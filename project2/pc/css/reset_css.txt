@@ -1,0 +1,48 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text">@charset "utf-8";
+</span></pre>
+<pre class="code_text"><span class="num">2</span><span class="text">	
+</span></pre>
+<pre class="code_text"><span class="num">3</span><span class="text"><span class="blue">body<span class="white">,</span> h1<span class="white">,</span> h2<span class="white">,</span> h3<span class="white">,</span> h4<span class="white">,</span> h5<span class="white">,</span> h6<span class="white">,</span> p<span class="white">,</span> ul<span class="white">,</span> ol<span class="white">,</span> table<span class="white">,</span> dl <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">4</span><span class="text"><span class="puple">	margin:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">5</span><span class="text"><span class="puple">	padding:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">6</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">7</span><span class="text"><span class="blue">h1 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">8</span><span class="text"><span class="puple">	font-size:</span> 16px;
+</span></pre>
+<pre class="code_text"><span class="num">9</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">10</span><span class="text"><span class="blue">a <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">11</span><span class="text"><span class="puple">	text-decoration:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">12</span><span class="text"><span class="puple">	color:</span> <span class="orange">#000;
+</span></span></pre>
+<pre class="code_text"><span class="num">13</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">14</span><span class="text"><span class="blue">ul<span class="white">,</span> ol <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">15</span><span class="text"><span class="puple">	list-style:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">16</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">17</span><span class="text"><span class="blue">img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">18</span><span class="text"><span class="puple">	vertical-align:</span> top;
+</span></pre>
+<pre class="code_text"><span class="num">19</span><span class="text"><span class="puple">	border:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">20</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">21</span><span class="text"><span class="blue">table <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">22</span><span class="text"><span class="puple">	border-collapse:</span> collapse;
+</span></pre>
+<pre class="code_text"><span class="num">23</span><span class="text"><span class="puple">	border-spacing:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">24</span><span class="text">}
+</span></pre>

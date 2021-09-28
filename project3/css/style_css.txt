@@ -1,0 +1,2434 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text">@charset <span class="orange">"utf-8"</span>;
+</span></pre>
+<pre class="code_text"><span class="num">2</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">3</span><span class="text">* <span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">4</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">5</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">6</span><span class="text"><span class="blue">body<span class="white">,</span> h1<span class="white">,</span> h2<span class="white">,</span> h3<span class="white">,</span> h4<span class="white">,</span> h5<span class="white">,</span> h6<span class="white">,</span> p<span class="white">,</span> ul<span class="white">,</span> ol <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">7</span><span class="text"><span class="puple">	margin:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">8</span><span class="text"><span class="puple">	padding:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">9</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">10</span><span class="text"><span class="blue">ul<span class="white">,</span> ol <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">11</span><span class="text"><span class="puple">	list-style:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">12</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">13</span><span class="text"><span class="blue">a <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">14</span><span class="text"><span class="puple">	text-decoration:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">15</span><span class="text"><span class="puple">	color:</span> <span class="orange">#000;
+</span></span></pre>
+<pre class="code_text"><span class="num">16</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">17</span><span class="text"><span class="blue">img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">18</span><span class="text"><span class="puple">	vertical-align:</span> top;
+</span></pre>
+<pre class="code_text"><span class="num">19</span><span class="text"><span class="puple">	border:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">20</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">21</span><span class="text"><span class="blue">body.fixed<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">22</span><span class="text"><span class="puple">	overflow-y:</span> hidden;
+</span></pre>
+<pre class="code_text"><span class="num">23</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">24</span><span class="text"><span class="puple"><span class="blue">.clearfix<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">25</span><span class="text"><span class="puple">	content:</span> <span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">26</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">27</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">28</span><span class="text"><span class="puple"><span class="blue">.clearfix<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">29</span><span class="text"><span class="puple">	content:</span> <span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">30</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">31</span><span class="text"><span class="puple">	clear:</span> both;
+</span></pre>
+<pre class="code_text"><span class="num">32</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">33</span><span class="text"><span class="blue">.dim<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">34</span><span class="text"><span class="puple">	display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">35</span><span class="text"><span class="puple">	position:</span> fixed;
+</span></pre>
+<pre class="code_text"><span class="num">36</span><span class="text"><span class="puple">	left:</span>0;
+</span></pre>
+<pre class="code_text"><span class="num">37</span><span class="text"><span class="puple">	right:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">38</span><span class="text"><span class="puple">	top:</span>0;
+</span></pre>
+<pre class="code_text"><span class="num">39</span><span class="text"><span class="puple">	bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">40</span><span class="text"><span class="puple">	z-index:</span> 1001;
+</span></pre>
+<pre class="code_text"><span class="num">41</span><span class="text"><span class="puple">	background-color:</span> rgba(0<span class="white">,</span>0<span class="white">,</span>0<span class="white">,</span>0.6);
+</span></pre>
+<pre class="code_text"><span class="num">42</span><span class="text"><span class="puple">	text-indent:</span> -999999px;
+</span></pre>
+<pre class="code_text"><span class="num">43</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">44</span><span class="text"><span class="blue">.dim.active<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">45</span><span class="text"><span class="puple">	display:</span>block;
+</span></pre>
+<pre class="code_text"><span class="num">46</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">47</span><span class="text"><span class="blue">.controller<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">48</span><span class="text"><span class="puple">	position:</span> fixed;
+</span></pre>
+<pre class="code_text"><span class="num">49</span><span class="text"><span class="puple">	right:</span> 40px;
+</span></pre>
+<pre class="code_text"><span class="num">50</span><span class="text"><span class="puple">	top:</span> 25%;
+</span></pre>
+<pre class="code_text"><span class="num">51</span><span class="text"><span class="puple">	z-index:</span> 100000;
+</span></pre>
+<pre class="code_text"><span class="num">52</span><span class="text"><span class="puple">	width:</span> 110px;
+</span></pre>
+<pre class="code_text"><span class="num">53</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">54</span><span class="text"><span class="blue">.controller ul<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">55</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">56</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">57</span><span class="text"><span class="puple"><span class="blue">.controller ul<span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">58</span><span class="text"><span class="puple">	content:</span> <span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">59</span><span class="text"><span class="puple">	display:</span>block;
+</span></pre>
+<pre class="code_text"><span class="num">60</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">61</span><span class="text"><span class="puple">	right:</span> -10%;
+</span></pre>
+<pre class="code_text"><span class="num">62</span><span class="text"><span class="puple">	top:</span> 10%;
+</span></pre>
+<pre class="code_text"><span class="num">63</span><span class="text"><span class="puple">	width:</span> 1px;
+</span></pre>
+<pre class="code_text"><span class="num">64</span><span class="text"><span class="puple">	height:</span> 180px;
+</span></pre>
+<pre class="code_text"><span class="num">65</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">66</span><span class="text"><span class="puple">	opacity:</span> 0.1;
+</span></pre>
+<pre class="code_text"><span class="num">67</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">68</span><span class="text"><span class="blue">.controller span <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">69</span><span class="text"><span class="puple">	display:</span>block;
+</span></pre>
+<pre class="code_text"><span class="num">70</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">71</span><span class="text"><span class="puple">	right:</span> -10%;
+</span></pre>
+<pre class="code_text"><span class="num">72</span><span class="text"><span class="puple">	top:</span> 10%;
+</span></pre>
+<pre class="code_text"><span class="num">73</span><span class="text"><span class="puple">	width:</span> 1px;
+</span></pre>
+<pre class="code_text"><span class="num">74</span><span class="text"><span class="puple">	height:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">75</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">76</span><span class="text"><span class="puple">	transition:</span> height 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">77</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">78</span><span class="text"><span class="blue">.controller li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">79</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">80</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">81</span><span class="text"><span class="puple">	line-height:</span> 3;
+</span></pre>
+<pre class="code_text"><span class="num">82</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">83</span><span class="text"><span class="puple"><span class="blue">.controller li<span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">84</span><span class="text"><span class="puple">	content:</span> <span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">85</span><span class="text"><span class="puple">	display:</span>block;
+</span></pre>
+<pre class="code_text"><span class="num">86</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">87</span><span class="text"><span class="puple">	right:</span> -11.8%;
+</span></pre>
+<pre class="code_text"><span class="num">88</span><span class="text"><span class="puple">	top:</span> 47%;
+</span></pre>
+<pre class="code_text"><span class="num">89</span><span class="text"><span class="puple">	width:</span> 5px;
+</span></pre>
+<pre class="code_text"><span class="num">90</span><span class="text"><span class="puple">	height:</span> 5px;
+</span></pre>
+<pre class="code_text"><span class="num">91</span><span class="text"><span class="puple">	border-radius:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">92</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">93</span><span class="text"><span class="puple">	opacity:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">94</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">95</span><span class="text"><span class="puple">	transition:</span> all 0s;
+</span></pre>
+<pre class="code_text"><span class="num">96</span><span class="text"><span class="puple">	transform:</span> scale(1<span class="white">,</span> 1);
+</span></pre>
+<pre class="code_text"><span class="num">97</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">98</span><span class="text"><span class="puple"><span class="blue">.controller li<span class="puple">:</span></span><span class="puple"><span class="white">hover</span><span class="puple">:</span></span><span class="puple">:</span>before<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">99</span><span class="text"><span class="puple"><span class="blue">.controller li.effect<span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">100</span><span class="text"><span class="puple">	transform:</span> scale(2<span class="white">,</span> 2);
+</span></pre>
+<pre class="code_text"><span class="num">101</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">102</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">103</span><span class="text"><span class="puple"><span class="blue">.controller li.color<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">104</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">105</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">106</span><span class="text"><span class="blue">.controller li a<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">107</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">108</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">109</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">110</span><span class="text"><span class="puple">	font-size:</span> 12px;
+</span></pre>
+<pre class="code_text"><span class="num">111</span><span class="text"><span class="puple">	text-align:</span> right;
+</span></pre>
+<pre class="code_text"><span class="num">112</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">113</span><span class="text"><span class="puple">	transition:</span> opacity 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">114</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">115</span><span class="text"><span class="puple"><span class="blue">.controller li:</span><span class="white">hover</span> a<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">116</span><span class="text"><span class="blue">.controller li.effect a <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">117</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">118</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">119</span><span class="text"><span class="blue">.controller.color li a<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">120</span><span class="text"><span class="puple">	color:</span> <span class="orange">#000;
+</span></span></pre>
+<pre class="code_text"><span class="num">121</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">122</span><span class="text"><span class="puple"><span class="blue">.controller.color li<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">123</span><span class="text"><span class="puple"><span class="blue">.controller.color ul<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">124</span><span class="text"><span class="blue">.controller.color span<span class="white">{</span></span> <span class="gray">/* 수정 */</span>
+</span></pre>
+<pre class="code_text"><span class="num">125</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#000;
+</span></span></pre>
+<pre class="code_text"><span class="num">126</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">127</span><span class="text"><span class="blue">#header<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">128</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">129</span><span class="text"><span class="puple">	z-index:</span> 1000;
+</span></pre>
+<pre class="code_text"><span class="num">130</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">131</span><span class="text"><span class="puple">	height:</span> 700px;
+</span></pre>
+<pre class="code_text"><span class="num">132</span><span class="text"><span class="puple">	background-color:</span> transparent;
+</span></pre>
+<pre class="code_text"><span class="num">133</span><span class="text"><span class="puple">	overflow:</span> hidden;
+</span></pre>
+<pre class="code_text"><span class="num">134</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">135</span><span class="text"><span class="blue">#pc<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">136</span><span class="text"><span class="puple">	position:</span> fixed;
+</span></pre>
+<pre class="code_text"><span class="num">137</span><span class="text"><span class="puple">	right:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">138</span><span class="text"><span class="puple">	top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">139</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">140</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">141</span><span class="text"><span class="puple">	z-index:</span> 1100;
+</span></pre>
+<pre class="code_text"><span class="num">142</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">143</span><span class="text"><span class="blue">#pc.fixed<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">144</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#000;
+</span></span></pre>
+<pre class="code_text"><span class="num">145</span><span class="text"><span class="puple">	opacity:</span>58%;
+</span></pre>
+<pre class="code_text"><span class="num">146</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">147</span><span class="text"><span class="blue">#pc .pc_inner<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">148</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">149</span><span class="text"><span class="puple">	margin:</span>0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">150</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">151</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">152</span><span class="text"><span class="blue">#pc .pc_inner .logo<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">153</span><span class="text"><span class="puple">	padding:</span> 15px 5px;
+</span></pre>
+<pre class="code_text"><span class="num">154</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">155</span><span class="text"><span class="blue">#pc .pc_inner .btn_on<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">156</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">157</span><span class="text"><span class="puple">	right:</span> 5px;
+</span></pre>
+<pre class="code_text"><span class="num">158</span><span class="text"><span class="puple">	top:</span> 20px;
+</span></pre>
+<pre class="code_text"><span class="num">159</span><span class="text"><span class="puple">	display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">160</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">161</span><span class="text"><span class="blue">#pc ul<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">162</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">163</span><span class="text"><span class="puple">	text-align:</span> right;
+</span></pre>
+<pre class="code_text"><span class="num">164</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">165</span><span class="text"><span class="puple">	top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">166</span><span class="text"><span class="puple">	right:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">167</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">168</span><span class="text"><span class="blue">#pc ul li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">169</span><span class="text"><span class="puple">	display:</span> inline-block;
+</span></pre>
+<pre class="code_text"><span class="num">170</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">171</span><span class="text"><span class="blue">#pc ul li a<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">172</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">173</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">174</span><span class="text"><span class="puple">	padding:</span> 26px;
+</span></pre>
+<pre class="code_text"><span class="num">175</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">176</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">177</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">178</span><span class="text"><span class="puple"><span class="blue">#pc ul li:</span><span class="white">hover</span> a<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">179</span><span class="text"><span class="puple"><span class="blue">#pc ul li:</span>focus a<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">180</span><span class="text"><span class="blue">#pc ul li.active a <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">181</span><span class="text"><span class="puple">	color:</span> <span class="orange">#006aba;
+</span></span></pre>
+<pre class="code_text"><span class="num">182</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">183</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(1) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">184</span><span class="text"><span class="puple">	content:</span><span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">185</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">186</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">187</span><span class="text"><span class="puple">	bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">188</span><span class="text"><span class="puple">	left:</span> 27%;
+</span></pre>
+<pre class="code_text"><span class="num">189</span><span class="text"><span class="puple">	width:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">190</span><span class="text"><span class="puple">	height:</span> 2px;
+</span></pre>
+<pre class="code_text"><span class="num">191</span><span class="text"><span class="puple">	transition:</span> width 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">192</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#006aba;
+</span></span></pre>
+<pre class="code_text"><span class="num">193</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">194</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(1)<span class="puple">:</span></span><span class="puple"><span class="white">hover</span> a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">195</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(1)<span class="puple">:</span></span><span class="puple">focus a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">196</span><span class="text"><span class="puple"><span class="blue">#pc ul li.active<span class="puple">:</span></span><span class="puple">nth-child(1) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">197</span><span class="text"><span class="puple">	width:</span> 50px;
+</span></pre>
+<pre class="code_text"><span class="num">198</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">199</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(2) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">200</span><span class="text"><span class="puple">	content:</span><span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">201</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">202</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">203</span><span class="text"><span class="puple">	bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">204</span><span class="text"><span class="puple">	left:</span> 20%;
+</span></pre>
+<pre class="code_text"><span class="num">205</span><span class="text"><span class="puple">	width:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">206</span><span class="text"><span class="puple">	height:</span> 2px;
+</span></pre>
+<pre class="code_text"><span class="num">207</span><span class="text"><span class="puple">	transition:</span> width 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">208</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#006aba;
+</span></span></pre>
+<pre class="code_text"><span class="num">209</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">210</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(2)<span class="puple">:</span></span><span class="puple"><span class="white">hover</span> a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span> 
+</span></pre>
+<pre class="code_text"><span class="num">211</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(2)<span class="puple">:</span></span><span class="puple">focus a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">212</span><span class="text"><span class="puple"><span class="blue">#pc ul li.active<span class="puple">:</span></span><span class="puple">nth-child(2) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">213</span><span class="text"><span class="puple">	width:</span> 80px;
+</span></pre>
+<pre class="code_text"><span class="num">214</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">215</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(3) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">216</span><span class="text"><span class="puple">	content:</span><span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">217</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">218</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">219</span><span class="text"><span class="puple">	bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">220</span><span class="text"><span class="puple">	left:</span> 19%;
+</span></pre>
+<pre class="code_text"><span class="num">221</span><span class="text"><span class="puple">	width:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">222</span><span class="text"><span class="puple">	height:</span> 2px;
+</span></pre>
+<pre class="code_text"><span class="num">223</span><span class="text"><span class="puple">	transition:</span> width 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">224</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#006aba;
+</span></span></pre>
+<pre class="code_text"><span class="num">225</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">226</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(3)<span class="puple">:</span></span><span class="puple"><span class="white">hover</span> a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span> 
+</span></pre>
+<pre class="code_text"><span class="num">227</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(3)<span class="puple">:</span></span><span class="puple">focus a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">228</span><span class="text"><span class="puple"><span class="blue">#pc ul li.active<span class="puple">:</span></span><span class="puple">nth-child(3) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">229</span><span class="text"><span class="puple">	width:</span> 90px;
+</span></pre>
+<pre class="code_text"><span class="num">230</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">231</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(1n+4) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">232</span><span class="text"><span class="puple">	content:</span><span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">233</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">234</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">235</span><span class="text"><span class="puple">	bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">236</span><span class="text"><span class="puple">	left:</span> 20%;
+</span></pre>
+<pre class="code_text"><span class="num">237</span><span class="text"><span class="puple">	width:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">238</span><span class="text"><span class="puple">	height:</span> 2px;
+</span></pre>
+<pre class="code_text"><span class="num">239</span><span class="text"><span class="puple">	transition:</span> width 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">240</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#006aba;
+</span></span></pre>
+<pre class="code_text"><span class="num">241</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">242</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(1n+4)<span class="puple">:</span></span><span class="puple"><span class="white">hover</span> a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span> 
+</span></pre>
+<pre class="code_text"><span class="num">243</span><span class="text"><span class="puple"><span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(1n+4)<span class="puple">:</span></span><span class="puple">focus a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">244</span><span class="text"><span class="puple"><span class="blue">#pc ul li.active<span class="puple">:</span></span><span class="puple">nth-child(1n+4) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">245</span><span class="text"><span class="puple">	width:</span> 75px;
+</span></pre>
+<pre class="code_text"><span class="num">246</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">247</span><span class="text"><span class="blue">#mobile <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">248</span><span class="text"><span class="puple">	position:</span> fixed;
+</span></pre>
+<pre class="code_text"><span class="num">249</span><span class="text"><span class="puple">	right:</span> -58.750em;
+</span></pre>
+<pre class="code_text"><span class="num">250</span><span class="text"><span class="puple">	top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">251</span><span class="text"><span class="puple">	z-index:</span> 1003;
+</span></pre>
+<pre class="code_text"><span class="num">252</span><span class="text"><span class="puple">	width:</span> 15.000em;
+</span></pre>
+<pre class="code_text"><span class="num">253</span><span class="text"><span class="puple">	height:</span> 100vh;
+</span></pre>
+<pre class="code_text"><span class="num">254</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">255</span><span class="text"><span class="puple">	transition:</span> right 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">256</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">257</span><span class="text"><span class="puple">	overflow-y:</span> auto;
+</span></pre>
+<pre class="code_text"><span class="num">258</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">259</span><span class="text"><span class="blue">#mobile.active <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">260</span><span class="text"><span class="puple">	right:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">261</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">262</span><span class="text"><span class="blue">#mobile .btn_close <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">263</span><span class="text"><span class="puple">	position:</span> fixed;
+</span></pre>
+<pre class="code_text"><span class="num">264</span><span class="text"><span class="puple">	top:</span> 24px;
+</span></pre>
+<pre class="code_text"><span class="num">265</span><span class="text"><span class="puple">	right:</span> -43.125em;
+</span></pre>
+<pre class="code_text"><span class="num">266</span><span class="text"><span class="puple">	z-index:</span> 1004;
+</span></pre>
+<pre class="code_text"><span class="num">267</span><span class="text"><span class="puple">	transition:</span> right 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">268</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">269</span><span class="text"><span class="blue">#mobile .btn_close.active<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">270</span><span class="text"><span class="puple">	right:</span> 250px;
+</span></pre>
+<pre class="code_text"><span class="num">271</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">272</span><span class="text"><span class="blue">#mobile ul <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">273</span><span class="text"><span class="puple">	padding:</span> 50px 25px;
+</span></pre>
+<pre class="code_text"><span class="num">274</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">275</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">276</span><span class="text"><span class="blue">#mobile li a<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">277</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">278</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">279</span><span class="text"><span class="puple">	line-height:</span> 3;
+</span></pre>
+<pre class="code_text"><span class="num">280</span><span class="text"><span class="puple">	font-size:</span> 1.1em;
+</span></pre>
+<pre class="code_text"><span class="num">281</span><span class="text"><span class="puple">	color:</span> <span class="orange">#5e3d96;
+</span></span></pre>
+<pre class="code_text"><span class="num">282</span><span class="text"><span class="puple">	font-weight:</span> 700;
+</span></pre>
+<pre class="code_text"><span class="num">283</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">284</span><span class="text"><span class="puple"><span class="blue">#mobile li a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">285</span><span class="text"><span class="puple">	content:</span> <span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">286</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">287</span><span class="text"><span class="puple">	left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">288</span><span class="text"><span class="puple">	bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">289</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">290</span><span class="text"><span class="puple">	height:</span> 1px;
+</span></pre>
+<pre class="code_text"><span class="num">291</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#f1f1f1;
+</span></span></pre>
+<pre class="code_text"><span class="num">292</span><span class="text">	
+</span></pre>
+<pre class="code_text"><span class="num">293</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">294</span><span class="text"><span class="blue">#header .slider <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">295</span><span class="text"><span class="puple">	top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">296</span><span class="text"><span class="puple">	left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">297</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">298</span><span class="text"><span class="puple">	height:</span> 700px;
+</span></pre>
+<pre class="code_text"><span class="num">299</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">300</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">301</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">302</span><span class="text"><span class="blue">#header .slider ul.main &gt; li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">303</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">304</span><span class="text"><span class="puple">	top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">305</span><span class="text"><span class="puple">	left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">306</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">307</span><span class="text"><span class="puple">	height:</span> 700px;
+</span></pre>
+<pre class="code_text"><span class="num">308</span><span class="text"><span class="puple">	opacity:</span>0;
+</span></pre>
+<pre class="code_text"><span class="num">309</span><span class="text"><span class="puple">	transform:</span> scale(1<span class="blue">.15<span class="white">,</span></span> 1.15);
+</span></pre>
+<pre class="code_text"><span class="num">310</span><span class="text"><span class="puple">	transition:</span> opacity 2s<span class="white">,</span> transform 5s;
+</span></pre>
+<pre class="code_text"><span class="num">311</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">312</span><span class="text"><span class="puple"><span class="blue">#header .slider ul.main &gt; li:</span>nth-child(1)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">313</span><span class="text"><span class="puple">	background:</span> url(../images/keyvisual.jpg) no-repeat center center;
+</span></pre>
+<pre class="code_text"><span class="num">314</span><span class="text"><span class="puple">	background-size:</span> cover;
+</span></pre>
+<pre class="code_text"><span class="num">315</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">316</span><span class="text"><span class="puple"><span class="blue">#header .slider ul.main &gt; li:</span>nth-child(2)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">317</span><span class="text"><span class="puple">	background:</span> url(../images/slider2.jpg) no-repeat center center;
+</span></pre>
+<pre class="code_text"><span class="num">318</span><span class="text"><span class="puple">	background-size:</span> cover;
+</span></pre>
+<pre class="code_text"><span class="num">319</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">320</span><span class="text"><span class="puple"><span class="blue">#header .slider ul.main &gt; li:</span>nth-child(3)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">321</span><span class="text"><span class="puple">	background:</span> url(../images/slider3.jpg) no-repeat center center;
+</span></pre>
+<pre class="code_text"><span class="num">322</span><span class="text"><span class="puple">	background-size:</span> cover;
+</span></pre>
+<pre class="code_text"><span class="num">323</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">324</span><span class="text"><span class="puple"><span class="blue">#header .slider ul.main &gt; li:</span>nth-child(4)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">325</span><span class="text"><span class="puple">	background:</span> url(../images/slider4.jpg) no-repeat center center;
+</span></pre>
+<pre class="code_text"><span class="num">326</span><span class="text"><span class="puple">	background-size:</span> cover;
+</span></pre>
+<pre class="code_text"><span class="num">327</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">328</span><span class="text"><span class="blue">#header .slider ul.main &gt; li.active <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">329</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">330</span><span class="text"><span class="puple">	transform:</span> scale(1<span class="white">,</span> 1);
+</span></pre>
+<pre class="code_text"><span class="num">331</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">332</span><span class="text"><span class="blue">#header .slider ul.main ul <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">333</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">334</span><span class="text"><span class="puple">	position:</span>absolute;
+</span></pre>
+<pre class="code_text"><span class="num">335</span><span class="text"><span class="puple">	top:</span> 10.125em;
+</span></pre>
+<pre class="code_text"><span class="num">336</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">337</span><span class="text"><span class="blue">#header .slider ul.main ul li.more <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">338</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">339</span><span class="text"><span class="puple">	padding:</span> 3.813em 0;
+</span></pre>
+<pre class="code_text"><span class="num">340</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">341</span><span class="text"><span class="blue">#header .slider ul.main ul li.more a <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">342</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">343</span><span class="text"><span class="puple">	padding:</span> 1.250em 5.625em;
+</span></pre>
+<pre class="code_text"><span class="num">344</span><span class="text"><span class="puple">	width:</span> 240px;
+</span></pre>
+<pre class="code_text"><span class="num">345</span><span class="text"><span class="puple">	background-color:</span> transparent;
+</span></pre>
+<pre class="code_text"><span class="num">346</span><span class="text"><span class="puple">	border:</span> 1px solid <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">347</span><span class="text"><span class="puple">	box-sizing:</span>border-box;
+</span></pre>
+<pre class="code_text"><span class="num">348</span><span class="text"><span class="puple">	font-weight:</span> 700;
+</span></pre>
+<pre class="code_text"><span class="num">349</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">350</span><span class="text"><span class="puple">	transform:</span> translateX(-80px);
+</span></pre>
+<pre class="code_text"><span class="num">351</span><span class="text"><span class="puple">	transition:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">352</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">353</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">354</span><span class="text"><span class="blue">#header .slider ul.main &gt; li.active li.more a <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">355</span><span class="text"><span class="puple">	transform:</span> translateX(0);
+</span></pre>
+<pre class="code_text"><span class="num">356</span><span class="text"><span class="puple">	transition:</span> transform 1s<span class="white">,</span> opacity 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">357</span><span class="text"><span class="puple">	opacity:</span>1;
+</span></pre>
+<pre class="code_text"><span class="num">358</span><span class="text"><span class="puple">	transition-delay:</span> 0.5s;
+</span></pre>
+<pre class="code_text"><span class="num">359</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">360</span><span class="text"><span class="blue">#header .slider ul.main ul li.text <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">361</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">362</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">363</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">364</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">365</span><span class="text"><span class="puple">	line-height:</span> 1.5;
+</span></pre>
+<pre class="code_text"><span class="num">366</span><span class="text"><span class="puple">	transform:</span> translateX(-80px);
+</span></pre>
+<pre class="code_text"><span class="num">367</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">368</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">369</span><span class="text"><span class="puple"><span class="blue">#header .slider ul.main li:</span>nth-child(2) ul li.text<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">370</span><span class="text"><span class="puple">	padding-top:</span> 100px; 
+</span></pre>
+<pre class="code_text"><span class="num">371</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">372</span><span class="text"><span class="puple"><span class="blue">#header .slider ul.main li:</span>nth-child(3) ul li.text<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">373</span><span class="text"><span class="puple">	padding-top:</span> 100px; 
+</span></pre>
+<pre class="code_text"><span class="num">374</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">375</span><span class="text"><span class="blue">#header .slider ul.main li.active ul li.text <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">376</span><span class="text"><span class="puple">	opacity:</span>1;
+</span></pre>
+<pre class="code_text"><span class="num">377</span><span class="text"><span class="puple">	transform:</span> translateX(0);
+</span></pre>
+<pre class="code_text"><span class="num">378</span><span class="text"><span class="puple">	transition:</span> transform 0<span class="blue">.8s<span class="white">,</span></span> opacity 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">379</span><span class="text"><span class="puple">	transition-delay:</span> 1s;
+</span></pre>
+<pre class="code_text"><span class="num">380</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">381</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">382</span><span class="text"><span class="blue">#header .slider ul.main ul li.text span<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">383</span><span class="text"><span class="puple">	font-size:</span> 2.500em;
+</span></pre>
+<pre class="code_text"><span class="num">384</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">385</span><span class="text"><span class="blue">#header .slider ul.main ul li.text h2 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">386</span><span class="text"><span class="puple">	padding-top:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">387</span><span class="text"><span class="puple">	font-size:</span> 3.125em;
+</span></pre>
+<pre class="code_text"><span class="num">388</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">389</span><span class="text"><span class="gray">/*<span class="gray"><span class="orange">#header .slider ul.main ul li.text span<span class="orange">{</span><!--</span-->span&gt;
+</span></span></span></span></pre>
+<pre class="code_text"><span class="num">390</span><span class="text"><span class="puple">	font-size:</span> 2.500em;
+</span></pre>
+<pre class="code_text"><span class="num">391</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">392</span><span class="text"><span class="blue">#header .slider ul.main ul li.text h2 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">393</span><span class="text"><span class="puple">	padding-top:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">394</span><span class="text"><span class="puple">	font-size:</span> 3.125em;
+</span></pre>
+<pre class="code_text"><span class="num">395</span><span class="text">}*/
+</span></pre>
+<pre class="code_text"><span class="num">396</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">397</span><span class="text"><span class="gray">/*slider gauge*/</span>
+</span></pre>
+<pre class="code_text"><span class="num">398</span><span class="text"><span class="blue">#header .slider .gauge_bar<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">399</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">400</span><span class="text"><span class="puple">	bottom:</span> 50px;
+</span></pre>
+<pre class="code_text"><span class="num">401</span><span class="text"><span class="puple">	left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">402</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">403</span><span class="text"><span class="puple">	height:</span>24px;
+</span></pre>
+<pre class="code_text"><span class="num">404</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">405</span><span class="text"><span class="puple">	z-index:</span> 80000;
+</span></pre>
+<pre class="code_text"><span class="num">406</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">407</span><span class="text"><span class="blue">#header .slider .gauge_bar li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">408</span><span class="text"><span class="puple">	position:</span>relative;
+</span></pre>
+<pre class="code_text"><span class="num">409</span><span class="text"><span class="puple">	display:</span> inline-block;
+</span></pre>
+<pre class="code_text"><span class="num">410</span><span class="text"><span class="puple">	margin-left:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">411</span><span class="text"><span class="puple">	height:</span>24px;
+</span></pre>
+<pre class="code_text"><span class="num">412</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">413</span><span class="text"><span class="puple"><span class="blue">#header .slider .gauge_bar li:</span>first-child<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">414</span><span class="text"><span class="puple">	margin-left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">415</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">416</span><span class="text"><span class="blue">#header .slider .gauge_bar li a<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">417</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">418</span><span class="text"><span class="puple">	color:</span> rgba(255<span class="white">,</span> 255<span class="white">,</span> 255<span class="white">,</span> 0.2);
+</span></pre>
+<pre class="code_text"><span class="num">419</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">420</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">421</span><span class="text"><span class="puple"><span class="blue">#header .slider .gauge_bar li a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">422</span><span class="text"><span class="puple">	content:</span> attr(data-<span class="white">hover</span>);
+</span></pre>
+<pre class="code_text"><span class="num">423</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">424</span><span class="text"><span class="puple">	left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">425</span><span class="text"><span class="puple">	top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">426</span><span class="text"><span class="puple">	max-width:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">427</span><span class="text"><span class="puple">	overflow:</span> hidden;
+</span></pre>
+<pre class="code_text"><span class="num">428</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">429</span><span class="text"><span class="puple">	opacity:</span>1;
+</span></pre>
+<pre class="code_text"><span class="num">430</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">431</span><span class="text"><span class="puple"><span class="blue">#header .slider .gauge_bar li.active a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">432</span><span class="text"><span class="puple">	max-width:</span>100%;
+</span></pre>
+<pre class="code_text"><span class="num">433</span><span class="text"><span class="puple">	transition:</span> max-width 5s;
+</span></pre>
+<pre class="code_text"><span class="num">434</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">435</span><span class="text"><span class="blue">#header .slider .btn_1<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">436</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">437</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">438</span><span class="text"><span class="puple">	bottom:</span> 90px;
+</span></pre>
+<pre class="code_text"><span class="num">439</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">440</span><span class="text"><span class="puple">	z-index:</span> 999999;
+</span></pre>
+<pre class="code_text"><span class="num">441</span><span class="text"><span class="puple">	text-align:</span> right;
+</span></pre>
+<pre class="code_text"><span class="num">442</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">443</span><span class="text"><span class="blue">#header .slider .btn_1 ul<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">444</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">445</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">446</span><span class="text"><span class="puple">	bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">447</span><span class="text"><span class="puple">	max-width:</span> 350px;
+</span></pre>
+<pre class="code_text"><span class="num">448</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">449</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">450</span><span class="text"><span class="blue">#header .slider .btn_1 ul li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">451</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">452</span><span class="text"><span class="puple">	display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">453</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">454</span><span class="text"><span class="blue">#header .slider .btn_1 ul li.active<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">455</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">456</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">457</span><span class="text"><span class="blue">#header .slider .btn_1 ul li a<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">458</span><span class="text"><span class="puple">	margin:</span>0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">459</span><span class="text"><span class="puple">	display:</span>block;
+</span></pre>
+<pre class="code_text"><span class="num">460</span><span class="text"><span class="puple">	width:</span> 20px;
+</span></pre>
+<pre class="code_text"><span class="num">461</span><span class="text"><span class="puple">	height:</span> 20px;
+</span></pre>
+<pre class="code_text"><span class="num">462</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">463</span><span class="text"><span class="puple">	text-indent:</span> -9999999px;
+</span></pre>
+<pre class="code_text"><span class="num">464</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">465</span><span class="text"><span class="puple"><span class="blue">#header .slider .btn_1 ul li<span class="puple">:</span></span><span class="puple">nth-child(1) a span<span class="puple">:</span></span><span class="puple">:</span>after <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">466</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">467</span><span class="text"><span class="puple">    content:</span> <span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">468</span><span class="text"><span class="puple">    display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">469</span><span class="text"><span class="puple">    top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">470</span><span class="text"><span class="puple">    width:</span> 2px;
+</span></pre>
+<pre class="code_text"><span class="num">471</span><span class="text"><span class="puple">    height:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">472</span><span class="text"><span class="puple">    background-color:</span> transparent;
+</span></pre>
+<pre class="code_text"><span class="num">473</span><span class="text"><span class="puple">    border-right:</span> 2px solid <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">474</span><span class="text"><span class="puple">    border-left:</span> 2px solid <span class="orange">#ffff;
+</span></span></pre>
+<pre class="code_text"><span class="num">475</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">476</span><span class="text"><span class="puple"><span class="blue">#header .slider .btn_1 ul li<span class="puple">:</span></span><span class="puple">nth-child(2) a span<span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">477</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">478</span><span class="text"><span class="puple">	content:</span> <span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">479</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">480</span><span class="text"><span class="puple">	top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">481</span><span class="text"><span class="puple">	border:</span> 6px solid <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">482</span><span class="text"><span class="puple">	border-bottom-color:</span> transparent;
+</span></pre>
+<pre class="code_text"><span class="num">483</span><span class="text"><span class="puple">	border-top-color:</span> transparent;
+</span></pre>
+<pre class="code_text"><span class="num">484</span><span class="text"><span class="puple">	border-right-color:</span> transparent;
+</span></pre>
+<pre class="code_text"><span class="num">485</span><span class="text">	
+</span></pre>
+<pre class="code_text"><span class="num">486</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">487</span><span class="text"><span class="blue">#header .slider .gauge_bar .ball<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">488</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">489</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">490</span><span class="text"><span class="puple">	top:</span>-10px;
+</span></pre>
+<pre class="code_text"><span class="num">491</span><span class="text"><span class="puple">	width:</span>10px;
+</span></pre>
+<pre class="code_text"><span class="num">492</span><span class="text"><span class="puple">	height:</span>10px;
+</span></pre>
+<pre class="code_text"><span class="num">493</span><span class="text"><span class="puple">	border-radius:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">494</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">495</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">496</span><span class="text"><span class="puple">	transition:</span> left 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">497</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">498</span><span class="text"><span class="blue">#header .slider .gauge_bar.on .ball<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">499</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">500</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">501</span><span class="text"><span class="blue">#content <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">502</span><span class="text"><span class="puple">	padding-top:</span> 700px;
+</span></pre>
+<pre class="code_text"><span class="num">503</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">504</span><span class="text"><span class="blue">#content .page1<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">505</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">506</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">507</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">508</span><span class="text"><span class="blue">#content .page1 .page1_inner<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">509</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">510</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">511</span><span class="text"><span class="puple">	padding:</span> 6.250em 0 3.500em;
+</span></pre>
+<pre class="code_text"><span class="num">512</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">513</span><span class="text"><span class="blue">#content .title <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">514</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">515</span><span class="text"><span class="puple">	line-height:</span> 2;
+</span></pre>
+<pre class="code_text"><span class="num">516</span><span class="text"><span class="puple">	padding-bottom:</span> 5.313em;
+</span></pre>
+<pre class="code_text"><span class="num">517</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">518</span><span class="text"><span class="blue">#content .title h3 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">519</span><span class="text"><span class="puple">	font-size:</span> 2.500em;
+</span></pre>
+<pre class="code_text"><span class="num">520</span><span class="text"><span class="puple">	color:</span> <span class="orange">#006aba;
+</span></span></pre>
+<pre class="code_text"><span class="num">521</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">522</span><span class="text"><span class="blue">#content .title span <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">523</span><span class="text"><span class="puple">	color:</span> <span class="orange">#767875;
+</span></span></pre>
+<pre class="code_text"><span class="num">524</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">525</span><span class="text"><span class="blue">#content .page1 .page1_inner .icon &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">526</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">527</span><span class="text"><span class="puple">	transform:</span> translateY(80px);
+</span></pre>
+<pre class="code_text"><span class="num">528</span><span class="text"><span class="puple">	transition:</span> transform 1s<span class="white">,</span> opacity 0.6s;
+</span></pre>
+<pre class="code_text"><span class="num">529</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">530</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">531</span><span class="text"><span class="blue">#content .page1.on .page1_inner &gt; .icon &gt; ul &gt; li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">532</span><span class="text"><span class="puple">	transform:</span> translateY(0);
+</span></pre>
+<pre class="code_text"><span class="num">533</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">534</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">535</span><span class="text"><span class="blue">#content .page1 .page1_inner .icon &gt; ul &gt; li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">536</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">537</span><span class="text"><span class="puple">	width:</span> 33.333%;
+</span></pre>
+<pre class="code_text"><span class="num">538</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">539</span><span class="text"><span class="gray">/*<span class="gray"><span class="orange">#content .page1.on .page1_inner .icon ul ul<span class="orange">{</span><!--</span-->span&gt;
+</span></span></span></span></pre>
+<pre class="code_text"><span class="num">540</span><span class="text"><span class="puple">	transform:</span>translateY(0);
+</span></pre>
+<pre class="code_text"><span class="num">541</span><span class="text"><span class="puple">	opacity:</span>1;
+</span></pre>
+<pre class="code_text"><span class="num">542</span><span class="text">}*/
+</span></pre>
+<pre class="code_text"><span class="num">543</span><span class="text"><span class="blue">#content .page1 .page1_inner .icon li.text_title<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">544</span><span class="text"><span class="puple">	font-weight:</span> 700;
+</span></pre>
+<pre class="code_text"><span class="num">545</span><span class="text"><span class="puple">	font-size:</span> 1.125em;
+</span></pre>
+<pre class="code_text"><span class="num">546</span><span class="text"><span class="puple">	line-height:</span> 3.5;
+</span></pre>
+<pre class="code_text"><span class="num">547</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">548</span><span class="text"><span class="blue">#content .page1 .page1_inner .icon li img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">549</span><span class="text"><span class="puple">	border-radius:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">550</span><span class="text"><span class="puple">	border:</span> 2px solid <span class="orange">#603d99;
+</span></span></pre>
+<pre class="code_text"><span class="num">551</span><span class="text"><span class="puple">	width:</span> 150px;
+</span></pre>
+<pre class="code_text"><span class="num">552</span><span class="text"><span class="puple">	height:</span> 150px;
+</span></pre>
+<pre class="code_text"><span class="num">553</span><span class="text"><span class="puple">	transform:</span> scale (1.0);
+</span></pre>
+<pre class="code_text"><span class="num">554</span><span class="text"><span class="puple">	transition:</span> transform 0.6s;
+</span></pre>
+<pre class="code_text"><span class="num">555</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">556</span><span class="text"><span class="puple"><span class="blue">#content .page1 .page1_inner .icon li:</span><span class="white">hover</span> img<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">557</span><span class="text"><span class="puple">	transform:</span> scale(1.2);
+</span></pre>
+<pre class="code_text"><span class="num">558</span><span class="text"><span class="puple">	transition:</span> transform 0.6s;
+</span></pre>
+<pre class="code_text"><span class="num">559</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">560</span><span class="text"><span class="blue">#content .page1 .page1_inner .icon li.text_content<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">561</span><span class="text"><span class="puple">	color:</span> <span class="orange">#777978;
+</span></span></pre>
+<pre class="code_text"><span class="num">562</span><span class="text"><span class="puple">	line-height:</span> 1.5;
+</span></pre>
+<pre class="code_text"><span class="num">563</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">564</span><span class="text"><span class="blue">#content .page2 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">565</span><span class="text"><span class="puple">	clear:</span> both;
+</span></pre>
+<pre class="code_text"><span class="num">566</span><span class="text"><span class="puple">	width:</span>100%;
+</span></pre>
+<pre class="code_text"><span class="num">567</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#f7f7f7;
+</span></span></pre>
+<pre class="code_text"><span class="num">568</span><span class="text"><span class="puple">	padding:</span> 6.250em 0 10.313em;
+</span></pre>
+<pre class="code_text"><span class="num">569</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">570</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">571</span><span class="text"><span class="blue">#content .page2 .page2_inner<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">572</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">573</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">574</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">575</span><span class="text"><span class="blue">#content .page2 .page2_inner .title <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">576</span><span class="text"><span class="puple">	padding-bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">577</span><span class="text"><span class="puple">	padding-bottom:</span> 2.813em; 
+</span></pre>
+<pre class="code_text"><span class="num">578</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">579</span><span class="text"><span class="blue">#content .page2 .page2_inner .box_banner &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">580</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">581</span><span class="text"><span class="puple">	margin-left:</span> 35px;
+</span></pre>
+<pre class="code_text"><span class="num">582</span><span class="text"><span class="puple">	width:</span> calc((100% - 70px)/3);
+</span></pre>
+<pre class="code_text"><span class="num">583</span><span class="text"><span class="puple">	margin-top:</span> 45px;
+</span></pre>
+<pre class="code_text"><span class="num">584</span><span class="text"><span class="puple">	transform:</span> translateY(10px);
+</span></pre>
+<pre class="code_text"><span class="num">585</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">586</span><span class="text"><span class="puple">	overflow:</span> hidden;
+</span></pre>
+<pre class="code_text"><span class="num">587</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">588</span><span class="text"><span class="blue">#content .page2.on .page2_inner .box_banner &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">589</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">590</span><span class="text"><span class="puple">	transform:</span> translateY(0);
+</span></pre>
+<pre class="code_text"><span class="num">591</span><span class="text"><span class="puple">	transition:</span> transform 0<span class="blue">.6s<span class="white">,</span></span> opacity 0.5s;
+</span></pre>
+<pre class="code_text"><span class="num">592</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">593</span><span class="text"><span class="puple"><span class="blue">#content .page2 .page2_inner .box_banner &gt; ul &gt; li:</span>nth-child(3n+1)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">594</span><span class="text"><span class="puple">	margin-left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">595</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">596</span><span class="text"><span class="blue">#content .page2 .page2_inner .box_banner li img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">597</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">598</span><span class="text"><span class="puple">	z-index:</span> 1000;
+</span></pre>
+<pre class="code_text"><span class="num">599</span><span class="text"><span class="puple">	transform:</span> scale(1.0);
+</span></pre>
+<pre class="code_text"><span class="num">600</span><span class="text"><span class="puple">	transition:</span> transform 1s;
+</span></pre>
+<pre class="code_text"><span class="num">601</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">602</span><span class="text"><span class="puple"><span class="blue">#content .page2 .page2_inner .box_banner li:</span><span class="white">hover</span> img<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">603</span><span class="text"><span class="puple">	transform:</span> scale(1.1);
+</span></pre>
+<pre class="code_text"><span class="num">604</span><span class="text"><span class="puple">	transition:</span> transform 1s;
+</span></pre>
+<pre class="code_text"><span class="num">605</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">606</span><span class="text"><span class="blue">#content .page2 .page2_inner li ul.text <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">607</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">608</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">609</span><span class="text"><span class="puple">	height:</span> 97px;
+</span></pre>
+<pre class="code_text"><span class="num">610</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">611</span><span class="text"><span class="puple">	padding:</span> 20px 0 20px;
+</span></pre>
+<pre class="code_text"><span class="num">612</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">613</span><span class="text"><span class="puple">	line-height:</span> 2;
+</span></pre>
+<pre class="code_text"><span class="num">614</span><span class="text"><span class="puple">	transform:</span> rotateX(180deg);
+</span></pre>
+<pre class="code_text"><span class="num">615</span><span class="text"><span class="puple">	transition:</span> transform 1s;
+</span></pre>
+<pre class="code_text"><span class="num">616</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">617</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">618</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">619</span><span class="text"><span class="blue">#content .page2.on .page2_inner li ul.text<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">620</span><span class="text"><span class="puple">	transform:</span> rotateX(0);
+</span></pre>
+<pre class="code_text"><span class="num">621</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">622</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">623</span><span class="text"><span class="blue">#content .page2 .page2_inner li.text_title<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">624</span><span class="text"><span class="puple">	font-weight:</span> 700;
+</span></pre>
+<pre class="code_text"><span class="num">625</span><span class="text"><span class="puple">	font-size:</span> 1.125em;
+</span></pre>
+<pre class="code_text"><span class="num">626</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">627</span><span class="text"><span class="blue">#content .page2 .page2_inner li.text_content<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">628</span><span class="text"><span class="puple">	font-size:</span> 0.875em;
+</span></pre>
+<pre class="code_text"><span class="num">629</span><span class="text"><span class="puple">	color:</span><span class="orange">#777978;
+</span></span></pre>
+<pre class="code_text"><span class="num">630</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">631</span><span class="text"><span class="blue">#content .page3<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">632</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">633</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">634</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">635</span><span class="text"><span class="blue">#content .page3 .page3_inner <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">636</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">637</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">638</span><span class="text"><span class="puple">	padding:</span> 6.250em 0 15.188em;
+</span></pre>
+<pre class="code_text"><span class="num">639</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">640</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">641</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">642</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">643</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">644</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners &gt; ul <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">645</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">646</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">647</span><span class="text"><span class="puple"><span class="blue">#content .page3.on .page3_inner .banners &gt; ul<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">648</span><span class="text"><span class="puple">	transform:</span> translateY(0);
+</span></pre>
+<pre class="code_text"><span class="num">649</span><span class="text"><span class="puple">	height:</span> 95.9%;
+</span></pre>
+<pre class="code_text"><span class="num">650</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">651</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners &gt; ul<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">652</span><span class="text"><span class="puple">	content:</span> <span class="orange">""</span>;
+</span></pre>
+<pre class="code_text"><span class="num">653</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">654</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">655</span><span class="text"><span class="puple">	left:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">656</span><span class="text"><span class="puple">	top:</span>4.1%;
+</span></pre>
+<pre class="code_text"><span class="num">657</span><span class="text"><span class="puple">	width:</span> 5px;
+</span></pre>
+<pre class="code_text"><span class="num">658</span><span class="text"><span class="puple">	height:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">659</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#f1f1f1;
+</span></span></pre>
+<pre class="code_text"><span class="num">660</span><span class="text"><span class="puple">	z-index:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">661</span><span class="text"><span class="puple">	transition:</span> height 5s;
+</span></pre>
+<pre class="code_text"><span class="num">662</span><span class="text"><span class="puple">	transition-delay:</span> 0.5s;
+</span></pre>
+<pre class="code_text"><span class="num">663</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">664</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">665</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">666</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">667</span><span class="text"><span class="puple">	display:</span> inline-block;
+</span></pre>
+<pre class="code_text"><span class="num">668</span><span class="text"><span class="puple">	padding:</span> 55px 0;
+</span></pre>
+<pre class="code_text"><span class="num">669</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">670</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li:</span>nth-child(1) img<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">671</span><span class="text"><span class="puple">	transition-delay:</span> 0s;
+</span></pre>
+<pre class="code_text"><span class="num">672</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">673</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li:</span>nth-child(2) img<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">674</span><span class="text"><span class="puple">	transition-delay:</span> 1s;
+</span></pre>
+<pre class="code_text"><span class="num">675</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">676</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li:</span>nth-child(3) img<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">677</span><span class="text"><span class="puple">	transition-delay:</span> 1.5s;
+</span></pre>
+<pre class="code_text"><span class="num">678</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">679</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li:</span>nth-child(4) img<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">680</span><span class="text"><span class="puple">	transition-delay:</span> 2s;
+</span></pre>
+<pre class="code_text"><span class="num">681</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">682</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li:</span>nth-child(5) img<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">683</span><span class="text"><span class="puple">	transition-delay:</span> 3s;
+</span></pre>
+<pre class="code_text"><span class="num">684</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">685</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">686</span><span class="text"><span class="puple">	border-radius:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">687</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">688</span><span class="text"><span class="puple">	left:</span> 40%;
+</span></pre>
+<pre class="code_text"><span class="num">689</span><span class="text"><span class="puple">	border:</span> 8px solid <span class="orange">#f1f1f1;
+</span></span></pre>
+<pre class="code_text"><span class="num">690</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">691</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">692</span><span class="text"><span class="puple">	transition:</span> opacity 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">693</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">694</span><span class="text"><span class="blue">#content .page3.on .page3_inner .banners &gt; ul &gt; li img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">695</span><span class="text"><span class="puple">	opacity:</span>1;
+</span></pre>
+<pre class="code_text"><span class="num">696</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">697</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners li ul.text<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">698</span><span class="text"><span class="puple">	width:</span> 42%;
+</span></pre>
+<pre class="code_text"><span class="num">699</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">700</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">701</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners li ul li.text_title<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">702</span><span class="text"><span class="puple">	font-weight:</span> 700;
+</span></pre>
+<pre class="code_text"><span class="num">703</span><span class="text"><span class="puple">	font-size:</span> 1.125em;
+</span></pre>
+<pre class="code_text"><span class="num">704</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">705</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners li ul li.text_title .br3_2<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">706</span><span class="text"><span class="puple">	display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">707</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">708</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners li ul li.text_content<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">709</span><span class="text"><span class="puple">	font-size:</span> 0.875em;
+</span></pre>
+<pre class="code_text"><span class="num">710</span><span class="text"><span class="puple">	padding-top:</span> 20px;
+</span></pre>
+<pre class="code_text"><span class="num">711</span><span class="text"><span class="puple">	color:</span> <span class="orange">#777978;
+</span></span></pre>
+<pre class="code_text"><span class="num">712</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">713</span><span class="text"><span class="blue">#content .page3 .page3_inner .banners li li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">714</span><span class="text"><span class="puple">	transform:</span> translateY(-80px);
+</span></pre>
+<pre class="code_text"><span class="num">715</span><span class="text"><span class="puple">	transform:</span> rotateX(-180deg);
+</span></pre>
+<pre class="code_text"><span class="num">716</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">717</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">718</span><span class="text"><span class="blue">#content .page3.on .page3_inner .banners li li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">719</span><span class="text"><span class="puple">	opacity:</span> 1;
+</span></pre>
+<pre class="code_text"><span class="num">720</span><span class="text"><span class="puple">	transform:</span> translateY(0);
+</span></pre>
+<pre class="code_text"><span class="num">721</span><span class="text"><span class="puple">	transform:</span> rotateX(0);
+</span></pre>
+<pre class="code_text"><span class="num">722</span><span class="text"><span class="puple">	transition:</span> transform 0<span class="blue">.6s<span class="white">,</span></span> opacity 0.7s;
+</span></pre>
+<pre class="code_text"><span class="num">723</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">724</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li li:</span>nth-child(1)<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">725</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(1) li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">726</span><span class="text"><span class="puple">	transition-delay:</span> 0s;
+</span></pre>
+<pre class="code_text"><span class="num">727</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">728</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li li:</span>nth-child(2)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">729</span><span class="text"><span class="puple">	transition-delay:</span> 0.3s;
+</span></pre>
+<pre class="code_text"><span class="num">730</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">731</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(2) li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">732</span><span class="text"><span class="puple">	transition-delay:</span> 1s;
+</span></pre>
+<pre class="code_text"><span class="num">733</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">734</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span><span class="puple">nth-child(2) li:</span>nth-child(2)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">735</span><span class="text"><span class="puple">	transition-delay:</span> 1.3s;
+</span></pre>
+<pre class="code_text"><span class="num">736</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">737</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(3) li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">738</span><span class="text"><span class="puple">	transition-delay:</span> 1.5s;
+</span></pre>
+<pre class="code_text"><span class="num">739</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">740</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span><span class="puple">nth-child(3) li:</span>nth-child(2)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">741</span><span class="text"><span class="puple">	transition-delay:</span> 1.8s;
+</span></pre>
+<pre class="code_text"><span class="num">742</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">743</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(4) li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">744</span><span class="text"><span class="puple">	transition-delay:</span> 2s;
+</span></pre>
+<pre class="code_text"><span class="num">745</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">746</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span><span class="puple">nth-child(4) li:</span>nth-child(2)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">747</span><span class="text"><span class="puple">	transition-delay:</span> 2.3s;
+</span></pre>
+<pre class="code_text"><span class="num">748</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">749</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(5) li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">750</span><span class="text"><span class="puple">	transition-delay:</span> 3s;
+</span></pre>
+<pre class="code_text"><span class="num">751</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">752</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span><span class="puple">nth-child(5) li:</span>nth-child(2)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">753</span><span class="text"><span class="puple">	transition-delay:</span> 3.3s;
+</span></pre>
+<pre class="code_text"><span class="num">754</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">755</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(odd) ul.text<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">756</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">757</span><span class="text"><span class="puple">	text-align:</span> right;
+</span></pre>
+<pre class="code_text"><span class="num">758</span><span class="text"><span class="puple">	padding:</span> 10px 30px 10px 0;
+</span></pre>
+<pre class="code_text"><span class="num">759</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">760</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(even) ul.text<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">761</span><span class="text"><span class="puple">	float:</span> right;
+</span></pre>
+<pre class="code_text"><span class="num">762</span><span class="text"><span class="puple">	text-align:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">763</span><span class="text"><span class="puple">	padding:</span> 10px 0px 10px 30px;
+</span></pre>
+<pre class="code_text"><span class="num">764</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">765</span><span class="text"><span class="puple"><span class="blue">#content .page3 .page3_inner .banners li:</span>last-child <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">766</span><span class="text"><span class="puple">	padding-bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">767</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">768</span><span class="text"><span class="blue">#content .page4 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">769</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">770</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">771</span><span class="text"><span class="puple">	padding:</span> 6.250em 0;
+</span></pre>
+<pre class="code_text"><span class="num">772</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#f1f1f1;
+</span></span></pre>
+<pre class="code_text"><span class="num">773</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">774</span><span class="text"><span class="blue">#content .page4 .page4_inner<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">775</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">776</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">777</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">778</span><span class="text"><span class="blue">#content .page4 .page4_inner .banners <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">779</span><span class="text"><span class="puple">	padding:</span> 0 4.375em;
+</span></pre>
+<pre class="code_text"><span class="num">780</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">781</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">782</span><span class="text"><span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">783</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">784</span><span class="text"><span class="puple">	margin-left:</span> 46px;
+</span></pre>
+<pre class="code_text"><span class="num">785</span><span class="text"><span class="puple">	width:</span> calc((100% - 92px)/3);
+</span></pre>
+<pre class="code_text"><span class="num">786</span><span class="text"><span class="puple">	box-sizing:</span>border-box;
+</span></pre>
+<pre class="code_text"><span class="num">787</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">788</span><span class="text"><span class="puple">	transform:</span> translateX(-80px);
+</span></pre>
+<pre class="code_text"><span class="num">789</span><span class="text"><span class="puple">	opacity:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">790</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">791</span><span class="text"><span class="puple"><span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li:</span>first-child<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">792</span><span class="text"><span class="puple">	margin-left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">793</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">794</span><span class="text"><span class="blue">#content .page4.on .page4_inner .banners &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">795</span><span class="text"><span class="puple">	transform:</span> translateX(0);
+</span></pre>
+<pre class="code_text"><span class="num">796</span><span class="text"><span class="puple">	opacity:</span>1;
+</span></pre>
+<pre class="code_text"><span class="num">797</span><span class="text"><span class="puple">	transition:</span> transform 0<span class="blue">.8s<span class="white">,</span></span> opacity 0.9s;
+</span></pre>
+<pre class="code_text"><span class="num">798</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">799</span><span class="text"><span class="puple"><span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li:</span>nth-child(1)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">800</span><span class="text"><span class="puple">	transition-delay:</span> 0s;
+</span></pre>
+<pre class="code_text"><span class="num">801</span><span class="text"><span class="puple">	margin-left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">802</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">803</span><span class="text"><span class="puple"><span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li:</span>nth-child(2)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">804</span><span class="text"><span class="puple">	transition-delay:</span> 0.5s;
+</span></pre>
+<pre class="code_text"><span class="num">805</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">806</span><span class="text"><span class="puple"><span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li:</span>nth-child(3)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">807</span><span class="text"><span class="puple">	transition-delay:</span> 1s;
+</span></pre>
+<pre class="code_text"><span class="num">808</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">809</span><span class="text"><span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li a img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">810</span><span class="text"><span class="puple">	border-radius:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">811</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">812</span><span class="text"><span class="puple">	border:</span> 5px solid <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">813</span><span class="text"><span class="puple">	/*width:</span> 230px;
+</span></pre>
+<pre class="code_text"><span class="num">814</span><span class="text"><span class="puple">	height:</span> 230px;*/
+</span></pre>
+<pre class="code_text"><span class="num">815</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">816</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">817</span><span class="text"><span class="blue">#content .page4 .page4_inner .banners li li.text_title<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">818</span><span class="text"><span class="puple">	padding:</span> 20px 0;
+</span></pre>
+<pre class="code_text"><span class="num">819</span><span class="text"><span class="puple">	font-size:</span> 1.125em;
+</span></pre>
+<pre class="code_text"><span class="num">820</span><span class="text"><span class="puple">	font-weight:</span> 700;
+</span></pre>
+<pre class="code_text"><span class="num">821</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">822</span><span class="text"><span class="blue">#content .page4 .page4_inner .banners li li.text_content<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">823</span><span class="text"><span class="puple">	font-size:</span> 0.875em;
+</span></pre>
+<pre class="code_text"><span class="num">824</span><span class="text"><span class="puple">	color:</span> <span class="orange">#777978;
+</span></span></pre>
+<pre class="code_text"><span class="num">825</span><span class="text"><span class="puple">	line-height:</span> 1.5;
+</span></pre>
+<pre class="code_text"><span class="num">826</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">827</span><span class="text"><span class="blue">#content .page5 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">828</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">829</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">830</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">831</span><span class="text"><span class="blue">#content .page5 .page5_inner<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">832</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">833</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">834</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">835</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">836</span><span class="text"><span class="blue">#content .page5 .page5_inner li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">837</span><span class="text"><span class="puple">	display:</span> inline-block;
+</span></pre>
+<pre class="code_text"><span class="num">838</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">839</span><span class="text"><span class="blue">#content .page6 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">840</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">841</span><span class="text"><span class="puple">	background:</span> url(../images/contact_background.jpg) no-repeat center center;
+</span></pre>
+<pre class="code_text"><span class="num">842</span><span class="text"><span class="puple">	background-size:</span> cover;
+</span></pre>
+<pre class="code_text"><span class="num">843</span><span class="text"><span class="puple">	padding:</span> 6.250em 0 5.188em;
+</span></pre>
+<pre class="code_text"><span class="num">844</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">845</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">846</span><span class="text"><span class="blue">#content .page6 .page6_inner<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">847</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">848</span><span class="text"><span class="puple">	margin:</span>0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">849</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">850</span><span class="text"><span class="blue">#content .page6 .page6_inner .title <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">851</span><span class="text"><span class="puple">	color:</span><span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">852</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">853</span><span class="text"><span class="blue">#content .page6 .page6_inner .enquiry <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">854</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">855</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">856</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">857</span><span class="text"><span class="blue">#content .page6 .page6_inner .enquiry input[type=text] <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">858</span><span class="text"><span class="puple">	padding:</span> 20px 20px;
+</span></pre>
+<pre class="code_text"><span class="num">859</span><span class="text"><span class="puple">	font-size:</span> 0.875em; <span class="gray">/* 14px */</span>
+</span></pre>
+<pre class="code_text"><span class="num">860</span><span class="text"><span class="puple">	font-family:</span> <span class="orange">"Open Sans"</span><span class="white">,</span> sans-serif;
+</span></pre>
+<pre class="code_text"><span class="num">861</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">862</span><span class="text"><span class="puple">	border:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">863</span><span class="text"><span class="puple">	outline:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">864</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">865</span><span class="text"><span class="puple">	border:</span> 1px solid <span class="orange">#cccccc;
+</span></span></pre>
+<pre class="code_text"><span class="num">866</span><span class="text"><span class="puple">	border-radius:</span> 5px;
+</span></pre>
+<pre class="code_text"><span class="num">867</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">868</span><span class="text"><span class="puple"><span class="puple">:</span></span><span class="puple"><span class="puple">:</span></span><span class="blue">placeholder <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">869</span><span class="text"><span class="puple">	color:</span> <span class="orange">#cccccc;
+</span></span></pre>
+<pre class="code_text"><span class="num">870</span><span class="text"><span class="puple">	font-style:</span>italic;
+</span></pre>
+<pre class="code_text"><span class="num">871</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">872</span><span class="text"><span class="puple"><span class="blue">textarea<span class="puple">:</span></span><span class="puple">:</span>placeholder <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">873</span><span class="text"><span class="puple">	color:</span> <span class="orange">#cccccc;
+</span></span></pre>
+<pre class="code_text"><span class="num">874</span><span class="text"><span class="puple">	font-family:</span> <span class="orange">"Open Sans"</span><span class="white">,</span> sans-serif;
+</span></pre>
+<pre class="code_text"><span class="num">875</span><span class="text"><span class="puple">	padding:</span> 7px 13px;
+</span></pre>
+<pre class="code_text"><span class="num">876</span><span class="text"><span class="puple">	font-size:</span> 0.875em; <span class="gray">/* 14 */</span>
+</span></pre>
+<pre class="code_text"><span class="num">877</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">878</span><span class="text"><span class="blue">#content .page6 .page6_inner .enquiry input[type=email]<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">879</span><span class="text"><span class="puple">	padding:</span> 20px 20px;
+</span></pre>
+<pre class="code_text"><span class="num">880</span><span class="text"><span class="puple">	font-size:</span> 0.875em; <span class="gray">/* 14 */</span> 
+</span></pre>
+<pre class="code_text"><span class="num">881</span><span class="text"><span class="puple">	font-family:</span> <span class="orange">"Open Sans"</span><span class="white">,</span> sans-serif;
+</span></pre>
+<pre class="code_text"><span class="num">882</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">883</span><span class="text"><span class="puple">	border:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">884</span><span class="text"><span class="puple">	outline:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">885</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">886</span><span class="text"><span class="puple">	border:</span> 1px solid <span class="orange">#cccccc;
+</span></span></pre>
+<pre class="code_text"><span class="num">887</span><span class="text"><span class="puple">	border-radius:</span> 5px;
+</span></pre>
+<pre class="code_text"><span class="num">888</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">889</span><span class="text"><span class="blue">#content .page6 .page6_inner .enquiry input[type=submit]<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">890</span><span class="text"><span class="puple">	clear:</span> both;
+</span></pre>
+<pre class="code_text"><span class="num">891</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">892</span><span class="text"><span class="puple">	padding:</span> 20px 60px;
+</span></pre>
+<pre class="code_text"><span class="num">893</span><span class="text"><span class="puple">	font-size:</span> 0.875em; <span class="gray">/* 14 */</span>
+</span></pre>
+<pre class="code_text"><span class="num">894</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">895</span><span class="text"><span class="puple">	font-family:</span> <span class="orange">"Open Sans"</span><span class="white">,</span> sans-serif;
+</span></pre>
+<pre class="code_text"><span class="num">896</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#603d99;
+</span></span></pre>
+<pre class="code_text"><span class="num">897</span><span class="text"><span class="puple">	border:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">898</span><span class="text"><span class="puple">	outline:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">899</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">900</span><span class="text"><span class="puple">	border:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">901</span><span class="text"><span class="puple">	cursor:</span> pointer;
+</span></pre>
+<pre class="code_text"><span class="num">902</span><span class="text"><span class="puple">	border-radius:</span> 4px;
+</span></pre>
+<pre class="code_text"><span class="num">903</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">904</span><span class="text"><span class="puple">	font-weight:</span>500;
+</span></pre>
+<pre class="code_text"><span class="num">905</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">906</span><span class="text"><span class="blue">#content .page6 .page6_inner .enquiry .name<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">907</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">908</span><span class="text"><span class="puple">	width:</span> 47%;
+</span></pre>
+<pre class="code_text"><span class="num">909</span><span class="text">} 
+</span></pre>
+<pre class="code_text"><span class="num">910</span><span class="text"><span class="blue">#content .page6 .page6_inner .enquiry .email <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">911</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">912</span><span class="text"><span class="puple">	clear:</span> both;
+</span></pre>
+<pre class="code_text"><span class="num">913</span><span class="text"><span class="puple">	margin-top:</span> 28px;
+</span></pre>
+<pre class="code_text"><span class="num">914</span><span class="text"><span class="puple">	width:</span> 47%;
+</span></pre>
+<pre class="code_text"><span class="num">915</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">916</span><span class="text"><span class="blue">#content .page6 .page6_inner .enquiry .subject <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">917</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">918</span><span class="text"><span class="puple">	clear:</span> both;
+</span></pre>
+<pre class="code_text"><span class="num">919</span><span class="text"><span class="puple">	width:</span> 47%;
+</span></pre>
+<pre class="code_text"><span class="num">920</span><span class="text"><span class="puple">	margin-top:</span> 28px;
+</span></pre>
+<pre class="code_text"><span class="num">921</span><span class="text"><span class="puple">	margin-bottom:</span> 28px;
+</span></pre>
+<pre class="code_text"><span class="num">922</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">923</span><span class="text"><span class="blue">#content .page6 .page6_inner .enquiry textarea <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">924</span><span class="text"><span class="puple">	width:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">925</span><span class="text"><span class="puple">	height:</span> 237px;
+</span></pre>
+<pre class="code_text"><span class="num">926</span><span class="text"><span class="puple">	border:</span> 1px solid <span class="orange">#4acaa9;
+</span></span></pre>
+<pre class="code_text"><span class="num">927</span><span class="text"><span class="puple">	border-radius:</span> 4px;
+</span></pre>
+<pre class="code_text"><span class="num">928</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">929</span><span class="text"><span class="puple">	font-size:</span> 0.875em;
+</span></pre>
+<pre class="code_text"><span class="num">930</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">931</span><span class="text"><span class="blue">#footer .last<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">932</span><span class="text"><span class="puple">	padding:</span> 25px 0 20px;
+</span></pre>
+<pre class="code_text"><span class="num">933</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">934</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">935</span><span class="text"><span class="puple">	font-size:</span> 1em;
+</span></pre>
+<pre class="code_text"><span class="num">936</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">937</span><span class="text"><span class="blue">#footer .last .footer_inner <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">938</span><span class="text"><span class="puple">	max-width:</span> 940px;
+</span></pre>
+<pre class="code_text"><span class="num">939</span><span class="text"><span class="puple">	margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">940</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">941</span><span class="text"><span class="blue">#footer .left<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">942</span><span class="text"><span class="puple">	width:</span> 78%;
+</span></pre>
+<pre class="code_text"><span class="num">943</span><span class="text"><span class="puple">	float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">944</span><span class="text"><span class="puple">	padding-left:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">945</span><span class="text"><span class="puple">	box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">946</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">947</span><span class="text"><span class="blue">#footer .left p<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">948</span><span class="text"><span class="puple">	line-height:</span> 2;
+</span></pre>
+<pre class="code_text"><span class="num">949</span><span class="text"><span class="puple">	width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">950</span><span class="text"><span class="puple">	font-size:</span> 0.813em;
+</span></pre>
+<pre class="code_text"><span class="num">951</span><span class="text"><span class="puple">	word-spacing:</span> 0.1px;
+</span></pre>
+<pre class="code_text"><span class="num">952</span><span class="text"><span class="puple">	color:</span> <span class="orange">#545456;
+</span></span></pre>
+<pre class="code_text"><span class="num">953</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">954</span><span class="text"><span class="blue">#footer .left p .br6<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">955</span><span class="text"><span class="puple">	display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">956</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">957</span><span class="text"><span class="blue">#footer .left p .br6_1<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">958</span><span class="text"><span class="puple">	display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">959</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">960</span><span class="text"><span class="blue">#footer .right<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">961</span><span class="text"><span class="puple">	float:</span> right;
+</span></pre>
+<pre class="code_text"><span class="num">962</span><span class="text"><span class="puple">	width:</span> 22%;
+</span></pre>
+<pre class="code_text"><span class="num">963</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">964</span><span class="text"><span class="blue">#footer .right li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">965</span><span class="text"><span class="puple">	display:</span> inline-block;
+</span></pre>
+<pre class="code_text"><span class="num">966</span><span class="text"><span class="puple">	margin-left:</span> 6px;
+</span></pre>
+<pre class="code_text"><span class="num">967</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">968</span><span class="text"><span class="blue">#footer .right li a <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">969</span><span class="text"><span class="puple">	display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">970</span><span class="text"><span class="puple">	position:</span> relative;
+</span></pre>
+<pre class="code_text"><span class="num">971</span><span class="text"><span class="puple">	width:</span> 40px;
+</span></pre>
+<pre class="code_text"><span class="num">972</span><span class="text"><span class="puple">	height:</span> 40px;
+</span></pre>
+<pre class="code_text"><span class="num">973</span><span class="text"><span class="puple">	background-color:</span> <span class="orange">#222222;
+</span></span></pre>
+<pre class="code_text"><span class="num">974</span><span class="text"><span class="puple">	border-radius:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">975</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">976</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">977</span><span class="text"><span class="puple"><span class="blue">#footer .right li<span class="puple">:</span></span><span class="puple">first-child a<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">978</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">979</span><span class="text"><span class="puple">	top:</span> 12px;
+</span></pre>
+<pre class="code_text"><span class="num">980</span><span class="text"><span class="puple">	left:</span> 14px;
+</span></pre>
+<pre class="code_text"><span class="num">981</span><span class="text"><span class="puple">	font-size:</span> 1.063em;
+</span></pre>
+<pre class="code_text"><span class="num">982</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">983</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">984</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">985</span><span class="text"><span class="puple"><span class="blue">#footer .right li<span class="puple">:</span></span><span class="puple">nth-child(2) a<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">986</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">987</span><span class="text"><span class="puple">	top:</span> 11px;
+</span></pre>
+<pre class="code_text"><span class="num">988</span><span class="text"><span class="puple">	left:</span> 11px;
+</span></pre>
+<pre class="code_text"><span class="num">989</span><span class="text"><span class="puple">	font-size:</span> 1.063em;
+</span></pre>
+<pre class="code_text"><span class="num">990</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">991</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">992</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">993</span><span class="text"><span class="puple"><span class="blue">#footer .right li a<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">994</span><span class="text"><span class="puple">	position:</span> absolute;
+</span></pre>
+<pre class="code_text"><span class="num">995</span><span class="text"><span class="puple">	top:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">996</span><span class="text"><span class="puple">	left:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">997</span><span class="text"><span class="puple">	font-size:</span> 1.063em;
+</span></pre>
+<pre class="code_text"><span class="num">998</span><span class="text"><span class="puple">	color:</span> <span class="orange">#fff;
+</span></span></pre>
+<pre class="code_text"><span class="num">999</span><span class="text"><span class="puple">	text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">1000</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">1001</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">1002</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">1003</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">1004</span><span class="text"><span class="puple">@<span class="blue">media only screen and (max-width:</span> 940px)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1005</span><span class="text">	<span class="blue">#pc ul li a<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1006</span><span class="text"><span class="puple">		padding-left:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">1007</span><span class="text"><span class="puple">		padding-right:</span> 10px;
+</span></pre>
+<pre class="code_text"><span class="num">1008</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1009</span><span class="text">	<span class="blue">#content .page1 .page1_inner .icon &gt; ul &gt; li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1010</span><span class="text"><span class="puple">		float:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1011</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1012</span><span class="text"><span class="puple">		padding-top:</span> 60px;
+</span></pre>
+<pre class="code_text"><span class="num">1013</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1014</span><span class="text">	<span class="blue">#content .page1 .page1_inner .title <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1015</span><span class="text"><span class="puple">		padding-bottom:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">1016</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1017</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li  a img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1018</span><span class="text"><span class="puple">		left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">1019</span><span class="text"><span class="puple">		border:</span> 5px solid <span class="orange">#f1f1f1;
+</span></span></pre>
+<pre class="code_text"><span class="num">1020</span><span class="text"><span class="puple">		box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">1021</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1022</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1023</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1024</span><span class="text"><span class="puple">		text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">1025</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1026</span><span class="text"><span class="puple">	<span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(odd) ul.text<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1027</span><span class="text"><span class="puple">		padding:</span> 10px 0;
+</span></pre>
+<pre class="code_text"><span class="num">1028</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1029</span><span class="text"><span class="puple">	<span class="blue">#content .page3 .page3_inner .banners li:</span>nth-child(even) ul.text<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1030</span><span class="text"><span class="puple">		padding:</span> 10px 0;
+</span></pre>
+<pre class="code_text"><span class="num">1031</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1032</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners li ul.text <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1033</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1034</span><span class="text"><span class="puple">		text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">1035</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1036</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners li .text li<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1037</span><span class="text"><span class="puple">		text-align:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">1038</span><span class="text"><span class="puple">		padding-left:</span> 180px;
+</span></pre>
+<pre class="code_text"><span class="num">1039</span><span class="text"><span class="puple">		padding-right:</span> 5%;
+</span></pre>
+<pre class="code_text"><span class="num">1040</span><span class="text"><span class="puple">		box-sizing:</span> border-box;
+</span></pre>
+<pre class="code_text"><span class="num">1041</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1042</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners li .text li .br3 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1043</span><span class="text"><span class="puple">		display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1044</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1045</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners &gt; ul &gt; li  a img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1046</span><span class="text"><span class="puple">		width:</span> 167px;
+</span></pre>
+<pre class="code_text"><span class="num">1047</span><span class="text"><span class="puple">		height:</span> 167px;
+</span></pre>
+<pre class="code_text"><span class="num">1048</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1049</span><span class="text"><span class="puple">	<span class="blue">#content .page3 .page3_inner .banners &gt; ul<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1050</span><span class="text"><span class="puple">		left:</span> 83px;
+</span></pre>
+<pre class="code_text"><span class="num">1051</span><span class="text"><span class="puple">		top:</span>4.1%;
+</span></pre>
+<pre class="code_text"><span class="num">1052</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1053</span><span class="text">	<span class="blue">#content .page4 .page4_inner .banners<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1054</span><span class="text"><span class="puple">		text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">1055</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1056</span><span class="text">	<span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1057</span><span class="text"><span class="puple">		padding-top:</span> 44px;
+</span></pre>
+<pre class="code_text"><span class="num">1058</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1059</span><span class="text"><span class="puple">	<span class="gray">/*<span class="gray"><span class="orange">#content .page4 .page4_inner .banners &gt; ul &gt; li:</span>first-child<span class="white">{</span><!--</span-->span&gt;
+</span></span></span></span></pre>
+<pre class="code_text"><span class="num">1060</span><span class="text"><span class="puple">		padding-top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">1061</span><span class="text">	}*/
+</span></pre>
+<pre class="code_text"><span class="num">1062</span><span class="text">	<span class="blue">#content .page5 .page5_inner li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1063</span><span class="text"><span class="puple">		width:</span> 24%;
+</span></pre>
+<pre class="code_text"><span class="num">1064</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1065</span><span class="text">	<span class="blue">#content .page6 .page6_inner .enquiry <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1066</span><span class="text"><span class="puple">		font-size:</span> 1.143em;
+</span></pre>
+<pre class="code_text"><span class="num">1067</span><span class="text"><span class="puple">		padding:</span> 0 50px;
+</span></pre>
+<pre class="code_text"><span class="num">1068</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1069</span><span class="text">	<span class="blue">#content .page6 .page6_inner .enquiry .name<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1070</span><span class="text">	<span class="blue">#content .page6 .page6_inner .enquiry .email<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1071</span><span class="text">	<span class="blue">#content .page6 .page6_inner .enquiry .subject<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1072</span><span class="text">	<span class="blue">#content .page6 .page6_inner .enquiry textarea <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1073</span><span class="text"><span class="puple">		float:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1074</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1075</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1076</span><span class="text">	<span class="blue">#content .page6 .page6_inner .enquiry input[type=submit] <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1077</span><span class="text"><span class="puple">		margin-top:</span> 50px;
+</span></pre>
+<pre class="code_text"><span class="num">1078</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1079</span><span class="text">	<span class="blue">#footer .left <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1080</span><span class="text"><span class="puple">		width:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">1081</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1082</span><span class="text">	<span class="blue">#footer .left p .br6<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1083</span><span class="text"><span class="puple">		display:</span> inline;
+</span></pre>
+<pre class="code_text"><span class="num">1084</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1085</span><span class="text">	<span class="blue">#footer .right <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1086</span><span class="text"><span class="puple">		width:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">1087</span><span class="text"><span class="puple">		text-align:</span> right;
+</span></pre>
+<pre class="code_text"><span class="num">1088</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1089</span><span class="text"><span class="puple">	<span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(1) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1090</span><span class="text"><span class="puple">		left:</span> 13%;
+</span></pre>
+<pre class="code_text"><span class="num">1091</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1092</span><span class="text"><span class="puple">	<span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(2) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1093</span><span class="text"><span class="puple">		left:</span> 13%;
+</span></pre>
+<pre class="code_text"><span class="num">1094</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1095</span><span class="text"><span class="puple">	<span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(3) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1096</span><span class="text"><span class="puple">		left:</span> 13%;
+</span></pre>
+<pre class="code_text"><span class="num">1097</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1098</span><span class="text"><span class="puple">	<span class="blue">#pc ul li<span class="puple">:</span></span><span class="puple">nth-child(1n+4) a<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1099</span><span class="text"><span class="puple">		left:</span> 13%;
+</span></pre>
+<pre class="code_text"><span class="num">1100</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1101</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">1102</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">1103</span><span class="text"><span class="puple">@<span class="blue">media only screen and (max-width:</span> 720px)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1104</span><span class="text">	<span class="blue">#pc ul <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1105</span><span class="text"><span class="puple">		display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1106</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1107</span><span class="text">	<span class="blue">#pc .pc_inner .btn_on <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1108</span><span class="text"><span class="puple">		display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">1109</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1110</span><span class="text">	<span class="blue">#header .slider <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1111</span><span class="text"><span class="puple">		font-size:</span> 0.750em;
+</span></pre>
+<pre class="code_text"><span class="num">1112</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1113</span><span class="text">	<span class="blue"><span class="blue">#content .page1<span class="white">,</span></span> <span class="blue">#content page2<span class="white">,</span></span> <span class="blue">#content .page3<span class="white">,</span></span> <span class="blue">#content .page4<span class="white">,</span></span> #content .page6 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1114</span><span class="text"><span class="puple">		font-size:</span> 0.875em;
+</span></pre>
+<pre class="code_text"><span class="num">1115</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1116</span><span class="text">	<span class="blue">#content .page2 .page2_inner .box_banner &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1117</span><span class="text"><span class="puple">		width:</span> calc((100% - 35px)/2);
+</span></pre>
+<pre class="code_text"><span class="num">1118</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1119</span><span class="text"><span class="puple">	<span class="blue">#content .page2 .page2_inner .box_banner &gt; ul &gt; li:</span>nth-child(3n+1) <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1120</span><span class="text"><span class="puple">		margin-left:</span> 35px;
+</span></pre>
+<pre class="code_text"><span class="num">1121</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1122</span><span class="text"><span class="puple">	<span class="blue">#content .page2 .page2_inner .box_banner &gt; ul &gt; li:</span>nth-child(2n+1) <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1123</span><span class="text"><span class="puple">		margin-left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">1124</span><span class="text"><span class="puple">		clear:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">1125</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1126</span><span class="text">	<span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1127</span><span class="text"><span class="puple">		float:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1128</span><span class="text"><span class="puple">		margin-left:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">1129</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1130</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1131</span><span class="text"><span class="puple">	<span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li:</span>first-child<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1132</span><span class="text"><span class="puple">		padding-top:</span> 0;
+</span></pre>
+<pre class="code_text"><span class="num">1133</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1134</span><span class="text">	<span class="blue">#content .page4 .page4_inner .banners &gt; ul &gt; li a img <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1135</span><span class="text"><span class="puple">		width:</span> 230px;
+</span></pre>
+<pre class="code_text"><span class="num">1136</span><span class="text"><span class="puple">		height:</span> 230px;
+</span></pre>
+<pre class="code_text"><span class="num">1137</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1138</span><span class="text">	<span class="blue">#content .page5 .page5_inner li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1139</span><span class="text"><span class="puple">		width:</span> 50%;
+</span></pre>
+<pre class="code_text"><span class="num">1140</span><span class="text"><span class="puple">		float:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">1141</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1142</span><span class="text">	<span class="blue">#footer .left <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1143</span><span class="text"><span class="puple">		width:</span> 79%;
+</span></pre>
+<pre class="code_text"><span class="num">1144</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1145</span><span class="text">	<span class="blue">#footer .right <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1146</span><span class="text"><span class="puple">		clear:</span> both;
+</span></pre>
+<pre class="code_text"><span class="num">1147</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1148</span><span class="text"><span class="puple">		text-align:</span> left;
+</span></pre>
+<pre class="code_text"><span class="num">1149</span><span class="text"><span class="puple">		padding-top:</span> 13px;
+</span></pre>
+<pre class="code_text"><span class="num">1150</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1151</span><span class="text">	<span class="blue">#footer .left p .br6<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1152</span><span class="text"><span class="puple">		display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1153</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1154</span><span class="text">	<span class="blue">.controller <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1155</span><span class="text"><span class="puple">		display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1156</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1157</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">1158</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">1159</span><span class="text"><span class="puple">@<span class="blue">media only screen and (max-width:</span> 460px)<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1160</span><span class="text">	<span class="blue">#content .page3 .page3_inner .title <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1161</span><span class="text"><span class="puple">		padding:</span> 0 90px;
+</span></pre>
+<pre class="code_text"><span class="num">1162</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1163</span><span class="text">	<span class="blue">#content .page1 .page1_inner .title <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1164</span><span class="text"><span class="puple">		padding:</span> 0 74px;
+</span></pre>
+<pre class="code_text"><span class="num">1165</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1166</span><span class="text">	<span class="blue">.slider <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1167</span><span class="text"><span class="puple">		font-size:</span> 0.600em;
+</span></pre>
+<pre class="code_text"><span class="num">1168</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1169</span><span class="text">	<span class="blue"><span class="blue">#content .page1<span class="white">,</span></span> #content .page2 <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1170</span><span class="text"><span class="puple">		font-size:</span> 0.750em;
+</span></pre>
+<pre class="code_text"><span class="num">1171</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1172</span><span class="text">	<span class="blue">#content .page2 .page2_inner .box_banner &gt; ul &gt; li <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1173</span><span class="text"><span class="puple">		float:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1174</span><span class="text"><span class="puple">		margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">1175</span><span class="text"><span class="puple">		margin-top:</span> 25px;
+</span></pre>
+<pre class="code_text"><span class="num">1176</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1177</span><span class="text"><span class="puple">	<span class="blue">#content .page2 .page2_inner .box_banner &gt; ul &gt; li:</span>nth-child(2n+1) <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1178</span><span class="text"><span class="puple">		margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">1179</span><span class="text"><span class="puple">		margin-top:</span> 25px;
+</span></pre>
+<pre class="code_text"><span class="num">1180</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1181</span><span class="text"><span class="puple">	<span class="blue">#content .page2 .page2_inner .box_banner &gt; ul &gt; li:</span>nth-child(3n+1) <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1182</span><span class="text"><span class="puple">		margin:</span> 0 auto;
+</span></pre>
+<pre class="code_text"><span class="num">1183</span><span class="text"><span class="puple">		margin-top:</span> 25px;
+</span></pre>
+<pre class="code_text"><span class="num">1184</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1185</span><span class="text">	<span class="blue">#content .page2 .page2_inner .box_banner &gt; ul <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1186</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1187</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1188</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners li ul li.text_content<span class="white">,</span></span> 
+</span></pre>
+<pre class="code_text"><span class="num">1189</span><span class="text"><span class="puple">	<span class="blue">#content .page3 .page3_inner .banners &gt; ul<span class="puple">:</span></span><span class="puple">:</span>before<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1190</span><span class="text">	<span class="blue">#content .page3 .page3_inner .title .br2<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1191</span><span class="text"><span class="puple">		display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1192</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1193</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners li ul li.text_title .br3_2<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1194</span><span class="text"><span class="puple">		display:</span> block;
+</span></pre>
+<pre class="code_text"><span class="num">1195</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1196</span><span class="text">	<span class="blue">#content .page3 .page3_inner .banners li ul li.text_title<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1197</span><span class="text"><span class="puple">		padding-top:</span> 40px;
+</span></pre>
+<pre class="code_text"><span class="num">1198</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1199</span><span class="text">	<span class="blue">#content .page5 .page5_inner <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1200</span><span class="text"><span class="puple">		display:</span> none;
+</span></pre>
+<pre class="code_text"><span class="num">1201</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1202</span><span class="text">	<span class="blue">#footer .left <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1203</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1204</span><span class="text"><span class="puple">		padding:</span> 0 10px;
+</span></pre>
+<pre class="code_text"><span class="num">1205</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1206</span><span class="text">	<span class="blue">#footer .left p .br6_1<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1207</span><span class="text"><span class="puple">		display:</span> inline;
+</span></pre>
+<pre class="code_text"><span class="num">1208</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1209</span><span class="text">	<span class="blue">#footer <span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1210</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1211</span><span class="text"><span class="puple">		text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">1212</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1213</span><span class="text">	<span class="blue">#footer .right<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">1214</span><span class="text"><span class="puple">		width:</span> 100%;
+</span></pre>
+<pre class="code_text"><span class="num">1215</span><span class="text"><span class="puple">		text-align:</span> center;
+</span></pre>
+<pre class="code_text"><span class="num">1216</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">1217</span><span class="text">}
+</span></pre>

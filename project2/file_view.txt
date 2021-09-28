@@ -1,0 +1,1 @@
+﻿PC/Mobile|html/js/css|index.html|script.js|style.css/reset.css

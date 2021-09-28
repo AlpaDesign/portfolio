@@ -1,0 +1,5 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text"><span class="puple">@charset&nbsp;</span><span class="orange">"utf-8"</span>;
+</span></pre><pre class="code_text"><span class="num">2</span><br></pre><pre class="code_text"><span class="num">3</span><span class="text"><span class="blue">.controller&nbsp;li.active<span class="white">,</span></span>
+</span></pre><pre class="code_text"><span class="num">4</span><span class="text"><span class="puple"><span class="blue">.controller&nbsp;li:</span><span class="white">hover</span><span class="white">{</span></span>
+</span></pre><pre class="code_text"><span class="num">5</span><span class="text"><span class="puple">	background-color:</span><span class="orange">#a63145;</span>
+</span></pre><pre class="code_text"><span class="num">6</span><span class="text">}</span><br></pre>

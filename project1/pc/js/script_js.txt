@@ -1,0 +1,78 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text">window.addEventListener<span class="white">(</span><span class="orange">"load"</span>, <span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">2</span><span class="text">	<span class="puple"><span class="blue">var</span> swiper1=</span>new Swiper<span class="white">(</span><span class="orange">".slider .swiper-container"</span>, <span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">3</span><span class="text">		pagination: <span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">4</span><span class="text">			el: <span class="orange">".slider .swiper-pagination"</span>,
+</span></pre>
+<pre class="code_text"><span class="num">5</span><span class="text">			clickable: <span class="orange">true</span>,
+</span></pre>
+<pre class="code_text"><span class="num">6</span><span class="text">		},
+</span></pre>
+<pre class="code_text"><span class="num">7</span><span class="text">		navigation: <span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">8</span><span class="text">			nextEl: <span class="orange">".slider .swiper-button-next"</span>,
+</span></pre>
+<pre class="code_text"><span class="num">9</span><span class="text">			prevEl: <span class="orange">".slider .swiper-button-prev"</span>,
+</span></pre>
+<pre class="code_text"><span class="num">10</span><span class="text">		},
+</span></pre>
+<pre class="code_text"><span class="num">11</span><span class="text">		breakpoints: <span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">12</span><span class="text">			1200: <span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">13</span><span class="text">				slidesPerView: 3,
+</span></pre>
+<pre class="code_text"><span class="num">14</span><span class="text">				spaceBetween: 50,
+</span></pre>
+<pre class="code_text"><span class="num">15</span><span class="text">			},
+</span></pre>
+<pre class="code_text"><span class="num">16</span><span class="text">			1600: <span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">17</span><span class="text">				slidesPerView: 3,
+</span></pre>
+<pre class="code_text"><span class="num">18</span><span class="text">				spaceBetween: 50,
+</span></pre>
+<pre class="code_text"><span class="num">19</span><span class="text">			},
+</span></pre>
+<pre class="code_text"><span class="num">20</span><span class="text">		},
+</span></pre>
+<pre class="code_text"><span class="num">21</span><span class="text">	});
+</span></pre>
+<pre class="code_text"><span class="num">22</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">23</span><span class="text">	<span class="puple"><span class="blue">var</span> header=</span>document.getElementById<span class="white">(</span><span class="orange">"header"</span>);
+</span></pre>
+<pre class="code_text"><span class="num">24</span><span class="text">	<span class="puple"><span class="blue">var</span> MenuHeight=</span>header<span class="puple">.children</span>[2];
+</span></pre>
+<pre class="code_text"><span class="num">25</span><span class="text">	<span class="gray">//console.log<span class="gray">(</span>headerIndex);
+</span></span></pre>
+<pre class="code_text"><span class="num">26</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">27</span><span class="text">	<span class="puple"><span class="blue">var</span> GNB=</span>document.getElementById<span class="white">(</span><span class="orange">"gnb"</span>);
+</span></pre>
+<pre class="code_text"><span class="num">28</span><span class="text">	<span class="puple"><span class="blue">var</span> gnbIndex=</span>GNB<span class="puple">.children</span>;
+</span></pre>
+<pre class="code_text"><span class="num">29</span><span class="text">	
+</span></pre>
+<pre class="code_text"><span class="num">30</span><span class="text">	<span class="blue">for</span> <span class="white">(</span>i=0;i&lt;gnbIndex.length;i++ )<span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">31</span><span class="text">		gnbIndex[i].addEventListener<span class="white">(</span><span class="orange">"<span class="orange">mouseenter</span>"</span>, <span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">32</span><span class="text">			MenuHeight.classList.add<span class="white">(</span><span class="orange">"active"</span>);
+</span></pre>
+<pre class="code_text"><span class="num">33</span><span class="text">		});
+</span></pre>
+<pre class="code_text"><span class="num">34</span><span class="text">		gnbIndex[i].addEventListener<span class="white">(</span><span class="orange">"<span class="orange">mouseleave</span>"</span>, <span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre>
+<pre class="code_text"><span class="num">35</span><span class="text">			MenuHeight.classList.remove<span class="white">(</span><span class="orange">"active"</span>);
+</span></pre>
+<pre class="code_text"><span class="num">36</span><span class="text">		});
+</span></pre>
+<pre class="code_text"><span class="num">37</span><span class="text">	}
+</span></pre>
+<pre class="code_text"><span class="num">38</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">39</span><span class="text">});
+</span></pre>

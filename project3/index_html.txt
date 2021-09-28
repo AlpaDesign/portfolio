@@ -1,0 +1,628 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text"><span class="blue">&lt;!DOCTYPE html&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">2</span><span class="text"><span class="blue"><span class="gray">&lt;!-- 작업일시 : 2021.02.13 --&gt;</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">3</span><span class="text"><span class="blue"><span class="gray">&lt;!-- 작업완료 : 2021.02.18 --&gt;</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">4</span><span class="text"><span class="blue">&lt;html&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">5</span><span class="text"><span class="blue">&lt;head&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">6</span><span class="text"><span class="blue">&lt;title&gt;</span>Wylie<span class="blue">&lt;/title&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">7</span><span class="text"><span class="blue">&lt;meta <span class="green">charset=</span><span class="orange">"utf-8"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">8</span><span class="text"><span class="blue">&lt;meta <span class="green">name=</span><span class="orange">"viewport"</span> <span class="green">content=</span><span class="orange">"width=device-width, initial-scale=1.0, maximum-scale=1"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">9</span><span class="text"><span class="blue">&lt;link <span class="green">rel=</span><span class="orange">"stylesheet"</span> <span class="green">href=</span><span class="orange">"css/font.css"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">10</span><span class="text"><span class="blue">&lt;link <span class="green">rel=</span><span class="orange">"stylesheet"</span> <span class="green">href=</span><span class="orange">"css/style.css"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">11</span><span class="text"><span class="blue">&lt;link <span class="green">rel=</span><span class="orange">"stylesheet"</span> <span class="green">href=</span><span class="orange">"https:<span class="orange">//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"</span>&gt;</span>
+</span></span></pre>
+<pre class="code_text"><span class="num">12</span><span class="text"><span class="blue">&lt;script <span class="green">src=</span><span class="orange">"js/jquery-1.10.1.min.js"</span>&gt;</span><span class="blue">&lt;/script&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">13</span><span class="text"><span class="blue">&lt;script <span class="green">src=</span><span class="orange">"../js/accessibility.js"</span>&gt;</span><span class="blue">&lt;/script&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">14</span><span class="text"><span class="blue">&lt;script <span class="green">src=</span><span class="orange">"js/script.js"</span>&gt;</span><span class="blue">&lt;/script&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">15</span><span class="text"><span class="blue">&lt;/head&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">16</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">17</span><span class="text"><span class="blue">&lt;body&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">18</span><span class="text">	<span class="blue">&lt;div class=<span class="orange">"wrapper"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">19</span><span class="text">		<span class="blue">&lt;div class=<span class="orange">"controller"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">20</span><span class="text">			<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">21</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>HOME<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">22</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>DDP 소개<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">23</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>DDP 프로그램<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">24</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>시설안내<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">25</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>AWARDS<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span> 
+</span></pre>
+<pre class="code_text"><span class="num">26</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>CONTACT<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">27</span><span class="text">			<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">28</span><span class="text">			<span class="blue">&lt;span&gt;</span><span class="blue">&lt;/span&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">29</span><span class="text">		<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">30</span><span class="text">		<span class="blue">&lt;header <span class="green">id=</span><span class="orange">"header"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">31</span><span class="text">				<span class="blue">&lt;nav <span class="green">id=</span><span class="orange">"pc"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">32</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"pc_inner"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">33</span><span class="text">						<span class="blue">&lt;div class=<span class="orange">"logo"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">34</span><span class="text">							<span class="blue">&lt;h1&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/logo1.png"</span> <span class="green">alt=</span><span class="orange">"logo"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/h1&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">35</span><span class="text">						<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">36</span><span class="text">						<span class="blue">&lt;div class=<span class="orange">"btn_on"</span>&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">"#none"</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/ico_tab_open.png"</span> <span class="green">alt=</span><span class="orange">"메뉴열기"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">37</span><span class="text">						<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">38</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>HOME<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">39</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>DDP 소개<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">40</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>DDP 프로그램<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">41</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>시설안내<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">42</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>AWARDS<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span> 
+</span></pre>
+<pre class="code_text"><span class="num">43</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>CONTACT<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">44</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">45</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">46</span><span class="text">				<span class="blue">&lt;/nav&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">47</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"slider"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">48</span><span class="text">				<span class="blue">&lt;ul class=<span class="orange">"main"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">49</span><span class="text">					<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">50</span><span class="text">						<span class="blue">&lt;ul class=<span class="orange">"slider_text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">51</span><span class="text">							<span class="blue">&lt;li class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">52</span><span class="text">								<span class="blue">&lt;span&gt;</span>Women in D-숲 Classic<span class="blue">&lt;/span&gt;</span><span class="blue">&lt;br&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">53</span><span class="text">								<span class="blue">&lt;h2&gt;</span>우먼 인 D-숲 클래식<span class="blue">&lt;/h2&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">54</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">55</span><span class="text">							<span class="blue">&lt;li class=<span class="orange">"more"</span>&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>영상보기<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">56</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">57</span><span class="text">					<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">58</span><span class="text">					<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">59</span><span class="text">						<span class="blue">&lt;ul class=<span class="orange">"slider_text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">60</span><span class="text">							<span class="blue">&lt;li class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">61</span><span class="text">								<span class="blue">&lt;span&gt;</span>지속가능한 도시를 위한 세계 최최의 디자인 어워드<span class="blue">&lt;/span&gt;</span><span class="blue">&lt;br&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">62</span><span class="text">								<span class="blue">&lt;h2&gt;</span>휴먼시티디지인어워드<span class="blue">&lt;/h2&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">63</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">64</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">65</span><span class="text">					<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">66</span><span class="text">					<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">67</span><span class="text">						<span class="blue">&lt;ul class=<span class="orange">"slider_text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">68</span><span class="text">							<span class="blue">&lt;li class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">69</span><span class="text">								<span class="blue">&lt;h2&gt;</span>DDP 운영안내<span class="blue">&lt;/h2&gt;</span><span class="blue">&lt;br&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">70</span><span class="text">								<span class="blue">&lt;span&gt;</span>알림터-오픈준비중<span class="blue"><span class="blue">&lt;br&gt;</span></span>배움터-정상 운영중<span class="blue"><span class="blue">&lt;br&gt;</span></span>살림터-링크세부내역 확인<span class="blue">&lt;/span&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">71</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">72</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">73</span><span class="text">					<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">74</span><span class="text">					<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">75</span><span class="text">						<span class="blue">&lt;ul class=<span class="orange">"slider_text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">76</span><span class="text">							<span class="blue">&lt;li class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">77</span><span class="text">								<span class="blue">&lt;h2&gt;</span>DDP Operations <span class="blue"><span class="blue">&lt;br&gt;</span></span>Guide<span class="blue">&lt;/h2&gt;</span><span class="blue"><span class="blue">&lt;br&gt;</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">78</span><span class="text">								<span class="blue">&lt;span&gt;</span>Alt Hall-Scheduled<span class="blue"><span class="blue">&lt;br&gt;</span></span>Museum- Nomal<span class="blue"><span class="blue">&lt;br&gt;</span></span>Design Lab-Click <span class="blue">for</span> details<span class="blue">&lt;/span&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">79</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">80</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">81</span><span class="text">					<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">82</span><span class="text">				<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">83</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"gauge_bar"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">84</span><span class="text">					<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">85</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span> data-hover=<span class="orange">"Classic"</span>&gt;</span>Classic<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">86</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span> data-hover=<span class="orange">"design"</span>&gt;</span>design<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">87</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span> data-hover=<span class="orange">"GuideKR"</span>&gt;</span>GuideKR<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">88</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span> data-hover=<span class="orange">"GuideEG"</span>&gt;</span>GuideEG<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">89</span><span class="text">					<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">90</span><span class="text">                    <span class="blue">&lt;div class=<span class="orange">"ball"</span>&gt;</span><span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">91</span><span class="text">                <span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">92</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"btn_1"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">93</span><span class="text">					<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">94</span><span class="text">						<span class="blue">&lt;li class=<span class="orange">"stop"</span>&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;span&gt;</span><span class="blue">&lt;/span&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">95</span><span class="text">						<span class="blue">&lt;li class=<span class="orange">"start"</span>&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;span&gt;</span><span class="blue">&lt;/span&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">96</span><span class="text">					<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">97</span><span class="text">				<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">98</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">99</span><span class="text">		<span class="blue">&lt;/header&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">100</span><span class="text">		<span class="blue">&lt;nav <span class="green">id=</span><span class="orange">"mobile"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">101</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"btn_close"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">102</span><span class="text">				<span class="blue">&lt;a <span class="green">href=</span><span class="orange">"#none"</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/ico_tab_close.png"</span> <span class="green">alt=</span><span class="orange">"메뉴닫기"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">103</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">104</span><span class="text">			<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">105</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>HOME<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">106</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>DDP 소개<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">107</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>DDP 프로그램<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">108</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>시설안내<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">109</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>AWARDS<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span> 
+</span></pre>
+<pre class="code_text"><span class="num">110</span><span class="text">				<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span>CONTACT<span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">111</span><span class="text">			<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">112</span><span class="text">		<span class="blue">&lt;/nav&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">113</span><span class="text">		<span class="blue">&lt;section <span class="green">id=</span><span class="orange">"content"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">114</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"page1 clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">115</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"page1_inner"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">116</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"title"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">117</span><span class="text">						<span class="blue">&lt;h3&gt;</span>DDP 소개<span class="blue">&lt;/h3&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">118</span><span class="text">						<span class="blue">&lt;span&gt;</span>DDP는 디자인 트렌드가 시작되고 문화가 교류하는 장소입니다.<span class="blue">&lt;/span&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">119</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">120</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"icon clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">121</span><span class="text">						<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">122</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/top_banner2.jpg"</span> <span class="green">alt=</span><span class="orange">"디자인"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">123</span><span class="text">								<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">124</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span><span class="blue">&lt;span&gt;</span>DDP라이트 ON<span class="blue">&lt;/span&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">125</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span><span class="blue">&lt;span&gt;</span>DDPLIGHTON<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>2020. 10.30.~ 11.12<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>레픽 아나돌(Refik)<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>모네의 정원 / FACE OF CITY<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>Artist 콰욜라<span class="blue">&lt;/span&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">126</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">127</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">128</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/top_banner1.jpg"</span> <span class="green">alt=</span><span class="orange">"마케팅"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">129</span><span class="text">								<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">130</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span><span class="blue">&lt;span&gt;</span>WOMEN IN DESIGN.<span class="blue">&lt;/span&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">131</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span><span class="blue">&lt;span&gt;</span>우먼 인 디자인<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>더 나은 일상을 향하여<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>대한민국 최초의 공립 디자인뮤지엄<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>바이럴, SNS 기획 운영<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>1종 공립미술관 등록<span class="blue">&lt;/span&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">132</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">133</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">134</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/top_banner3.jpg"</span> <span class="green">alt=</span><span class="orange">"플렛폼"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">135</span><span class="text">								<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">136</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span><span class="blue">&lt;span&gt;</span>DDP에듀 ON<span class="blue">&lt;/span&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">137</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span><span class="blue">&lt;span&gt;</span>생애주기 디자인 교육<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>종이로 만드는 DDP<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>살아움직이는 요리<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>내가 그린 ***의 몽타주?<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br1"</span></span></span></span>&gt;</span></span></span></span>재미있는 디자인 교육<span class="blue">&lt;/span&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">138</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">139</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">140</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">141</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">142</span><span class="text">				<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">143</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">144</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"page2 clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">145</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"page2_inner"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">146</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"title"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">147</span><span class="text">						<span class="blue">&lt;h3&gt;</span>DDP 프로그램<span class="blue">&lt;/h3&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">148</span><span class="text">						<span class="blue">&lt;span&gt;</span>고객사와 하나 된 울림이 만들어 낸 행복한 성과입니다.<span class="blue">&lt;/span&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">149</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">150</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"box_banner clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">151</span><span class="text">						<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">152</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/center_banner1.jpg"</span> <span class="green">alt=</span><span class="orange">"포트폴리오1"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">153</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">154</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>DDP 영디자이너 잡페어<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">155</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>2020-12-10~2021~12-10<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">156</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">157</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">158</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/center_banner2.jpg"</span> <span class="green">alt=</span><span class="orange">"포트폴리오2"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">159</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">160</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>DDP오픈큐레이팅 vol.15<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">161</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>2020-12-17~2021~12-16<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">162</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">163</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">164</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/center_banner3.jpg"</span> <span class="green">alt=</span><span class="orange">"포트폴리오3"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">165</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">166</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>행복의 기호들 디자인<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">167</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>2020-11-18~2021~12-01<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">168</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">169</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">170</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/center_banner4.jpg"</span> <span class="green">alt=</span><span class="orange">"포트폴리오4"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">171</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">172</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>팀랩 라이프<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">173</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>2020-09-25~2021~04-04<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">174</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">175</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">176</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/center_banner5.jpg"</span> <span class="green">alt=</span><span class="orange">"포트폴리오5"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">177</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">178</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>DDP 건축물 투어<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">179</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>2019-01-01~2021-12-31<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">180</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">181</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">182</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/center_banner6.jpg"</span> <span class="green">alt=</span><span class="orange">"포트폴리오6"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">183</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">184</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>코로나19 관련 서울시 대책<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">185</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>2020-11-05~2021-11-30<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">186</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">187</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">188</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">189</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">190</span><span class="text">				<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">191</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">192</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"page3 clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">193</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"page3_inner"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">194</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"title"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">195</span><span class="text">						<span class="blue">&lt;h3&gt;</span>시설안내<span class="blue">&lt;/h3&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">196</span><span class="text">						<span class="blue">&lt;span&gt;</span>매년 새롭게 구성되는 Club Wylie는 다양한 직군의 멤버들이 조를 이루어 <span class="blue">&lt;br class=<span class="orange">"br2"</span>&gt;</span>한 해 동안 허락된 땡땡이를 즐기며 팀워크를 다집니다.<span class="blue">&lt;/span&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">197</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">198</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"banners clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">199</span><span class="text">						<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">200</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/culture1.jpg"</span> <span class="green">alt=</span><span class="orange">"culture1"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">201</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">202</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>알림터 <span class="blue">&lt;br class=<span class="orange">"br3_1"</span>&gt;</span>Cafe de Fessoni<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">203</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>Café de Fessonia는 100%<span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span>&gt;</span></span></span> 스페셜 원두만 사용하여 로스팅합니다. <span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span>&gt;</span></span></span>로스팅 후 일주일 이내 만든 신선한 커피만을 제공하는<span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span>&gt;</span></span></span>프리미엄 커피 하우스입니다. <span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">204</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">205</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">206</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/culture2.jpg"</span> <span class="green">alt=</span><span class="orange">"culture1"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">207</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">208</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>배움터 <span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br3_2"</span></span>&gt;</span></span> 디자인박물관 <span class="blue">&lt;br class=<span class="orange">"br3_1"</span>&gt;</span>전시 / 행사 <span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br3_2"</span></span>&gt;</span></span>문화 콘텐츠<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">209</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>대나무가 깔려 있는 바닥과 온화하고 <span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span></span>&gt;</span></span></span></span>은은한 조명을 갖춘 디자인박물관은 <span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span></span>&gt;</span></span></span></span>한국 전통문화 콘텐츠를 비롯해 <span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span></span>&gt;</span></span></span></span> 다양한 디자인 기획전이 열리는<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span></span>&gt;</span></span></span></span> 전시 공간입니다.<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">210</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">211</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">212</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/culture3.jpg"</span> <span class="green">alt=</span><span class="orange">"culture1"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">213</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">214</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>살림터<span class="blue">&lt;br class=<span class="orange">"br3_1"</span>&gt;</span>카카오프렌즈 <span class="blue">&lt;br class=<span class="orange">"br3_2"</span>&gt;</span> 스토어<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">215</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>국민캐릭터 카카오프렌즈 캐릭터를 모티브로 하는<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span></span>&gt;</span></span></span></span>다양한 라이프스타일 상품을 만나볼 수 있는 스토어입니다.<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span></span>&gt;</span></span></span></span> ‘일상의 장면(Scene)’을 컨셉으로 캐릭터와 함께<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span></span>&gt;</span></span></span></span>  제품을 즐겁게 체험할 수 있는 통합적인<span class="blue"><span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span></span>&gt;</span></span></span></span> 브랜드 경험을 지향하는 공간입니다.<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">216</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">217</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">218</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/culture4.jpg"</span> <span class="green">alt=</span><span class="orange">"culture1"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">219</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">220</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>크레아소개 <span class="blue">&lt;br class=<span class="orange">"br3_1"</span>&gt;</span>같이 상상하며<span class="blue">&lt;br class=<span class="orange">"br3_2"</span>&gt;</span>시작하는 하루<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">221</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>다양한 분야의 크리에이터가<span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span>&gt;</span></span></span> 각자의 아이디어를 알리고 공유하는 공간.<span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span>&gt;</span></span></span>크리에이터의 문화와 아이디어가 살아 숨쉬는<span class="blue"><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange"><span class="orange">"br3"</span></span></span>&gt;</span></span></span> DDP 크리에이티브 라운지<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">222</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">223</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">224</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/culture5.jpg"</span> <span class="green">alt=</span><span class="orange">"culture1"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">225</span><span class="text">								<span class="blue">&lt;ul class=<span class="orange">"text"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">226</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>DDP 디자인뮤지엄<span class="blue">&lt;br class=<span class="orange">"br3_2"</span>&gt;</span>갤러리문<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">227</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>‘디자인은 모든 것’, <span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br3"</span></span>&gt;</span></span>우리 모두가 디자이너’라는 모토를 실현하는 갤러리 문은<span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br3"</span></span>&gt;</span></span> ‘DDP 오픈큐레이팅’ 전시 공간입니다.<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">228</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">229</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">230</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">231</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">232</span><span class="text">				<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">233</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">234</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"page4 clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">235</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"page4_inner"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">236</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"title"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">237</span><span class="text">						<span class="blue">&lt;h3&gt;</span>AWARDS<span class="blue">&lt;/h3&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">238</span><span class="text">						<span class="blue">&lt;span&gt;</span>주요 Award의 다양한 수상 실적을 통해 전문성과 크리에이티브를 검증받았습니다.<span class="blue">&lt;/span&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">239</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">240</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"banners clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">241</span><span class="text">						<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">242</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/img_award1.jpg"</span> <span class="green">alt=</span><span class="orange">"KB스타뱅킹 이미지"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">243</span><span class="text">								<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">244</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>KB스타뱅킹<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">245</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>App Award Korea 2018<span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br4"</span></span>&gt;</span></span>기술이노베이션<span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br4"</span></span>&gt;</span></span>대상<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">246</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">247</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">248</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/img_award2.jpg"</span> <span class="green">alt=</span><span class="orange">"서울성모병원 이미지"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">249</span><span class="text">								<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">250</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>서울성모병원<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">251</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>Web Award Korea 2018<span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br4"</span></span>&gt;</span></span>종합의료분야 &amp; 건강/의료분야<span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br4"</span></span>&gt;</span></span>대상<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">252</span><span class="text">								<span class="blue">&lt;/ul&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">253</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/img_award3.jpg"</span> <span class="green">alt=</span><span class="orange">"어바웃미 이미지"</span>&gt;</span><span class="blue">&lt;/a&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">254</span><span class="text">								<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">255</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_title"</span>&gt;</span>어바웃미<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">256</span><span class="text">									<span class="blue">&lt;li class=<span class="orange">"text_content"</span>&gt;</span>Web Award Korea 2018<span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br4"</span></span>&gt;</span></span>제품브랜드분야<span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br4"</span></span>&gt;</span></span>대상<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">257</span><span class="text">								<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">258</span><span class="text">							<span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">259</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">260</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">261</span><span class="text">				<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">262</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">263</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"page5 clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">264</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"page5_inner"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">265</span><span class="text">					<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">266</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/signature1.jpg"</span> <span class="green">alt=</span><span class="orange">"깨끗한나라 로고"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">267</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/signature2.jpg"</span> <span class="green">alt=</span><span class="orange">"KB 국민은행 로고"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">268</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/signature3.jpg"</span> <span class="green">alt=</span><span class="orange">"cj 로고"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">269</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/signature4.jpg"</span> <span class="green">alt=</span><span class="orange">"about me 로고"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">270</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/signature5.jpg"</span> <span class="green">alt=</span><span class="orange">"대유위니아 로고"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">271</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/signature6.jpg"</span> <span class="green">alt=</span><span class="orange">"한화생명 로고"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">272</span><span class="text">						<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a <span class="green">href=</span><span class="orange">""</span>&gt;</span><span class="blue">&lt;img <span class="green">src=</span><span class="orange">"images/signature7.jpg"</span> <span class="green">alt=</span><span class="orange">"농심 로고"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">273</span><span class="text">					<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">274</span><span class="text">				<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">275</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">276</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"page6"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">277</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"page6_inner"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">278</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"title"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">279</span><span class="text">						<span class="blue">&lt;h3&gt;</span>CONTACT US<span class="blue">&lt;/h3&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">280</span><span class="text">						<span class="blue">&lt;span&gt;</span>다양한 경험과 노하우로 성공을 설계합니다.<span class="blue">&lt;/span&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">281</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">282</span><span class="text">					<span class="blue">&lt;<span class="blue">for</span>m <span class="green">action=</span><span class="orange">""</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">283</span><span class="text">						<span class="blue">&lt;div class=<span class="orange">"enquiry clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">284</span><span class="text">							<span class="blue">&lt;input type=<span class="orange">"text"</span> value=<span class="orange">""</span> placeholder=<span class="orange">"YOUR NAME*"</span> class=<span class="orange">"name"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">285</span><span class="text">							<span class="blue">&lt;input type=<span class="orange"><span class="orange">"email"</span></span> value=<span class="orange">""</span> placeholder=<span class="orange">"YOUR E-MAIL*"</span> class=<span class="orange"><span class="orange">"email"</span></span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">286</span><span class="text">							<span class="blue">&lt;input type=<span class="orange">"text"</span> value=<span class="orange">""</span> placeholder=<span class="orange">"SUBJECT*"</span> class=<span class="orange">"subject"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">287</span><span class="text">							<span class="blue">&lt;textarea class=<span class="orange">"message"</span> placeholder=<span class="orange">"YOUR MESSAGE*"</span>&gt;</span><span class="blue">&lt;/textarea&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">288</span><span class="text">							<span class="blue">&lt;input type=<span class="orange">"submit"</span> value=<span class="orange">"SEND MESSAGE"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">289</span><span class="text">						<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">290</span><span class="text">					<span class="blue">&lt;/<span class="blue">for</span>m&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">291</span><span class="text">				<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">292</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">293</span><span class="text">		<span class="blue">&lt;/section&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">294</span><span class="text">		<span class="blue">&lt;footer <span class="green">id=</span><span class="orange">"footer"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">295</span><span class="text">			<span class="blue">&lt;div class=<span class="orange">"last clearfix"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">296</span><span class="text">				<span class="blue">&lt;div class=<span class="orange">"footer_inner"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">297</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"left"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">298</span><span class="text">						<span class="blue">&lt;p class=<span class="orange">"p"</span>&gt;</span>주소 : 서울시 강남구 논현로 131길 39(논현동)와일리타워<span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br6"</span></span>&gt;</span></span> Tel: 02-545-3477 <span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br6 br6_1"</span></span>&gt;</span></span><span class="blue"><span class="blue">&lt;span class=<span class="orange"><span class="orange">"block1"</span></span>&gt;</span></span> Fax: 02-545-3494<span class="blue"><span class="blue">&lt;/span&gt;</span></span><span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br6"</span></span>&gt;</span></span> E-mail: wylie@wylie.co.kr <span class="blue"><span class="blue">&lt;br class=<span class="orange"><span class="orange">"br6 br6_1"</span></span>&gt;</span></span><span class="blue"><span class="blue">&lt;span class=<span class="orange"><span class="orange">"block1"</span></span>&gt;</span></span>COPYRIGHTⓒ WYLIE. ALL RIGHTS RESERVED.<span class="blue"><span class="blue">&lt;/span&gt;</span></span><span class="blue">&lt;/p&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">299</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">300</span><span class="text">					<span class="blue">&lt;div class=<span class="orange">"right"</span>&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">301</span><span class="text">						<span class="blue">&lt;ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">302</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a class=<span class="orange">"fa fa-facebook"</span> <span class="green">href=</span><span class="orange">""</span> title=<span class="orange">"facebook"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">303</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a class=<span class="orange">"fa fa-twitter"</span> <span class="green">href=</span><span class="orange">""</span> title=<span class="orange">"twitter"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">304</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a class=<span class="orange">"fa fa-pinterest-p"</span> <span class="green">href=</span><span class="orange">""</span> title=<span class="orange">"google plus"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">305</span><span class="text">							<span class="blue">&lt;li&gt;</span><span class="blue">&lt;a class=<span class="orange">"fa fa-google-plus"</span> <span class="green">href=</span><span class="orange">""</span> title=<span class="orange">"google plus"</span>&gt;</span><span class="blue">&lt;/a&gt;</span><span class="blue">&lt;/li&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">306</span><span class="text">						<span class="blue">&lt;/ul&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">307</span><span class="text">					<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">308</span><span class="text">				<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">309</span><span class="text">			<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">310</span><span class="text">		<span class="blue">&lt;/footer&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">311</span><span class="text">	<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">312</span><span class="text">	<span class="blue">&lt;div class=<span class="orange">"dim"</span>&gt;</span>dim<span class="blue">&lt;/div&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">313</span><span class="text"><span class="blue">&lt;/body&gt;</span>
+</span></pre>
+<pre class="code_text"><span class="num">314</span><span class="text"><span class="blue">&lt;/html&gt;</span>
+</span></pre>

@@ -1,0 +1,2 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text"><span class="puple">@charset&nbsp;</span>;<span class="orange">"utf-8"</span>;
+</span></pre><pre class="code_text"><span class="num">2</span><span class="text"></span></pre>

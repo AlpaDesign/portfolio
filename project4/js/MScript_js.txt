@@ -1,0 +1,290 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text">$<span class="white">(</span><span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">2</span><span class="text">	<span class="blue">var</span>&nbsp;<span class="puple">xDown</span>;
+</span></pre><pre class="code_text"><span class="num">3</span><span class="text">	<span class="blue">var</span>&nbsp;<span class="puple">yDown</span>;
+</span></pre><pre class="code_text"><span class="num">4</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;direction=</span><span class="orange">""</span>;
+</span></pre><pre class="code_text"><span class="num">5</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;dragn=</span>0;
+</span></pre><pre class="code_text"><span class="num">6</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;total=</span>7;
+</span></pre><pre class="code_text"><span class="num">7</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;scrollDragn&nbsp;=</span>&nbsp;0;
+</span></pre><pre class="code_text"><span class="num">8</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;pos=</span>0;
+</span></pre><pre class="code_text"><span class="num">9</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;moving=</span><span class="orange">false</span>;
+</span></pre><pre class="code_text"><span class="num">10</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;movings=</span><span class="orange">false</span>;
+</span></pre><pre class="code_text"><span class="num">11</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;touchT=</span>&nbsp;<span class="orange">false</span>;
+</span></pre><pre class="code_text"><span class="num">12</span><span class="text">	<span class="blue">var</span>&nbsp;<span class="puple">distance</span>;
+</span></pre><pre class="code_text"><span class="num">13</span><span class="text">	<span class="blue">var</span>&nbsp;<span class="puple">touchTimer</span>;
+</span></pre><pre class="code_text"><span class="num">14</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;n=</span>0;
+</span></pre><pre class="code_text"><span class="num">15</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;pageN=</span>0;
+</span></pre><pre class="code_text"><span class="num">16</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;t=</span>0;
+</span></pre><pre class="code_text"><span class="num">17</span><span class="text">	<span class="blue">var</span>&nbsp;<span class="puple">h</span>;
+</span></pre><pre class="code_text"><span class="num">18</span><span class="text">	<span class="puple"><span class="blue">var</span>&nbsp;les&nbsp;=</span>&nbsp;0;
+</span></pre><pre class="code_text"><span class="num">19</span><br></pre><pre class="code_text"><span class="num">20</span><span class="text">	<span class="puple"><span class="blue">function</span>&nbsp;touchFunction<span class="white">(</span>)<span class="white">{</span></span>
+</span></pre><pre class="code_text"><span class="num">21</span><span class="text">		$<span class="white">(</span><span class="orange">".touch_icon"</span>)<span class="puple">.css</span><span class="white">(</span><span class="white">{</span><span class="orange">"display"</span>:&nbsp;<span class="orange">"none"</span>});
+</span></pre><pre class="code_text"><span class="num">22</span><span class="text">	};
+</span></pre><pre class="code_text"><span class="num">23</span><span class="text">	
+</span></pre><pre class="code_text"><span class="num">24</span><span class="text">	$<span class="white">(</span>window)<span class="puple">.resize</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">25</span><span class="text">		t=$<span class="white">(</span>window)<span class="puple">.scrollTop</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">26</span><span class="text">		<span class="gray">//console.log<span class="white">(</span>pageN);
+</span></span></pre><pre class="code_text"><span class="num">27</span><span class="text">		clearInterval<span class="white">(</span>touchTimer);
+</span></pre><pre class="code_text"><span class="num">28</span><br></pre><pre class="code_text"><span class="num">29</span><span class="text">		touchTimer=setInterval<span class="white">(</span>touchFunction,&nbsp;6000);
+</span></pre><pre class="code_text"><span class="num">30</span><br></pre><pre class="code_text"><span class="num">31</span><span class="text">		timer=setTimeout<span class="white">(</span><span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">32</span><span class="text">			h=$<span class="white">(</span>window)<span class="puple">.height</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">33</span><span class="text">			distance=$<span class="white">(</span><span class="orange">"#page_content&nbsp;&gt;&nbsp;ul&nbsp;&gt;&nbsp;li"</span>).width<span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">34</span><span class="text">			pos=distance*<span class="white">(</span>-1)*dragn;
+</span></pre><pre class="code_text"><span class="num">35</span><span class="text">			$<span class="white">(</span><span class="orange">"#page_content"</span>)<span class="puple">.animate</span><span class="white">(</span><span class="white">{</span>left:pos},&nbsp;200);
+</span></pre><pre class="code_text"><span class="num">36</span><span class="text">		},&nbsp;50);
+</span></pre><pre class="code_text"><span class="num">37</span><br></pre><pre class="code_text"><span class="num">38</span><span class="text">		$<span class="white">(</span><span class="orange">"#page1&nbsp;.page1_cover&nbsp;.left&nbsp;.content&nbsp;li"</span>).<span class="puple">eq</span><span class="white">(</span>n)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">39</span><span class="text">		$<span class="white">(</span><span class="orange">"#page1&nbsp;.page1_cover&nbsp;.right&nbsp;.page1_content"</span>).<span class="puple">eq</span><span class="white">(</span>n)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"view"</span>);
+</span></pre><pre class="code_text"><span class="num">40</span><span class="text">		$<span class="white">(</span><span class="orange">"#page5_ab"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"back"</span>&nbsp;+&nbsp;n);
+</span></pre><pre class="code_text"><span class="num">41</span><span class="text">		$<span class="white">(</span><span class="orange">"#page5_background"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"back"</span>&nbsp;+&nbsp;n)<span class="puple">.hide</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">42</span><span class="text">		$<span class="white">(</span><span class="orange">"#page5_ab&nbsp;.page5_cover&nbsp;.page5_btn&nbsp;li"</span>).<span class="puple">eq</span><span class="white">(</span>1)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">43</span><span class="text">		$<span class="white">(</span><span class="orange">".controller&nbsp;li"</span>).<span class="puple">eq</span><span class="white">(</span>scrollDragn)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">44</span><br></pre><pre class="code_text"><span class="num">45</span><span class="text">		doLayout<span class="white">(</span>scrollDragn);
+</span></pre><pre class="code_text"><span class="num">46</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">47</span><span class="text">	$<span class="white">(</span>window)<span class="puple">.trigger</span><span class="white">(</span><span class="orange">"resize"</span>);
+</span></pre><pre class="code_text"><span class="num">48</span><br></pre><pre class="code_text"><span class="num">49</span><span class="text">	$<span class="white">(</span><span class="orange">"#page1&nbsp;.page1_cover&nbsp;.left&nbsp;.content&nbsp;li"</span>)<span class="puple">.click</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">50</span><span class="text">		e<span class="puple">.preventDefault</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">51</span><br></pre><pre class="code_text"><span class="num">52</span><span class="text">		n=$<span class="white">(</span>this)<span class="puple">.index</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">53</span><br></pre><pre class="code_text"><span class="num">54</span><span class="text">		<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span>this)<span class="puple">.hasClass</span><span class="white">(</span><span class="orange">"active"</span>)&nbsp;==&nbsp;<span class="orange">false</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">55</span><span class="text">			$<span class="white">(</span><span class="orange">"#page1&nbsp;.page1_cover&nbsp;.right&nbsp;.page1_content"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"active"</span>).<span class="puple">fadeOut</span><span class="white">(</span>0);
+</span></pre><pre class="code_text"><span class="num">56</span><span class="text">			$<span class="white">(</span><span class="orange">"#page1&nbsp;.page1_cover&nbsp;.right&nbsp;.page1_content"</span>).<span class="puple">eq</span><span class="white">(</span>n)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>).<span class="puple">fadeIn</span><span class="white">(</span>300);
+</span></pre><pre class="code_text"><span class="num">57</span><span class="text">		}<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">58</span><span class="text">			return;
+</span></pre><pre class="code_text"><span class="num">59</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">60</span><span class="text">			$<span class="white">(</span><span class="orange">"#page1&nbsp;.page1_cover&nbsp;.left&nbsp;.content&nbsp;li"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">61</span><span class="text">			$<span class="white">(</span><span class="orange">"#page1&nbsp;.page1_cover&nbsp;.left&nbsp;.content&nbsp;li"</span>).<span class="puple">eq</span><span class="white">(</span>n)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">62</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">63</span><br></pre><pre class="code_text"><span class="num">64</span><span class="text">	$<span class="white">(</span><span class="orange">"#pc"</span>).<span class="puple">mouseenter</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">65</span><span class="text">		$<span class="white">(</span><span class="orange">".menu_height"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"height"</span>);
+</span></pre><pre class="code_text"><span class="num">66</span><span class="text">		$<span class="white">(</span><span class="orange">"#pc"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"height"</span>);
+</span></pre><pre class="code_text"><span class="num">67</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">68</span><span class="text">	$<span class="white">(</span><span class="orange">"#pc"</span>).<span class="puple">mouseleave</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">69</span><span class="text">		$<span class="white">(</span><span class="orange">".menu_height"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"height"</span>);
+</span></pre><pre class="code_text"><span class="num">70</span><span class="text">		$<span class="white">(</span><span class="orange">"#pc"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"height"</span>);
+</span></pre><pre class="code_text"><span class="num">71</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">72</span><span class="text">	
+</span></pre><pre class="code_text"><span class="num">73</span><span class="text">	$<span class="white">(</span><span class="orange">"#footer&nbsp;.footer_inner&nbsp;.top&nbsp;.box"</span>)<span class="puple">.click</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">74</span><span class="text">		e<span class="puple">.preventDefault</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">75</span><span class="text">		<span class="gray">//pageN=0;
+</span></span></pre><pre class="code_text"><span class="num">76</span><span class="text">		$<span class="white">(</span><span class="orange">"html"</span>)<span class="puple">.animate</span><span class="white">(</span><span class="white">{</span>scrollTop:0},&nbsp;800);
+</span></pre><pre class="code_text"><span class="num">77</span><span class="text">		doLayout<span class="white">(</span>scrollDragn);
+</span></pre><pre class="code_text"><span class="num">78</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">79</span><br></pre><pre class="code_text"><span class="num">80</span><span class="text">	$<span class="white">(</span><span class="orange">".pc_inner&nbsp;.menu_bar"</span>)<span class="puple">.click</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">81</span><span class="text">		e<span class="puple">.preventDefault</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">82</span><span class="text">		$<span class="white">(</span><span class="orange">".tab_menu-cover"</span>).<span class="puple">fadeIn</span><span class="white">(</span>300);
+</span></pre><pre class="code_text"><span class="num">83</span><span class="text">		$<span class="white">(</span><span class="orange">"#tab_menu"</span>).<span class="puple">fadeIn</span><span class="white">(</span>300);
+</span></pre><pre class="code_text"><span class="num">84</span><span class="text">		wheelFlag=<span class="orange">false</span>;
+</span></pre><pre class="code_text"><span class="num">85</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">86</span><span class="text">	$<span class="white">(</span><span class="orange">"#tab_menu&nbsp;.menubar-close"</span>)<span class="puple">.click</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">87</span><span class="text">		e<span class="puple">.preventDefault</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">88</span><span class="text">		$<span class="white">(</span><span class="orange">".tab_menu-cover"</span>).<span class="puple">fadeOut</span><span class="white">(</span>300);
+</span></pre><pre class="code_text"><span class="num">89</span><span class="text">		$<span class="white">(</span><span class="orange">"#tab_menu"</span>).<span class="puple">fadeOut</span><span class="white">(</span>300);
+</span></pre><pre class="code_text"><span class="num">90</span><span class="text">		wheelFlag=<span class="orange">true</span>;
+</span></pre><pre class="code_text"><span class="num">91</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">92</span><span class="text">	$<span class="white">(</span><span class="orange">".eamil_content&nbsp;span.check_text"</span>)<span class="puple">.click</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">93</span><span class="text">		<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span><span class="orange">".eamil_content&nbsp;span.check_text"</span>)<span class="puple">.hasClass</span><span class="white">(</span><span class="orange">"on"</span>)&nbsp;==<span class="orange">false</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">94</span><span class="text">			$<span class="white">(</span><span class="orange">".eamil_content&nbsp;span.check_text"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"on"</span>);
+</span></pre><pre class="code_text"><span class="num">95</span><span class="text">			$<span class="white">(</span><span class="orange">"input[type=checkbox]"</span>).prop<span class="white">(</span><span class="orange">"checked"</span>,&nbsp;<span class="orange">true</span>);
+</span></pre><pre class="code_text"><span class="num">96</span><span class="text">		}<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">97</span><span class="text">			$<span class="white">(</span><span class="orange">".eamil_content&nbsp;span.check_text"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"on"</span>);
+</span></pre><pre class="code_text"><span class="num">98</span><span class="text">			$<span class="white">(</span><span class="orange">"input[type=checkbox]"</span>).prop<span class="white">(</span><span class="orange">"checked"</span>,&nbsp;<span class="orange">false</span>);
+</span></pre><pre class="code_text"><span class="num">99</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">100</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">101</span><span class="text">	<span class="puple"><span class="blue">function</span>&nbsp;touchIcon<span class="white">(</span>)<span class="white">{</span></span>
+</span></pre><pre class="code_text"><span class="num">102</span><span class="text">		<span class="blue">if<span class="white">(</span></span>touchT==<span class="orange">true</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">103</span><span class="text">			touchTimer=setInterval<span class="white">(</span>touchFunction,&nbsp;0);
+</span></pre><pre class="code_text"><span class="num">104</span><span class="text">		}<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">105</span><span class="text">			touchTimer=setInterval<span class="white">(</span>touchFunction,&nbsp;6000);
+</span></pre><pre class="code_text"><span class="num">106</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">107</span><span class="text">	}
+</span></pre><pre class="code_text"><span class="num">108</span><span class="text">	$<span class="white">(</span><span class="orange">"#page_content"</span>).on<span class="white">(</span><span class="orange">"touchstart"</span>,&nbsp;<span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">109</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;evt=</span>e.originalEvent;
+</span></pre><pre class="code_text"><span class="num">110</span><span class="text">		xDown=evt.touches[0]<span class="puple">.clientX</span>;
+</span></pre><pre class="code_text"><span class="num">111</span><span class="text">		yDown=evt.touches[0]<span class="puple">.clientY</span>;
+</span></pre><pre class="code_text"><span class="num">112</span><span class="text">		&nbsp;<span class="gray">//console.log<span class="white">(</span>xDown+<span class="orange">"&nbsp;:&nbsp;"</span>+yDown);
+</span></span></pre><pre class="code_text"><span class="num">113</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">114</span><span class="text">	$<span class="white">(</span>window).on<span class="white">(</span><span class="orange">"touchstart"</span>,&nbsp;<span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">115</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;evt=</span>e.originalEvent;
+</span></pre><pre class="code_text"><span class="num">116</span><span class="text">		xDown=evt.touches[0]<span class="puple">.clientX</span>;
+</span></pre><pre class="code_text"><span class="num">117</span><span class="text">		yDown=evt.touches[0]<span class="puple">.clientY</span>;
+</span></pre><pre class="code_text"><span class="num">118</span><span class="text">		&nbsp;<span class="gray">//console.log<span class="white">(</span>xDown+<span class="orange">"&nbsp;:&nbsp;"</span>+yDown);
+</span></span></pre><pre class="code_text"><span class="num">119</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">120</span><span class="text">	
+</span></pre><pre class="code_text"><span class="num">121</span><span class="text">	$<span class="white">(</span><span class="orange">"#page_content"</span>).on<span class="white">(</span><span class="orange">"touchmove"</span>,&nbsp;<span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">122</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;evt=</span>e.originalEvent;
+</span></pre><pre class="code_text"><span class="num">123</span><br></pre><pre class="code_text"><span class="num">124</span><span class="text">		<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span><span class="orange">"#page_content"</span>)<span class="puple">.is</span><span class="white">(</span><span class="orange">":animated"</span>))&nbsp;return;
+</span></pre><pre class="code_text"><span class="num">125</span><br></pre><pre class="code_text"><span class="num">126</span><span class="text">		<span class="blue">if<span class="white">(</span></span>moving&nbsp;==&nbsp;<span class="orange">true</span>)&nbsp;return;
+</span></pre><pre class="code_text"><span class="num">127</span><br></pre><pre class="code_text"><span class="num">128</span><span class="text">		direction=swipeAPI<span class="white">(</span>evt,&nbsp;xDown,&nbsp;yDown);
+</span></pre><pre class="code_text"><span class="num">129</span><span class="text">		<span class="gray">//console.log<span class="white">(</span><span class="orange">"direction&nbsp;:&nbsp;"</span>+direction);
+</span></span></pre><pre class="code_text"><span class="num">130</span><br></pre><pre class="code_text"><span class="num">131</span><span class="text">		<span class="blue">if<span class="white">(</span></span>direction&nbsp;==&nbsp;<span class="orange">"right"</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">132</span><span class="text">			<span class="blue">if<span class="white">(</span></span>dragn&nbsp;&gt;&nbsp;0)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">133</span><span class="text">				dragn-=1;
+</span></pre><pre class="code_text"><span class="num">134</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">135</span><span class="text">			<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">136</span><span class="text">				return;
+</span></pre><pre class="code_text"><span class="num">137</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">138</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">139</span><span class="text">		<span class="blue">else</span>&nbsp;<span class="blue">if<span class="white">(</span></span>direction&nbsp;==&nbsp;<span class="orange">"left"</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">140</span><span class="text">			<span class="blue">if<span class="white">(</span></span>dragn&nbsp;&lt;&nbsp;<span class="white">(</span>total-2))<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">141</span><span class="text">				dragn+=1;
+</span></pre><pre class="code_text"><span class="num">142</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">143</span><span class="text">			<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">144</span><span class="text">				return;
+</span></pre><pre class="code_text"><span class="num">145</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">146</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">147</span><span class="text">		moving=<span class="orange">true</span>;
+</span></pre><pre class="code_text"><span class="num">148</span><span class="text">		<span class="gray">//dragUI<span class="white">(</span>dragn);
+</span></span></pre><pre class="code_text"><span class="num">149</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">150</span><span class="text">	$<span class="white">(</span><span class="orange">".page5_btn&nbsp;li"</span>)<span class="puple">.click</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">151</span><span class="text">		<span class="blue">if<span class="white">(</span></span>moving&nbsp;==&nbsp;<span class="orange">true</span>)&nbsp;return;
+</span></pre><pre class="code_text"><span class="num">152</span><span class="text">		moving=<span class="orange">true</span>;
+</span></pre><pre class="code_text"><span class="num">153</span><br></pre><pre class="code_text"><span class="num">154</span><span class="text">		<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span>this)<span class="puple">.index</span><span class="white">(</span>)&nbsp;==&nbsp;0)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">155</span><span class="text">			<span class="blue">if<span class="white">(</span></span>dragn&nbsp;&gt;&nbsp;0)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">156</span><span class="text">				dragn=dragn-1;
+</span></pre><pre class="code_text"><span class="num">157</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">158</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">159</span><span class="text">		<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">160</span><span class="text">			<span class="blue">if<span class="white">(</span></span>dragn&nbsp;&lt;&nbsp;<span class="white">(</span>total-2))<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">161</span><span class="text">				dragn=dragn+1;
+</span></pre><pre class="code_text"><span class="num">162</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">163</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">164</span><span class="text">		dragUI<span class="white">(</span>dragn);
+</span></pre><pre class="code_text"><span class="num">165</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">166</span><span class="text">	$<span class="white">(</span><span class="orange">"#page_content"</span>).on<span class="white">(</span><span class="orange">"touchend"</span>,&nbsp;<span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">167</span><span class="text">		dragUI<span class="white">(</span>dragn);
+</span></pre><pre class="code_text"><span class="num">168</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">169</span><br></pre><pre class="code_text"><span class="num">170</span><span class="text">	<span class="puple"><span class="blue">function</span>&nbsp;dragUI<span class="white">(</span>n)<span class="white">{</span></span>
+</span></pre><pre class="code_text"><span class="num">171</span><span class="text">		pos=distance*<span class="white">(</span>-1)*n;
+</span></pre><pre class="code_text"><span class="num">172</span><br></pre><pre class="code_text"><span class="num">173</span><span class="text">		$<span class="white">(</span><span class="orange">"#page_content"</span>)<span class="puple">.animate</span><span class="white">(</span><span class="white">{</span>left:pos},&nbsp;400,&nbsp;<span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">174</span><span class="text">			<span class="blue">if<span class="white">(</span></span>n&nbsp;==&nbsp;0)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">175</span><span class="text">				$<span class="white">(</span><span class="orange">".page5_btn&nbsp;.left_btn"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">176</span><span class="text">				$<span class="white">(</span><span class="orange">".page5_btn&nbsp;.right_btn"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">177</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">178</span><span class="text">			<span class="blue">else</span>&nbsp;<span class="blue">if<span class="white">(</span></span>n&nbsp;==&nbsp;<span class="white">(</span>total-1))<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">179</span><span class="text">				$<span class="white">(</span><span class="orange">".page5_btn&nbsp;.left_btn"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">180</span><span class="text">				$<span class="white">(</span><span class="orange">".page5_btn&nbsp;.right_btn"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">181</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">182</span><span class="text">			<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">183</span><span class="text">				$<span class="white">(</span><span class="orange">".page5_btn&nbsp;.left_btn"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">184</span><span class="text">				$<span class="white">(</span><span class="orange">".page5_btn&nbsp;.right_btn"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">185</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">186</span><br></pre><pre class="code_text"><span class="num">187</span><span class="text">			$<span class="white">(</span><span class="orange">"#page5_background"</span>)<span class="puple">.attr</span><span class="white">(</span><span class="white">{</span>class:<span class="orange">"back"</span>+n});
+</span></pre><pre class="code_text"><span class="num">188</span><br></pre><pre class="code_text"><span class="num">189</span><span class="text">			$<span class="white">(</span><span class="orange">"#page5_background"</span>).<span class="puple">fadeIn</span><span class="white">(</span>600,&nbsp;<span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">190</span><span class="text">				moving=<span class="orange">false</span>;
+</span></pre><pre class="code_text"><span class="num">191</span><span class="text">				$<span class="white">(</span><span class="orange">"#page5_ab"</span>)<span class="puple">.attr</span><span class="white">(</span><span class="white">{</span>class:&nbsp;<span class="orange">"back"</span>&nbsp;+n});
+</span></pre><pre class="code_text"><span class="num">192</span><span class="text">				$<span class="white">(</span><span class="orange">"#page5_background"</span>)<span class="puple">.hide</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">193</span><span class="text">			});
+</span></pre><pre class="code_text"><span class="num">194</span><span class="text">		});
+</span></pre><pre class="code_text"><span class="num">195</span><span class="text">	}
+</span></pre><pre class="code_text"><span class="num">196</span><span class="text">	$<span class="white">(</span>window).on<span class="white">(</span><span class="orange">"touchmove"</span>,&nbsp;<span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">197</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;evt=</span>e.originalEvent;
+</span></pre><pre class="code_text"><span class="num">198</span><br></pre><pre class="code_text"><span class="num">199</span><span class="text">		<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span><span class="orange">"html"</span>)<span class="puple">.is</span><span class="white">(</span><span class="orange">":animated"</span>))&nbsp;return;
+</span></pre><pre class="code_text"><span class="num">200</span><br></pre><pre class="code_text"><span class="num">201</span><span class="text">		<span class="blue">if<span class="white">(</span></span>movings&nbsp;==&nbsp;<span class="orange">true</span>)&nbsp;return;
+</span></pre><pre class="code_text"><span class="num">202</span><br></pre><pre class="code_text"><span class="num">203</span><span class="text">		direction=swipeAPI<span class="white">(</span>evt,&nbsp;xDown,&nbsp;yDown);
+</span></pre><pre class="code_text"><span class="num">204</span><br></pre><pre class="code_text"><span class="num">205</span><span class="text">		<span class="blue">if<span class="white">(</span></span>direction&nbsp;==&nbsp;<span class="orange">"down"</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">206</span><span class="text">			<span class="blue">if<span class="white">(</span></span>scrollDragn&nbsp;&gt;&nbsp;0)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">207</span><span class="text">				scrollDragn&nbsp;-=&nbsp;1;
+</span></pre><pre class="code_text"><span class="num">208</span><span class="text">			}&nbsp;<span class="blue">else</span>&nbsp;<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">209</span><span class="text">				return;
+</span></pre><pre class="code_text"><span class="num">210</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">211</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">212</span><span class="text">		<span class="blue">else</span>&nbsp;<span class="blue">if<span class="white">(</span></span>direction&nbsp;==&nbsp;<span class="orange">"up"</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">213</span><span class="text">			<span class="blue">if<span class="white">(</span></span>scrollDragn&nbsp;&lt;&nbsp;total)<span class="white">{</span>&nbsp;
+</span></pre><pre class="code_text"><span class="num">214</span><span class="text">				scrollDragn&nbsp;+=&nbsp;1;
+</span></pre><pre class="code_text"><span class="num">215</span><span class="text">			}&nbsp;<span class="blue">else</span>&nbsp;<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">216</span><span class="text">				return;
+</span></pre><pre class="code_text"><span class="num">217</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">218</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">219</span><span class="text">		movings&nbsp;=<span class="orange">true</span>;
+</span></pre><pre class="code_text"><span class="num">220</span><span class="text">		
+</span></pre><pre class="code_text"><span class="num">221</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">222</span><span class="text">	$<span class="white">(</span><span class="orange">"html"</span>).on<span class="white">(</span><span class="orange">"touchend"</span>,&nbsp;<span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">223</span><span class="text">		doLayout<span class="white">(</span>scrollDragn);
+</span></pre><pre class="code_text"><span class="num">224</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">225</span><br></pre><pre class="code_text"><span class="num">226</span><span class="text">	$<span class="white">(</span><span class="orange">".controller&nbsp;li"</span>)<span class="puple">.click</span><span class="white">(</span><span class="blue">function</span><span class="white">(</span>e)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">227</span><span class="text">		e<span class="puple">.preventDefault</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">228</span><span class="text">		<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span><span class="orange">"html"</span>)<span class="puple">.is</span><span class="white">(</span><span class="orange">":animated"</span>))&nbsp;return;
+</span></pre><pre class="code_text"><span class="num">229</span><span class="text">		<span class="blue">if<span class="white">(</span></span>movings&nbsp;==&nbsp;<span class="orange">true</span>)&nbsp;return;
+</span></pre><pre class="code_text"><span class="num">230</span><br></pre><pre class="code_text"><span class="num">231</span><span class="text">		scrollDragn=$<span class="white">(</span>this)<span class="puple">.index</span><span class="white">(</span>);
+</span></pre><pre class="code_text"><span class="num">232</span><span class="text">		
+</span></pre><pre class="code_text"><span class="num">233</span><span class="text">		doLayout<span class="white">(</span>scrollDragn);
+</span></pre><pre class="code_text"><span class="num">234</span><br></pre><pre class="code_text"><span class="num">235</span><span class="text">		
+</span></pre><pre class="code_text"><span class="num">236</span><span class="text">		return&nbsp;scrollDragn;
+</span></pre><pre class="code_text"><span class="num">237</span><span class="text">	});
+</span></pre><pre class="code_text"><span class="num">238</span><br></pre><pre class="code_text"><span class="num">239</span><span class="text">	<span class="puple"><span class="blue">function</span>&nbsp;doLayout<span class="white">(</span>les)<span class="white">{</span></span>
+</span></pre><pre class="code_text"><span class="num">240</span><span class="text">		pos=les*h;
+</span></pre><pre class="code_text"><span class="num">241</span><span class="text">		console.log<span class="white">(</span>les);
+</span></pre><pre class="code_text"><span class="num">242</span><span class="text">		<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span><span class="orange">"html"</span>)<span class="puple">.stop</span><span class="white">(</span>)<span class="puple">.animate</span><span class="white">(</span><span class="white">{</span>scrollTop:pos},&nbsp;500,&nbsp;<span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">243</span><span class="text">			<span class="blue">if<span class="white">(</span></span>les&nbsp;&lt;&nbsp;10)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">244</span><span class="text">				$<span class="white">(</span><span class="orange">"#pc"</span>)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"fixed"</span>);
+</span></pre><pre class="code_text"><span class="num">245</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">246</span><span class="text">			<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">247</span><span class="text">				$<span class="white">(</span><span class="orange">"#pc"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"fixed"</span>);
+</span></pre><pre class="code_text"><span class="num">248</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">249</span><span class="text">			<span class="blue">if<span class="white">(</span></span>les&nbsp;==&nbsp;2)<span class="white">{</span>&nbsp;
+</span></pre><pre class="code_text"><span class="num">250</span><span class="text">				clearInterval<span class="white">(</span>touchTimer);
+</span></pre><pre class="code_text"><span class="num">251</span><span class="text">				$<span class="white">(</span><span class="orange">".touch_icon"</span>)<span class="puple">.css</span><span class="white">(</span><span class="white">{</span><span class="orange">"display"</span>:&nbsp;<span class="orange">"block"</span>});
+</span></pre><pre class="code_text"><span class="num">252</span><span class="text">				touchTimer=setInterval<span class="white">(</span>touchFunction,&nbsp;6000);
+</span></pre><pre class="code_text"><span class="num">253</span><span class="text">				<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span><span class="orange">"#page2_slider"</span>).on<span class="white">(</span><span class="orange">"touchstart"</span>,&nbsp;<span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">254</span><span class="text">					touchTimer=setInterval<span class="white">(</span>touchFunction,&nbsp;0);
+</span></pre><pre class="code_text"><span class="num">255</span><span class="text">				}));
+</span></pre><pre class="code_text"><span class="num">256</span><span class="text">				<span class="blue">else</span>&nbsp;<span class="blue">if<span class="white">(</span></span>$<span class="white">(</span><span class="orange">"#page2_slider"</span>).on<span class="white">(</span><span class="orange">"touchend"</span>,&nbsp;<span class="blue">function</span><span class="white">(</span>)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">257</span><span class="text">					touchTimer=setInterval<span class="white">(</span>touchFunction,&nbsp;6000);
+</span></pre><pre class="code_text"><span class="num">258</span><span class="text">				}));
+</span></pre><pre class="code_text"><span class="num">259</span><span class="text">			}<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">260</span><span class="text">				clearInterval<span class="white">(</span>touchTimer);
+</span></pre><pre class="code_text"><span class="num">261</span><span class="text">				touchTimer=setInterval<span class="white">(</span>touchFunction,&nbsp;6000);
+</span></pre><pre class="code_text"><span class="num">262</span><span class="text">				$<span class="white">(</span><span class="orange">".touch_icon"</span>)<span class="puple">.css</span><span class="white">(</span><span class="white">{</span><span class="orange">"display"</span>:&nbsp;<span class="orange">"none"</span>});
+</span></pre><pre class="code_text"><span class="num">263</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">264</span><span class="text">			movings=<span class="orange">false</span>;
+</span></pre><pre class="code_text"><span class="num">265</span><span class="text">		}));
+</span></pre><pre class="code_text"><span class="num">266</span><span class="text">		$<span class="white">(</span><span class="orange">".controller&nbsp;li"</span>)<span class="puple">.removeClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">267</span><span class="text">		$<span class="white">(</span><span class="orange">".controller&nbsp;li"</span>).<span class="puple">eq</span><span class="white">(</span>les)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">268</span><span class="text">		$<span class="white">(</span><span class="orange">"#page"</span>+les)<span class="puple">.addClass</span><span class="white">(</span><span class="orange">"active"</span>);
+</span></pre><pre class="code_text"><span class="num">269</span><span class="text">	}
+</span></pre><pre class="code_text"><span class="num">270</span><span class="text">	<span class="puple"><span class="blue">function</span>&nbsp;swipeAPI<span class="white">(</span>evt,&nbsp;xd,&nbsp;yd)<span class="white">{</span></span>
+</span></pre><pre class="code_text"><span class="num">271</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;moveDirection=</span><span class="orange">""</span>;
+</span></pre><pre class="code_text"><span class="num">272</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;xUp=</span>evt.touches[0]<span class="puple">.clientX</span>;
+</span></pre><pre class="code_text"><span class="num">273</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;yUp=</span>evt.touches[0]<span class="puple">.clientY</span>;
+</span></pre><pre class="code_text"><span class="num">274</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;xDiff=</span>xd-xUp;
+</span></pre><pre class="code_text"><span class="num">275</span><span class="text">		<span class="puple"><span class="blue">var</span>&nbsp;yDiff=</span>yd-yUp;
+</span></pre><pre class="code_text"><span class="num">276</span><br></pre><pre class="code_text"><span class="num">277</span><span class="text">		<span class="blue">if<span class="white">(</span></span>Math.abs<span class="white">(</span>xDiff)&nbsp;&gt;&nbsp;Math.abs<span class="white">(</span>yDiff))<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">278</span><span class="text">			<span class="blue">if<span class="white">(</span></span>xDiff&nbsp;&gt;&nbsp;0)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">279</span><span class="text">				moveDirection=<span class="orange">"left"</span>;
+</span></pre><pre class="code_text"><span class="num">280</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">281</span><span class="text">			<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">282</span><span class="text">				moveDirection=<span class="orange">"right"</span>;
+</span></pre><pre class="code_text"><span class="num">283</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">284</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">285</span><span class="text">		<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">286</span><span class="text">			<span class="blue">if<span class="white">(</span></span>yDiff&nbsp;&gt;&nbsp;0)<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">287</span><span class="text">				moveDirection=<span class="orange">"up"</span>
+</span></pre><pre class="code_text"><span class="num">288</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">289</span><span class="text">			<span class="blue">else</span><span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">290</span><span class="text">				moveDirection=<span class="orange">"down"</span>;
+</span></pre><pre class="code_text"><span class="num">291</span><span class="text">			}
+</span></pre><pre class="code_text"><span class="num">292</span><span class="text">		}
+</span></pre><pre class="code_text"><span class="num">293</span><span class="text">		return&nbsp;moveDirection;
+</span></pre><pre class="code_text"><span class="num">294</span><span class="text">	}
+</span></pre><pre class="code_text"><span class="num">295</span><span class="text">	<span class="blue">var</span>&nbsp;swiper1&nbsp;=&nbsp;new&nbsp;Swiper<span class="white">(</span>'#slider&nbsp;.swiper-container',&nbsp;<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">296</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slidesPerView:&nbsp;1,
+</span></pre><pre class="code_text"><span class="num">297</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spaceBetween:&nbsp;0,
+</span></pre><pre class="code_text"><span class="num">298</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loop:&nbsp;<span class="orange">true</span>,
+</span></pre><pre class="code_text"><span class="num">299</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pagination:&nbsp;<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">300</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el:&nbsp;'#slider&nbsp;.swiper-pagination',
+</span></pre><pre class="code_text"><span class="num">301</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickable:&nbsp;<span class="orange">true</span>,
+</span></pre><pre class="code_text"><span class="num">302</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+</span></pre><pre class="code_text"><span class="num">303</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;navigation:&nbsp;<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">304</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nextEl:&nbsp;'#slider&nbsp;.swiper-button-next',
+</span></pre><pre class="code_text"><span class="num">305</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prevEl:&nbsp;'#slider&nbsp;.swiper-button-prev',
+</span></pre><pre class="code_text"><span class="num">306</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+</span></pre><pre class="code_text"><span class="num">307</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;});
+</span></pre><pre class="code_text"><span class="num">308</span><span class="text">//&nbsp;***************Main***************
+</span></pre><pre class="code_text"><span class="num">309</span><span class="text">	<span class="blue">var</span>&nbsp;swiper2&nbsp;=&nbsp;new&nbsp;Swiper<span class="white">(</span>'#page2_slider&nbsp;.swiper-container',&nbsp;<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">310</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slidesPerView:&nbsp;2,
+</span></pre><pre class="code_text"><span class="num">311</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spaceBetween:&nbsp;39,
+</span></pre><pre class="code_text"><span class="num">312</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;freeMode:&nbsp;<span class="orange">true</span>,
+</span></pre><pre class="code_text"><span class="num">313</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pagination:&nbsp;<span class="white">{</span>
+</span></pre><pre class="code_text"><span class="num">314</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el:&nbsp;'#page2_slider&nbsp;.swiper-pagination',
+</span></pre><pre class="code_text"><span class="num">315</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickable:&nbsp;<span class="orange">true</span>,
+</span></pre><pre class="code_text"><span class="num">316</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},	
+</span></pre><pre class="code_text"><span class="num">317</span><span class="text">&nbsp;&nbsp;&nbsp;&nbsp;});
+</span></pre><pre class="code_text"><span class="num">318</span><span class="text">});</span></pre>

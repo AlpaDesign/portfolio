@@ -1,0 +1,298 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text">@charset <span class="orange">"UTF-8"</span>;
+</span></pre>
+<pre class="code_text"><span class="num">2</span><span class="text"><span class="gray">/*본문 바로가기 입니다.*/</span>
+</span></pre>
+<pre class="code_text"><span class="num">3</span><span class="text"><span class="puple"><span class="blue">.skip_nav a <span class="white">{</span></span> display:</span><span class="puple"> block; position:</span><span class="puple"> fixed; left:</span><span class="puple"> 0; z-index:</span><span class="puple"> 3; top:</span><span class="puple"> -1000px; width:</span><span class="puple"> 100%; line-height:</span><span class="puple"> 40px; text-align:</span><span class="puple"> center; font-size:</span><span class="puple"> 14px; background-color:</span><span class="puple"> #385170; color:</span> #fff; }
+</span></pre>
+<pre class="code_text"><span class="num">4</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">5</span><span class="text"><span class="puple"><span class="blue">.skip_nav a:</span><span class="puple">focus <span class="white">{</span></span> top:</span> 0; }
+</span></pre>
+<pre class="code_text"><span class="num">6</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">7</span><span class="text"><span class="puple"><span class="blue">#header .top <span class="white">{</span></span> min-width:</span><span class="puple"> 1085px; background-color:</span><span class="puple"> #fafafa; height:</span><span class="puple"> 39px; overflow:</span> hidden; }
+</span></pre>
+<pre class="code_text"><span class="num">8</span><span class="text"><span class="puple"><span class="blue">#header .top .top_inner <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; width:</span><span class="puple"> 1085px; margin-top:</span><span class="puple"> 5px; font-size:</span> 0; }
+</span></pre>
+<pre class="code_text"><span class="num">9</span><span class="text"><span class="puple"><span class="blue">#header .top .top_inner li <span class="white">{</span></span> display:</span><span class="puple"> inline-block; padding:</span><span class="puple"> 0 7px; line-height:</span><span class="puple"> 29px; position:</span><span class="puple"> relative; font-weight:</span> 200; }
+</span></pre>
+<pre class="code_text"><span class="num">10</span><span class="text"><span class="puple"><span class="blue">#header .top .top_inner li<span class="puple">:</span></span><span class="puple">:</span>after <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; z-index<span class="puple">:</span> 2; right<span class="puple">:</span> 0; top<span class="puple">:</span> 7px; width<span class="puple">:</span> 1px; height<span class="puple">:</span> 15px; background-color<span class="puple">:</span> #d6d6d6; }
+</span></pre>
+<pre class="code_text"><span class="num">11</span><span class="text"><span class="puple"><span class="blue">#header .top .top_inner li<span class="puple">:</span></span><span class="puple">last-child<span class="puple">:</span></span><span class="puple">:</span>after <span class="white">{</span></span> display<span class="puple">:</span> none; }
+</span></pre>
+<pre class="code_text"><span class="num">12</span><span class="text"><span class="puple"><span class="blue">#header .top .top_inner li a <span class="white">{</span></span> display:</span><span class="puple"> block; padding:</span><span class="puple"> 0 7px; line-height:</span><span class="puple"> 29px; color:</span><span class="puple"> #555555; font-size:</span> 13px; }
+</span></pre>
+<pre class="code_text"><span class="num">13</span><span class="text"><span class="puple"><span class="blue">#header .search <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; position:</span><span class="puple"> relative; width:</span><span class="puple"> 1085px; height:</span> 94px; }
+</span></pre>
+<pre class="code_text"><span class="num">14</span><span class="text"><span class="puple"><span class="blue">#header .search .logo <span class="white">{</span></span> float:</span><span class="puple"> left; margin-top:</span><span class="puple"> 27px; width:</span><span class="puple"> 233px; height:</span> 52px; }
+</span></pre>
+<pre class="code_text"><span class="num">15</span><span class="text"><span class="puple"><span class="blue">#header .search .srh <span class="white">{</span></span> position:</span><span class="puple"> relative; float:</span><span class="puple"> left; width:</span><span class="puple"> 600px; height:</span><span class="puple"> 29px; margin-top:</span><span class="puple"> 44px; margin-left:</span> 50px; }
+</span></pre>
+<pre class="code_text"><span class="num">16</span><span class="text"><span class="puple"><span class="blue">#header .search .srh input[type=text] <span class="white">{</span></span> width:</span><span class="puple"> 400px; height:</span><span class="puple"> 29px; vertical-align:</span><span class="puple"> middle; font-size:</span><span class="puple"> 14px; font-weight:</span><span class="puple"> 200; color:</span><span class="puple"> #444444; border:</span><span class="puple"> 0; border-bottom:</span> 2px solid #444444; }
+</span></pre>
+<pre class="code_text"><span class="num">17</span><span class="text"><span class="puple"><span class="blue">#header .search .srh [type=button] <span class="white">{</span></span> background-color:</span><span class="puple"> #444444; color:</span><span class="puple"> #fff; border:</span><span class="puple"> none; padding:</span><span class="puple"> 6px 16px; border-radius:</span><span class="puple"> 5px; margin-left:</span> 10px; }
+</span></pre>
+<pre class="code_text"><span class="num">18</span><span class="text"><span class="puple"><span class="blue">#header .search .srh .src_icon <span class="white">{</span></span> position:</span><span class="puple"> absolute; display:</span><span class="puple"> block; top:</span><span class="puple"> 5px; left:</span> 370px; }
+</span></pre>
+<pre class="code_text"><span class="num">19</span><span class="text"><span class="puple"><span class="blue">#header .search .srh .src_btn <span class="white">{</span></span> display:</span> inline-block; }
+</span></pre>
+<pre class="code_text"><span class="num">20</span><span class="text"><span class="puple"><span class="blue">#header .search .srh img <span class="white">{</span></span> width:</span><span class="puple"> 24px; height:</span><span class="puple"> 24px; padding-bottom:</span> 12px; }
+</span></pre>
+<pre class="code_text"><span class="num">21</span><span class="text"><span class="puple"><span class="blue">#header .menu <span class="white">{</span></span> position:</span><span class="puple"> absolute; left:</span><span class="puple"> 0; top:</span><span class="puple"> 133px; width:</span><span class="puple"> 100%; z-index:</span><span class="puple"> 10000; min-width:</span><span class="puple"> 1085px; overflow:</span><span class="puple"> hidden; background-color:</span><span class="puple"> #fff; text-align:</span><span class="puple"> center; height:</span><span class="puple"> 69px; transition:</span> height 0.4s; }
+</span></pre>
+<pre class="code_text"><span class="num">22</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#header .menu.active<span class="white">,</span></span> #header .menu:</span><span class="puple">focus <span class="white">{</span></span> height:</span> 424px; }
+</span></pre>
+<pre class="code_text"><span class="num">23</span><span class="text"><span class="puple"><span class="blue">#header .menu .menu_banner <span class="white">{</span></span> padding:</span><span class="puple"> 17px 0; width:</span><span class="puple"> 100%; height:</span><span class="puple"> 74px; text-align:</span><span class="puple"> center; box-sizing:</span> border-box; }
+</span></pre>
+<pre class="code_text"><span class="num">24</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#header .menu .menu_banner:</span><span class="puple"><span class="white">hover</span> a<span class="white">,</span></span> #header .menu .menu_banner:</span><span class="puple">focus a <span class="white">{</span></span> background-color:</span> #444444; }
+</span></pre>
+<pre class="code_text"><span class="num">25</span><span class="text"><span class="puple"><span class="blue">#header .menu .menu_banner a <span class="white">{</span></span> display:</span><span class="puple"> inline-block; margin:</span><span class="puple"> 0 5px; margin-left:</span><span class="puple"> 32px; margin-top:</span><span class="puple"> 280px; padding:</span><span class="puple"> 0 16px; line-height:</span><span class="puple"> 40px; font-size:</span><span class="puple"> 14px; font-weight:</span><span class="puple"> 500px; background-color:</span><span class="puple"> #cc1a3f; color:</span><span class="puple"> #fff; border-radius:</span> 3px; }
+</span></pre>
+<pre class="code_text"><span class="num">26</span><span class="text"><span class="puple"><span class="blue">#header .slider <span class="white">{</span></span> margin-top:</span><span class="puple"> 69px; min-width:</span> 1085px; }
+</span></pre>
+<pre class="code_text"><span class="num">27</span><span class="text"><span class="puple"><span class="blue">#header .slider img <span class="white">{</span></span> <span class="gray">/*margin-left:</span><span class="puple"> -16px*/</span> height:</span> 347px; }
+</span></pre>
+<pre class="code_text"><span class="num">28</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container <span class="white">{</span></span> width:</span><span class="puple"> 100%; min-width:</span><span class="puple"> 1085px; height:</span><span class="puple"> 482px; background-color:</span><span class="puple"> #cc1a3f; z-index:</span> 3; }
+</span></pre>
+<pre class="code_text"><span class="num">29</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-slide <span class="white">{</span></span> display:</span><span class="puple"> flex; justify-content:</span><span class="puple"> center; align-items:</span><span class="puple"> center; margin-top:</span><span class="puple"> 81px; height:</span><span class="puple"> 347px; background:</span><span class="puple"> #fff; overflow:</span> hidden; }
+</span></pre>
+<pre class="code_text"><span class="num">30</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-slide:</span><span class="puple">nth-child(1) <span class="white">{</span></span> background:</span><span class="puple"> url(../images/slider1.jpg) no-repeat center center; background-size:</span> cover; }
+</span></pre>
+<pre class="code_text"><span class="num">31</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-slide:</span><span class="puple">nth-child(2) <span class="white">{</span></span> background:</span><span class="puple"> url(../images/slider2.jpg) no-repeat center center; background-size:</span> cover; }
+</span></pre>
+<pre class="code_text"><span class="num">32</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-slide:</span><span class="puple">nth-child(3) <span class="white">{</span></span> background:</span><span class="puple"> url(../images/slider3.jpg) no-repeat center center; background-size:</span> cover; }
+</span></pre>
+<pre class="code_text"><span class="num">33</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-slide:</span><span class="puple">nth-child(4) <span class="white">{</span></span> background:</span><span class="puple"> url(../images/slider4.jpg) no-repeat center center; background-size:</span> cover; }
+</span></pre>
+<pre class="code_text"><span class="num">34</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-slide:</span><span class="puple">nth-child(5) <span class="white">{</span></span> background:</span><span class="puple"> url(../images/slider5.jpg) no-repeat center center; background-size:</span> cover; }
+</span></pre>
+<pre class="code_text"><span class="num">35</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-slide a <span class="white">{</span></span> display:</span><span class="puple"> block; width:</span><span class="puple"> 100%; height:</span> 100%; }
+</span></pre>
+<pre class="code_text"><span class="num">36</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-button-prev <span class="white">{</span></span> left:</span><span class="puple"> 0; width:</span><span class="puple"> 70px; height:</span><span class="puple"> 70px; color:</span> #000; }
+</span></pre>
+<pre class="code_text"><span class="num">37</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container .swiper-button-next <span class="white">{</span></span> right:</span><span class="puple"> 0; width:</span><span class="puple"> 70px; height:</span><span class="puple"> 70px; color:</span> #000; }
+</span></pre>
+<pre class="code_text"><span class="num">38</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container-horizontal &gt; .swiper-pagination-bullets <span class="white">{</span></span> bottom:</span> 22px; }
+</span></pre>
+<pre class="code_text"><span class="num">39</span><span class="text"><span class="puple"><span class="blue">#header .slider .swiper-container-horizontal &gt; .swiper-pagination-bullets .swiper-pagination-bullet <span class="white">{</span></span> margin:</span><span class="puple"> 0 8px; height:</span><span class="puple"> 11px; width:</span><span class="puple"> 11px; background-color:</span><span class="puple"> transparent; opacity:</span><span class="puple"> 1px; border:</span> 1px solid #fff; }
+</span></pre>
+<pre class="code_text"><span class="num">40</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#header .slider .swiper-button-prev.swiper-button-disabled<span class="white">,</span></span> #header .slider .swiper-button-next.swiper-button-disabled <span class="white">{</span></span> opacity:</span> 1; }
+</span></pre>
+<pre class="code_text"><span class="num">41</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">42</span><span class="text"><span class="puple"><span class="blue">#gnb <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; width:</span><span class="puple"> 1085px; height:</span><span class="puple"> 69px; font-size:</span> 0; }
+</span></pre>
+<pre class="code_text"><span class="num">43</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li <span class="white">{</span></span> display:</span><span class="puple"> inline-block; position:</span><span class="puple"> relative; padding:</span> 0 37px; }
+</span></pre>
+<pre class="code_text"><span class="num">44</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li<span class="puple">:</span></span><span class="puple">:</span>after <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; right<span class="puple">:</span> 0; top<span class="puple">:</span> 23px; width<span class="puple">:</span> 1px; height<span class="puple">:</span> 21px; background-color<span class="puple">:</span> #a3a3a3; }
+</span></pre>
+<pre class="code_text"><span class="num">45</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li<span class="puple">:</span></span><span class="puple">last-child<span class="puple">:</span></span><span class="puple">:</span>after <span class="white">{</span></span> display<span class="puple">:</span> none; }
+</span></pre>
+<pre class="code_text"><span class="num">46</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li<span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; top<span class="puple">:</span> 70px; left<span class="puple">:</span> 0; width<span class="puple">:</span> 100%; height<span class="puple">:</span> 1px; color<span class="puple">:</span> #000; }
+</span></pre>
+<pre class="code_text"><span class="num">47</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li<span class="puple">:</span></span><span class="puple"><span class="white">hover</span><span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; left<span class="puple">:</span> 40px; bottom<span class="puple">:</span> 23px; width<span class="puple">:</span> 84px; height<span class="puple">:</span> 2px; background-color<span class="puple">:</span> #cc1a3f; }
+</span></pre>
+<pre class="code_text"><span class="num">48</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#gnb &gt; ul &gt; li<span class="puple"><span class="puple">:</span></span></span><span class="puple"><span class="white">hover</span><span class="puple"><span class="puple">:</span></span></span><span class="puple">nth-child(2)<span class="puple"><span class="puple">:</span></span></span><span class="puple"><span class="puple">:</span></span>before<span class="white">,</span></span> #gnb &gt; ul &gt; li<span class="puple"><span class="puple">:</span></span><span class="puple"><span class="white">hover</span><span class="puple"><span class="puple">:</span></span></span>nth-child(3)<span class="puple"><span class="puple">:</span></span><span class="puple"><span class="puple">:</span></span>before <span class="white">{</span></span> content<span class="puple"><span class="puple">:</span></span> <span class="orange">""</span>; display<span class="puple"><span class="puple">:</span></span> block; position<span class="puple"><span class="puple">:</span></span> absolute; left<span class="puple"><span class="puple">:</span></span> 38px; bottom<span class="puple"><span class="puple">:</span></span> 23px; width<span class="puple"><span class="puple">:</span></span> 84px; height<span class="puple"><span class="puple">:</span></span> 2px; background-color<span class="puple"><span class="puple">:</span></span> #000; }
+</span></pre>
+<pre class="code_text"><span class="num">49</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#gnb &gt; ul &gt; li<span class="puple"><span class="puple"><span class="puple">:</span></span></span></span><span class="puple"><span class="white">hover</span><span class="puple"><span class="puple"><span class="puple">:</span></span></span></span><span class="puple">nth-child(4)<span class="puple"><span class="puple"><span class="puple">:</span></span></span></span><span class="puple"><span class="puple"><span class="puple">:</span></span></span>before<span class="white">,</span></span> <span class="blue">#gnb &gt; ul &gt; li<span class="puple"><span class="puple"><span class="puple">:</span></span></span><span class="puple"><span class="white">hover</span><span class="puple"><span class="puple"><span class="puple">:</span></span></span></span>nth-child(5)<span class="puple"><span class="puple"><span class="puple">:</span></span></span><span class="puple"><span class="puple"><span class="puple">:</span></span></span>before<span class="white">,</span></span> #gnb &gt; ul &gt; li<span class="puple"><span class="puple"><span class="puple">:</span></span></span><span class="puple"><span class="white">hover</span><span class="puple"><span class="puple"><span class="puple">:</span></span></span></span>nth-child(6)<span class="puple"><span class="puple"><span class="puple">:</span></span></span><span class="puple"><span class="puple"><span class="puple">:</span></span></span>before <span class="white">{</span></span> content<span class="puple"><span class="puple"><span class="puple">:</span></span></span> <span class="orange">""</span>; display<span class="puple"><span class="puple"><span class="puple">:</span></span></span> block; position<span class="puple"><span class="puple"><span class="puple">:</span></span></span> absolute; left<span class="puple"><span class="puple"><span class="puple">:</span></span></span> 38px; bottom<span class="puple"><span class="puple"><span class="puple">:</span></span></span> 23px; width<span class="puple"><span class="puple"><span class="puple">:</span></span></span> 35px; height<span class="puple"><span class="puple"><span class="puple">:</span></span></span> 2px; background-color<span class="puple"><span class="puple"><span class="puple">:</span></span></span> #000; }
+</span></pre>
+<pre class="code_text"><span class="num">50</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li<span class="puple">:</span></span><span class="puple"><span class="white">hover</span><span class="puple">:</span></span><span class="puple">nth-child(7)<span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; left<span class="puple">:</span> 38px; bottom<span class="puple">:</span> 23px; width<span class="puple">:</span> 53px; height<span class="puple">:</span> 2px; background-color<span class="puple">:</span> #cc1a3f; }
+</span></pre>
+<pre class="code_text"><span class="num">51</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li<span class="puple">:</span></span><span class="puple"><span class="white">hover</span><span class="puple">:</span></span><span class="puple">nth-child(8)<span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; left<span class="puple">:</span> 38px; bottom<span class="puple">:</span> 23px; width<span class="puple">:</span> 35px; height<span class="puple">:</span> 2px; background-color<span class="puple">:</span> #cc1a3f; }
+</span></pre>
+<pre class="code_text"><span class="num">52</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li &gt; a <span class="white">{</span></span> display:</span><span class="puple"> block; padding:</span><span class="puple"> 0 7px; line-height:</span><span class="puple"> 69px; font-size:</span><span class="puple"> 18px; font-weight:</span><span class="puple"> 700; color:</span> #010101; }
+</span></pre>
+<pre class="code_text"><span class="num">53</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#gnb &gt; ul &gt; li &gt; a:</span><span class="puple"><span class="white">hover</span><span class="white">,</span></span> #gnb &gt; ul &gt; li &gt; a:</span><span class="puple">focus <span class="white">{</span></span> color:</span> #cc1a3f; }
+</span></pre>
+<pre class="code_text"><span class="num">54</span><span class="text"><span class="puple"><span class="blue">#gnb &gt; ul &gt; li &gt; a:</span><span class="puple">first-child <span class="white">{</span></span> padding-left:</span><span class="puple"> 0; margin-left:</span> 0; }
+</span></pre>
+<pre class="code_text"><span class="num">55</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#gnb &gt; ul &gt; li:</span><span class="puple">nth-child(6n+1) &gt; a<span class="white">,</span></span> #gnb &gt; ul &gt; li:</span><span class="puple">nth-child(7n+1) &gt; a <span class="white">{</span></span> color:</span> #cc1a3f; }
+</span></pre>
+<pre class="code_text"><span class="num">56</span><span class="text"><span class="puple"><span class="blue">#gnb ul ul <span class="white">{</span></span> position:</span><span class="puple"> absolute; left:</span><span class="puple"> 0; padding:</span><span class="puple"> 30px 0; width:</span> 100%; }
+</span></pre>
+<pre class="code_text"><span class="num">57</span><span class="text"><span class="puple"><span class="blue">#gnb ul ul a <span class="white">{</span></span> display:</span><span class="puple"> block; line-height:</span><span class="puple"> 50px; font-size:</span><span class="puple"> 14px; font-weight:</span><span class="puple"> 500; color:</span> #868686; }
+</span></pre>
+<pre class="code_text"><span class="num">58</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#gnb ul ul a:</span><span class="puple"><span class="white">hover</span><span class="white">,</span></span> #gnb ul ul a:</span><span class="puple">focus <span class="white">{</span></span> color:</span> #cc1a3f; }
+</span></pre>
+<pre class="code_text"><span class="num">59</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">60</span><span class="text"><span class="puple"><span class="blue">#section .top <span class="white">{</span></span> background-color:</span><span class="puple"> #fff; min-width:</span><span class="puple"> 1085px; height:</span> 397px; }
+</span></pre>
+<pre class="code_text"><span class="num">61</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; width:</span><span class="puple"> 1085px; height:</span> 397px; }
+</span></pre>
+<pre class="code_text"><span class="num">62</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner .title <span class="white">{</span></span> margin-top:</span><span class="puple"> 34px; position:</span> relative; }
+</span></pre>
+<pre class="code_text"><span class="num">63</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner .title h3 <span class="white">{</span></span> font-size:</span><span class="puple"> 30px; font-weight:</span><span class="puple"> 700; color:</span> #000000; }
+</span></pre>
+<pre class="code_text"><span class="num">64</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner span <span class="white">{</span></span> position:</span><span class="puple"> absolute; top:</span><span class="puple"> 19px; left:</span><span class="puple"> 167px; font-size:</span><span class="puple"> 14px; font-weight:</span><span class="puple"> 500; color:</span> #979797; }
+</span></pre>
+<pre class="code_text"><span class="num">65</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner .banner <span class="white">{</span></span> padding-top:</span><span class="puple"> 21px; font-size:</span><span class="puple"> 0; width:</span> 1085px; }
+</span></pre>
+<pre class="code_text"><span class="num">66</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner .banner li <span class="white">{</span></span> position:</span><span class="puple"> relative; float:</span><span class="puple"> left; <span class="gray">/*display:</span><span class="puple"> inline-block;*/</span> height:</span><span class="puple"> 243px; width:</span><span class="puple"> 19.2%; text-align:</span><span class="puple"> center; <span class="gray">/*box-sizing:</span><span class="puple"> border-box;*/</span> margin-left:</span><span class="puple"> 1%; font-size:</span><span class="puple"> 12px; font-weight:</span><span class="puple"> 300; overflow:</span><span class="puple"> hidden; color:</span> #000000; }
+</span></pre>
+<pre class="code_text"><span class="num">67</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner .banner li:</span><span class="puple">first-child <span class="white">{</span></span> margin-left:</span> 0; }
+</span></pre>
+<pre class="code_text"><span class="num">68</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner .banner li a <span class="white">{</span></span> display:</span><span class="puple"> block; height:</span><span class="puple"> 180px; font-size:</span><span class="puple"> 15px; font-weight:</span><span class="puple"> 700; width:</span><span class="puple"> 100%; color:</span><span class="puple"> #000000; box-sizing:</span><span class="puple"> border-box; overflow:</span> hidden; }
+</span></pre>
+<pre class="code_text"><span class="num">69</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#section .top .banner_inner .banner li img <span class="white">{</span></span> width:</span><span class="puple"> 100%; height:</span><span class="puple"> 180px; overflow:</span><span class="puple"> hidden; box-sizing:</span><span class="puple"> border-box; margin-bottom:</span><span class="puple"> 10px; transform:</span><span class="puple"> scale(1<span class="white">,</span></span> 1); transition:</span><span class="puple"> transform 0.3s; overflow:</span> hidden; }
+</span></pre>
+<pre class="code_text"><span class="num">70</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#section .top .banner_inner .banner li:</span><span class="puple"><span class="white">hover</span> img <span class="white">{</span></span> transform:</span> scale(1.2<span class="white">,</span></span> 1.2); }
+</span></pre>
+<pre class="code_text"><span class="num">71</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner .banner .txt_in dt <span class="white">{</span></span> font-size:</span><span class="puple"> 14px; font-weight:</span><span class="puple"> 300; width:</span><span class="puple"> 209px; height:</span><span class="puple"> 17px; box-sizing:</span><span class="puple"> border-box; font-size:</span> 12px; }
+</span></pre>
+<pre class="code_text"><span class="num">72</span><span class="text"><span class="puple"><span class="blue">#section .top .banner_inner .banner .txt_in dd a <span class="white">{</span></span> text-align:</span><span class="puple"> center; padding-right:</span><span class="puple"> 31px; font-size:</span> 15px; }
+</span></pre>
+<pre class="code_text"><span class="num">73</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">74</span><span class="text"><span class="puple"><span class="blue">#section .center <span class="white">{</span></span> background-color:</span><span class="puple"> #fff; height:</span><span class="puple"> 416px; min-width:</span> 1085px; }
+</span></pre>
+<pre class="code_text"><span class="num">75</span><span class="text"><span class="puple"><span class="blue">#section .center .center_inner <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; width:</span> 1085px; }
+</span></pre>
+<pre class="code_text"><span class="num">76</span><span class="text"><span class="puple"><span class="blue">#section .center .center_inner .title <span class="white">{</span></span> width:</span> 1085px; }
+</span></pre>
+<pre class="code_text"><span class="num">77</span><span class="text"><span class="puple"><span class="blue">#section .center .center_inner .title h3 <span class="white">{</span></span> font-size:</span> 30px; }
+</span></pre>
+<pre class="code_text"><span class="num">78</span><span class="text"><span class="puple"><span class="blue">#section .center .banner2 <span class="white">{</span></span> min-width:</span><span class="puple"> 1085px; height:</span><span class="puple"> 192px; background-color:</span> #f5eee6; }
+</span></pre>
+<pre class="code_text"><span class="num">79</span><span class="text"><span class="puple"><span class="blue">#section .center .banner2 .back <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; background-image:</span><span class="puple"> url(../images/section.png); width:</span><span class="puple"> 1085px; height:</span><span class="puple"> 259px; position:</span><span class="puple"> relative; margin-top:</span> 37px; }
+</span></pre>
+<pre class="code_text"><span class="num">80</span><span class="text"><span class="puple"><span class="blue">#section .center p <span class="white">{</span></span> display:</span><span class="puple"> block; padding-top:</span><span class="puple"> 80px; padding-left:</span><span class="puple"> 315px; font-size:</span><span class="puple"> 15px; font-weight:</span><span class="puple"> 700; color:</span> #020202; }
+</span></pre>
+<pre class="code_text"><span class="num">81</span><span class="text"><span class="puple"><span class="blue">#section .center p span <span class="white">{</span></span> display:</span><span class="puple"> block; padding-left:</span><span class="puple"> 0px; font-size:</span><span class="puple"> 18px; font-weight:</span><span class="puple"> 700; color:</span> #cc1a3f; }
+</span></pre>
+<pre class="code_text"><span class="num">82</span><span class="text"><span class="puple"><span class="blue">#section .center .btn a <span class="white">{</span></span> display:</span><span class="puple"> block; position:</span><span class="puple"> absolute; bottom:</span><span class="puple"> 134px; left:</span><span class="puple"> 470px; width:</span><span class="puple"> 110px; height:</span><span class="puple"> 22px; background-color:</span><span class="puple"> #fff; text-align:</span><span class="puple"> center; font-size:</span><span class="puple"> 15px; font-weight:</span><span class="puple"> 500; color:</span><span class="puple"> #4c4a49; border-radius:</span> 5px; }
+</span></pre>
+<pre class="code_text"><span class="num">83</span><span class="text"><span class="puple"><span class="blue">#section .center .btn a:</span><span class="puple"><span class="white">hover</span> <span class="white">{</span></span> background-color:</span><span class="puple"> #918c8a; color:</span> #fff; }
+</span></pre>
+<pre class="code_text"><span class="num">84</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">85</span><span class="text"><span class="puple"><span class="blue">#section .bottom <span class="white">{</span></span> height:</span><span class="puple"> 366px; min-width:</span><span class="puple"> 1085px; background-color:</span> #f8f8f8; }
+</span></pre>
+<pre class="code_text"><span class="num">86</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; height:</span><span class="puple"> 366px; width:</span><span class="puple"> 1085px; background-color:</span> #f8f8f8; }
+</span></pre>
+<pre class="code_text"><span class="num">87</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .title <span class="white">{</span></span> padding-top:</span><span class="puple"> 56px; position:</span> relative; }
+</span></pre>
+<pre class="code_text"><span class="num">88</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .title h3 <span class="white">{</span></span> display:</span><span class="puple"> block; font-size:</span> 30px; }
+</span></pre>
+<pre class="code_text"><span class="num">89</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .title span <span class="white">{</span></span> position:</span><span class="puple"> absolute; top:</span><span class="puple"> 75px; left:</span><span class="puple"> 370px; font-size:</span><span class="puple"> 13px; color:</span> #979797; }
+</span></pre>
+<pre class="code_text"><span class="num">90</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .content <span class="white">{</span></span> float:</span><span class="puple"> left; margin-top:</span><span class="puple"> 25px; width:</span> 517px; }
+</span></pre>
+<pre class="code_text"><span class="num">91</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .content2 <span class="white">{</span></span> float:</span><span class="puple"> right; margin-top:</span><span class="puple"> 25px; width:</span> 517px; }
+</span></pre>
+<pre class="code_text"><span class="num">92</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .banner3 <span class="white">{</span></span> float:</span><span class="puple"> left; width:</span><span class="puple"> 257px; height:</span><span class="puple"> 195px; position:</span><span class="puple"> relative; overflow:</span> hidden; }
+</span></pre>
+<pre class="code_text"><span class="num">93</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .banner3 img <span class="white">{</span></span> width:</span><span class="puple"> 257px; height:</span> 195px; }
+</span></pre>
+<pre class="code_text"><span class="num">94</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .txt3 <span class="white">{</span></span> position:</span><span class="puple"> relative; display:</span><span class="puple"> inline-block; width:</span><span class="puple"> 257px; height:</span><span class="puple"> 195px; background-color:</span><span class="puple"> #fff; text-align:</span> center; }
+</span></pre>
+<pre class="code_text"><span class="num">95</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .txt3<span class="puple">:</span></span><span class="puple">:</span>before <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; left<span class="puple">:</span> 105px; bottom<span class="puple">:</span> 40px; width<span class="puple">:</span> 50px; height<span class="puple">:</span> 2px; background-color<span class="puple">:</span> #3f3f3f; }
+</span></pre>
+<pre class="code_text"><span class="num">96</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .txt3<span class="puple">:</span></span><span class="puple">:</span>after <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; left<span class="puple">:</span> 136px; bottom<span class="puple">:</span> 47px; width<span class="puple">:</span> 20px; height<span class="puple">:</span> 1px; transform<span class="puple">:</span> rotate(35deg); background-color<span class="puple">:</span> #3f3f3f; }
+</span></pre>
+<pre class="code_text"><span class="num">97</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .txt3 a <span class="white">{</span></span> display:</span><span class="puple"> block; height:</span><span class="puple"> 100%; font-size:</span><span class="puple"> 15px; font-weight:</span><span class="puple"> 700; color:</span> #272525; }
+</span></pre>
+<pre class="code_text"><span class="num">98</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .txt3 span.span1 <span class="white">{</span></span> display:</span><span class="puple"> block; padding-top:</span><span class="puple"> 55px; font-weight:</span><span class="puple"> 200; font-size:</span><span class="puple"> 15px; color:</span> #272525; }
+</span></pre>
+<pre class="code_text"><span class="num">99</span><span class="text"><span class="puple"><span class="blue">#section .bottom .bottom_inner .txt3 span.span2 <span class="white">{</span></span> display:</span><span class="puple"> block; margin-top:</span> 20px; }
+</span></pre>
+<pre class="code_text"><span class="num">100</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">101</span><span class="text"><span class="puple"><span class="blue">#section .news <span class="white">{</span></span> min-width:</span><span class="puple"> 1085px; background-color:</span><span class="puple"> #fff; height:</span> 80px; }
+</span></pre>
+<pre class="code_text"><span class="num">102</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; width:</span> 1085px; }
+</span></pre>
+<pre class="code_text"><span class="num">103</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .title h3 <span class="white">{</span></span> margin-left:</span><span class="puple"> 10px; margin-top:</span><span class="puple"> 10px; font-size:</span><span class="puple"> 30px; font-weight:</span> 700; }
+</span></pre>
+<pre class="code_text"><span class="num">104</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .left <span class="white">{</span></span> float:</span> left; }
+</span></pre>
+<pre class="code_text"><span class="num">105</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .left .list <span class="white">{</span></span> width:</span><span class="puple"> 514px; margin-top:</span> 20px; }
+</span></pre>
+<pre class="code_text"><span class="num">106</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .left .list li <span class="white">{</span></span> display:</span><span class="puple"> inline-block; float:</span><span class="puple"> left; width:</span><span class="puple"> 514px; line-height:</span> 30px; }
+</span></pre>
+<pre class="code_text"><span class="num">107</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .left .list li a <span class="white">{</span></span> width:</span><span class="puple"> 500px; font-size:</span><span class="puple"> 15px; font-weight:</span> 700; }
+</span></pre>
+<pre class="code_text"><span class="num">108</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .left .list li span <span class="white">{</span></span> float:</span><span class="puple"> right; font-size:</span><span class="puple"> 12px; color:</span> #ababab; }
+</span></pre>
+<pre class="code_text"><span class="num">109</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .right <span class="white">{</span></span> float:</span><span class="puple"> left; margin-left:</span> 54px; }
+</span></pre>
+<pre class="code_text"><span class="num">110</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .right .icon <span class="white">{</span></span> float:</span><span class="puple"> left; margin-right:</span><span class="puple"> 10px; margin-top:</span> 20px; }
+</span></pre>
+<pre class="code_text"><span class="num">111</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .right .call <span class="white">{</span></span> margin-top:</span><span class="puple"> 20px; width:</span> 500px; }
+</span></pre>
+<pre class="code_text"><span class="num">112</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .right .call dt a <span class="white">{</span></span> font-size:</span><span class="puple"> 18px; font-weight:</span> 700; }
+</span></pre>
+<pre class="code_text"><span class="num">113</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .right .call dd <span class="white">{</span></span> font-size:</span><span class="puple"> 15px; font-weight:</span> 200; }
+</span></pre>
+<pre class="code_text"><span class="num">114</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .right .box1 <span class="white">{</span></span> float:</span><span class="puple"> left; width:</span><span class="puple"> 500px; padding-top:</span> 10px; }
+</span></pre>
+<pre class="code_text"><span class="num">115</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .right .box1 li <span class="white">{</span></span> display:</span><span class="puple"> inline-block; width:</span><span class="puple"> 74px; padding:</span><span class="puple"> 0px 10px; line-height:</span><span class="puple"> 35px; border:</span><span class="puple"> 1px solid #000; text-align:</span> center; }
+</span></pre>
+<pre class="code_text"><span class="num">116</span><span class="text"><span class="puple"><span class="blue"><span class="blue">#section .news .news_inner .right .box1 li:</span><span class="puple"><span class="white">hover</span><span class="white">,</span></span> #section .news .news_inner .right .box1 li a:</span><span class="puple"><span class="white">hover</span> <span class="white">{</span></span> background-color:</span><span class="puple"> #000; color:</span> #fff; }
+</span></pre>
+<pre class="code_text"><span class="num">117</span><span class="text"><span class="puple"><span class="blue">#section .news .news_inner .right .box1 li a <span class="white">{</span></span> font-size:</span><span class="puple"> 15px; display:</span><span class="puple"> block; color:</span><span class="puple"> #000; font-weight:</span> 200; }
+</span></pre>
+<pre class="code_text"><span class="num">118</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">119</span><span class="text"><span class="puple"><span class="blue">#footer .top <span class="white">{</span></span> background-color:</span><span class="puple"> #f5eee6; min-width:</span><span class="puple"> 1085px; height:</span><span class="puple"> 194px; margin-top:</span> 138px; }
+</span></pre>
+<pre class="code_text"><span class="num">120</span><span class="text"><span class="puple"><span class="blue">#footer .top .top_inner <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; position:</span><span class="puple"> relative; width:</span><span class="puple"> 1085px; background-image:</span><span class="puple"> url(../images/Untitled-1.png); height:</span><span class="puple"> 192px; background-size:</span> 1200px; }
+</span></pre>
+<pre class="code_text"><span class="num">121</span><span class="text"><span class="puple"><span class="blue">#footer .top .top_inner .font <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; width:</span><span class="puple"> 1085px; height:</span><span class="puple"> 192px; position:</span> relative; }
+</span></pre>
+<pre class="code_text"><span class="num">122</span><span class="text"><span class="puple"><span class="blue">#footer .top .top_inner .font p <span class="white">{</span></span> width:</span><span class="puple"> 100%; padding-top:</span><span class="puple"> 42px; font-size:</span><span class="puple"> 24px; font-weight:</span><span class="puple"> 700; color:</span><span class="puple"> #cc1a3f; text-align:</span> center; }
+</span></pre>
+<pre class="code_text"><span class="num">123</span><span class="text"><span class="puple"><span class="blue">#footer .top .top_inner .font p .span1 <span class="white">{</span></span> display:</span><span class="puple"> block; width:</span><span class="puple"> 100%; font-size:</span><span class="puple"> 18px; font-weight:</span><span class="puple"> 700; color:</span><span class="puple"> #333333; text-align:</span> center; }
+</span></pre>
+<pre class="code_text"><span class="num">124</span><span class="text"><span class="puple"><span class="blue">#footer .top .top_inner .font p .span2 <span class="white">{</span></span> font-size:</span><span class="puple"> 30px; font-weight:</span><span class="puple"> 700; color:</span> #333333; }
+</span></pre>
+<pre class="code_text"><span class="num">125</span><span class="text"><span class="puple"><span class="blue">#footer .top .top_inner .box <span class="white">{</span></span> position:</span><span class="puple"> absolute; left:</span><span class="puple"> 461px; bottom:</span><span class="puple"> 10px; text-align:</span> center; }
+</span></pre>
+<pre class="code_text"><span class="num">126</span><span class="text"><span class="puple"><span class="blue">#footer .top .top_inner .box a <span class="white">{</span></span> display:</span><span class="puple"> block; width:</span><span class="puple"> 167px; height:</span><span class="puple"> 29px; border:</span> 1px solid #6c6c6c; }
+</span></pre>
+<pre class="code_text"><span class="num">127</span><span class="text"><span class="puple"><span class="blue">#footer .top .top_inner .box a:</span><span class="puple"><span class="white">hover</span> <span class="white">{</span></span> background-color:</span><span class="puple"> #918c8a; color:</span> #fff; }
+</span></pre>
+<pre class="code_text"><span class="num">128</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">129</span><span class="text"><span class="puple"><span class="blue">#footer .bottom <span class="white">{</span></span> background-color:</span><span class="puple"> #333333; min-width:</span><span class="puple"> 1085px; height:</span> 213px; }
+</span></pre>
+<pre class="code_text"><span class="num">130</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last <span class="white">{</span></span> margin:</span><span class="puple"> 0 auto; width:</span> 1085px; }
+</span></pre>
+<pre class="code_text"><span class="num">131</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .left <span class="white">{</span></span> float:</span><span class="puple"> left; width:</span> 447px; }
+</span></pre>
+<pre class="code_text"><span class="num">132</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .left .link <span class="white">{</span></span> width:</span> 290px; }
+</span></pre>
+<pre class="code_text"><span class="num">133</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .left .link li <span class="white">{</span></span> display:</span><span class="puple"> inline-block; padding-top:</span><span class="puple"> 47px; margin-right:</span> 21px; }
+</span></pre>
+<pre class="code_text"><span class="num">134</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .left .link li a <span class="white">{</span></span> display:</span><span class="puple"> block; color:</span> #ffffff; }
+</span></pre>
+<pre class="code_text"><span class="num">135</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .left .txt_b <span class="white">{</span></span> margin-top:</span> 34px; }
+</span></pre>
+<pre class="code_text"><span class="num">136</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .left .txt_b p <span class="white">{</span></span> font-size:</span><span class="puple"> 10px; color:</span> #fff; }
+</span></pre>
+<pre class="code_text"><span class="num">137</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .left .txt_b p span <span class="white">{</span></span> font-size:</span> 13px; }
+</span></pre>
+<pre class="code_text"><span class="num">138</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right <span class="white">{</span></span> float:</span> right; }
+</span></pre>
+<pre class="code_text"><span class="num">139</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right .list <span class="white">{</span></span> margin-top:</span> 53px; }
+</span></pre>
+<pre class="code_text"><span class="num">140</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right .icon <span class="white">{</span></span> float:</span><span class="puple"> right; margin-top:</span><span class="puple"> 29px; margin-right:</span> 41px; }
+</span></pre>
+<pre class="code_text"><span class="num">141</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right .icon li <span class="white">{</span></span> display:</span><span class="puple"> inline-block; padding:</span><span class="puple"> 0 9px; position:</span> relative; }
+</span></pre>
+<pre class="code_text"><span class="num">142</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right .icon li .blog img <span class="white">{</span></span> width:</span><span class="puple"> 21px; height:</span> 17px; }
+</span></pre>
+<pre class="code_text"><span class="num">143</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right .icon li .face img <span class="white">{</span></span> width:</span><span class="puple"> 9px; height:</span> 17px; }
+</span></pre>
+<pre class="code_text"><span class="num">144</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right .icon li .ins img <span class="white">{</span></span> width:</span><span class="puple"> 17px; height:</span> 17px; }
+</span></pre>
+<pre class="code_text"><span class="num">145</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right .icon li<span class="puple">:</span></span><span class="puple">:</span>after <span class="white">{</span></span> content<span class="puple">:</span> <span class="orange">""</span>; display<span class="puple">:</span> block; position<span class="puple">:</span> absolute; right<span class="puple">:</span> 0; top<span class="puple">:</span> 1px; width<span class="puple">:</span> 1px; height<span class="puple">:</span> 15px; background-color<span class="puple">:</span> #a8a3a3; }
+</span></pre>
+<pre class="code_text"><span class="num">146</span><span class="text"><span class="puple"><span class="blue">#footer .bottom .last .right .icon li<span class="puple">:</span></span><span class="puple">last-child<span class="puple">:</span></span><span class="puple">:</span>after <span class="white">{</span></span> display<span class="puple">:</span> none; }
+</span></pre>
+<pre class="code_text"><span class="num">147</span><span class="text">
+</span></pre>
+<pre class="code_text"><span class="num">148</span><span class="text"><span class="gray">/*# sourceMappingURL=style.css.map */</span>
+</span></pre>
+<pre class="code_text"><span class="num">149</span><span class="text">
+</span></pre>

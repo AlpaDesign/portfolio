@@ -1,0 +1,16 @@
+﻿<pre class="code_text"><span class="num">1</span><span class="text"><span class="blue">#section .top .top_inner ul li.active<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">2</span><span class="text"><span class="puple"><span class="blue">#section .top .top_inner ul li:</span><span class="white">hover</span><span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">3</span><span class="text"><span class="puple">	color:</span><span class="orange">#ff4c00;
+</span></span></pre>
+<pre class="code_text"><span class="num">4</span><span class="text">}
+</span></pre>
+<pre class="code_text"><span class="num">5</span><span class="text"><span class="puple"><span class="blue">#section .top .top_inner ul li.active<span class="puple">:</span></span><span class="puple">:</span>after<span class="white">,</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">6</span><span class="text"><span class="puple"><span class="blue">#section .top .top_inner ul li<span class="puple">:</span></span><span class="puple"><span class="white">hover</span><span class="puple">:</span></span><span class="puple">:</span>after<span class="white">{</span></span>
+</span></pre>
+<pre class="code_text"><span class="num">7</span><span class="text"><span class="puple">	width:</span>100%
+</span></pre>
+<pre class="code_text"><span class="num">8</span><span class="text">}
+</span></pre>
