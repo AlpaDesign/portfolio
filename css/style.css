@@ -89,9 +89,6 @@ img {
 	padding: 25px 2.500em 23.67px;
 	cursor: pointer;
 }
-#gnb li:last-child{
-	padding-right:0;
-}
 #gnb li a {
 	display: block;
 	color:#000;
