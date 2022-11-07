@@ -18,309 +18,6 @@
 <script src="js/script.js"></script>
 
 </head>
-<style>
-
-.circlechart {
-    float: left;
-    padding: 20px;
-}
-button {
-	padding: 5px 15px;
-	background-color: #666;
-	color: #000;
-	border: none;
-	cursor: pointer;
-	border-radius: 5px;
-	transition: all 0.5s;
-}
-button:hover {
-	background-color: #888;
-}
-.title {
-	margin: 0;
-	padding: 0;
-	font-size: 1.5em;
-	font-weight: 300;
-}
-.container {
-	margin-top: 35px;
-	position: relative;
-	width: 500px;
-	height: 500px;
-}
-.control {
-	display: none;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	z-index: 5;
-	margin: -40px 0 0 -40px;
-	width: 80px;
-	height: 80px;
-	opacity: 0.5;
-	border-radius: 40px;
-}
-.control img {
-	max-width: 100%;
-}
-#my_video {
-    display: block;
-    width: 100%;
-    height: auto;
-    z-index: 4;
-    left: 0;
-    top: 0;
-    position: relative;
-    
-}
-#page3 .videos{
-    display: flex;
-    justify-content: space-between;
-}
-.videoDim{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 101%;
-    z-index: 5;
-    background-color: rgba(000,000,000);
-}
-.videoDim.opa{
-    background-color: rgba(000,000,000, 0.5);
-}
-.videoDim.ipad{
-    background: url("images/ipadBack.png") no-repeat top center;
-}
-#page3 .videos .left{
-    width: 200px;
-}
-#page3 .videos .right{
-    width: 100%;
-    position: relative;
-}
-
-#page3 .videos .left li{
-    margin-left: 0;
-    padding-left: 13px;
-	box-sizing: border-box;
-	line-height: 3;
-	position: relative;
-	cursor: pointer;
-    font-size: 1.250em;
-    font-weight: 300;
-    color: #6A6A6A;
-    text-align: left;
-}
-#page3 .videos .left li:hover::after{
-    background-color: #a63145;
-}
-#page3 .videos .left li:hover{
-    color: #a63145;
-}
-#page3 .videos .left li::before{
-	content:"";
-	display: block;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 1px;
-	background-color: #DDDDDD;
-}
-#page3 .videos .left li::after{
-	content:"";
-	display: block;
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 20px;
-	height: 3px;
-	background-color: #CDCDCD;
-}
-#page3 .videos .left li.active::after{
-	background-color: #a63145;
-}
-#page3 .videos .left li a{
-	font-size: 1.250em;
-	font-weight: 300;
-	color: #6A6A6A;
-}
-#page3 .videos .left li.active a{
-	color: #a63145;
-}
-.videoImage{
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    border-image: url(images/tablet-1593045_1280.png) 0 fill / 0 / 70px 52px  stretch;
-}
-.videoHome{
-    position: absolute;
-    left: 0;
-    bottom:-9%;
-    width: 100%;
-    text-align: center;
-    height: 5%;
-}
-.videoHomebtn{
-    display: block;
-    width: 8%;
-    height: 100%;
-    margin: 0 auto;
-    cursor: pointer;
-}
-#page3 .icons{
-    position: absolute;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-}
-#page3 .icons.ipad{
-    z-index: 6;
-}
-#page3 .icons-inner{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-}
-#page3 .icons-inner ul{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(215,215,216,0.4);
-    border-radius: 20px;
-}
-#page3 .icons-inner ul li{
-    cursor: pointer;
-}
-#page3 .icons-inner ul li img{
-    width: 100%;
-}
-#page3 .icons-inner ul li span{
-    display: block;
-    font-size: 10px;
-    margin-top: 10px;
-    color: #fff;
-}
-.path-thumb{
-    width: 100%;
-    padding-top: 80px;
-    text-align: center;
-    font-size: 30px;
-    height: 30px;
-    font-weight: 700;
-    color: #333;
-}
-.path-thumb i{
-    display: block;
-    animation:  3s ease 0s infinite normal none running;
-	animation-name: mouseClick_icon;
-}
-.path-text{
-    display: block;
-    text-align: center;
-    padding-top: 60px;
-    color: #333;
-}
-@keyframes mouseClick_icon {
-	0%{
-		margin-top: 0px;
-	}
-	50%{
-		margin-top: 10px;
-	}
-	100%{
-		margin-top: 0px;
-	}
-}
-
-@media only screen and (max-width: 1325px){
-    #page3 .videos{
-        padding: 0 65px;
-    }
-    .videoImage{
-        left: 0;
-        top: 0;
-        border-image: url(images/tablet-1593045_1280.png) 0 fill / 0 / 4.7vw 3vw stretch;
-    }
-}
-@media only screen and (max-width: 725px){
-    #page3 .videos{
-        padding: 0 10px;
-    }
-    .path-thumb{
-        padding-top:50px;
-    }
-}
-@media only screen and (max-width: 500px){
-    #page3 .icons-inner ul{
-        padding: 10px 5px;
-    }
-    .path-thumb{
-        padding-top:15px;
-    }
-}
-</style>
-<script>
-$(function(){
-	var t=0;
-
-	$(window).on("scroll", drawProgressHandler);
-	function drawProgressHandler(){
-        t=$(window).scrollTop();
-		// console.log("scroll event!!");
-        
-		if(t > $("#page2").offset().top){
-            $('.circlechart').circlechart(); 
-			// drawProgressBar(subject1, 80, "#aaa", "#ff0", 4);
-			// drawProgressBar(subject2, 60, "#aaa", "#ff0", 4);
-
-			$(window).off("scroll", drawProgressHandler);
-		}
-	}
-
-    var video=document.getElementById("my_video");
-
-    $("#page3 .icons-inner li").click(function(){
-        var link = $(this).attr("play-code");
-        
-        $(".videoDim").fadeOut(300);
-        $("#page3 .icons").fadeOut(300);
-        $("#my_video").attr("src", link);
-        video.play();
-
-    });
-
-    $(".videoHomebtn").click(function(){
-        $(".path-text span").text("클릭하여 홈으로");
-        mainHome();
-    });
-
-    video.addEventListener("ended", function(){
-        mainHome();
-		video.pause();
-		video.currentTime=0;
-	});
-
-    function mainHome(){
-        $("#my_video").attr("src", "");
-        $(".videoDim").addClass("ipad");
-        $(".videoDim").fadeIn(300);
-        $(".icons").fadeIn(300);
-        $(".icons").addClass("ipad");
-        $(".videoDim").removeClass("opa");
-    }
-	
-});
-</script>
 <body>
 <div class="wrapper">
 	<header id="header">
@@ -459,7 +156,7 @@ $(function(){
                         <ul>
                             <li>
                                 <dl>
-                                    <dt><img src="images/free-icon-idea-562647.png" alt="기획의도"></dt>
+                                    <dt><img src="images/free-icon-idea-562647.png" alt="기획 및 의도"></dt>
                                 </dl>
                             </li>
                             <li>
@@ -592,6 +289,9 @@ $(function(){
                         <span class="span1">직접 공연을 하러 갈 때도 다른 사람의 공연을 보러 갈 때도 이리저리 돌아다닙니다. 마치 전국 곳곳을 여행 다니는 느낌인 것처럼요 더불어 친구들과 함께 누리는 여행은 그 무엇보다도 값진 순간이었습니다</span>
                     </div>
                 </div>
+                <div class="download">
+                    <button type="button" onclick="downloadFunction();">이력서 다운로드</button>
+                </div>
             </div>
         </div>
     </section>
@@ -639,4 +339,11 @@ $(function(){
     </div>
 </div>
 </body>
+<script>
+    function downloadFunction(){
+        if(confirm("이력서를 다운로드 하시겠습니까?")){
+            location.href='download/장윤수 이력서.hwp';
+        }
+    }
+</script>
 </html>

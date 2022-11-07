@@ -8,7 +8,53 @@
     var httpRequest;
     var files = "files/ppt.txt";
     
-    
+    var to=0;
+
+	$(window).on("scroll", drawProgressHandler);
+	function drawProgressHandler(){
+        to=$(window).scrollTop();
+		// console.log("scroll event!!");
+        
+		if(to > $("#page2").offset().top){
+            $('.circlechart').circlechart(); 
+			// drawProgressBar(subject1, 80, "#aaa", "#ff0", 4);
+			// drawProgressBar(subject2, 60, "#aaa", "#ff0", 4);
+
+			$(window).off("scroll", drawProgressHandler);
+		}
+	}
+
+    var video=document.getElementById("my_video");
+
+    $("#page3 .icons-inner li").click(function(){
+        var link = $(this).attr("play-code");
+        
+        $(".videoDim").fadeOut(300);
+        $("#page3 .icons").fadeOut(300);
+        $("#my_video").attr("src", link);
+        video.play();
+
+    });
+
+    $(".videoHomebtn").click(function(){
+        $(".path-text span").text("클릭하여 홈으로");
+        mainHome();
+    });
+
+    video.addEventListener("ended", function(){
+        mainHome();
+		video.pause();
+		video.currentTime=0;
+	});
+
+    function mainHome(){
+        $("#my_video").attr("src", "");
+        $(".videoDim").addClass("ipad");
+        $(".videoDim").fadeIn(300);
+        $(".icons").fadeIn(300);
+        $(".icons").addClass("ipad");
+        $(".videoDim").removeClass("opa");
+    }
 
 	function gnbLine(){
 		$("#gnb li , #mobile li").removeClass("active");
@@ -386,7 +432,7 @@
         //loadStateDate();
         var text = $(this).find("img").attr("alt");
 
-        if(text == "기획의도"){
+        if(text == "기획 및 의도"){
             $("#pptx").attr("src", "files/기획의도.html");
         }else if(text == "요구사항 분석"){
             $("#pptx").attr("src", "files/요구사항분석.html");

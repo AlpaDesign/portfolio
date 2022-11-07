@@ -1089,6 +1089,238 @@ span.close::before{
 
 
 
+.circlechart {
+    float: left;
+    padding: 20px;
+}
+button {
+	padding: 5px 15px;
+	background-color: #666;
+	color: #000;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+button:hover {
+	background-color: #888;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 35px;
+	position: relative;
+	width: 500px;
+	height: 500px;
+}
+.control {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 5;
+	margin: -40px 0 0 -40px;
+	width: 80px;
+	height: 80px;
+	opacity: 0.5;
+	border-radius: 40px;
+}
+.control img {
+	max-width: 100%;
+}
+#my_video {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    position: relative;
+    
+}
+#page3 .videos{
+    display: flex;
+    justify-content: space-between;
+}
+.videoDim{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 101%;
+    z-index: 5;
+    background-color: rgba(000,000,000);
+}
+.videoDim.opa{
+    background-color: rgba(000,000,000, 0.5);
+}
+.videoDim.ipad{
+    background: url("../images/ipadBack.png") no-repeat top center;
+}
+#page3 .videos .left{
+    width: 200px;
+}
+#page3 .videos .right{
+    width: 100%;
+    position: relative;
+}
+
+#page3 .videos .left li{
+    margin-left: 0;
+    padding-left: 13px;
+	box-sizing: border-box;
+	line-height: 3;
+	position: relative;
+	cursor: pointer;
+    font-size: 1.250em;
+    font-weight: 300;
+    color: #6A6A6A;
+    text-align: left;
+}
+#page3 .videos .left li:hover::after{
+    background-color: #a63145;
+}
+#page3 .videos .left li:hover{
+    color: #a63145;
+}
+#page3 .videos .left li::before{
+	content:"";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #DDDDDD;
+}
+#page3 .videos .left li::after{
+	content:"";
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 20px;
+	height: 3px;
+	background-color: #CDCDCD;
+}
+#page3 .videos .left li.active::after{
+	background-color: #a63145;
+}
+#page3 .videos .left li a{
+	font-size: 1.250em;
+	font-weight: 300;
+	color: #6A6A6A;
+}
+#page3 .videos .left li.active a{
+	color: #a63145;
+}
+.videoImage{
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-image: url(../images/tablet-1593045_1280.png) 0 fill / 0 / 70px 52px  stretch;
+}
+.videoHome{
+    position: absolute;
+    left: 0;
+    bottom:-9%;
+    width: 100%;
+    text-align: center;
+    height: 5%;
+}
+.videoHomebtn{
+    display: block;
+    width: 8%;
+    height: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#page3 .icons{
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+#page3 .icons.ipad{
+    z-index: 6;
+}
+#page3 .icons-inner{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+#page3 .icons-inner ul{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(215,215,216,0.4);
+    border-radius: 20px;
+}
+#page3 .icons-inner ul li{
+    cursor: pointer;
+}
+#page3 .icons-inner ul li img{
+    width: 100%;
+}
+#page3 .icons-inner ul li span{
+    display: block;
+    font-size: 10px;
+    margin-top: 10px;
+    color: #fff;
+}
+.path-thumb{
+    width: 100%;
+    padding-top: 80px;
+    text-align: center;
+    font-size: 30px;
+    height: 30px;
+    font-weight: 700;
+    color: #333;
+}
+.path-thumb i{
+    display: block;
+    animation:  3s ease 0s infinite normal none running;
+	animation-name: mouseClick_icon;
+}
+.path-text{
+    display: block;
+    text-align: center;
+    padding-top: 60px;
+    color: #333;
+}
+.download{
+	clear: left;
+	padding-top: 50px;
+	text-align: center;
+}
+.download button[type= button]{
+	background-color: var(--main-color);
+	color: #fff;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+@keyframes mouseClick_icon {
+	0%{
+		margin-top: 0px;
+	}
+	50%{
+		margin-top: 10px;
+	}
+	100%{
+		margin-top: 0px;
+	}
+}
 
 
 @keyframes spin {
@@ -1104,6 +1336,16 @@ span.close::before{
 		-webkit-transform: rotate(359deg);
 		transform: rotate(359deg);
 	}
+}
+@media only screen and (max-width: 1325px){
+    #page3 .videos{
+        padding: 0 65px;
+    }
+    .videoImage{
+        left: 0;
+        top: 0;
+        border-image: url(../images/tablet-1593045_1280.png) 0 fill / 0 / 4.7vw 3vw stretch;
+    }
 }
 @media only screen and (max-width: 1200px){
 	#header .top .top_inner{
@@ -1473,6 +1715,15 @@ span.close::before{
 		margin-left:0;
 	}
 }
+
+@media only screen and (max-width: 725px){
+    #page3 .videos{
+        padding: 0 10px;
+    }
+    .path-thumb{
+        padding-top:50px;
+    }
+}
 @media only screen and (max-width: 530px){
 	#page2 .content .content_inner .content_box .about1, 
 	#page2 .content .content_inner .content_box .about2{
@@ -1506,6 +1757,14 @@ span.close::before{
 	#page3 .content li:nth-child(2n+1){
 		margin-left:0;
 	}
+}
+@media only screen and (max-width: 500px){
+    #page3 .icons-inner ul{
+        padding: 10px 5px;
+    }
+    .path-thumb{
+        padding-top:15px;
+    }
 }
 @media only screen and (max-width: 360px){
 	#gnb{
