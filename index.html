@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>장윤수portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/font.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/progresscircle.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/mousewheel.js"></script>
+<script src="js/progresscircle.js"></script>
+<script src="js/script.js"></script>
+
+</head>
+<style>
+
+.circlechart {
+    float: left;
+    padding: 20px;
+}
+button {
+	padding: 5px 15px;
+	background-color: #666;
+	color: #000;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+button:hover {
+	background-color: #888;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 35px;
+	position: relative;
+	width: 500px;
+	height: 500px;
+}
+.control {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 5;
+	margin: -40px 0 0 -40px;
+	width: 80px;
+	height: 80px;
+	opacity: 0.5;
+	border-radius: 40px;
+}
+.control img {
+	max-width: 100%;
+}
+#my_video {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    position: relative;
+    
+}
+#page3 .videos{
+    display: flex;
+    justify-content: space-between;
+}
+.videoDim{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 101%;
+    z-index: 5;
+    background-color: rgba(000,000,000);
+}
+.videoDim.opa{
+    background-color: rgba(000,000,000, 0.5);
+}
+.videoDim.ipad{
+    background: url("/images/ipadBack.png") no-repeat top center;
+}
+#page3 .videos .left{
+    width: 200px;
+}
+#page3 .videos .right{
+    width: 100%;
+    position: relative;
+}
+
+#page3 .videos .left li{
+    margin-left: 0;
+    padding-left: 13px;
+	box-sizing: border-box;
+	line-height: 3;
+	position: relative;
+	cursor: pointer;
+    font-size: 1.250em;
+    font-weight: 300;
+    color: #6A6A6A;
+    text-align: left;
+}
+#page3 .videos .left li:hover::after{
+    background-color: #a63145;
+}
+#page3 .videos .left li:hover{
+    color: #a63145;
+}
+#page3 .videos .left li::before{
+	content:"";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #DDDDDD;
+}
+#page3 .videos .left li::after{
+	content:"";
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 20px;
+	height: 3px;
+	background-color: #CDCDCD;
+}
+#page3 .videos .left li.active::after{
+	background-color: #a63145;
+}
+#page3 .videos .left li a{
+	font-size: 1.250em;
+	font-weight: 300;
+	color: #6A6A6A;
+}
+#page3 .videos .left li.active a{
+	color: #a63145;
+}
+.videoImage{
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-image: url(images/tablet-1593045_1280.png) 0 fill / 0 / 70px 52px  stretch;
+}
+.videoHome{
+    position: absolute;
+    left: 0;
+    bottom:-9%;
+    width: 100%;
+    text-align: center;
+    height: 5%;
+}
+.videoHomebtn{
+    display: block;
+    width: 8%;
+    height: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#page3 .icons{
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+#page3 .icons.ipad{
+    z-index: 6;
+}
+#page3 .icons-inner{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+#page3 .icons-inner ul{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(215,215,216,0.4);
+    border-radius: 20px;
+}
+#page3 .icons-inner ul li{
+    cursor: pointer;
+}
+#page3 .icons-inner ul li img{
+    width: 100%;
+}
+#page3 .icons-inner ul li span{
+    display: block;
+    font-size: 10px;
+    margin-top: 10px;
+    color: #fff;
+}
+.path-thumb{
+    width: 100%;
+    padding-top: 80px;
+    text-align: center;
+    font-size: 30px;
+    height: 30px;
+    font-weight: 700;
+    color: #333;
+}
+.path-thumb i{
+    display: block;
+    animation:  3s ease 0s infinite normal none running;
+	animation-name: mouseClick_icon;
+}
+.path-text{
+    display: block;
+    text-align: center;
+    padding-top: 60px;
+    color: #333;
+}
+@keyframes mouseClick_icon {
+	0%{
+		margin-top: 0px;
+	}
+	50%{
+		margin-top: 10px;
+	}
+	100%{
+		margin-top: 0px;
+	}
+}
+
+@media only screen and (max-width: 1325px){
+    #page3 .videos{
+        padding: 0 65px;
+    }
+    .videoImage{
+        left: 0;
+        top: 0;
+        border-image: url(images/tablet-1593045_1280.png) 0 fill / 0 / 4.7vw 3vw stretch;
+    }
+}
+@media only screen and (max-width: 725px){
+    #page3 .videos{
+        padding: 0 10px;
+    }
+    .path-thumb{
+        padding-top:50px;
+    }
+}
+@media only screen and (max-width: 500px){
+    #page3 .icons-inner ul{
+        padding: 10px 5px;
+    }
+    .path-thumb{
+        padding-top:15px;
+    }
+}
+</style>
+<script>
+$(function(){
+	var t=0;
+
+	$(window).on("scroll", drawProgressHandler);
+	function drawProgressHandler(){
+        t=$(window).scrollTop();
+		// console.log("scroll event!!");
+        
+		if(t > $("#page2").offset().top){
+            $('.circlechart').circlechart(); 
+			// drawProgressBar(subject1, 80, "#aaa", "#ff0", 4);
+			// drawProgressBar(subject2, 60, "#aaa", "#ff0", 4);
+
+			$(window).off("scroll", drawProgressHandler);
+		}
+	}
+
+    var video=document.getElementById("my_video");
+
+    $("#page3 .icons-inner li").click(function(){
+        var link = $(this).attr("play-code");
+        
+        $(".videoDim").fadeOut(300);
+        $("#page3 .icons").fadeOut(300);
+        $("#my_video").attr("src", link);
+        video.play();
+
+    });
+
+    $(".videoHomebtn").click(function(){
+        $(".path-text span").text("클릭하여 홈으로");
+        mainHome();
+    });
+
+    video.addEventListener("ended", function(){
+        mainHome();
+		video.pause();
+		video.currentTime=0;
+	});
+
+    function mainHome(){
+        $("#my_video").attr("src", "");
+        $(".videoDim").addClass("ipad");
+        $(".videoDim").fadeIn(300);
+        $(".icons").fadeIn(300);
+        $(".icons").addClass("ipad");
+        $(".videoDim").removeClass("opa");
+    }
+	
+});
+</script>
+<body>
+<div class="wrapper">
+	<header id="header">
+        <div class="top">
+            <div class="top_inner">
+                <div class="logo">
+                    <h1><a href=""><img src="images/logo.png" alt="logo"></a></h1>
+                </div>
+                <div class="menu_on">
+                    <span></span>
+                </div>
+                <nav id="gnb" class="menu">
+                    <ul class="list">
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">CAREER</a></li>
+                        <li><a href="">WORKS</a></li>
+                        <li><a href="">ABOUT</a></li>
+                    </ul>
+                    <div class="line"></div>
+                </nav>
+            </div>
+        </div>
+        <nav id="mobile">
+            <div class="menu_close">
+                <span></span>
+            </div>
+            <div class="list">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">CAREER</a></li>
+                    <li><a href="">WORKS</a></li>
+                    <li><a href="">ABOUT</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+        <div id="page1">
+            <div class="page1_table">
+                <div class="page1_inner">
+                    <div class="page1_cover clearfix">
+                        <div class="name">
+                            <ul>
+                                <li>JANGYOONSUE</li>
+                                <li>JANGYOONSUE</li>
+                                <li>JANGYOONSUE</li>
+                                <li>JANGYOONSUE</li>
+                            </ul>
+                        </div>
+                        <div class="my_image">
+                            <img src="images/jangyoosue1.png" alt="jangyoonsue Photo">
+                        </div>
+                        <div class="text">
+                            <span data-hover="PORTFOLIO">PORTFOLIO</span>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+	</header>
+   <section id="section">
+        <div id="page2">
+            <div class="title_background">
+                <div class="title_background-inner">
+                    <div class="title">
+                        <h3>career</h3>
+                        <span></span>
+                    </div>
+                    <div class="title_sub">
+                        <span class="span"><span class="span1">퍼블리싱이 가능한<br class="br1"></span> 웹개발자<span class="span1_1"> 장윤수 </span>입니다.</span>
+                        <span class="span2">
+                        프론트, 백 엔드개발이 가능한 신입이자 풀스택 개발자로서 <br> 모든 업무의 최선을 다해 발전해나가는 웹 개발자가 되겠습니다.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_inner">
+                    <div class="content_box clearfix">
+                        <div class="about_left">
+                            <div class="my_image">
+                                <img src="images/jangyoonsue2.png">
+                            </div>
+                        </div>
+                        <div class="about_right">
+                            <div class="about1">
+                                <ul>
+                                    <li><span class="title">CERTIFICATE</span>
+                                        <ul>
+                                            <li><span class="Date">2022.11.04</span><span class="span_container"><span class="span1">정보처리산업기사 (과정평가형)</span><br><span class="span2">한국산업인력공단</span></span></li>
+                                            <li><span class="Date">2016.04.09</span><span class="span_container"><span class="span1">마술지도사 2급 (사)</span><br><span class="span2">축제문화 예술협회</span></span></li>
+                                            <li><span class="Date">2014.07.18</span><span class="span_container"><span class="span1">조경기능사 (국가기술자격증)</span><br><span class="span2">한국산업인력공단</span></span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="about2">
+                                <ul>
+                                    <li><span class="title">EDUCATION</span>
+                                        <ul>
+                                            <li><span class="Date">2022.04~2022.09</span><span class="span_container"><span class="span1">하이미디어 아카데미</span><br><span class="span2">JAVA 기반 웹개발자 수료</span></span></li>
+                                            <li><span class="Date">2020.11~2021.05</span><span class="span_container"><span class="span1">하이미디어 아카데미</span><br><span class="span2">웹퍼블리셔 과정 수료</span></span></li>
+                                            <li><span class="Date">2015.03~2017.02</span><span class="span_container"><span class="span1">동아인재대학</span><br><span class="span2">마술전공</span></span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="demo" class="clearfix">
+                            <div><span class="title">SKILL</span><span class="sub">*해당스킬을 클릭하면 자세히 볼수있습니다</span></div>
+                            <div class="circlechart" data-percentage="80">HTML</div>
+                            <div class="circlechart" data-percentage="95">CSS</div>
+                            <div class="circlechart" data-percentage="80">JS</div>
+                            <div class="circlechart" data-percentage="70">JSP</div>
+                            <div class="circlechart" data-percentage="60">JAVA</div>
+                            <div class="circlechart" data-percentage="40">PHP</div>
+                            <div class="circlechart" data-percentage="65">Oracle</div>
+                            <div class="circlechart" data-percentage="70">Spring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page3">
+            <div class="page3_inner">
+                <div class="page3_title">
+                    <div class="title">
+                        <h3>works</h3>
+                        <span></span>
+                    </div>
+                    <div class="title_sub">
+                        <span class="span1">WEB PLAN</span><br>
+                        <span class="span2">웹 설계</span>
+                    </div>
+                    <div class="content">
+                        
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt><img src="images/free-icon-idea-562647.png" alt="기획의도"></dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt><img src="images/free-icon-handshake-1786971.png" alt="요구사항 분석"></dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt><img src="images/free-icon-big-data-4240695.png" alt="데이터베이스 설계"></dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt><img src="images/free-icon-computer-desktop-3964999.png" alt="화면설계"></dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt><img src="images/free-icon-software-1660096.png" alt="소프트웨어 설계"></dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt><img src="images/free-icon-binary-code-910065.png" alt="소스코드"></dt>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt><img src="images/free-icon-test-1581942.png" alt="테스트"></dt>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="title_sub">
+                        <span class="span1">WEB SKILL</span><br>
+                        <span class="span2">웹 기술</span>
+                    </div>
+                    <div class="videos clearfix">
+                        
+                        <div class="right">
+                            <div class="videoImage"></div>
+                            <div class="videoDim"></div>
+                            <div class="videoHome">
+                                <div class="videoHomebtn"></div>
+                            </div>
+                            <div class="icons">
+                                <div class="icons-inner">
+                                    <ul>
+                                        <li play-code="/video/notice.mp4"><img src="/images/notice.png" alt="게시판"><span>게시판</span></li>
+                                        <li play-code="/video/theater.mp4"><img src="/images/theater.png" alt="극장등록"><span>극장등록</span></li>
+                                        <li play-code="/video/product.mp4"><img src="/images/product.png" alt="상품등록"><span>상품등록</span></li>
+                                        <li play-code="/video/buy.mp4"><img src="/images/buy.png" alt="상품구매"><span>상품구매</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <video id="my_video" src="" muted controls></video>
+                        </div>
+                    </div>
+                    <div class="path-thumb">
+                        <i class="bi bi-hand-index-thumb"></i>
+                    </div>
+                    <div class="path-text">
+                        <span>클릭하여 켜기</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page4">
+            <div class="page4_inner clearfix">
+                <div class="title">
+                    <h3>about</h3>
+                    <span></span>
+                </div>
+                <div class="contents">
+                    <div class="banner1">
+                        <div class="banner"></div>
+                    </div>
+                    <div class="box">
+                        <div class="text1">
+                            <span class="span_title">나의 취미의 시작</span><br>
+                            <span class="sub">전국 청소년 마술 경연대전</span><br>
+                            <span class="span1">저의 취미생활은 마술입니다. 2013년도에 나간 마술 대회가 저의 첫 활동입니다. 수상은 못하였지만 마술을 더욱 사랑하게 된 순간입니다. 이날을 기점으로 마술을 공부하게 되었고 그리하여 공연을 다녀서 저의 취미를 완성 시켰습니다.</span>
+                        </div>
+                    </div>
+                    <div class="text_box">
+                        <div class="text2">
+                            <span class="span_title">때로는 공연자<br>때로는 강사</span><br>
+                            <span class="sub">고려대학교 / 산의초등학교</span><br>
+                            <span class="span1">고려대학교 DAL 프로그램에서 고려대학교 학생 대상으로 공연과 강의를 진행하였습니다. 제가 아이들도 좋아하기에 아이들에게도 마술의 즐거움을 주고 “신기한 마술 나라”에 프로그램을 만들어 아이들에게 좋은 추억을 선물했습니다.</span>
+                        </div>
+                    </div>
+                    <div class="banner2">
+                        <div class="main"></div>
+                        <ul class="sub">
+                           <li></li> 
+                           <li></li> 
+                        </ul>
+                    </div>
+                    <div class="text_box1">
+                        <div class="text2">
+                            <span class="span_title">때로는 공연자<br>때로는 강사</span><br>
+                            <span class="sub">고려대학교 / 산의초등학교</span><br>
+                            <span class="span1">고려대학교 DAL 프로그램에서 고려대학교 학생 대상으로 공연과 강의를 진행하였습니다. 제가 아이들도 좋아하기에 아이들에게도 마술의 즐거움을 주고 “신기한 마술 나라”에 프로그램을 만들어 아이들에게 좋은 추억을 선물했습니다.</span>
+                        </div>
+                    </div>
+                    <div class="phone_back">
+                        <img src="images/PhoneDesign.png" alt="phone">
+                    </div>
+                    <div class="phone_slider">
+                        <div class="image_border"></div>
+                        <div class="slider_box">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide slider1"></div>
+                                    <div class="swiper-slide slider2"></div>
+                                    <div class="swiper-slide slider3"></div>
+                                    <div class="swiper-slide slider4"></div>
+                                    <div class="swiper-slide slider5"></div>
+                                    <div class="swiper-slide slider6"></div>
+                                    <div class="swiper-slide slider7"></div>
+                                    <div class="swiper-slide slider8"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text3">
+                        <span class="span_title">여행 그리고 추억</span><br>
+                        <span class="sub">공연을 하러 공연을 보러</span><br>
+                        <span class="span1">직접 공연을 하러 갈 때도 다른 사람의 공연을 보러 갈 때도 이리저리 돌아다닙니다. 마치 전국 곳곳을 여행 다니는 느낌인 것처럼요 더불어 친구들과 함께 누리는 여행은 그 무엇보다도 값진 순간이었습니다</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="footer_inner">
+            <div class="text">
+                <span class="top">THANK YOU FOR YOUR VISIT!</span><br>
+                <span class="bottom">COPYRIGHT© 2022 SZ100. ALL RIGHTS RESERVED.</span>
+            </div>
+        </div>
+    </footer>
+</div>
+<div class="modal" id="pop1">
+    <div class="modal_table">
+        <div class="modal_table_cell">
+            <div class="modal_table_inner clearfix" >
+                <div class="modal_title">
+                    <h3></h3>
+                    <span class="close"></span>
+                </div>
+                <div class="modal_content" style="text-align: center;">
+                    <div class="content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>상세내용</th>
+                                </tr>
+                            </thead>
+                            <tbody id="modal_tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dim">dim</div>
+<div class="view">
+    <div class="title_box">
+        <span class="view_title"></span>
+    </div>
+    <span class="close"></span>
+    <div class="content">
+        <iframe id="pptx" class="ppt" src=""></iframe>
+    </div>
+</div>
+</body>
+</html>

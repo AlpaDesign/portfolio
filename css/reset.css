@@ -1,0 +1,27 @@
+:root {
+    --main-color: #f2ca24;
+	--sub-color: #595757;
+	--font-color-title: #333333;
+	--font-color-sub:#6E6E6E;
+	--scroll-color-back:#eeeeee73;
+	--scroll-color:#7c87988e;
+
+	--font-size-title: 1.125em;
+	
+}
+
+html { scrollbar-arrow-color: var(--scroll-color-back);
+    scrollbar-Track-Color: var(--scroll-color-back); 
+    scrollbar-base-color: var(--scroll-color-back);
+    scrollbar-Face-Color: var(--scroll-color-back);
+    scrollbar-3dLight-Color: var(--scroll-color-back);         
+    scrollbar-DarkShadow-Color: var(--scroll-color-back);
+    scrollbar-Highlight-Color: var(--scroll-color-back);
+    scrollbar-Shadow-Color: var(--scroll-color-back)}
+
+/* Chrome, Safari용 스크롤 바 */
+::-webkit-scrollbar {width:12px; height: 12px;}
+::-webkit-scrollbar-button:start:decrement, 
+::-webkit-scrollbar-button:end:increment {display: block; width: 0px; height: 0px; background: url() rgba(0,0,0,.05);}
+::-webkit-scrollbar-track {  background:var(--scroll-color-back);}
+::-webkit-scrollbar-thumb {  background: var(--scroll-color);  border-radius: 6px;}
