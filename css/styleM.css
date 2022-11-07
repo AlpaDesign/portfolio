@@ -1,7 +1,0 @@
-#page3 .page3_inner .my_slider .slide .mouse_over{
-    opacity: 1;
-    z-index: 10;
-}
-#page3 .page3_inner .my_slider .slide .mouse_over .box a{
-    z-index: 11;
-}
