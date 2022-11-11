@@ -29,9 +29,10 @@
     $("#page3 .icons-inner li").click(function(){
         var link = $(this).attr("play-code");
         
-        $(".videoDim").fadeOut(300);
-        $("#page3 .icons").fadeOut(300);
+        $(".videoDim").fadeOut(0);
+        $("#page3 .icons").fadeOut(0);
         $("#my_video").attr("src", link);
+        $("#my_video").css({"visibility":"visible"});
         video.play();
 
     });
@@ -48,12 +49,13 @@
 	});
 
     function mainHome(){
-        $("#my_video").attr("src", "");
         $(".videoDim").addClass("ipad");
         $(".videoDim").fadeIn(300);
         $(".icons").fadeIn(300);
         $(".icons").addClass("ipad");
         $(".videoDim").removeClass("opa");
+       
+        $("#my_video").attr("src", "");
     }
 
 	function gnbLine(){

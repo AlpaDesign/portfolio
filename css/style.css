@@ -1133,7 +1133,7 @@ button:hover {
 	max-width: 100%;
 }
 #my_video {
-    display: block;
+	visibility: hidden;
     width: 100%;
     height: auto;
     z-index: 4;
