@@ -232,12 +232,7 @@
         $(".modal").addClass("on");
     });
 
-    $(".modal .close").click(function(){
-        $(".modal h3").text("");
-        $("#modal_tbody").html("");
-        $(".dim").removeClass("on");
-        $(".modal").removeClass("on");
-    });
+    
 
     function htmlText(){
         var text = `
@@ -461,5 +456,28 @@
         $("body").removeClass("fixed");
         $("#pptx").attr("src", "");
     });
+
+    $(".modal .close").click(function(){
+        $(".modal h3").text("");
+        $("#modal_tbody").html("");
+        $(".dim").removeClass("on");
+        $(".modal").removeClass("on");
+    });
+
+    let pop1 = document.getElementById("pop1");
+    
+    pop1.addEventListener("click", function(ele){
+        let targets = ele.target;
+        if(!targets.closest(".modal_table_inner")){
+            popHidden();
+        }
+    });
+
+    function popHidden(){
+        $(".modal h3").text("");
+        $("#modal_tbody").html("");
+        $(".dim").removeClass("on");
+        $(".modal").removeClass("on");
+    }
    
 });

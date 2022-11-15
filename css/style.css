@@ -40,7 +40,7 @@ body.fixed{
 	--font-color-sub:#6E6E6E;
 	--scroll-color-back:#eeeeee73;
 	--scroll-color:rgba(242,202,36);
-
+	--dark-font: #333;
 	--font-size-title: 1.125em;
 	
 }
@@ -117,6 +117,7 @@ html { scrollbar-arrow-color: var(--scroll-color-back);
 .modal_content{
 	padding: 50px 0;
 }
+
 span.close{
 	position: absolute;
     right: 0;
@@ -134,7 +135,7 @@ span.close::after{
     left: 0;
     width: 30px;
     height: 2px;
-    background-color: #222;
+    background-color: var(--dark-font);
     border-radius: 10px;
     transform: rotate(45deg);
 }
@@ -146,7 +147,7 @@ span.close::before{
     left: 0;
     width: 30px;
     height: 2px;
-    background-color: #222;
+    background-color:var(--dark-font);
     border-radius: 10px;
     transform: rotate(-45deg);
 }
@@ -1792,4 +1793,13 @@ button:hover {
 		padding: 0;
 	}
 	
+}
+
+@media (prefers-color-scheme: dark) {
+	:root{
+		--dark-font: #fff;
+	}
+	.modal_title{
+		color:#333;
+	}
 }
