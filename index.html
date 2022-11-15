@@ -137,7 +137,8 @@
                             <div class="circlechart" data-percentage="70">Spring</div>
                         </div>
                         <div class="download">
-                            <button type="button" onclick="downloadFunction();">이력서 다운로드</button>
+                            <button type="button" onclick="downloadFunction('이력서','장윤수 이력서.hwp');">이력서 다운로드</button>
+                            <button type="button" onclick="downloadFunction('포트폴리오','장윤수 백엔드 포트폴리오.pptx');">포트폴리오 다운로드</button>
                         </div>
                     </div>
                 </div>
@@ -155,6 +156,7 @@
                         <span class="span1">WEB SKILL</span><br>
                         <span class="span2">웹 기술</span>
                     </div>
+                    
                     <div class="videos clearfix">
                         
                         <div class="right">
@@ -171,6 +173,7 @@
                                         <li play-code="video/buy.mp4"><img src="images/buy.png" alt="상품구매"><span>상품구매</span></li>
                                         <li play-code="video/notice.mp4"><img src="images/notice.png" alt="게시판"><span>게시판</span></li>
                                     </ul>
+                                    
                                 </div>
                             </div>
                             <video id="my_video" src="" muted controls></video>
@@ -342,9 +345,9 @@
 </div>
 </body>
 <script>
-    function downloadFunction(){
-        if(confirm("이력서를 다운로드 하시겠습니까?")){
-            location.href='download/장윤수 이력서.hwp';
+    function downloadFunction(msg, link){
+        if(confirm(""+msg+"를 다운로드 하시겠습니까?")){
+            location.href='download/'+link+'';
         }
     }
 </script>
