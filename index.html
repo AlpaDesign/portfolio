@@ -123,6 +123,9 @@ html { scrollbar-arrow-color: var(--scroll-color-back);
         padding: 10px 15px;
         border-radius: 5px;
     }
+    #nav {
+        display: none;
+    }
     @media only screen and (max-width: 800px) {
         .media{
             display: none;
@@ -131,10 +134,22 @@ html { scrollbar-arrow-color: var(--scroll-color-back);
             padding: 50px;
         }
     }
+
 </style>
 <body>
     <div class="container">
         <div class="content">
+            <nav id="nav">
+                <li><a href="https://smartstore.naver.com/namu_1/best?cp=1">베스트 상품</a></li>
+                <li><a href="https://smartstore.naver.com/namu_1/category/2bc0d415e929438c9514e2e89b23ab7f?cp=1">전체 상품</a></li>
+                <li><a href="https://smartstore.naver.com/namu_1/category/b812ee0a58154964bee6568597c901f8?cp=1">장류</a></li>
+                <li><a href="https://smartstore.naver.com/namu_1/qna?cp=1">묻고답하기</a></li>
+                <li><a href="https://smartstore.naver.com/namu_1/notice/list?cp=1">공지사항</a></li>
+                <li><a href="https://smartstore.naver.com/namu_1/review-event/list?cp=1">리뷰이벤트</a></li>
+                <li><a href="https://smartstore.naver.com/namu_1/shoppingstory/list?cp=1">쇼핑스토리</a></li>
+                <li><a href="https://smartstore.naver.com/namu_1/profile?cp=1">나무하나 소개</a></li>
+            </nav>
+            
             <h1>
                 <a href="/">
                     <img src="https://alpaka-s3-bucket.s3.ap-northeast-2.amazonaws.com/namuhana/logo/logo.png" alt="나무하나 로고">
