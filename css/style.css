@@ -152,14 +152,18 @@ span.close::before{
     transform: rotate(-45deg);
 }
 
+i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
+	font-size: 40px;
+}
 
-.view span.close{
+
+.view span.close {
 	position: absolute;
-    right: 50px;
-    top: 25px;
-    display: block;
-    width: 30px;
-    height: 30px;
+	right: 50px;
+	top: 25px;
+	display: block;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
 }
 .view span.close::after{
@@ -580,15 +584,23 @@ span.close::before{
 	line-height:3;
 	color:#666;
 	font-weight:200;
+	display:flex;
+	justify-content:start;
+	gap:30px;
 }
 #page2 .content .content_inner .content_box ul ul li span{
 	line-height: 2;
 }
-#page2 .content .content_inner .content_box ul ul li span.span_container{
-	display:inline-table;
-	text-align:left;
-	padding-left:30px;
-	box-sizing:border-box;
+
+#page2 .content .content_inner .content_box ul ul li span.Date {
+	width: 110px;
+	text-align: left;
+	display: inline-block;
+}
+#page2 .content .content_inner .content_box ul ul li span.span_container {
+	
+	text-align: left;
+	box-sizing: border-box;
 }
 #page2 .content .content_inner .content_box ul ul li span.span1{
 	font-weight: 500;
@@ -1089,11 +1101,17 @@ span.close::before{
 }
 
 
-
-.circlechart {
-    float: left;
-    padding: 20px;
+#skillChart {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 20px;
+	width: 100%;
+	flex-flow: wrap;
 }
+/*.circlechart {
+	padding: 20px;
+}*/
 button {
 	padding: 5px 15px;
 	background-color: #666;
@@ -1146,20 +1164,21 @@ button:hover {
     display: flex;
     justify-content: space-between;
 }
-.videoDim{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 101%;
-    z-index: 5;
-    background-color: rgba(000,000,000);
+.videoDim {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 101%;
+	z-index: -1;
+	background-color: rgba(000,000,000);
+	background: url("../images/ipadBack.png") no-repeat top center;
 }
 .videoDim.opa{
     background-color: rgba(000,000,000, 0.5);
 }
-.videoDim.ipad{
-    background: url("../images/ipadBack.png") no-repeat top center;
+.videoDim.ipad {
+	z-index: 5;
 }
 #page3 .videos .left{
     width: 200px;
@@ -1249,17 +1268,23 @@ button:hover {
     width: 100%;
     left: 0;
     top: 0;
+	background-color: #000;
 }
-#page3 .icons.ipad{
-    z-index: 6;
+#page3 .icons.ipad {
+	z-index: 6;
+	background-color: transparent;
 }
-#page3 .icons-inner{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
+
+#page3 .icons.ipad .icons-inner {
+	display: flex;
+}
+#page3 .icons-inner {
 	
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	display: none;
 }
 #page3 .icons-inner ul{
     padding: 20px;
@@ -1355,7 +1380,13 @@ button:hover {
 	#page2, #page3 .page3_inner .page3_title, #page4, #footer{
 		font-size: 0.875em;
 	}
-	#page2 .title_background .title_background-inner{
+	#page2 .content .content_inner .content_box ul ul li{
+		gap: 0;
+	}
+	#page2 .content .content_inner .content_box ul ul li span.Date{
+		width: 100px;
+	}
+	#page2 .title_background .title_background-inner {
 		padding: 0 20px;
 	}
 	#page2 .content .content_inner{
