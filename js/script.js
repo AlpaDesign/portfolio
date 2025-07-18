@@ -185,29 +185,29 @@
 		}
 	}
 
-    var video=document.getElementById("my_video");
+ //   var video=document.getElementById("my_video");
 
-    $("#page3 .icons-inner li").click(function(){
-        var link = $(this).attr("play-code");
+ //   $("#page3 .icons-inner li").click(function(){
+ //       var link = $(this).attr("play-code");
         
-        $(".videoDim").fadeOut(0);
-        $("#page3 .icons").fadeOut(0);
-        $("#my_video").attr("src", link);
-        $("#my_video").css({"visibility":"visible"});
-        video.play();
+ //       $(".videoDim").fadeOut(0);
+ //       $("#page3 .icons").fadeOut(0);
+ //       $("#my_video").attr("src", link);
+ //       $("#my_video").css({"visibility":"visible"});
+ //       video.play();
 
-    });
+ //   });
 
     $(".videoHomebtn").click(function(){
         $(".path-text span").text("클릭하여 홈으로");
         mainHome();
     });
 
-    video.addEventListener("ended", function(){
-        mainHome();
-		video.pause();
-		video.currentTime=0;
-	});
+ //   video.addEventListener("ended", function(){
+ //       mainHome();
+	//	video.pause();
+	//	video.currentTime=0;
+	//});
 
     function mainHome(){
         $(".videoDim").addClass("ipad");
@@ -217,6 +217,8 @@
         $(".videoDim").removeClass("opa");
        
         $("#my_video").attr("src", "");
+
+        $("#folder_viewer").removeClass("active");
     }
 
 	function gnbLine(){
@@ -460,5 +462,8 @@
         $(".dim").removeClass("on");
         $(".modal").removeClass("on");
     }
+
+
+    
    
 });
