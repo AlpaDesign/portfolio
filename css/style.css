@@ -156,7 +156,152 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 	font-size: 40px;
 }
 
+.folder_container{
+	width:100%;
+	position:absolute;
+	height:100%;
+	z-index:-1;
+	display: none;
+}
+.folder_container.active {
+	display: block;
+	z-index: 7;
+}
+.folder_inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+#folder {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none; /* Standard syntax */
+	overflow: auto;
+	max-height: 450px;
+}
 
+.explorer {
+	width: 700px;
+	background: white;
+	border: 1px solid #ccc;
+	box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+	min-height: 300px;
+	max-height: 500px;
+}
+
+.explorer-header {
+	background: #f1f1f1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 12px;
+	height: 48px;
+	border-bottom: 1px solid #ccc;
+}
+.explorer-header .nav-buttons{
+	display:flex;
+	justify-content:start;
+	gap: 5px;
+	text-align:center;
+}
+.explorer-header .nav-buttons div{
+	width:50px;
+	opacity: 0.3;
+}
+.explorer-header .nav-buttons div.active {
+	cursor: pointer;
+	opacity: 1;
+}
+.explorer-header .nav-buttons div.active:hover {
+	background: #e0f0ff;
+}
+.explorer-header .path {
+	font-size: 14px;
+	color: #333;
+	width: 500px;
+	height: 100%;
+	padding: 14px 16px;
+	border-radius: 8px;
+	margin-left: -33px;
+	border: 1px solid var(--reed-gray100);
+	font-family: monospace;
+	white-space: pre;
+}
+
+.explorer-header .path:focus {
+	outline: 1px solid var(--reed-gray300);
+}
+
+.explorer-header .path::placeholder {
+	color: var(--reed-gray300);
+}
+.explorer-header .close-btn {
+	background: #e81123;
+	color: white;
+	border: none;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	border-radius: 50px;
+	cursor: pointer;
+}
+.file-item.selected {
+	background: #cce5ff;
+	border-radius: 4px;
+}
+
+.nav-buttons button {
+	padding: 2px 8px;
+	margin-right: 6px;
+	font-size: 14px;
+}
+
+.explorer-body {
+	padding: 10px;
+}
+
+.file-item {
+	display: flex;
+	align-items: center;
+	padding: 4px 6px;
+	border-radius: 4px;
+	transition: background 0.2s;
+	cursor: pointer;
+	gap: 10px;
+}
+#previewFrame {
+	width: 100%;
+	height: 100%;
+}
+#folder_viewer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+#folder_viewer.active {
+	z-index: 7;
+	
+}
+.file-item:hover {
+	background: #e0f0ff;
+}
+.file-item i{
+	font-size: 30px;
+}
+.file-icon {
+	width: 20px;
+	margin-right: 10px;
+}
+
+.file-name {
+	font-size: 14px;
+}
 .view span.close {
 	position: absolute;
 	right: 50px;
@@ -1163,13 +1308,14 @@ button:hover {
 #page3 .videos{
     display: flex;
     justify-content: space-between;
+	height:600px;
 }
 .videoDim {
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 101%;
+	height: 100%;
 	z-index: -1;
 	background-color: rgba(000,000,000);
 	background: url("../images/ipadBack.png") no-repeat top center;
@@ -1277,6 +1423,9 @@ button:hover {
 
 #page3 .icons.ipad .icons-inner {
 	display: flex;
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none; /* Standard syntax */
 }
 #page3 .icons-inner {
 	
