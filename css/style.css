@@ -182,12 +182,13 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 }
 
 .explorer {
-	width: 700px;
+	max-width: 700px;
 	background: white;
 	border: 1px solid #ccc;
 	box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
 	min-height: 300px;
 	max-height: 500px;
+	width: calc(100% - 30px);
 }
 
 .explorer-header {
@@ -219,11 +220,11 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 .explorer-header .path {
 	font-size: 14px;
 	color: #333;
-	width: 500px;
+	width: calc(100% - 140px);
 	height: 100%;
 	padding: 14px 16px;
 	border-radius: 8px;
-	margin-left: -33px;
+	/* margin-left: -33px; */
 	border: 1px solid var(--reed-gray100);
 	font-family: monospace;
 	white-space: pre;
@@ -1306,9 +1307,11 @@ button:hover {
     position: relative;
 }
 #page3 .videos{
-    display: flex;
+	display: flex;
     justify-content: space-between;
-	height:600px;
+    height: 70vh;
+    width: 100%;
+	min-height: 572px;
 }
 .videoDim {
 	position: absolute;
@@ -1395,10 +1398,10 @@ button:hover {
 .videoHome{
     position: absolute;
     left: 0;
-    bottom:-9%;
+    bottom:-59px;
     width: 100%;
     text-align: center;
-    height: 5%;
+    height: 50px;
 }
 .videoHomebtn{
     display: block;
@@ -1450,8 +1453,7 @@ button:hover {
 }
 #page3 .icons-inner ul li span{
     display: block;
-    font-size: 10px;
-    margin-top: 10px;
+    font-size: 18px;
     color: #fff;
 }
 .path-thumb{
@@ -1519,7 +1521,7 @@ button:hover {
     .videoImage{
         left: 0;
         top: 0;
-        border-image: url(../images/tablet-1593045_1280.png) 0 fill / 0 / 4.7vw 3vw stretch;
+        border-image: url(../images/tablet-1593045_1280.png) 0 fill / 0 / 58px 24px stretch;
     }
 }
 @media only screen and (max-width: 1200px){
@@ -1895,15 +1897,34 @@ button:hover {
 	#page3  .content li:nth-child(2n+1){
 		margin-left:0;
 	}
+	.explorer{
+		width: calc(100% - 60px);
+	}
 }
 
 @media only screen and (max-width: 725px){
+	#gnb{
+		display:none;
+	}
+	#header .menu_on{
+		display:block;
+	}
     #page3 .videos{
         padding: 0 10px;
     }
     .path-thumb{
         padding-top:50px;
     }
+	.videoImage{
+		border-image: url(../images/tablet-1593045_1280.png) 0 fill / 0 / 50px 17px stretch;
+	}
+	.videoHome{
+		bottom: -50px;
+		height: 50px;
+	}
+	#page3 .videos{
+		height:60vh;
+	}
 }
 @media only screen and (max-width: 530px){
 	#page2 .content .content_inner .content_box .about1, 
@@ -1938,22 +1959,35 @@ button:hover {
 	#page3 .content li:nth-child(2n+1){
 		margin-left:0;
 	}
+	#page3 .icons-inner ul li span{
+		font-size:12px;
+	}
+	
+
 }
 @media only screen and (max-width: 500px){
     #page3 .icons-inner ul{
-        padding: 10px 5px;
+        padding: 10px 15px;
     }
     .path-thumb{
         padding-top:15px;
     }
+	.videoImage{
+		border-image: url(../images/tablet-1593045_1280.png) 0 fill / 0 / 28px 12px stretch;
+	}
+	.videoHome{
+		bottom: -29px;
+		height: 29px;
+	}
+	#page3 .videos{
+		height:60vh
+	}
+	.explorer-header .nav-buttons div{
+		width: 30px;
+	}
 }
 @media only screen and (max-width: 360px){
-	#gnb{
-		display:none;
-	}
-	#header .menu_on{
-		display:block;
-	}
+	
 	#page2, #page3 .page3_inner .page3_title, #page4{
 		font-size: 0.688em;
 	}

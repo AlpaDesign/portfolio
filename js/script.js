@@ -248,11 +248,7 @@
 			}
 		}
 
-        if(w < 500){
-            $(".icons-inner li span").css({"display": "none"});
-        } else {
-            $(".icons-inner li span").css({"display": "block"});
-        }
+        
 	});
     
     $(".pagination li").eq(n).addClass("active");

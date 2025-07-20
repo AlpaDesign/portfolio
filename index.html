@@ -146,8 +146,8 @@
                             <div class="circlechart" data-percentage="70">Spring</div>-->
                         </div>
                         <div class="download">
-                            <button type="button" onclick="downloadFunction('이력서','장윤수 이력서.hwp');">이력서 다운로드</button>
-                            <button type="button" onclick="downloadFunction('포트폴리오','장윤수 백엔드 포트폴리오.pptx');">포트폴리오 다운로드</button>
+                            <button type="button" onclick="downloadFunction('이력서','장윤수 이력서.pdf');">이력서 다운로드</button>
+                            <!-- <button type="button" onclick="downloadFunction('포트폴리오','장윤수 백엔드 포트폴리오.pptx');">포트폴리오 다운로드</button> -->
                         </div>
                     </div>
                 </div>
@@ -162,8 +162,8 @@
                     </div>
                     
                     <div class="title_sub">
-                        <span class="span1">WEB SKILL</span><br>
-                        <span class="span2">웹 기술</span>
+                        <span class="span1">SKILL</span><br>
+                        <span class="span2">기술</span>
                     </div>
                     
                     <div class="videos clearfix">
@@ -178,15 +178,18 @@
                                 <div class="icons-inner">
                                     <ul id="iconList">
                                         <li play-code="D:\웹 개발">
-                                            <i class="bi bi-browser-edge"></i>
+                                            <!-- <i class="bi bi-browser-edge"></i> -->
+                                             <i class="bi bi-folder-fill" style="color: #f4b400; font-size: 40px;"></i>
                                             <span>웹 개발</span>
                                         </li>
                                         <li play-code="D:\윈도우 응용프로그램">
-                                            <i class="bi bi-windows"></i>
+                                            <!-- <i class="bi bi-windows"></i> -->
+                                             <i class="bi bi-folder-fill" style="color: #f4b400; font-size: 40px;"></i>
                                             <span>Window 응용</span>
                                         </li>
                                         <li play-code="D:\웹 개발">
-                                            <i class="bi bi-collection-fill"></i>
+                                            <!-- <i class="bi bi-collection-fill"></i> -->
+                                             <i class="bi bi-folder-fill" style="color: #f4b400; font-size: 40px;"></i>
                                             <span>라이브러리</span>
                                         </li>
                                     </ul>
@@ -201,7 +204,7 @@
                                                 <div id="backBtn"><i class="bi bi-arrow-left"></i></div>
                                                 <div id="forwardBtn"><i class="bi bi-arrow-right"></i></div>
                                             </div>
-                                            <input type="text" id="folder_path" class="path" value="D:\웹 개발" />
+                                            <input type="text" id="folder_path" class="path" value="D:\웹 개발" placeholder="폴더 경로 입력" />
                                             <div class="close-btn" id="closeBtn"><i class="bi bi-x-lg"></i></div>
                                         </div>
                                         <div class="explorer-body" id="folder">
@@ -221,7 +224,7 @@
                     <div class="path-text">
                         <span>클릭하여 켜기</span>
                     </div>
-                    <div class="title_sub">
+                    <!-- <div class="title_sub">
                         <span class="span1">WEB PLAN</span><br>
                         <span class="span2">웹 설계</span>
                     </div>
@@ -264,7 +267,7 @@
                                 </dl>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -388,10 +391,10 @@
     }
 
     const fileList = [
-        { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "./video/theater.mp4" },
-        { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "./video/product.mp4" },
-        { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "./video/buy.mp4" },
-        { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "./video/notice.mp4" },
+        { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/theater.mp4" },
+        { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/product.mp4" },
+        { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/buy.mp4" },
+        { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/notice.mp4" },
 
         { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "./files/기획의도.html" },
         { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "./files/요구사항분석.html" },
@@ -401,7 +404,7 @@
         { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "./files/소스코드.html" },
         { path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "./files/테스트.html" },
 
-        { path: "D:\\윈도우 응용프로그램", name: "record.mov", type: "file", ext: ".mov", realPath: "./video/theater.mp4" }
+        { path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".mp4", realPath: "https://files.mybox.naver.com/file/download.api?auth=3&amp;resourceKey=c2tza3Nrd2tkNDU2fDM0NzI1OTc0MTgyNjY5ODE0NDR8Rnww&amp;atoken=T0n1FrRWOPV%2FWsKp9oeD1NW29js8id8GiZJha23283EreKKRzbP0VJezzzxWO6HjBA%3D%3D&amp;NdriveSvcType=NHN%2FND-WEB%20Ver" }
     ];
 
     var files = new FileExplorer(fileList, "#folder", "#folder_path", "#folder_viewer");

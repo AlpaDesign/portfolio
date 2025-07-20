@@ -109,10 +109,15 @@ class FileExplorer {
             const $icon = $('<i class="bi bi-folder-fill" style="color: #f4b400;"></i>');
             const $name = $('<div class="file-name"></div>').text(folderName);
             $item.append($icon).append($name);
-
+            const self = this;
             $item.on("click", function () {
-                $('.file-item').removeClass("selected");
-                $(this).addClass("selected");
+                if ($(this).hasClass("selected")) {
+                    const newPath = path + "\\" + folderName;
+                    self.renderFolder(newPath, true);
+                } else {
+                    $('.file-item').removeClass("selected");
+                    $(this).addClass("selected");
+                }
             });
 
             $item.on("dblclick", () => {
@@ -129,10 +134,17 @@ class FileExplorer {
             const $icon = $(this.getIcon(extType));
             const $name = $('<div class="file-name"></div>').text(file.name);
             $item.append($icon).append($name);
-
+            const self = this;      
             $item.on("click", function () {
-                $('.file-item').removeClass("selected");
-                $(this).addClass("selected");
+                if ($(this).hasClass("selected")) {
+                    if (file.realPath) {
+                        self.showPreview(file.ext, file.realPath);
+                        self.$viewer.addClass("active");
+                    }
+                } else {
+                    $('.file-item').removeClass("selected");
+                    $(this).addClass("selected");
+                }
             });
 
             $item.on("dblclick", () => {
@@ -213,7 +225,7 @@ class FileExplorer {
             case ".mp4":
             case ".mov":
             case ".webm":
-                this.$viewer.html(`<video id="previewFrame" controls muted">
+                this.$viewer.html(`<video id="previewFrame" controls autoplay muted">
           <source src="${path}" type="video/${ext.replace('.', '')}">
           비디오를 재생할 수 없습니다.
         </video>`);
