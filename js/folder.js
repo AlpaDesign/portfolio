@@ -232,7 +232,7 @@ class FileExplorer {
         </video>`);
                 break;
             case ".yotube":
-                this.$viewer.html(`<iframe width="560" height="315" 
+                this.$viewer.html(`<iframe id="youtube"  
         src="${path}" 
         frameborder="0" allowfullscreen>
 </iframe>`);
