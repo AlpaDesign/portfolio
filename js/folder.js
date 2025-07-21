@@ -234,7 +234,7 @@ class FileExplorer {
             case ".youtube":
                 this.$viewer.html(`<iframe id="youtube"  
         src="${path}" 
-        frameborder="0" allowfullscreen>
+        frameborder="0" allow="autoplay" allowfullscreen>
 </iframe>`);
                 break;
             case ".pdf":
