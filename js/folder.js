@@ -1,4 +1,4 @@
-class FileExplorer {
+class AlpaFolder {
     /**
      * @param {Array} fileList - 파일 및 폴더 정보 배열
      * @param {string} folderSelector - 파일 항목이 렌더링될 DOM 요소 선택자 (예: '#folder')
