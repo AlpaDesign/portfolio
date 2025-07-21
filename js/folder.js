@@ -178,6 +178,7 @@ class FileExplorer {
             case ".mkv":
             case ".webm":
             case ".flv":
+            case ".yotube":
             case ".wmv": return '<i class="bi bi-file-play-fill" style="color: #ea4335;"></i>';
             case ".mp3":
             case ".wav":
@@ -229,13 +230,12 @@ class FileExplorer {
           <source src="${path}" type="video/${ext.replace('.', '')}">
           비디오를 재생할 수 없습니다.
         </video>`);
+                break;
+            case ".yotube":
                 this.$viewer.html(`<iframe width="560" height="315" 
         src="${path}" 
         frameborder="0" allowfullscreen>
 </iframe>`);
-                break;
-            case ".yotube":
-                
                 break;
             case ".pdf":
             case ".html":
