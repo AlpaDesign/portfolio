@@ -530,6 +530,11 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 	background-color:#eaeaea;
 	font-size:1em;
 }
+
+#youtube{
+	width: 100%;
+	height: 100%;
+}
 #page1 .page1_table{
 	display:table-cell;
 	vertical-align:middle;
