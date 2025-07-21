@@ -178,7 +178,7 @@ class FileExplorer {
             case ".mkv":
             case ".webm":
             case ".flv":
-            case ".yotube":
+            case ".youtube":
             case ".wmv": return '<i class="bi bi-file-play-fill" style="color: #ea4335;"></i>';
             case ".mp3":
             case ".wav":
@@ -231,7 +231,7 @@ class FileExplorer {
           비디오를 재생할 수 없습니다.
         </video>`);
                 break;
-            case ".yotube":
+            case ".youtube":
                 this.$viewer.html(`<iframe id="youtube"  
         src="${path}" 
         frameborder="0" allowfullscreen>
