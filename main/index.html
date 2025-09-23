@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>장윤수portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="../js/script.js"></script>
+    <!-- <script src="./proccess.js"></script> -->
+    <script src="./deskTop.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <section>
+        <div class="container">
+            <div class="container_inner">
+                <div id="main">
+                    <div class="main_cover" id="window_main">
+                        
+                        
+                    </div>
+                </div>
+                <div class="proccess_window_bar">
+                    <div class="window_search_cover">
+                        <i class="bi bi-search" id="window_search_i"></i>
+                        <input type="text" placeholder="검색" id="window-search">
+                    </div>
+                    <div id="window_proccess_list">
+
+                    </div>
+                    <div class="power" title="로그아웃" onclick="logout()">
+                        <i class="bi bi-power"></i>
+                    </div>
+                </div>
+                <div id="pointer_box"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+<script>
+    
+    function logout(){
+        deleteCookie("login");
+        window.location.href = "/";
+    }
+    // 로그인 쿠키 확인
+    const loginCookie = getCookie("login");
+
+    // Base64 디코딩 후 "success" 여부 확인
+    if (!loginCookie || atob(loginCookie) !== "success") {
+        window.location.href = "/";
+    }
+
+
+
+    // ====== 사용 ======
+    const mainList = [
+        { pk:0, txt:"웹개발", url:"D:\\웹 개발", ext:"folder" },
+        { pk:0, txt:"윈도우 응용 프로그램", url:"D:\\윈도우 응용프로그램", ext:"folder" },
+        { pk:5, txt:"이력서", url:"D:\\이력서\\장윤수 이력서.pdf", ext:".pdf", realPath:"/download/장윤수 이력서.pdf" }
+    ];
+/*
+    const fileList = [
+    {idx:1, path:"D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상\\1.좌석 설계.mp4", name:"1.좌석 설계.mp4", type:"file", ext:".mp4", realPath:"./video/웹/극장/theater.mp4"},
+    {idx:2, path:"D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상\\2.공연 등록.mp4", name:"2.공연 등록.mp4", type:"file", ext:".mp4", realPath:"./video/웹/극장/product.mp4"},
+    {idx:5, path:"D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서\\1.기획 및 의도.pdf", name:"1.기획 및 의도.pdf", type:"file", ext:".pdf", realPath:"./files/기획의도.html"},
+    {idx:12, path:"D:\\이력서\\7.테스트.pdf", name:"7.테스트.pdf", type:"file", ext:".pdf", realPath:"./files/테스트.html"},
+    {idx:13, path:"D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램\\시연.mp4", name:"시연.mp4", type:"file", ext:".mp4", realPath:"https://youtube.com/shorts/THeeaBYBaFM?feature=share"}
+    ];*/
+
+    const fileList = [
+        {idx:1, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/theater.mp4", ico: null },
+        {idx:2, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/product.mp4", ico: null },
+        {idx:3, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/buy.mp4", ico: null },
+        {idx:4, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/notice.mp4",ico: null },
+
+        {idx:5, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "./files/기획의도.html", ico: null },
+        {idx:6, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "./files/요구사항분석.html", ico: null },
+        {idx:7, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/데이터베이스-설계.html", ico: null },
+        {idx:8, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/화면설계.html", ico: null },
+        {idx:9, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/소프트웨어-설계.html",ico: null },
+        {idx:10, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "./files/소스코드.html", ico: null },
+        {idx:11, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "./files/테스트.html", ico: null },
+        
+        {idx:12, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/THeeaBYBaFM?autoplay=1",ico: null },
+    	{idx:13, path: "D:\\윈도우 응용프로그램\\작업스케줄러", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",ico: null },
+        {idx:14, path: "C:\\Alpa프로그래스", name: "Progress.exe", type: "file", ext: ".exe", realPath: null, ico: null },
+    ];
+
+
+    const manager = new AlpaProcessManager({ fileList });
+    const desktop = new AlpaDesktop({ target:"#window_main", mainList, manager });
+    desktop.render();
+
+    // const mainList = [
+    //     {
+    //         pk : 0,
+    //         txt : "웹개발",
+    //         url : "D:\\웹 개발",
+    //         ext : "folder"
+    //     },
+    //     {
+    //         pk : 0,
+    //         txt : "윈도우 응용 프로그램",
+    //         url : "D:\\윈도우 응용프로그램",
+    //         ext : "folder"
+    //     },
+    //     {
+    //         pk : 5,
+    //         txt : "이력서",
+    //         url : "D:\\이력서\\7.테스트.pdf",
+    //         ext : ".pdf"
+    //     }
+    // ]
+    // const fileList = [
+    //     {idx:1, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/theater.mp4" },
+    //     {idx:2, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/product.mp4" },
+    //     {idx:3, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/buy.mp4" },
+    //     {idx:4, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/notice.mp4" },
+
+    //     {idx:5, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "./files/기획의도.html" },
+    //     {idx:6, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "./files/요구사항분석.html" },
+    //     {idx:7, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/데이터베이스-설계.html" },
+    //     {idx:8, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/화면설계.html" },
+    //     {idx:9, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/소프트웨어-설계.html" },
+    //     {idx:10, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "./files/소스코드.html" },
+    //     {idx:11, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "./files/테스트.html" },
+
+    //     {idx:12,path: "D:\\이력서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "./files/테스트.html" },
+
+    //     {idx:13, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".mp4", realPath: "https://files.mybox.naver.com/file/download.api?auth=3&amp;resourceKey=c2tza3Nrd2tkNDU2fDM0NzI1OTc0MTgyNjY5ODE0NDR8Rnww&amp;atoken=T0n1FrRWOPV%2FWsKp9oeD1NW29js8id8GiZJha23283EreKKRzbP0VJezzzxWO6HjBA%3D%3D&amp;NdriveSvcType=NHN%2FND-WEB%20Ver" }
+    // ];
+
+    
+    // var prc = new AlpaProccess(fileList, mainList);
+    // prc.WindowMain("#window_main");
+    // $(window).on("keypress", function(e){
+        
+    //     if (e.key === "Enter") {
+    //         $("#main .window_ico").each(function(){
+    //             if($(this).hasClass("select")){
+    //                 itemViewer($(this));
+    //             }
+                
+    //         });
+    //     }
+    // });
+    
+</script>
+</html>
