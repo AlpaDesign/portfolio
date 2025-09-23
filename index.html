@@ -41,7 +41,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="goFull" style="display: none;"></div>
             </div>
         </div>
     </section>
@@ -49,26 +48,13 @@
 
 </body>
 <script>
-    // 전체화면 전환
-    $('#goFull').on('click', function() {
-        enterFullscreen();
-    });
-
-    // 전체화면 해제
-    $('#exitFull').on('click', function() {
-        exitFullscreen();
-    });
-
+    
 
     const loginCookie = getCookie("login");
 
     if (loginCookie || atob(loginCookie) == "success") {
         window.location.href = "/main";
     }
-    $(function(){
-        $('#goFull').trigger("click");
-
-    });
     
 </script>
 </html>

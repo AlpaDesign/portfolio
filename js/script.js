@@ -68,7 +68,7 @@ $("#password").on("keypress", function(e){
         }
         const encoded = btoa("success"); // "success" → Base64 인코딩
         setCookie("login", encoded, 1);  // 1일 유지
-        enterFullscreen();
+        //enterFullscreen();
         // /main으로 이동
         window.location.href = "/main";
     }
