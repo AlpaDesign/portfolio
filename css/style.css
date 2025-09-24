@@ -140,7 +140,7 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background: url("../images/bottom4.jpg") no-repeat center center;
+	background: url("../images/window.jpg") no-repeat center center;
 	background-size: cover;
 	transition: all 0.5s;
 }
