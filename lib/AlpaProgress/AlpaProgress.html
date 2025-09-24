@@ -212,6 +212,10 @@
       .alpa-controls, .ap-details{
         display: none;
       }
+      .ar-title{
+        font-size:20px;
+      }
+      
     }
     /* 작은 화면 보정 */
     @media (max-width:480px){
@@ -350,7 +354,7 @@
           },
           {
             title: "리쥬란 NFC, QR 태깅 정품 인증",
-            comment: "프론트, 퍼블, 백엔드 담당, 인증방식 설계",
+            comment: "프론트, 퍼블, 백엔드 담당, URL Redirect 기반 정품 인증 플로우 설계",
             date: "2023.06~2023.07",
             framework: ["JAVA", "Spring Boot", "JSP", "JavaScript", "HTML", "CSS", "Apache", "Gradle"],
             client: "리쥬란"
@@ -364,7 +368,7 @@
           },
           {
             title: "그 외 홈페이지 개발 및 유지보수",
-            comment: "",
+            comment: "자사폴렛폼 유지보수 및 고객 관리",
             date: "2022.12~2023.08",
             framework: ["JAVA", "Spring Boot", "Gradle", "Git"],
             client: "스마트레이저"
@@ -518,11 +522,12 @@
         Percent: 50
       },
     ];
-
+    let isTarget = false;
     document.getElementById("alpaWrap").addEventListener("click", () => {
-      window.parent.postMessage("Progress Div Clicked!", "*");
+      isTarget = !isTarget;
+      window.parent.postMessage(isTarget, "*");
     });
-
+    
     const ap = new AlpaProgress('#progressRoot', skills, {
       type: 'bar',
       showContents: true,

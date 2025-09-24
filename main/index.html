@@ -34,6 +34,31 @@
   z-index:-1;
   opacity:0; transition:opacity 800ms ease; /* JS의 FADE와 맞추기 */
 }
+.backs.active{
+    display: block;
+}
+.backs{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+    cursor: pointer;
+}
+.backs .backs_cover{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.backs .backs_cover p {
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+}
 </style>
 <body>
 <div class="wrapper">
@@ -63,7 +88,12 @@
                 <div id="pointer_box"></div>
 
                 <div class="skills">
-                <iframe src="../lib/AlpaProgress/AlpaProgress.html"
+                    <div class="backs">
+                        <div class="backs_cover">
+                            <p>클릭하여 자세히 보기!</p>
+                        </div>
+                    </div>
+                    <iframe src="../lib/AlpaProgress/AlpaProgress.html"
                         class="viewer"
                         sandbox="allow-same-origin allow-scripts"
                         style="width:100%;height:100%;border:0"></iframe>
@@ -179,5 +209,15 @@
     layerA.style.opacity = '1';
 
     setInterval(rotate, INTERVAL);
+    
+    $(".skills").on("mouseenter", ()=>{
+        $(".backs").addClass("active");
+    });
+    $(".skills").on("mouseleave", ()=>{
+        $(".backs").removeClass("active");
+    })
+    $(".skills").on("click",()=>{
+        viewSkill();
+    })
 </script>
 </html>
