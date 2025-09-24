@@ -220,7 +220,21 @@
 i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 	font-size: 40px;
 }
-
+.skills{
+	position: fixed;
+    right: 0;
+    bottom: 39px;
+    width: 450px;
+    height: 300px;
+    border-radius: 5px 5px 0 0;
+    z-index: 10;
+    overflow: hidden;
+	box-shadow: 0px -6px 15px 0px rgb(0, 0, 0, 0.2);
+}
+.skills.active{
+	width: 100%;
+	height:100%;
+}
 #folder, .alpaka-folder-window{
   	position: absolute;
   	top: 100px;

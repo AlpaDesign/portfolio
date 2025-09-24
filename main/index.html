@@ -18,14 +18,31 @@
     <script src="../js/script.js"></script>
     <!-- <script src="./proccess.js"></script> -->
     <script src="./deskTop.js"></script>
-
+    <script src="../lib/AlpaProgress/js/AlpaProgress.js"></script>
 </head>
+<style>
+
+.bg-rotator{
+  position:relative; width:100%; height:60vh; /* 필요크기 */
+  overflow:hidden; background:#000;
+}
+.bg-rotator .layer{
+  position:absolute; inset:0;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  z-index:-1;
+  opacity:0; transition:opacity 800ms ease; /* JS의 FADE와 맞추기 */
+}
+</style>
 <body>
 <div class="wrapper">
     <section>
         <div class="container">
             <div class="container_inner">
-                <div id="main">
+                <div id="main" class="bg-rotator">
+                    <div class="layer a"></div>
+                    <div class="layer b"></div>
                     <div class="main_cover" id="window_main">
                         
                         
@@ -44,6 +61,14 @@
                     </div>
                 </div>
                 <div id="pointer_box"></div>
+
+                <div class="skills">
+                <iframe src="../lib/AlpaProgress/AlpaProgress.html"
+                        class="viewer"
+                        sandbox="allow-same-origin allow-scripts"
+                        style="width:100%;height:100%;border:0"></iframe>
+                </div>
+
             </div>
         </div>
     </section>
@@ -51,6 +76,7 @@
 
 </body>
 <script>
+
     
     function logout(){
         deleteCookie("login");
@@ -64,6 +90,7 @@
         window.location.href = "/";
     }
 
+    
 
 
     // ====== 사용 ======
@@ -73,82 +100,84 @@
         { pk:5, txt:"이력서", url:"D:\\이력서\\장윤수 이력서.pdf", ext:".pdf", realPath:"/download/장윤수 이력서.pdf" }
     ];
     const fileList = [
-        {idx:1, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/theater.mp4", ico: null },
-        {idx:2, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/product.mp4", ico: null },
-        {idx:3, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/buy.mp4", ico: null },
-        {idx:4, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/notice.mp4",ico: null },
+        {idx:1, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/theater.mp4", ico: null },
+        {idx:2, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/product.mp4", ico: null },
+        {idx:3, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/buy.mp4", ico: null },
+        {idx:4, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/notice.mp4",ico: null },
 
-        {idx:5, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "./files/기획의도.html", ico: null },
-        {idx:6, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "./files/요구사항분석.html", ico: null },
-        {idx:7, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/데이터베이스-설계.html", ico: null },
-        {idx:8, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/화면설계.html", ico: null },
-        {idx:9, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/소프트웨어-설계.html",ico: null },
-        {idx:10, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "./files/소스코드.html", ico: null },
-        {idx:11, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "./files/테스트.html", ico: null },
+        {idx:5, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "/files/기획의도.html", ico: null },
+        {idx:6, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "/files/요구사항분석.html", ico: null },
+        {idx:7, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/데이터베이스-설계.html", ico: null },
+        {idx:8, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/화면설계.html", ico: null },
+        {idx:9, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/소프트웨어-설계.html",ico: null },
+        {idx:10, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "/files/소스코드.html", ico: null },
+        {idx:11, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "/files/테스트.html", ico: null },
         
         {idx:12, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/THeeaBYBaFM?autoplay=1",ico: null },
     	{idx:13, path: "D:\\윈도우 응용프로그램\\작업스케줄러", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",ico: null },
-        {idx:14, path: "C:\\Alpa프로그래스", name: "Progress.exe", type: "file", ext: ".exe", realPath: null, ico: null },
+        {idx:14, path: "C:\\Alpa프로그래스", name: "Progress.exe", type: "file", ext: ".exe", realPath: "../lib/AlpaProgress/AlpaProgress.html", ico: null },
     ];
 
 
     const manager = new AlpaProcessManager({ fileList });
     const desktop = new AlpaDesktop({ target:"#window_main", mainList, manager });
     desktop.render();
+    window.addEventListener("message", viewSkill);
 
-    // const mainList = [
-    //     {
-    //         pk : 0,
-    //         txt : "웹개발",
-    //         url : "D:\\웹 개발",
-    //         ext : "folder"
-    //     },
-    //     {
-    //         pk : 0,
-    //         txt : "윈도우 응용 프로그램",
-    //         url : "D:\\윈도우 응용프로그램",
-    //         ext : "folder"
-    //     },
-    //     {
-    //         pk : 5,
-    //         txt : "이력서",
-    //         url : "D:\\이력서\\7.테스트.pdf",
-    //         ext : ".pdf"
-    //     }
-    // ]
-    // const fileList = [
-    //     {idx:1, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/theater.mp4" },
-    //     {idx:2, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/product.mp4" },
-    //     {idx:3, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/buy.mp4" },
-    //     {idx:4, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "./video/웹/극장/notice.mp4" },
 
-    //     {idx:5, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "./files/기획의도.html" },
-    //     {idx:6, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "./files/요구사항분석.html" },
-    //     {idx:7, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/데이터베이스-설계.html" },
-    //     {idx:8, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/화면설계.html" },
-    //     {idx:9, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "./files/소프트웨어-설계.html" },
-    //     {idx:10, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "./files/소스코드.html" },
-    //     {idx:11, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "./files/테스트.html" },
-
-    //     {idx:12,path: "D:\\이력서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "./files/테스트.html" },
-
-    //     {idx:13, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".mp4", realPath: "https://files.mybox.naver.com/file/download.api?auth=3&amp;resourceKey=c2tza3Nrd2tkNDU2fDM0NzI1OTc0MTgyNjY5ODE0NDR8Rnww&amp;atoken=T0n1FrRWOPV%2FWsKp9oeD1NW29js8id8GiZJha23283EreKKRzbP0VJezzzxWO6HjBA%3D%3D&amp;NdriveSvcType=NHN%2FND-WEB%20Ver" }
-    // ];
-
-    
-    // var prc = new AlpaProccess(fileList, mainList);
-    // prc.WindowMain("#window_main");
-    // $(window).on("keypress", function(e){
+    function viewSkill(){
+        manager.runProccessIdx(14);
         
-    //     if (e.key === "Enter") {
-    //         $("#main .window_ico").each(function(){
-    //             if($(this).hasClass("select")){
-    //                 itemViewer($(this));
-    //             }
-                
-    //         });
-    //     }
-    // });
-    
+        
+        $(".skills").hide(300);
+
+        try{
+            manager.win?.onClose(()=>$(".skills").show(300));
+        }catch(e){
+            
+        }
+    }
+
+
+    const IMAGES = [
+    '/images/bottom4.jpg',
+    '/images/bottom5.jpg',
+    '/images/bottom6.jpg',
+    '/images/bottom7.jpg',
+    ];
+
+    const INTERVAL = 4000;  // 교체 간격(ms)
+    const FADE = 800;       // 페이드 시간(ms)
+
+    const main = document.querySelector('#main');
+    const [layerA, layerB] = main.querySelectorAll('.layer');
+    let idx = 0, usingA = true;
+
+    // 사전 로딩
+    IMAGES.forEach(src => { const img = new Image(); img.src = src; });
+
+    function setBg(el, url) {
+    el.style.backgroundImage = `url("${url}")`;
+    }
+
+    function rotate() {
+    const next = IMAGES[idx % IMAGES.length];
+    if (usingA) {
+        setBg(layerB, next);
+        layerB.style.opacity = '1';
+        layerA.style.opacity = '0';
+    } else {
+        setBg(layerA, next);
+        layerA.style.opacity = '1';
+        layerB.style.opacity = '0';
+    }
+    usingA = !usingA;
+    idx++;
+    }
+
+    setBg(layerA, IMAGES[0]);
+    layerA.style.opacity = '1';
+
+    setInterval(rotate, INTERVAL);
 </script>
 </html>
