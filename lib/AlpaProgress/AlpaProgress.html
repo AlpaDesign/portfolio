@@ -7,6 +7,56 @@
   <script src="./js/AlpaProgress.js"></script>
   <style>
     :root{
+      --ar-bg:#f8fafc; --ar-card:#fff; --ar-text:#0f172a; --ar-sub:#475569; --ar-border:#e2e8f0; --ar-accent:#4f46e5;
+      --ar-green:#22c55e; --ar-orange:#f59e0b; --ar-radius:16px; --ar-shadow:0 6px 18px rgba(15,23,42,.08);
+    }
+    .alpa-resume{max-width:1100px;margin:24px auto;padding:0 16px;color:var(--ar-text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans KR",Arial}
+    .ar-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 16px}
+    .ar-title{font-size:24px;font-weight:800;letter-spacing:-.3px}
+    .ar-controls{display:flex;gap:8px;flex-wrap:wrap}
+    .ar-select,.ar-toggle{border:1px solid var(--ar-border);background:#fff;border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer}
+    .ar-grid{display:grid;grid-template-columns:280px 1fr;gap:18px}
+
+    /* Left: section nav */
+    .ar-sections{background:var(--ar-card);border:1px solid var(--ar-border);border-radius:var(--ar-radius);box-shadow:var(--ar-shadow);padding:12px}
+    .ar-nav{display:flex;flex-direction:column;gap:6px}
+    .ar-nav button{all:unset;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;cursor:pointer}
+    .ar-nav button:hover{background:#f1f5f9}
+    .ar-nav button[aria-current="true"]{background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe}
+    .ar-count{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--ar-sub);font-size:12px}
+
+    /* Right: content */
+    .ar-pane{background:var(--ar-card);border:1px solid var(--ar-border);border-radius:var(--ar-radius);box-shadow:var(--ar-shadow);padding:16px;min-height:280px}
+    .ar-pane h3{margin:4px 2px 14px;font-size:20px;font-weight:800}
+
+    /* timeline */
+    .ar-timeline{position:relative;margin-left:8px}
+    .ar-timeline:before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:#e5e7eb}
+    .ar-item{position:relative;padding:12px 12px 12px 44px;border-radius:12px;border:1px solid transparent}
+    .ar-item:hover{background:#f8fafc;border-color:#e5e7eb}
+    .ar-dot{position:absolute;left:7px;top:18px;width:16px;height:16px;border-radius:999px;background:var(--ar-accent);box-shadow:0 0 0 3px #eef2ff}
+    .ar-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .ar-name{font-weight:800}
+    .ar-badges{display:flex;gap:6px;flex-wrap:wrap}
+    .ar-badge{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;font-weight:700;border:1px solid #c7d2fe}
+    .ar-date{margin-left:auto;color:var(--ar-sub);font-size:12px;font-weight:700}
+    .ar-desc{color:var(--ar-sub);margin-top:6px;line-height:1.45}
+
+    /* list (자격/교육용) */
+    .ar-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+    .ar-card{background:#fff;border:1px solid var(--ar-border);border-radius:14px;padding:12px;box-shadow:var(--ar-shadow);transition:transform .12s ease, box-shadow .12s ease}
+    .ar-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,23,42,.12)}
+    .ar-card .top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+    .ar-card .title{font-weight:800}
+    .ar-card .date{margin-left:auto;color:var(--ar-sub);font-size:12px;font-weight:700}
+    .ar-card .meta{color:var(--ar-sub);font-size:13px}
+
+    /* chips */
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;font-size:11px;border:1px solid #e5e7eb;color:#374151;background:#f9fafb}
+
+    /* responsive */
+    @media (max-width:900px){.ar-grid{grid-template-columns:1fr}}
+    :root{
       --ap-accent: #4f46e5; /* 인디고 */
       --ap-bg: #f8fafc;
       --ap-card: #ffffff;
@@ -170,28 +220,175 @@
   </style>
 </head>
 <body>
-  <div class="alpa-wrap" id="progressDiv">
-    <div class="alpa-header">
-      <div class="alpa-title">기술 스킬</div>
-      <div class="alpa-controls">
-        <label class="alpa-toggle" title="내용 접기/펼치기">
-          <input type="checkbox" id="toggleContents" checked />
-          내용 표시
-        </label>
-        <select id="typeSelect" class="alpa-select" title="표시 타입">
-          <option value="bar">막대형 (bar)</option>
-          <option value="circle">원형 (circle)</option>
-          <option value="mixed">혼합 (mixed)</option>
-        </select>
+  <div class="alpa-container" id="alpaWrap">
+    <div class="alpa-resume">
+      <div class="ar-header">
+        <div class="ar-title">이력 & 자격 & 프로젝트</div>
+        <div class="ar-controls">
+          <select id="viewSelect" class="ar-select" title="보기 방식">
+            <option value="auto">자동</option>
+            <option value="timeline">타임라인</option>
+            <option value="cards">카드</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ar-grid">
+        <aside class="ar-sections">
+          <nav class="ar-nav" id="arNav" aria-label="섹션"></nav>
+        </aside>
+        <section class="ar-pane" id="arPane" aria-live="polite"></section>
       </div>
     </div>
 
-    <div id="progressRoot" class="alpa-grid" aria-live="polite"></div>
-  </div>
+    <div class="alpa-wrap">
+      <div class="alpa-header">
+        <div class="alpa-title">기술 스킬</div>
+        <div class="alpa-controls">
+          <label class="alpa-toggle" title="내용 접기/펼치기">
+            <input type="checkbox" id="toggleContents" checked />
+            내용 표시
+          </label>
+          <select id="typeSelect" class="alpa-select" title="표시 타입">
+            <option value="bar">막대형 (bar)</option>
+            <option value="circle">원형 (circle)</option>
+            <option value="mixed">혼합 (mixed)</option>
+          </select>
+        </div>
+      </div>
 
+      <div id="progressRoot" class="alpa-grid" aria-live="polite"></div>
+    </div>
+  </div>
   <script>
-    // 주어진 데이터 (질문에 제공된 것 그대로). 빈 항목(쉼표로 생긴 구멍)은 코드에서 걸러냅니다.
-    var list = [
+
+    var intro = [
+      {
+        order : 1,
+        title : "경력",
+        list : [
+          {
+            title : "엔지온 시스템 -> 이엘피",
+            comment: "SW팀 검사알고리즘 활용한 프로그램 제작 및 유지보수",
+            date : "2024.01 ~ 2025.08.15",
+          },
+          {
+            title : "스마트레이저",
+            comment: "웹 개발 (프론트, 백엔드)",
+            date : "2022.12 ~ 2023.08",
+          },
+          {
+            title : "동아인재대학",
+            comment: "마술전공",
+            date : "2015.03~2017.02",
+          }
+        ]
+      },
+      {
+        order : 2,
+        title : "자격증 및 교육",
+        list : [
+          {
+            title : "정보처리산업기사 (국가기술자격증)",
+            comment: "한국산업인력공단",
+            date : "2022.11.04",
+          },
+          {
+            title : "마술지도사 2급 (사)",
+            comment: "축제문화 예술협회",
+            date : "2016.04.09",
+          },
+          {
+            title : "조경기능사 (국가기술자격증)",
+            comment: "한국산업인력공단",
+            date : "2014.07.18",
+          },
+          {
+            title : "하이미디어 아카데미",
+            comment: "JAVA 기반 웹개발자 수료",
+            date : "2022.04~2022.09",
+          },
+          {
+            title : "하이미디어 아카데미",
+            comment: "웹퍼블리셔 과정 수료",
+            date : "2020.11~2021.05",
+          }
+        ]
+      },
+
+      {
+        order : 3,
+        title : "프로젝트 경험",
+        list: [
+          {
+            title: "SDC BP Macro",
+            comment: "Mura 검사 Console 프로그램 및 IP 프로그램 유지보수 및 셋업",
+            date: "2024.07~2025.08",
+            framework: ["C#", ".Net Framework", "WPF", "Windows Forms"],
+            client: "SDC"
+          },
+          {
+            title: "Seal 공정 Lens 검사기",
+            comment: "Lens 검사 Console 프로그램 및 IP 프로그램 유지보수 및 셋업",
+            date: "2024.03~2024.07",
+            framework: ["C#", "Windows Forms", "WPF"],
+            client: "지오메디칼"
+          },
+          {
+            title: "서귀포 스마트 알림",
+            comment: "유저 단, 관리자 단 퍼블 및 프론트 담당",
+            date: "2023.06~2023.07",
+            framework: ["JAVA", "SPRING BOOT", "RESTFUL API", "Apache", "Gradle", "Git", "JavaScript", "HTML", "CSS", "Thymeleaf"],
+            client: "서귀포시"
+          },
+          {
+            title: "해피리얼 AR앱",
+            comment: "프론트 UI담당, 백오피스 공지등록",
+            date: "2023.06~2023.06",
+            framework: ["React Native", "NestJS", "React", "AWS", "Git"],
+            client: "섹터나인, SPC"
+          },
+          {
+            title: "리쥬란 NFC, QR 태깅 정품 인증",
+            comment: "프론트, 퍼블, 백엔드 담당, 인증방식 설계",
+            date: "2023.06~2023.07",
+            framework: ["JAVA", "Spring Boot", "JSP", "JavaScript", "HTML", "CSS", "Apache", "Gradle"],
+            client: "리쥬란"
+          },
+          {
+            title: "KT 원격 수업",
+            comment: "프론트, 퍼블",
+            date: "2023.05~2023.06",
+            framework: ["JAVA", "TypeScript", "HTML", "CSS", "Git"],
+            client: "KT, 올리브스톤"
+          },
+          {
+            title: "그 외 홈페이지 개발 및 유지보수",
+            comment: "",
+            date: "2022.12~2023.08",
+            framework: ["JAVA", "Spring Boot", "Gradle", "Git"],
+            client: "스마트레이저"
+          },
+          {
+            title: "회사 내부 서버 이전 및 빌드 환경 변경",
+            comment: "AWS로 서버 이전, Spring → Spring Boot 전환, Maven → Gradle 변경, 서버 배포",
+            date: "2022.12~2023.08",
+            framework: ["JAVA", "AWS (EC2)", "Nginx", "Spring Boot", "SSL", "JSP", "Node"],
+            client: "스마트레이저"
+          },
+          {
+            title: "자회사 플랫폼 유지보수",
+            comment: "SSL 관련 작업",
+            date: "2022.12~2023.08",
+            framework: ["JAVA", "AWS (EC2)", "Nginx", "Spring Boot"],
+            client: "스마트레이저"
+          }
+        ]
+      }
+    ]
+
+    
+    var skills = [
       { title: "HTML",
         Contents: [
           "HTML5 DTD 문법 준수",
@@ -322,24 +519,22 @@
       },
     ];
 
-    document.getElementById("progressDiv").addEventListener("click", () => {
-      // 부모(index.html)에게 메시지 전달
+    document.getElementById("alpaWrap").addEventListener("click", () => {
       window.parent.postMessage("Progress Div Clicked!", "*");
     });
 
-    // ===== 데모 초기화 =====
-    const ap = new AlpaProgress('#progressRoot', list, {
-      type: 'bar',           // 'bar' | 'circle' | 'mixed'
+    const ap = new AlpaProgress('#progressRoot', skills, {
+      type: 'bar',
       showContents: true,
-      // accent: '#16a34a',  // 원하면 포인트 컬러 지정
     });
 
-    // UI 연동
     const typeSelect = document.getElementById('typeSelect');
     const toggleContents = document.getElementById('toggleContents');
+    window.addEventListener('DOMContentLoaded', ()=> new AlpaResume(document.querySelector('.alpa-resume'), intro));
 
     typeSelect.addEventListener('change', (e)=> ap.setType(e.target.value));
     toggleContents.addEventListener('change', (e)=> ap.showContents(e.target.checked));
   </script>
+</body>
 </body>
 </html>
