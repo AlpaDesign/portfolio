@@ -132,7 +132,7 @@ $("#main").on("mousedown", function (e) {
     
 });
 
-$("#main").on("mousemove", function (e) {
+$("body").on("mousemove", function (e) {
     if (!selectObj.isDragging) return;
 
     const x = Math.min(e.pageX, selectObj.startX);
