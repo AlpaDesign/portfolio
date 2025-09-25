@@ -167,10 +167,20 @@
 	z-index: -1;
 }
 #main .main_cover .txt{
-	font-size: 12px;
+	font-size: 11px;
 	color: #ffffff;
 	text-shadow: 1px 1px 2px black;
 	text-align: center;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	white-space: nowrap;
+	
+}
+#main .main_cover .window_ico.select .txt{
+	overflow-wrap: anywhere;
+	white-space: wrap;
+	
 }
 #main .window_ico .ico_image{
 	text-align: center;

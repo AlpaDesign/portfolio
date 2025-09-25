@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--
+    안녕하세요?
+    활동명 AlpaDesign 장윤수입니다.
+    사용 라이브러리 = jQuery, bootstrap icon
+    직접 제작한 라이브러리 = AlpaProgress.js, AlpaDeskTop.js
+    
+    -->
     <title>장윤수portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/font.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="../js/script.js"></script>
-    <!-- <script src="./proccess.js"></script> -->
-    <script src="./deskTop.js"></script>
+    <script src="./AlpaDeskTop.js"></script>
     <script src="../lib/AlpaProgress/js/AlpaProgress.js"></script>
 </head>
 <style>
 
 .bg-rotator{
-  position:relative; width:100%; height:60vh; /* 필요크기 */
+  position:relative; width:100%; height:60vh;
   overflow:hidden; background:#000;
 }
 .bg-rotator .layer{
@@ -32,7 +36,7 @@
   background-size:cover;
   background-repeat:no-repeat;
   z-index:-1;
-  opacity:0; transition:opacity 800ms ease; /* JS의 FADE와 맞추기 */
+  opacity:0; transition:opacity 800ms ease;
 }
 .backs.active{
     display: block;
@@ -127,7 +131,7 @@
     const mainList = [
         { pk:0, txt:"웹개발", url:"D:\\웹 개발", ext:"folder" },
         { pk:0, txt:"윈도우 응용 프로그램", url:"D:\\윈도우 응용프로그램", ext:"folder" },
-        { pk:5, txt:"이력서", url:"D:\\이력서\\장윤수 이력서.pdf", ext:".pdf", realPath:"/download/장윤수 이력서.pdf" }
+        { pk:15, txt:"이력서.pdf", url:"D:\\이력서\\장윤수 이력서.pdf", ext:".pdf", realPath:"/download/장윤수 이력서.pdf" }
     ];
     const fileList = [
         {idx:1, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/theater.mp4", ico: null },
@@ -146,6 +150,7 @@
         {idx:12, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/HN8kXCf19us?autoplay=1",ico: null },
     	{idx:13, path: "D:\\윈도우 응용프로그램\\작업스케줄러", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",ico: null },
         {idx:14, path: "C:\\Alpa프로그래스", name: "Progress.exe", type: "file", ext: ".exe", realPath: "../lib/AlpaProgress/AlpaProgress.html", ico: null },
+        {idx:15, path: "D:\\이력서", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null },
     ];
 
 

@@ -17,7 +17,6 @@
     .ar-select,.ar-toggle{border:1px solid var(--ar-border);background:#fff;border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer}
     .ar-grid{display:grid;grid-template-columns:280px 1fr;gap:18px}
 
-    /* Left: section nav */
     .ar-sections{background:var(--ar-card);border:1px solid var(--ar-border);border-radius:var(--ar-radius);box-shadow:var(--ar-shadow);padding:12px}
     .ar-nav{display:flex;flex-direction:column;gap:6px}
     .ar-nav button{all:unset;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;cursor:pointer}
@@ -25,11 +24,9 @@
     .ar-nav button[aria-current="true"]{background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe}
     .ar-count{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--ar-sub);font-size:12px}
 
-    /* Right: content */
     .ar-pane{background:var(--ar-card);border:1px solid var(--ar-border);border-radius:var(--ar-radius);box-shadow:var(--ar-shadow);padding:16px;min-height:280px}
     .ar-pane h3{margin:4px 2px 14px;font-size:20px;font-weight:800}
 
-    /* timeline */
     .ar-timeline{position:relative;margin-left:8px}
     .ar-timeline:before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:#e5e7eb}
     .ar-item{position:relative;padding:12px 12px 12px 44px;border-radius:12px;border:1px solid transparent}
@@ -42,7 +39,6 @@
     .ar-date{margin-left:auto;color:var(--ar-sub);font-size:12px;font-weight:700}
     .ar-desc{color:var(--ar-sub);margin-top:6px;line-height:1.45}
 
-    /* list (자격/교육용) */
     .ar-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
     .ar-card{background:#fff;border:1px solid var(--ar-border);border-radius:14px;padding:12px;box-shadow:var(--ar-shadow);transition:transform .12s ease, box-shadow .12s ease}
     .ar-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,23,42,.12)}
@@ -51,13 +47,11 @@
     .ar-card .date{margin-left:auto;color:var(--ar-sub);font-size:12px;font-weight:700}
     .ar-card .meta{color:var(--ar-sub);font-size:13px}
 
-    /* chips */
     .chip{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;font-size:11px;border:1px solid #e5e7eb;color:#374151;background:#f9fafb}
 
-    /* responsive */
     @media (max-width:900px){.ar-grid{grid-template-columns:1fr}}
     :root{
-      --ap-accent: #4f46e5; /* 인디고 */
+      --ap-accent: #4f46e5;
       --ap-bg: #f8fafc;
       --ap-card: #ffffff;
       --ap-text: #0f172a;
@@ -111,7 +105,6 @@
     }
     .alpa-toggle input{ margin-right:6px; }
 
-    /* 카드 레이아웃 */
     .alpa-grid{
       display:grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -154,7 +147,6 @@
       width: var(--ap-target, 0%);
     }
 
-    /* 원형형 */
     .ap-circle{
       width:112px; height:112px; margin:4px 0;
       align-self:center; position:relative;
@@ -172,14 +164,12 @@
       transition: stroke-dasharray 1200ms cubic-bezier(.22,1,.36,1);
     }
     .ap-circle[data-animate="on"] .ap-ring{
-      /* JS에서 dasharray를 세팅 */
     }
     .ap-circle .ap-center{
       position:absolute; inset:0; display:grid; place-items:center;
       font-weight:800; font-size:18px;
     }
 
-    /* 내용 리스트 */
     details.ap-details{
       background:#f8fafc; border:1px solid var(--ap-border);
       border-radius:12px; overflow:hidden;
@@ -191,8 +181,6 @@
     details.ap-details[open] > summary{ border-bottom:1px solid var(--ap-border); }
     .ap-contents{ padding:10px 14px; }
     .ap-contents li{ color: var(--ap-subtext); margin:6px 0;font-size:11px; line-height:1.35; }
-
-    /* 뱃지 */
     .ap-badge{
       display:inline-block; padding:2px 8px; border-radius:999px;
       background:#eef2ff; color:#3730a3; font-size:12px; font-weight:700;
@@ -217,7 +205,6 @@
       }
       
     }
-    /* 작은 화면 보정 */
     @media (max-width:480px){
       .alpa-title{ font-size:20px; }
     }
