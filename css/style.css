@@ -197,6 +197,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+	gap:3px;
 }
 
 #main .window_ico.select, #main .window_ico:hover{
@@ -212,6 +213,46 @@
 	background-color: rgba(87,163,255, 0.3);
 	z-index: 10;
 }
+span.i_cover{
+	display: inline-block;
+	text-align: center;
+	border-radius: 5px;
+}
+.file-item span.i_cover{
+	font-size:18px;
+	padding: 0 5px;
+}
+
+.proccess_window_bar span.i_cover{
+	padding: 5px;
+}
+
+
+span.i_cover.folders{
+	background-color: #f4b400;
+	color:#fff;
+}
+span.i_cover.videos{
+	background-color:#ea4335;
+	color:#fff;
+}
+span.i_cover.pdf{
+	background-color:#d93025;
+	color:#fff;
+}
+span.i_cover.images{
+	background-color:#34a853;
+	color:#fff;
+}
+span.i_cover.exe{
+	background-color:#555;
+	color:#fff;
+}
+span.i_cover.earmark{
+	background-color:#777;
+	color:#fff;
+}
+
 
 .proccess_window_bar{
 	display: flex;
@@ -219,27 +260,51 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 39px;
-	background-color: #eee;
-	padding: 5px 25px;
+	height: 48px;
+	background-color: transparent;
 	z-index: 999;
 	gap: 10px;
 }
 
+.window_proccess_start.active,
+.window_proccess_start:hover{
+	background-color: #0277BD;
 
+}
+
+.start-menu{
+	display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 48px;
+    padding: 10px;
+    height: 85vh;
+    min-height: 512px;
+    z-index: 9999;
+    color: white;
+    background-color: #0277BD;
+}
+
+.window_proccess_list i.bi{
+	font-size: 22px;
+}
+
+.window_proccess_list i.bi{
+	font-size: 22px;
+}
 i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 	font-size: 40px;
 }
 .skills{
 	position: fixed;
-    right: 0;
-    bottom: 39px;
+    right: 9px;
+    bottom: 58px;
     width: 450px;
     height: 300px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     z-index: 10;
     overflow: hidden;
-	box-shadow: 0px -6px 15px 0px rgb(0, 0, 0, 0.2);
+    box-shadow: 0px -6px 15px 0px rgb(0, 0, 0, 0.2);
 }
 .skills.active{
 	width: 100%;
@@ -321,14 +386,22 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 	gap:10px;
 }
 #window_proccess_list .alpaka-proccess_box{
-	width:35px;
 	display: flex;
-	justify-content: center;
-	cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 55px;
+    height: 48px;
+    color: white;
+    border: 1px solid transparent;
+    transition: all 100ms;
+    cursor: pointer;
 }
+.alpaka-proccess_box.select{
 
-#window_proccess_list .alpaka-proccess_box:hover{
-	background-color:#DFDFDF;
+}
+#window_proccess_list .alpaka-proccess_box:hover,.alpaka-proccess_box.select{
+	background-color: rgba(255,255,255,.3);
 }
 #window_proccess_list i{
 	font-size: 29px;
@@ -439,7 +512,7 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 	background: #e0f0ff;
 }
 .file-item i{
-	font-size: 30px;
+	font-size: 18px;
 }
 .file-icon {
 	width: 20px;
@@ -513,7 +586,7 @@ input:focus{
 }
 
 #window_main i{
-	font-size: 40px;
+	font-size: 26px;
 }
 .power{
 	margin-left: auto;

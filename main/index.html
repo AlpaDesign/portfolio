@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/AlpaDeskTop.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     
@@ -22,7 +23,9 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="./AlpaDeskTop.js"></script>
+    <!-- <script src="./deskTop_back.js"></script> -->
     <script src="../lib/AlpaProgress/js/AlpaProgress.js"></script>
+    
 </head>
 <style>
 
@@ -63,12 +66,125 @@
     color: #fff;
     font-size: 22px;
 }
+i.bi.bi-windows{
+    font-size: 31px;
+}
+.window_proccess_start{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 55px;
+    height: 48px;
+    color: white;
+    border: 1px solid transparent;
+    transition: all 100ms;
+    cursor: pointer;
+}
+.alpaka-proccess_box:hover{
+    background-color: rgba(255,255,255,.1);
+}
 </style>
 <body>
 <div class="wrapper">
     <section>
         <div class="container">
             <div class="container_inner">
+                <div class="start-menu start-menu--open" style="display: flex;">
+                <div class="start-menu__list">
+                <div class="media">
+                    <a class="user-info" href="#">
+                    <img class="user-info__img media__img" src="/images/alpaka.png" alt="User image" />
+                    <div class="user-info__name media__body">
+                    Alpa장윤수
+                    </div>
+                    </a>
+                    <a class="user-info__power" href="#">
+                    <i class="fa fa-power-off"></i>
+                    </a>
+                </div>
+                
+
+                <ul class="start-menu__recent" id="file_recent">
+                    <li class="start-menu__explorer">
+                    <a href="#" data-window="explorer">
+                        <i class="fa fa-folder"></i>
+                        File Explorer
+                    </a>
+                    </li>
+                    <li class="start-menu__mail">
+                    <a href="#" data-window="mail">
+                        <i class="fa fa-envelope"></i>
+                        Mail
+                    </a>
+                    </li>
+                    <li class="start-menu__notepad">
+                    <a href="#" data-window="notepad">
+                        <i class="fa fa-pencil"></i>
+                        Notepad
+                    </a>
+                    </li>
+                    <li class="start-menu__explorer">
+                    <a href="#">
+                        <i class="fa fa-folder"></i>
+                        File Explorer
+                    </a>
+                    </li>
+                    <li class="start-menu__mail">
+                    <a href="#">
+                        <i class="fa fa-envelope"></i>
+                        Mail
+                    </a>
+                    </li>
+                    <li class="start-menu__notepad">
+                    <a href="#">
+                        <i class="fa fa-pencil"></i>
+                        Notepad
+                    </a>
+                    </li>
+                </ul>
+                
+                <a class="all-apps" href="#">
+                    All apps
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+                
+                <input type="text" class="search" placeholder="Search files and folders">
+                </div>
+                <!-- <div class="start-screen-scroll">
+                <div class="start-screen" style="position: relative; height: 512px;">
+                <a class="start-screen__tile start-screen__tile--explorer masonry-item" href="#" style="position: absolute; left: 0px; top: 0px;">
+                    <i class="fa fa-folder"></i>
+                    <span>File Explorer</span>
+                </a>
+                <a class="start-screen__tile masonry-item" href="#" style="position: absolute; left: 128px; top: 0px;">
+                </a>
+                <a class="start-screen__tile start-screen__tile--wide masonry-item" href="#" data-ss-colspan="2" style="position: absolute; left: 256px; top: 0px;">
+                </a>
+                <div class="start-screen__smallgroup masonry-item" style="position: absolute; left: 0px; top: 128px;">
+                <a class="start-screen__tile start-screen__tile--small" href="#"></a>
+                    <a class="start-screen__tile start-screen__tile--small" href="#"></a>
+                    <a class="start-screen__tile start-screen__tile--small" href="#"></a>
+                </div>
+                <a class="start-screen__tile masonry-item" href="#" style="position: absolute; left: 128px; top: 128px;">
+                </a>
+                <a class="start-screen__tile masonry-item" href="#" style="position: absolute; left: 256px; top: 128px;">
+                </a>
+                <a class="start-screen__tile start-screen__tile--notepad masonry-item" href="#" style="position: absolute; left: 384px; top: 128px;">
+                </a>
+                <a class="start-screen__tile start-screen__tile--large start-screen__tile--mail masonry-item" href="#" data-ss-colspan="2" style="position: absolute; left: 0px; top: 256px;">
+                    <i class="fa fa-envelope"></i>
+                    <span>Mail</span>
+                </a>
+                <a class="start-screen__tile masonry-item" href="#" style="position: absolute; left: 256px; top: 256px;">
+                </a>
+                <a class="start-screen__tile masonry-item" href="#" style="position: absolute; left: 384px; top: 256px;">
+                </a>
+                <a class="start-screen__tile masonry-item" href="#" style="position: absolute; left: 256px; top: 384px;">
+                </a>
+                </div>
+                </div> -->
+            </div>
                 <div id="main" class="bg-rotator">
                     <div class="layer a"></div>
                     <div class="layer b"></div>
@@ -78,9 +194,12 @@
                     </div>
                 </div>
                 <div class="proccess_window_bar">
-                    <div class="window_search_cover">
+                    <!-- <div class="window_search_cover">
                         <i class="bi bi-search" id="window_search_i"></i>
                         <input type="text" placeholder="검색" id="window-search">
+                    </div> -->
+                    <div class="window_proccess_start">
+                        <i class="bi bi-windows"></i>
                     </div>
                     <div id="window_proccess_list">
 
@@ -91,7 +210,7 @@
                 </div>
                 <div id="pointer_box"></div>
 
-                <div class="skills">
+                <!-- <div class="skills">
                     <div class="backs">
                         <div class="backs_cover">
                             <p>클릭하여 자세히 보기!</p>
@@ -101,7 +220,7 @@
                         class="viewer"
                         sandbox="allow-same-origin allow-scripts"
                         style="width:100%;height:100%;border:0"></iframe>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -132,7 +251,8 @@
         { pk:0, txt:"웹개발", url:"D:\\웹 개발", ext:"folder" },
         { pk:0, txt:"윈도우 응용 프로그램", url:"D:\\윈도우 응용프로그램", ext:"folder" },
         { pk:15, txt:"이력서.pdf", url:"D:\\이력서\\장윤수 이력서.pdf", ext:".pdf", realPath:"/download/장윤수 이력서.pdf" },
-        { pk:16, txt:"극장설계기획안", url:"D:\\웹 개발\\기획서.exe", ext:".exe", realPath:"/lib/AlpaTheater/AlpaTheater.html", ico:`<i class="bi bi-card-checklist"></i>` },
+        { pk:16, txt:"극장설계기획안", url:"D:\\웹 개발\\기획서.exe", ext:".exe", realPath:"/lib/AlpaTheater/AlpaTheater.html", ico:`<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>` },
+        { pk:16, txt:"보유스킬 현황", url:"C:\\Alpa프로그래스", ext:".exe", realPath:"/lib/AlpaProgress/AlpaProgress.html", ico:`<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>` },
     ];
     const fileList = [
         {idx:1, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/theater.mp4", ico: null },
@@ -150,8 +270,8 @@
         
         {idx:12, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/HN8kXCf19us?autoplay=1",ico: null },
     	{idx:13, path: "D:\\윈도우 응용프로그램\\작업스케줄러", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",ico: null },
-        {idx:14, path: "C:\\Alpa프로그래스", name: "Progress.exe", type: "file", ext: ".exe", realPath: "../lib/AlpaProgress/AlpaProgress.html", ico: null },
-        {idx:15, path: "D:\\웹 개발", name: "기획서.exe", type: "file", ext: ".exe", realPath: "../lib/AlpaTheater/AlpaTheater.html", ico: `<i class="bi bi-card-checklist"></i>` },
+        {idx:14, path: "C:\\Alpa프로그래스", name: "Progress.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaProgress/AlpaProgress.html", ico: `<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>` },
+        {idx:15, path: "D:\\웹 개발", name: "기획서.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaTheater/AlpaTheater.html", ico: `<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>` },
         {idx:16, path: "D:\\이력서", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null },
     ];
 
@@ -159,72 +279,65 @@
     const manager = new AlpaProcessManager({ fileList });
     const desktop = new AlpaDesktop({ target:"#window_main", mainList, manager });
     desktop.render();
-    window.addEventListener("message", viewSkill);
+    //window.addEventListener("message", viewSkill);
 
 
-    function viewSkill(){
+    $(window).on("load",()=>{
+        manager.runProccessIdx(15);
         manager.runProccessIdx(14);
-        
-        
-        $(".skills").hide(300);
 
-        try{
-            manager.win?.onClose(()=>$(".skills").show(300));
-        }catch(e){
+
+        let html = "";
+        fileList.forEach(e => {
+            if(e.ext == ".exe"){
+                html += `
+                    <li data-idx=${e.idx}>
+                        <a href="#">
+                            ${e.ico ?? '<i class="bi bi-terminal-fill"></i>'}
+                            ${e.name.split(".")[0] ?? e.name}
+                        </a>
+                    </li>
+                `;
+            }
+        });
+        $("#file_recent").html(html);
+        
+        $("#file_recent li").click((e)=>{
+            const idx = Number($(e.currentTarget).attr("data-idx"));
+            manager.runProccessIdx(idx);
+            $(".start-menu").removeClass("active");
+            $(".window_proccess_start").removeClass("active");
+        });
+    })
+
+
+    // function viewSkill(){
+    //     manager.runProccessIdx(14);
+        
+        
+    //     $(".skills").hide(300);
+
+    //     try{
+    //         manager.win?.onClose(()=>$(".skills").show(300));
+    //     }catch(e){
             
-        }
-    }
+    //     }
+    // }
 
-/*
-    const IMAGES = [
-    '/images/bottom4.jpg',
-    '/images/bottom5.jpg',
-    '/images/bottom6.jpg',
-    '/images/bottom7.jpg',
-    ];
 
-    const INTERVAL = 4000;  // 교체 간격(ms)
-    const FADE = 800;       // 페이드 시간(ms)
-
-    const main = document.querySelector('#main');
-    const [layerA, layerB] = main.querySelectorAll('.layer');
-    let idx = 0, usingA = true;
-
-    // 사전 로딩
-    IMAGES.forEach(src => { const img = new Image(); img.src = src; });
-
-    function setBg(el, url) {
-    el.style.backgroundImage = `url("${url}")`;
-    }
-
-    function rotate() {
-    const next = IMAGES[idx % IMAGES.length];
-    if (usingA) {
-        setBg(layerB, next);
-        layerB.style.opacity = '1';
-        layerA.style.opacity = '0';
-    } else {
-        setBg(layerA, next);
-        layerA.style.opacity = '1';
-        layerB.style.opacity = '0';
-    }
-    usingA = !usingA;
-    idx++;
-    }
-
-    setBg(layerA, IMAGES[0]);
-    layerA.style.opacity = '1';
-
-    setInterval(rotate, INTERVAL);
-    */
-    $(".skills").on("mouseenter", ()=>{
-        $(".backs").addClass("active");
+    $(".window_proccess_start").on("click",()=>{
+        $(".start-menu").toggleClass("active");
+        $(".window_proccess_start").toggleClass("active");
     });
-    $(".skills").on("mouseleave", ()=>{
-        $(".backs").removeClass("active");
-    })
-    $(".skills").on("click",()=>{
-        viewSkill();
-    })
+
+    $("body").on("mousedown", (e)=>{
+        let targets = e.target;
+        if(!targets.closest(".start-menu") && !targets.closest(".window_proccess_start")){
+            $(".start-menu").removeClass("active");
+            $(".window_proccess_start").removeClass("active");
+        }
+    });
+    
+    
 </script>
 </html>
