@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>장윤수 | 백엔드 포트폴리오</title>
+  <meta name="description" content="공연/강의 예약 서비스 백엔드 포트폴리오 – 설계, 기술 스택, DB/화면/소프트웨어 설계, 테스트까지 한눈에 보는 이력서형 랜딩." />
+  <style>
+
+    body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+      margin: 0;
+      padding: 0;
+    }
+    ul, ol {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    img {
+      vertical-align: top;
+      border: 0;
+    }
+    /* ====== THEME TOKENS ====== */
+    :root{
+      --bg:#0b0e14; --panel:#11161f; --ink:#e7ecf3; --muted:#a9b4c0; --brand:#7aa2ff; --accent:#9ee493; --warn:#f7b267;
+      --card:#0f1420; --chip:#1a2130; --border:#1f2a3a; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px; --w:1200px;
+      --h-font:"Pretendard Variable", "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif;
+      --b-font:"Pretendard Variable", system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif;
+      --heading-grad:linear-gradient(135deg,#a6c8ff,#6ea8fe 45%,#9ee493);
+    }
+    /* LIGHT */
+    body[data-theme="light"]{
+      --bg:#f6f8fb; --panel:#ffffff; --card:#ffffff; --ink:#0c1220; --muted:#5c677d; --chip:#eef3fb; --border:#e7ecf3; --shadow:0 10px 30px rgba(12,18,32,.08);
+      --heading-grad:linear-gradient(135deg,#4f6bdc,#8ac6ff 45%,#6dd6a6);
+    }
+    /* SOLAR (강조 테마) */
+    body[data-theme="solar"]{
+      --bg:#0b0e14; --panel:#0e1524; --card:#0c1422; --ink:#fefefe; --muted:#b9c4d1; --chip:#0f1c33; --border:#1b2a42;
+      --brand:#ffd166; --accent:#fca311; --heading-grad:linear-gradient(135deg,#ffd166,#fca311 50%,#ff6b6b);
+    }
+
+    /* ====== BASE ====== */
+    @media (prefers-color-scheme: light) { body:not([data-theme]){ background:#f6f8fb } }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font:16px/1.65 var(--b-font); color:var(--ink); background:
+      radial-gradient(1200px 800px at 10% -10%, rgba(122,162,255,.14), transparent 60%),
+      radial-gradient(900px 600px at 100% 0%, rgba(158,228,147,.12), transparent 50%),
+      var(--bg);
+      transition:background .35s ease, color .25s ease;
+    }
+    .wrap{max-width:var(--w); margin:0 auto; padding:22px}
+
+    header.hero{position:sticky; top:0; z-index:10; backdrop-filter:saturate(120%) blur(10px); background:linear-gradient(180deg, rgba(11,14,20,.85), rgba(11,14,20,.6)); border-bottom:1px solid var(--border)}
+    header .hero-inner{max-width:var(--w); margin:0 auto; padding:14px; display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+    .avatar{width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg, var(--brand), var(--accent)); box-shadow:var(--shadow); display:grid; place-items:center; color:#09111f; font-weight:800}
+    .me h1{margin:0; font:700 22px/1.2 var(--h-font); background:var(--heading-grad); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .me p{margin:4px 0 0; color:var(--muted); font-size:13.5px}
+    .hero-actions{margin-left:auto; display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+    .btn{appearance:none; border:1px solid var(--border); background:var(--chip); color:var(--ink); padding:9px 13px; border-radius:12px; cursor:pointer; transition:.2s transform ease, .2s background ease, .2s border-color ease; font-size:14px}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg, var(--brand), #82b3ff); color:#09111f; border-color:transparent; font-weight:700}
+
+    main{display:grid; grid-template-columns:260px 1fr; gap:22px; margin-top:22px}
+    nav.toc{position:sticky; top:92px; align-self:start; background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:14px; box-shadow:var(--shadow)}
+    .toc h2{font-size:14px; margin:2px 0 10px; letter-spacing:.3px; color:var(--muted)}
+    .toc a{display:block; padding:10px 10px; border-radius:12px; color:var(--ink); text-decoration:none; border:1px solid transparent; font-size:14px}
+    .toc a:hover{background:var(--chip); border-color:var(--border)}
+
+    section.card{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow); margin-bottom:16px; font-size:14px}
+    section.card header{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:6px}
+    section.card header h3{margin:0; font:800 18px/1.2 var(--h-font); letter-spacing:.2px}
+    section.card header .chip{font-size:11px; color:var(--muted); background:var(--chip); border:1px solid var(--border); padding:4px 8px; border-radius:999px}
+
+    /* ====== CREATIVE BODY TYPO ====== */
+    .content{display:grid; gap:20px}
+    .content p{margin:0; position:relative; padding-left:12px}
+    .content p::before{content:""; position:absolute; left:0; top:.7em; width:6px; height:6px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--accent))}
+    .content strong{font-weight:800; padding:2px 6px; border-radius:8px; background:linear-gradient(135deg, rgba(122,162,255,.2), rgba(158,228,147,.18));}
+    .content .lead{font:600 14px/1.7 var(--b-font); letter-spacing:.1px}
+    .content .lead::first-letter{font:800 38px/1 var(--h-font); float:left; padding-right:6px; color:transparent; background:var(--heading-grad); -webkit-background-clip:text; background-clip:text}
+
+    /* ====== MEDIA (Images) ====== */
+    .media{margin-bottom:12px}
+    .image-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px}
+    .image-slot{position:relative; aspect-ratio:16/9; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01))}
+    .image-slot::after{content:""; position:absolute; inset:0; box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+    .image-slot img{width:100%;  object-fit:cover; transition:transform .25s ease}
+    .image-slot:hover img{transform:scale(1.03)}
+    .image-slot figcaption{font-size:12px; color:var(--muted); padding:6px 8px; text-align:center}
+
+    /* ====== LIGHTBOX ====== */
+    .lightbox{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.75); z-index:1000}
+    .lightbox.open{display:grid}
+    .lightbox img{max-width:92vw; max-height:86vh; border-radius:12px}
+    .lightbox .cap{color:#fff; margin-top:8px; text-align:center; font-size:14px}
+    .lightbox .nav{position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; pointer-events:none}
+    .lightbox .btn{pointer-events:auto; background:rgba(255,255,255,.15); color:#fff; border:none; padding:10px 14px; border-radius:10px; margin:0 12px}
+    #tocList li.active > a{
+        background:var(--chip); 
+        border-color:var(--border);
+        
+    }
+    .viewer-details{margin-top:10px}
+.viewer-details summary{
+  list-style:none; cursor:pointer; user-select:none; padding:8px 12px;
+  border:1px solid var(--border); border-radius:12px; background:var(--chip);
+  display:inline-flex; align-items:center; gap:8px; font-weight:700
+}
+.viewer-details summary::-webkit-details-marker{display:none}
+.viewer-details summary:after{content:"▼"; font-size:12px; opacity:.7; transition:transform .2s ease}
+.viewer-details[open] summary:after{transform:rotate(180deg)}
+
+.viewer-wrap{border:1px solid var(--border); border-radius:16px; background:var(--card);
+  box-shadow:var(--shadow); overflow:hidden; margin-top:10px}
+.viewer-body{position:relative; height:min(72vh, 900px)}
+.viewer-body::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:64px; pointer-events:none;
+  background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.22))
+}
+body[data-theme="light"] .viewer-body::after{
+  background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.85))
+}
+.viewer, .viewer-iframe{width:100%; height:100%; border:0}
+
+.hero-inner .title{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+.hero-inner .title .btn_div{
+  display: none;
+  margin-left: auto;
+}
+
+.dim{
+	display: none;
+	position: fixed;
+	left:0;
+	right: 0;
+	top:0;
+	bottom: 0;
+	z-index: 13;
+	background-color: rgba(0,0,0,0.6);
+	text-indent: -999999px;
+}
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 980px){ 
+      main{grid-template-columns:1fr} 
+      nav.toc{
+        position:fixed;
+        display: none; 
+        order:2;
+        right: 0;
+        top:0;
+        height: 100vh;
+      }
+      nav.toc.active{
+        display: block;
+        z-index: 100;
+      }
+      .dim.active{
+        display: block;
+        z-index: 99;
+      }
+      .hero-inner .title .btn_div{
+        display: block;
+      }
+    }
+    @media (max-width:600px){ header .hero-inner{flex-direction:column; align-items:flex-start} .hero-actions{margin-left:0} }
+  </style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="title">
+        <div class="avatar">JY</div>
+        <div class="btn_div">
+          <button class="btn primary" onclick="toggleMenu()">목차보기</button>
+        </div>
+      </div>
+      
+      <div class="me">
+        <h1>장윤수 · FullStack Engineer</h1>
+        <p>공연/강의 예약 서비스 백엔드 · Spring / MyBatis / Oracle · MVC Model2</p>
+      </div>
+      <div class="hero-actions">
+        <button class="btn" id="toggleTheme" aria-live="polite">테마: <span id="themeLabel">Dark</span></button>
+        <button class="btn primary" onclick="window.print()">PDF로 저장</button>
+        
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <main>
+      <nav class="toc" aria-label="목차"><h2>목차</h2><ul id="tocList"></ul></nav>
+      <div id="sections"></div>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Jang Yoonsue. All rights reserved.</p>
+    </footer>
+  </div>
+  <div class="dim"></div>
+
+  <script>
+
+    
+    // 섹션 랜더링 전: 첫 문단을 리드로 꾸며 가독성 향상
+    // (렌더링 후 JS에서 .lead 클래스 자동 부여)
+    const portfolioSections = [
+        {
+            title:"01_기획", 
+            type: "content", 
+            img: ["/images/theater/무대.jpg"], 
+            content:`<p><strong>기획설명:</strong> 코로나19 이후 다시 활성화된 공연 시장 기반 웹페이지</p><p><strong>기획의도:</strong> 공연 및 강의 예약을 효율적으로 관리하는 시스템</p>`},
+        {
+            title:"02_적용기술과_API",
+            type: "content",
+            img: ["/images/theater/skill.png"], 
+            content:`<p><strong>언어:</strong> JAVA, JSP, HTML5, CSS3, JavaScript, SQL, jQuery(Ajax)</p><p><strong>서버:</strong> Apache Tomcat</p><p><strong>프레임워크:</strong> Spring3, Spring Boot, MyBatis</p><p><strong>DB:</strong> Oracle 11g</p><p><strong>개발툴:</strong> Eclipse, SQL Developer, Visual Studio Code, ERDCloud</p><p><strong>API:</strong> 별도 적용 API 내용 포함</p>`},
+        {
+            title:"03_요구사항분석",
+            type: "content", 
+            img: ["/images/theater/요구사항.png"], 
+            content:`<p><strong>유저:</strong> 회원가입, 게시글 댓글 CRUD, 상품 예매</p><p><strong>관리자:</strong> 권한 생성/부여, 팀 관리, 상품 등록, 게시판 관리, 좌석표 관리, 통계 관리</p><p><strong>상품:</strong> 대표사진, 제목, 상태, 가격, 공연시간·기간, 좌석 및 참가자 관리</p>`},
+        {
+            title:"04_DB설계-계념적 설계",
+            type: "content", 
+            img: ["/images/theater/개념적설계.png", "/images/theater/개념적설계2.png"],
+            content:`
+            <p><strong>개념적 설계:</strong> 요구사항 기반 ER 다이어그램 초안 작성 및 수정</p>`
+        },
+        {
+            title:"04_DB설계-논리적 설계",
+            type: "content", 
+            img: ["/images/theater/논리적설계.png","/images/theater/논리적설계2.png"],
+            content:`
+            <p>논리적 설계:</strong> 관계형 스키마 1차/2차</p>`
+        },
+        {
+            title:"04_DB설계-물리적 설계",
+            type: "content", 
+            img: ["/images/theater/물리적설계.png"],
+            content:`
+            <p>물리적 설계:</strong> ERCloud 활용 완성본</p>`
+        },
+        {
+            title:"05_화면설계",
+            type: "iframe", 
+            img: [], 
+            content:`
+            <iframe src="/files/화면설계.html"
+                            class="viewer"
+                            sandbox="allow-same-origin allow-scripts"
+                            style="width:100%;height:100%;border:0"></iframe>
+        `},
+        {
+            title:"06_소프트웨어설계",
+            type: "iframe", 
+            img: [], 
+            content:`<iframe src="/files/소프트웨어-설계.html"
+                            class="viewer"
+                            sandbox="allow-same-origin allow-scripts"
+                            style="width:100%;height:100%;border:0"></iframe>`},
+
+        {
+          title:"시연영상-1.좌석설계",
+          type: "content", 
+          img: [], 
+          content:`
+          <video controls muted style="width:100%;height:100%">
+            <source src="/video/웹/극장/theater.mp4" type="video/mp4">
+            </video>`
+        },
+        {
+          title:"시연영상-2.공연등록",
+          type: "content", 
+          img: [], 
+          content:`
+          <video controls muted style="width:100%;height:100%">
+            <source src="/video/웹/극장/product.mp4" type="video/mp4">
+            </video>`
+        },
+        {
+          title:"시연영상-3.구매",
+          type: "content", 
+          img: [], 
+          content:`
+          <video controls muted style="width:100%;height:100%">
+            <source src="/video/웹/극장/buy.mp4" type="video/mp4">
+            </video>`
+        },
+        {
+          title:"시연영상-4.게시판",
+          type: "content", 
+          img: [], 
+          content:`
+          <video controls muted style="width:100%;height:100%">
+            <source src="/video/웹/극장/notice.mp4" type="video/mp4">
+            </video>`
+        },
+      
+    ];
+
+    const tocParent=document.querySelector('nav.toc');
+    const toc=document.getElementById('tocList');
+    const sections=document.getElementById('sections');
+    const dim =document.querySelector(".dim");
+
+    function toggleMenu(){
+      tocParent.classList.toggle("active");
+      dim.classList.toggle("active");
+    }
+    dim.addEventListener("click",()=>{
+      tocParent.classList.remove("active");
+      dim.classList.remove("active");
+    });
+    portfolioSections.forEach((sec, idx) => {
+  // id를 안정적으로 생성 (한글/특수문자 안전)
+  const id = `sec-${String(idx+1).padStart(2,'0')}-${sec.title.replace(/[^a-zA-Z0-9가-힣_-]+/g,'-')}`;
+
+  // TOC
+  toc.insertAdjacentHTML('beforeend', `<li><a href="#${id}">${sec.title}</a></li>`);
+
+  // 이미지 (content 타입만 노출; iframe 타입이면 보통 img:[] 이므로 자연스레 없음)
+  const media = `
+    <div class="media">
+      <div class="image-grid">
+        ${(sec.img || []).filter(Boolean).map((src,i)=>`
+          <figure class="image-slot" data-src="${src}">
+            <img loading="lazy" decoding="async" src="${src}" alt="${sec.title} 이미지 ${i+1}" />
+            <figcaption>${sec.title} – 이미지 ${i+1}</figcaption>
+          </figure>
+        `).join('')}
+      </div>
+    </div>`;
+
+  // type별 콘텐츠
+  let contentHTML = "";
+  if (sec.type === "iframe") {
+    // 접힘(details) + lazy-load
+    contentHTML = `
+      <details class="viewer-details">
+        <summary>자세히 보기</summary>
+        <div class="viewer-wrap">
+          <div class="viewer-body">
+            ${sec.content}
+          </div>
+        </div>
+      </details>`;
+  } else {
+    // 기본: 이미지 먼저, 아래에 본문
+    contentHTML = `${media}<div class="content">${sec.content}</div>`;
+  }
+
+  // 섹션 추가
+  sections.insertAdjacentHTML('beforeend', `
+    <section class="card" id="${id}">
+      <header><h3>${sec.title}</h3>
+        <span class="chip">Section ${String(idx+1).padStart(2,'0')}</span>
+      </header>
+      ${contentHTML}
+    </section>`);
+
+  // iframe lazy-load: 접힐 때는 src 제거 → 펼칠 때 최초 로드
+  if (sec.type === "iframe") {
+    const sectionEl = document.getElementById(id);
+    if (!sectionEl) return;
+
+    const detailsEl = sectionEl.querySelector('.viewer-details');
+    const iframeEl  = detailsEl?.querySelector('iframe.viewer');
+
+    if (detailsEl && iframeEl) {
+      // 초기엔 src 보관만 하고 제거
+      const orig = iframeEl.getAttribute('src');
+      if (orig) { iframeEl.dataset.src = orig; iframeEl.removeAttribute('src'); }
+
+      detailsEl.addEventListener('toggle', () => {
+        if (detailsEl.open && !iframeEl.src && iframeEl.dataset.src) {
+          iframeEl.src = iframeEl.dataset.src;
+        }
+      });
+    }
+  }
+});
+
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // 섹션 첫 문단에 리드 스타일 적용
+    requestAnimationFrame(()=>{
+      document.querySelectorAll('.content').forEach(c=>{
+        const p=c.querySelector('p'); if(p) p.classList.add('lead');
+      });
+    });
+
+    (function () {
+        const tocListEl = document.getElementById('tocList');
+        // 1) a 앵커들을 가져옵니다.
+        const anchors = [...tocListEl.querySelectorAll('a')];
+        // 2) 섹션ID -> 해당 li 매핑
+        const idToLi = new Map(
+            anchors.map(a => [a.getAttribute('href').slice(1), a.closest('li')])
+        );
+
+        function setActive(id) {
+            tocListEl.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+            const li = idToLi.get(id);
+            if (li) li.classList.add('active');
+        }
+
+        // 클릭 시 스크롤 + 활성화
+        anchors.forEach(a => a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = a.getAttribute('href').slice(1);
+            const target = document.getElementById(id);
+            if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActive(id);
+            history.replaceState(null, '', `#${id}`);
+            }
+        }));
+
+        // 스크롤 감지하여 활성화
+        const sectionsEls = [...document.querySelectorAll('#sections > section.card')];
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setActive(entry.target.id);
+                // 필요하면 해시도 동기화:
+                // history.replaceState(null, '', `#${entry.target.id}`);
+            }
+            });
+        }, { root: null, rootMargin: '-45% 0px -50% 0px', threshold: 0.01 });
+
+        sectionsEls.forEach(sec => io.observe(sec));
+
+        // 초기 상태
+        const hash = decodeURIComponent(location.hash.replace('#', ''));
+        if (hash && idToLi.has(hash)) setActive(hash);
+        else if (sectionsEls[0]) setActive(sectionsEls[0].id);
+        })();
+
+    // ====== THEME TOGGLER (Dark → Light → Solar 순환) ======
+    const toggle=document.getElementById('toggleTheme');
+    const themeLabel=document.getElementById('themeLabel');
+
+    const themes=['dark','light','solar'];
+    function applyTheme(t){
+      if(t==='dark'){document.body.removeAttribute('data-theme');}
+      else{document.body.setAttribute('data-theme', t);}    
+      localStorage.setItem('theme', t);
+      themeLabel.textContent = t.charAt(0).toUpperCase() + t.slice(1);
+    }
+    // 초기 테마
+    applyTheme(localStorage.getItem('theme') || 'light');
+
+    toggle.addEventListener('click',()=>{
+      const cur = localStorage.getItem('theme') || 'dark';
+      const idx = (themes.indexOf(cur)+1) % themes.length;
+      applyTheme(themes[idx]);
+    });
+  </script>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+    <div class="nav">
+      <button class="btn" id="lbPrev" aria-label="이전">◀</button>
+      <button class="btn" id="lbNext" aria-label="다음">▶</button>
+    </div>
+    <div>
+      <img id="lbImg" alt="portfolio image" />
+      <div class="cap" id="lbCap"></div>
+    </div>
+  </div>
+
+  <script>
+    // 라이트박스 동작
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCap');
+    const btnPrev = document.getElementById('lbPrev');
+    const btnNext = document.getElementById('lbNext');
+
+    let currentList = [];
+    let currentIdx = 0;
+
+    function openLB(list, idx){
+      currentList = list; currentIdx = idx;
+      const item = list[idx];
+      lbImg.src = item.src; lbCap.textContent = item.caption || '';
+      lb.classList.add('open');
+    }
+    function closeLB(){ lb.classList.remove('open'); }
+    function navLB(step){
+      if(!currentList.length) return; 
+      currentIdx = (currentIdx + step + currentList.length) % currentList.length;
+      const item = currentList[currentIdx];
+      lbImg.src = item.src; lbCap.textContent = item.caption || '';
+    }
+
+    // 이미지 클릭 바인딩
+    document.addEventListener('click', (e)=>{
+      const fig = e.target.closest('.image-slot');
+      if(!fig) return;
+      const sec = fig.closest('section');
+      const imgs = [...sec.querySelectorAll('.image-slot img')]
+        .filter(img=>img.style.display !== 'none')
+        .map((img)=>({src: img.currentSrc || img.src, caption: img.alt}));
+      const idx = imgs.findIndex(x=>x.src === (fig.querySelector('img').currentSrc || fig.querySelector('img').src));
+      openLB(imgs, Math.max(0, idx));
+    });
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLB(); });
+    document.addEventListener('keydown', (e)=>{ if(!lb.classList.contains('open')) return; if(e.key==='Escape') closeLB(); if(e.key==='ArrowLeft') navLB(-1); if(e.key==='ArrowRight') navLB(1); });
+    btnPrev.addEventListener('click', ()=>navLB(-1));
+    btnNext.addEventListener('click', ()=>navLB(1));
+  </script>
+</body>
+</html>
