@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AlpaDesigner — Figma‑like Starter</title>
+  <script src="./test.js"></script>
+  <style>
+    :root{ --bg:#0b0e14; --panel:#11161f; --ink:#e7ecf3; --muted:#8aa0b4; --accent:#6ee7ff; --accent2:#a78bfa; }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%;}
+    body{ margin:0; font-family:system-ui,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,sans-serif; background:var(--bg); color:var(--ink); }
+    .app{ display:grid; grid-template-columns:260px 1fr 320px; grid-template-rows:56px 1fr; height:100vh; }
+    header{ grid-column:1/4; display:flex; align-items:center; gap:12px; padding:8px 12px; background:linear-gradient(180deg,#141a25,#0f1420); border-bottom:1px solid #1c2432; }
+    header .title{ font-weight:700; letter-spacing:.3px; }
+
+    .sidebar, .inspector{ background:#0f1420; border-right:1px solid #1c2432; }
+    .inspector{ border-left:1px solid #1c2432; border-right:none; }
+    .section{ padding:12px; border-bottom:1px solid #1c2432; }
+    .section h3{ margin:0 0 8px; font-size:12px; letter-spacing:.8px; color:var(--muted); text-transform:uppercase; }
+    .tools{ display:flex; gap:8px; }
+    .btn{ background:#111827; border:1px solid #1f2937; color:var(--ink); padding:8px 10px; border-radius:8px; cursor:pointer; font-size:12px; }
+    .btn.active{ outline:2px solid var(--accent); }
+
+    .canvas-wrap{ position:relative; overflow:auto; background:linear-gradient(45deg, #0e131d 25%, #0c111a 25%, #0c111a 50%, #0e131d 50%, #0e131d 75%, #0c111a 75%, #0c111a 100%); background-size:24px 24px; }
+    canvas{ background:#fff; box-shadow:0 0 0 1px #1c2432, 0 10px 30px rgba(0,0,0,.4); image-rendering:pixelated; }
+
+    ul.layers{ list-style:none; margin:0; padding:0; }
+    .layer-item{ display:flex; align-items:center; gap:8px; padding:6px 8px; border-radius:6px; cursor:pointer; }
+    .layer-item:hover{ background:#111827; }
+    .layer-item.active{ outline:1px solid var(--accent2); background:#101826; }
+
+    .grid2{ display:grid; grid-template-columns:repeat(2, 1fr); gap:8px; }
+    .grid3{ display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; }
+    label small{ color:var(--muted); display:block; font-size:11px; margin-bottom:4px; }
+    input[type="text"], input[type="number"], textarea{ width:100%; background:#0c1220; color:var(--ink); border:1px solid #1f2a3a; border-radius:8px; padding:8px 10px; }
+    textarea{ min-height:100px; resize:vertical; }
+    .row{ display:flex; gap:8px; }
+
+    .handle{
+        position:absolute;
+        width:8px; height:8px;
+        background:#fff; border:2px solid #000; border-radius:2px;
+        pointer-events:auto;   /* ✅ 반드시 auto */
+        z-index:10;            /* ✅ 캔버스 위로 */
+    }
+
+
+    /* selection handles */
+    .handle{ position:absolute; width:8px; height:8px; background:#fff; border:2px solid #000; border-radius:2px; pointer-events:none; }
+    .marquee{ position:absolute; border:1px dashed #6ee7ff; background:rgba(110,231,255,.1); pointer-events:none; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="title">AlpaDesigner</div>
+      <div class="tools">
+        <button class="btn" data-tool="select">선택(V)</button>
+        <button class="btn" data-tool="rect">사각형(R)</button>
+        <button class="btn" data-tool="text">텍스트(T)</button>
+        <button class="btn" data-tool="image">이미지(I)</button>
+        <button class="btn" id="btnExportHTML">HTML 내보내기</button>
+        <button class="btn" id="btnExportJSON">JSON 내보내기</button>
+        <button class="btn" id="btnImportJSON">JSON 불러오기</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <div class="section">
+        <h3>레이어</h3>
+        <ul class="layers" id="layerList"></ul>
+      </div>
+      <div class="section">
+        <h3>캔버스</h3>
+        <div class="grid2">
+          <label><small>Width</small><input type="number" id="canW" value="1800"/></label>
+          <label><small>Height</small><input type="number" id="canH" value="1000"/></label>
+        </div>
+        <div class="row" style="margin-top:8px">
+          <label style="flex:1"><small>배경</small><input type="text" id="canBG" value="#ffffff"/></label>
+          <button class="btn" id="btnApplyCanvas">적용</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="canvas-wrap">
+      <div id="stageWrap" style="position:relative; width:max-content; height:max-content; margin:40px;">
+        <canvas id="stage" width="1800" height="1000"></canvas>
+        <div id="marquee" class="marquee" style="display:none"></div>
+        <!-- selection handles will be positioned here -->
+        <div id="handles"></div>
+      </div>
+    </main>
+
+    <aside class="inspector">
+      <div class="section">
+        <h3>속성</h3>
+        <div class="grid3">
+          <label><small>X</small><input type="number" id="px"/></label>
+          <label><small>Y</small><input type="number" id="py"/></label>
+          <label><small>회전</small><input type="number" id="prot" value="0"/></label>
+        </div>
+        <div class="grid2" style="margin-top:8px">
+          <label><small>W</small><input type="number" id="pw"/></label>
+          <label><small>H</small><input type="number" id="ph"/></label>
+        </div>
+        <div style="margin-top:8px">
+          <label><small>이름</small><input type="text" id="pname"/></label>
+        </div>
+        <div style="margin-top:8px">
+          <label><small>텍스트(텍스트 요소)</small><input type="text" id="ptext" placeholder="요소가 텍스트일 때"/></label>
+        </div>
+        <div style="margin-top:8px">
+          <label><small>배경색</small><input type="text" id="pbg" placeholder="#eeeeee 또는 rgba(...)"/></label>
+        </div>
+      </div>
+      <div class="section">
+        <h3>내보내기</h3>
+        <textarea id="exportOut" placeholder="내보낸 HTML/JSON이 여기에 표시됩니다."></textarea>
+      </div>
+    </aside>
+  </div>
+    <input type="file" id="filePicker" accept="image/*" style="display:none" />
+  <script>
+  // ========== DOM 참조 ==========
+  const $ = (id) => document.getElementById(id);
+  const stage     = $('stage');
+  const ctx       = stage.getContext('2d');
+  const handleBox = $('handles');
+  const marquee   = $('marquee');
+
+  // ========== 앱 생성 ==========
+  // test.js 안에 정의된 클래스들(AlpaDesigner, Rect 등)을 직접 사용
+  const app = new AlpaDesigner({
+    projectName: "Demo",
+    fileName: "index.ap",
+    canvas: { width: 1800, height: 1000, background: "#ffffff" }
+  });
+
+  // ========== 렌더 & UI 동기화 ==========
+  let currentTool = 'select';
+  let selectedId = null;
+
+  function render(){
+    stage.width  = app.canvas.width;
+    stage.height = app.canvas.height;
+    app.renderToCanvas(ctx);
+    drawSelection();
+    syncLayerList();
+  }
+
+  function syncLayerList(){
+    const list = $('layerList');
+    const root = app.elements[app.component.roiId];
+    list.innerHTML = '';
+    function add(el, depth=0){
+      if(el.id !== root.id){
+        const li = document.createElement('li');
+        li.className = 'layer-item' + (selectedId===el.id ? ' active' : '');
+        li.style.paddingLeft = (8 + depth*12) + 'px';
+        li.textContent = el.name || el.id;
+        li.onclick = () => { selectedId = el.id; render(); syncInspector(); };
+        list.appendChild(li);
+      }
+      el.children.forEach(cid => add(app.elements[cid], depth+1));
+    }
+    add(root, 0);
+  }
+
+  function syncInspector(){
+    const ids = ['px','py','pw','ph','prot','pname','ptext','pbg'];
+    if(!selectedId){ ids.forEach(id=>$(id).value=''); return; }
+    const el = app.elements[selectedId];
+    $('px').value   = el.rect.x;
+    $('py').value   = el.rect.y;
+    $('pw').value   = el.rect.width;
+    $('ph').value   = el.rect.height;
+    $('prot').value = el.rect.rotation || 0;
+    $('pname').value= el.name || '';
+    $('ptext').value= el.shape.tag==='p' ? (el.meta.text||'') : '';
+    $('pbg').value  = el.style.backgroundColor || '';
+  }
+
+  ['px','py','pw','ph','prot','pname','ptext','pbg'].forEach(id=>{
+    $(id).addEventListener('input',()=>{
+      if(!selectedId) return;
+      const el = app.elements[selectedId];
+      if(id==='px') el.rect.x = Number($(id).value)||0;
+      else if(id==='py') el.rect.y = Number($(id).value)||0;
+      else if(id==='pw') el.rect.width = Number($(id).value)||0;
+      else if(id==='ph') el.rect.height = Number($(id).value)||0;
+      else if(id==='prot') el.rect.rotation = Number($(id).value)||0;
+      else if(id==='pname') el.name = $(id).value;
+      else if(id==='ptext' && el.shape.tag==='p') el.meta.text = $(id).value;
+      else if(id==='pbg') el.style.backgroundColor = $(id).value;
+      render();
+    });
+  });
+
+  // ========== 선택 핸들 ==========
+  function drawSelection(){
+    handleBox.innerHTML = '';
+    if(!selectedId) return;
+    const el = app.elements[selectedId];
+    const {x,y,width:w,height:h} = el.rect;
+    const corners = [
+      {n:'nw',x:x-4,y:y-4},
+      {n:'ne',x:x+w-4,y:y-4},
+      {n:'sw',x:x-4,y:y+h-4},
+      {n:'se',x:x+w-4,y:y+h-4},
+    ];
+    corners.forEach(h=>{
+      const d=document.createElement('div');
+      d.className='handle';
+      d.style.left = h.x+'px';
+      d.style.top  = h.y+'px';
+      d.dataset.handle = h.n;
+      handleBox.appendChild(d);
+    });
+  }
+
+  // ========== 툴 선택 ==========
+  const toolButtons = Array.from(document.querySelectorAll('[data-tool]'));
+  function setTool(t){ currentTool=t; toolButtons.forEach(b=>b.classList.toggle('active', b.dataset.tool===t)); }
+  toolButtons.forEach(btn=>btn.addEventListener('click',()=>setTool(btn.dataset.tool)));
+  setTool('select');
+
+  // ========== 마우스 인터랙션 ==========
+  function getMousePos(evt){
+    const r = stage.getBoundingClientRect();
+    return { x: (evt.clientX - r.left), y: (evt.clientY - r.top) };
+  }
+
+  function hitTest(x,y){
+    const root = app.elements[app.component.roiId];
+    const stack = [];
+    (function collect(el){
+      el.children.forEach(cid=>collect(app.elements[cid]));
+      if(el.id !== root.id) stack.push(el);
+    })(root);
+    for(let i=stack.length-1;i>=0;i--){
+      const el = stack[i];
+      const {x:ex,y:ey,width:w,height:h} = el.rect;
+      if(x>=ex && y>=ey && x<=ex+w && y<=ey+h) return el.id;
+    }
+    return null;
+  }
+
+  let dragState = null; // {mode:'move'|'resize'|'draw', startX,startY, elId?, handle?, baseX?, baseY?}
+
+  stage.addEventListener('mousedown',(e)=>{
+    const m = getMousePos(e);
+    const target = document.elementFromPoint(e.clientX,e.clientY);
+    if(target && target.classList.contains('handle')){
+      dragState = { mode:'resize', startX:m.x, startY:m.y, elId:selectedId, handle:target.dataset.handle };
+      return;
+    }
+
+    if(currentTool==='rect' || currentTool==='text' || currentTool==='image'){
+      dragState = { mode:'draw', startX:m.x, startY:m.y };
+      Object.assign(marquee.style, { display:'block', left:m.x+'px', top:m.y+'px', width:'0px', height:'0px' });
+    }else{
+      const hit = hitTest(m.x,m.y);
+      if(hit){
+        selectedId = hit; syncInspector(); drawSelection();
+        const el = app.elements[hit];
+        dragState = { mode:'move', startX:m.x, startY:m.y, elId:hit, baseX:el.rect.x, baseY:el.rect.y };
+      }else{
+        selectedId = null; drawSelection(); syncInspector();
+      }
+    }
+    render();
+  });
+
+  stage.addEventListener('mousemove',(e)=>{
+    if(!dragState) return;
+    const m = getMousePos(e);
+
+    if(dragState.mode==='move'){
+      const el = app.elements[dragState.elId];
+      el.rect.x = Math.round(dragState.baseX + (m.x - dragState.startX));
+      el.rect.y = Math.round(dragState.baseY + (m.y - dragState.startY));
+      syncInspector(); render();
+    }
+    else if(dragState.mode==='resize'){
+      const el = app.elements[dragState.elId];
+      const dx = m.x - dragState.startX;
+      const dy = m.y - dragState.startY;
+      if(dragState.handle==='se'){ el.rect.width+=dx; el.rect.height+=dy; }
+      else if(dragState.handle==='ne'){ el.rect.width+=dx; el.rect.height-=dy; el.rect.y+=dy; }
+      else if(dragState.handle==='sw'){ el.rect.width-=dx; el.rect.x+=dx; el.rect.height+=dy; }
+      else if(dragState.handle==='nw'){ el.rect.width-=dx; el.rect.x+=dx; el.rect.height-=dy; el.rect.y+=dy; }
+      dragState.startX = m.x; dragState.startY = m.y;
+      syncInspector(); render();
+    }
+    else if(dragState.mode==='draw'){
+      const x0 = Math.min(dragState.startX, m.x);
+      const y0 = Math.min(dragState.startY, m.y);
+      const w  = Math.abs(m.x - dragState.startX);
+      const h  = Math.abs(m.y - dragState.startY);
+      Object.assign(marquee.style, { left:x0+'px', top:y0+'px', width:w+'px', height:h+'px' });
+    }
+  });
+
+  window.addEventListener('mouseup', (e) => {
+  if (!dragState) return;
+  const m = getMousePos(e);
+
+  if (dragState.mode === 'draw') {
+    marquee.style.display = 'none';
+    const x0 = Math.min(dragState.startX, m.x);
+    const y0 = Math.min(dragState.startY, m.y);
+    const w  = Math.abs(m.x - dragState.startX);
+    const h  = Math.abs(m.y - dragState.startY);
+
+    if (currentTool === 'rect') {
+      const created = app.addRect({
+        x: x0, y: y0,
+        width: Math.max(10, w),
+        height: Math.max(10, h),
+        bg: '#e5e7eb'
+      });
+      selectedId = created.id;
+      setTool('select');
+      render(); syncInspector();
+
+    } else if (currentTool === 'text') {
+      const created = app.addText({
+        x: x0, y: y0,
+        width: Math.max(60, w),
+        height: Math.max(32, h),
+        text: '새 텍스트',
+        fontSize: '20px'
+      });
+      selectedId = created.id;
+      setTool('select');
+      render(); syncInspector();
+
+    } else if (currentTool === 'image') {
+      // 숨은 파일 입력 보장
+      const picker = document.getElementById('filePicker') || (() => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.id = 'filePicker';
+        input.accept = 'image/*';
+        input.style.display = 'none';
+        document.body.appendChild(input);
+        return input;
+      })();
+
+      // 파일 선택 핸들러 (단 한 번만)
+      picker.addEventListener('change', (ev) => {
+        const file = ev.target.files && ev.target.files[0];
+        if (file) {
+          const url = URL.createObjectURL(file);
+          const created = app.addImage({
+            x: x0, y: y0,
+            width: Math.max(60, w),
+            height: Math.max(40, h),
+            url
+          });
+          selectedId = created.id;
+          setTool('select');
+          render(); syncInspector();
+        }
+        // 같은 파일 재선택 가능하게 초기화
+        picker.value = '';
+      }, { once: true });
+
+      picker.click();
+
+      // image 분기는 파일 선택(비동기) 이후에 처리되므로 여기서 종료
+      dragState = null;
+      return;
+    }
+  }
+
+  dragState = null;
+});
+
+
+  // ========== 캔버스 설정 ==========
+  $('btnApplyCanvas').onclick = ()=>{
+    app.setCanvasSize(Number($('canW').value)||1800, Number($('canH').value)||1000);
+    app.setCanvasBackground($('canBG').value||'#ffffff');
+    render();
+  };
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Delete' && selectedId) {
+        app.removeElement(selectedId);
+        selectedId = null;
+        render();
+        syncInspector();
+    }
+    });
+
+  // ========== 내보내기/불러오기 ==========
+  $('btnExportHTML').onclick = ()=>{ $('exportOut').value = app.exportHTML(); };
+  $('btnExportJSON').onclick = ()=>{ $('exportOut').value = app.exportJSON(); };
+  $('btnImportJSON').onclick = ()=>{ try{ app.importJSON($('exportOut').value); render(); syncInspector(); } catch(e){ alert('JSON 파싱 오류: '+e.message); } };
+
+  // ========== 초기 데모 요소 ==========
+  app.addRect({ name:'Hero', x:120, y:80, width:820, height:360, bg:'#eef2ff' });
+  app.addText({ name:'Title', x:160, y:480, width:600, height:64, text:'Hello, AlpaDesigner!', fontSize:'36px' });
+
+  // 첫 렌더
+  render();
+</script>
+
+</body>
+</html>

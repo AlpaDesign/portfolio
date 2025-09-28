@@ -145,8 +145,9 @@ i.bi.bi-windows{
                 </ul>
                 
                 <a class="all-apps" href="#">
-                    All apps
-                    <i class="fa fa-arrow-right"></i>
+                    <div class="power" title="로그아웃" onclick="logout()">
+                        <i class="bi bi-power"></i>
+                    </div>
                 </a>
                 
                 <input type="text" class="search" placeholder="Search files and folders">
@@ -204,9 +205,7 @@ i.bi.bi-windows{
                     <div id="window_proccess_list">
 
                     </div>
-                    <div class="power" title="로그아웃" onclick="logout()">
-                        <i class="bi bi-power"></i>
-                    </div>
+                    
                 </div>
                 <div id="pointer_box"></div>
 
@@ -247,37 +246,53 @@ i.bi.bi-windows{
 
 
     // ====== 사용 ======
-    const mainList = [
-        { pk:0, txt:"웹개발", url:"D:\\웹 개발", ext:"folder" },
-        { pk:0, txt:"윈도우 응용 프로그램", url:"D:\\윈도우 응용프로그램", ext:"folder" },
-        { pk:15, txt:"이력서.pdf", url:"D:\\이력서\\장윤수 이력서.pdf", ext:".pdf", realPath:"/download/장윤수 이력서.pdf" },
-        { pk:16, txt:"극장설계기획안", url:"D:\\웹 개발\\기획서.exe", ext:".exe", realPath:"/lib/AlpaTheater/AlpaTheater.html", ico:`<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>` },
-        { pk:16, txt:"보유스킬 현황", url:"C:\\Alpa프로그래스", ext:".exe", realPath:"/lib/AlpaProgress/AlpaProgress.html", ico:`<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>` },
-    ];
     const fileList = [
-        {idx:1, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/theater.mp4", ico: null },
-        {idx:2, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/product.mp4", ico: null },
-        {idx:3, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/buy.mp4", ico: null },
-        {idx:4, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/notice.mp4",ico: null },
+        {idx:1,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/theater.mp4", ico: null },
+        {idx:2,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/product.mp4", ico: null },
+        {idx:3,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/buy.mp4", ico: null },
+        {idx:4,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/notice.mp4",ico: null },
 
-        {idx:5, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "/files/기획의도.html", ico: null },
-        {idx:6, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "/files/요구사항분석.html", ico: null },
-        {idx:7, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/데이터베이스-설계.html", ico: null },
-        {idx:8, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/화면설계.html", ico: null },
-        {idx:9, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/소프트웨어-설계.html",ico: null },
-        {idx:10, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "/files/소스코드.html", ico: null },
-        {idx:11, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "/files/테스트.html", ico: null },
+        {idx:5,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "/files/기획의도.html", ico: null },
+        {idx:6,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "/files/요구사항분석.html", ico: null },
+        {idx:7,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/데이터베이스-설계.html", ico: null },
+        {idx:8,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/화면설계.html", ico: null },
+        {idx:9,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/소프트웨어-설계.html",ico: null },
+        {idx:10,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "/files/소스코드.html", ico: null },
+        {idx:11,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "/files/테스트.html", ico: null },
         
-        {idx:12, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/HN8kXCf19us?autoplay=1",ico: null },
-    	{idx:13, path: "D:\\윈도우 응용프로그램\\작업스케줄러", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",ico: null },
-        {idx:14, path: "C:\\Alpa프로그래스", name: "Progress.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaProgress/AlpaProgress.html", ico: `<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>` },
-        {idx:15, path: "D:\\웹 개발", name: "기획서.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaTheater/AlpaTheater.html", ico: `<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>` },
-        {idx:16, path: "D:\\이력서", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null },
+        {idx:12,pk:0, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/HN8kXCf19us?autoplay=1",ico: null },
+        {idx:13,pk:0, path: "D:\\윈도우 응용프로그램\\작업스케줄러", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",ico: null },
+        {idx:14,pk:0, path: "C:\\Alpa프로그래스", name: "Progress.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaProgress/AlpaProgress.html", ico: `<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>` },
+        {idx:15,pk:0, path: "D:\\웹 개발", name: "기획서.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaTheater/AlpaTheater.html", ico: `<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>` },
+        {idx:16,pk:0, path: "D:\\이력서", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null },
+        
+        {idx:17,pk:0, path: "C:\\Users\\바탕화면", name: "파일탐색기", type: "folder", ext: "folder", realPath: "D:", ico: null ,order : {x : 1, y:1}},
+        {idx:18,pk:14, path: "C:\\Users\\바탕화면", name: "Progress.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaProgress/AlpaProgress.html", ico: `<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>`,order : {x : 1, y:2} },
+        {idx:19,pk:15, path: "C:\\Users\\바탕화면", name: "기획서.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaTheater/AlpaTheater.html", ico: `<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>`,order : {x : 1, y:3} },
+        {idx:20,pk:16, path: "C:\\Users\\바탕화면", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null,order : {x : 1, y:4} },
     ];
+    const mainList = {
+        desktop : {
+            target : "#window_main",
+        },
+        disk : [...fileList]
+    }
 
 
     const manager = new AlpaProcessManager({ fileList });
-    const desktop = new AlpaDesktop({ target:"#window_main", mainList, manager });
+
+    const desktop = new AlpaDesktop({
+        target: mainList.desktop.target,
+        manager,
+        disk: mainList.disk,
+        desktopPath: "C:\\Users\\바탕화면",
+        onReorder: ({ idx, order }) => {
+            console.log(idx, order);
+            // const db = JSON.parse(localStorage.getItem('desktopOrder') || '{}');
+            // db[idx] = order;
+            // localStorage.setItem('desktopOrder', JSON.stringify(db));
+        }
+    });
     desktop.render();
     //window.addEventListener("message", viewSkill);
 
@@ -288,17 +303,23 @@ i.bi.bi-windows{
 
 
         let html = "";
+        const seen = new Set();
         fileList.forEach(e => {
-            if(e.ext == ".exe"){
-                html += `
-                    <li data-idx=${e.idx}>
-                        <a href="#">
-                            ${e.ico ?? '<i class="bi bi-terminal-fill"></i>'}
-                            ${e.name.split(".")[0] ?? e.name}
-                        </a>
-                    </li>
-                `;
-            }
+        if (e.ext === ".exe") {
+            const uniqKey = (e.pk && e.pk > 0) ? e.pk : e.idx;
+
+            if (seen.has(uniqKey)) return; // 이미 추가한 exe는 스킵
+            seen.add(uniqKey);
+
+            html += `
+            <li data-idx=${uniqKey}>
+                <a href="#">
+                ${e.ico ?? '<i class="bi bi-terminal-fill"></i>'}
+                ${e.name.split(".")[0] ?? e.name}
+                </a>
+            </li>
+            `;
+        }
         });
         $("#file_recent").html(html);
         

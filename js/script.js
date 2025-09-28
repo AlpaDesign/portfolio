@@ -93,100 +93,85 @@ $(window).on("contextmenu",function(e){
 })
 
 $(window).on("mouseout", function (e) {
-    // e.relatedTarget이 null이면 브라우저 바깥으로 나간 것
-    if (!e.relatedTarget && selectObj.isDragging) {
-        selectObj.isDragging = false;
-        $("#pointer_box").hide();
-
-        // 선택도 초기화 (선택 안 하고 마우스 벗어났을 때)
-        $(".window_ico").removeClass("select");
-        selectObj.selectItems = [];
-    }
-});
-$("#main").on("mousedown", function (e) {
-
-    selectObj = {
-        startX: 0,
-        startY: 0,
-        top: 0,
-        left: 0,
-        width: 0,
-        height: 0,
-        selectItems: [],
-        isDragging : false,
-    };
-
-    selectObj.isDragging = true;
-
-    selectObj.startX = e.pageX;
-    selectObj.startY = e.pageY;
-
-    $("#pointer_box").css({
-        top: e.pageY,
-        left: e.pageX,
-        width: 0,
-        height: 0,
-        display: "block"
-    });
-
-    
-});
-
-$("body").on("mousemove", function (e) {
-    if (!selectObj.isDragging) return;
-
-    const x = Math.min(e.pageX, selectObj.startX);
-    const y = Math.min(e.pageY, selectObj.startY);
-    const w = Math.abs(e.pageX - selectObj.startX);
-    const h = Math.abs(e.pageY - selectObj.startY);
-
-    selectObj.left = x;
-    selectObj.top = y;
-    selectObj.width = w;
-    selectObj.height = h;
-
-    $("#pointer_box").css({
-        left: x,
-        top: y,
-        width: w,
-        height: h
-    });
-});
-
-$("#main, #pointer_box").on("mouseup", function (e) {
+  if (!e.relatedTarget && selectObj.isDragging) {
     selectObj.isDragging = false;
     $("#pointer_box").hide();
-
+    $(".window_ico").removeClass("select");
     selectObj.selectItems = [];
-
-    const selLeft = selectObj.left;
-    const selTop = selectObj.top;
-    const selRight = selLeft + selectObj.width;
-    const selBottom = selTop + selectObj.height;
-
-    $(".window_ico").each(function () {
-        const $el = $(this);
-        const offset = $el.offset();
-        const elLeft = offset.left;
-        const elTop = offset.top;
-        const elRight = elLeft + $el.outerWidth();
-        const elBottom = elTop + $el.outerHeight();
-
-        // 충돌 여부 판정 (겹치는 경우)
-        const isOverlap = !(
-            elRight < selLeft ||
-            elLeft > selRight ||
-            elBottom < selTop ||
-            elTop > selBottom
-        );
-
-        if (isOverlap) {
-            $el.addClass("select"); // 선택된 아이콘
-            selectObj.selectItems.push($el);
-        } else {
-            $el.removeClass("select"); // 선택되지 않으면 제거
-        }
-    });
+  }
 });
+
+$("#main").on("mousedown", function (e) {
+  // 아이콘(.window_ico) 위에서 누르면 셀렉션 시작하지 않음
+  if ($(e.target).closest('.window_ico').length) return;
+
+  selectObj = {
+    startX: 0, startY: 0, top: 0, left: 0, width: 0, height: 0,
+    selectItems: [], isDragging: false,
+  };
+
+  selectObj.isDragging = true;
+  selectObj.startX = e.pageX;
+  selectObj.startY = e.pageY;
+
+  $("#pointer_box").css({
+    top: e.pageY, left: e.pageX, width: 0, height: 0, display: "block"
+  });
+});
+
+
+$("body").on("mousemove", function (e) {
+  if (!selectObj.isDragging) return;
+
+  // jQuery UI 드래그가 진행 중이면 셀렉션 갱신하지 않음
+  
+  if ($(".ui-draggable-dragging").length > 0 || window.__alpaDraggingIcon) return;
+
+  const x = Math.min(e.pageX, selectObj.startX);
+  const y = Math.min(e.pageY, selectObj.startY);
+  const w = Math.abs(e.pageX - selectObj.startX);
+  const h = Math.abs(e.pageY - selectObj.startY);
+
+  selectObj.left = x; selectObj.top = y;
+  selectObj.width = w; selectObj.height = h;
+
+  $("#pointer_box").css({ left: x, top: y, width: w, height: h });
+});
+
+
+$("#main, #pointer_box").on("mouseup", function (e) {
+  if (!selectObj.isDragging) return;  // 아이콘 드래그였으면 이미 false
+
+  selectObj.isDragging = false;
+  $("#pointer_box").hide();
+  selectObj.selectItems = [];
+
+  const selLeft = selectObj.left;
+  const selTop = selectObj.top;
+  const selRight = selLeft + selectObj.width;
+  const selBottom = selTop + selectObj.height;
+
+  $(".window_ico").each(function () {
+    const $el = $(this);
+    const offset = $el.offset();
+    const elLeft = offset.left;
+    const elTop = offset.top;
+    const elRight = elLeft + $el.outerWidth();
+    const elBottom = elTop + $el.outerHeight();
+
+    const isOverlap = !(
+      elRight < selLeft || elLeft > selRight ||
+      elBottom < selTop || elTop > selBottom
+    );
+
+    if (isOverlap) {
+      $el.addClass("select");
+      selectObj.selectItems.push($el);
+    } else {
+      $el.removeClass("select");
+    }
+  });
+});
+
    
 });

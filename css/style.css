@@ -145,15 +145,17 @@
 	transition: all 0.5s;
 }
 #main .main_cover{
-	display: flex;
-	justify-content: start;
-	align-items: start;
-	width: 100%;
-	height: 100%;
-	position: relative;
-	padding:50px 25px;
-	flex-direction: column;
-	gap: 10px;
+	contain: strict;
+    display: grid;
+    gap: 28px 1px;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  grid-auto-rows: 96px;
+  gap: 12px;
+    height: 100%;
+    overflow: hidden;
+    padding: 15px 15px;
+    place-content: flex-start;
 }
 #main .main_cover::before{
 	content: "";
@@ -166,7 +168,7 @@
 	background-color: rgba(0,0,0,0.1);
 	z-index: -1;
 }
-#main .main_cover .txt{
+#main .main_cover .txt, .window_ico.ui-draggable-handle .txt{
 	font-size: 11px;
 	color: #ffffff;
 	text-shadow: 1px 1px 2px black;
@@ -177,16 +179,24 @@
 	white-space: nowrap;
 	
 }
+/* 드래그 중 실제 아이콘 스타일 */
+.window_ico.dragging { 
+	opacity: .9; 
+	filter: drop-shadow(0 8px 20px rgba(0,0,0,.25)); 
+}
+/* placeholder: 그리드 칸을 채워서 레이아웃 유지 */
+.ico-placeholder { visibility: hidden; }
 #main .main_cover .window_ico.select .txt{
 	overflow-wrap: anywhere;
 	white-space: wrap;
 	
 }
-#main .window_ico .ico_image{
+#main .window_ico .ico_image, .window_ico.dragging .ico_image, .window_ico.ui-draggable-handle{
 	text-align: center;
 }
-#main .window_ico{
-	width: 50px;
+#main .window_ico, .window_ico.dragging, .window_ico.ui-draggable-handle{
+	position: static;
+	width: 62px;
 	padding: 5px 3px;
     cursor: pointer;
     display: flex;
@@ -212,11 +222,16 @@
 	width:0;
 	background-color: rgba(87,163,255, 0.3);
 	z-index: 10;
+	pointer-events: none;
 }
 span.i_cover{
 	display: inline-block;
-	text-align: center;
-	border-radius: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+#window_main span.i_cover, .window_ico.ui-draggable-handle span.i_cover{
+	width: 40px;
+	margin: 0 auto;
 }
 .file-item span.i_cover{
 	font-size:18px;
