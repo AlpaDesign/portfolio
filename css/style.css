@@ -386,13 +386,16 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 }
 .alpaka-foloder-body{
 	width:100%;
-	overflow: auto;
 	background-color: #fff;
     height: calc(100% - 74px);
 	-webkit-user-select: none; /* Chrome, Safari, Edge */
   	-moz-user-select: none;    /* Firefox */
   	-ms-user-select: none;     /* IE 10+ */
   	user-select: none;
+	
+}
+.alpaka-folder-window.alpaka_folder .alpaka-foloder-body{
+	overflow: auto;
 }
 #window_proccess_list{
 	display: flex;

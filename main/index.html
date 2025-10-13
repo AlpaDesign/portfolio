@@ -2,7 +2,6 @@
 <html>
 <head>
     <!--
-    안녕하세요?
     활동명 AlpaDesign 장윤수입니다.
     사용 라이브러리 = jQuery, bootstrap icon
     직접 제작한 라이브러리 = AlpaProgress.js, AlpaDeskTop.js
@@ -23,7 +22,7 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="./AlpaDeskTop.js"></script>
-    <!-- <script src="./deskTop_back.js"></script> -->
+    <!-- <script src="./AlpaDeskTop_back.js"></script> -->
     <script src="../lib/AlpaProgress/js/AlpaProgress.js"></script>
     
 </head>
@@ -85,7 +84,7 @@ i.bi.bi-windows{
     background-color: rgba(255,255,255,.1);
 }
 </style>
-<body>
+<body class="fixed">
 <div class="wrapper">
     <section>
         <div class="container">
@@ -231,16 +230,16 @@ i.bi.bi-windows{
 
     
     function logout(){
-        deleteCookie("login");
+        //deleteCookie("login");
         window.location.href = "/";
     }
-    // 로그인 쿠키 확인
-    const loginCookie = getCookie("login");
+    // // 로그인 쿠키 확인
+    // const loginCookie = getCookie("login");
 
-    // Base64 디코딩 후 "success" 여부 확인
-    if (!loginCookie || atob(loginCookie) !== "success") {
-        window.location.href = "/";
-    }
+    // // Base64 디코딩 후 "success" 여부 확인
+    // if (!loginCookie || atob(loginCookie) !== "success") {
+    //     window.location.href = "/";
+    // }
 
     
 
@@ -298,8 +297,8 @@ i.bi.bi-windows{
 
 
     $(window).on("load",()=>{
-        manager.runProccessIdx(15);
-        manager.runProccessIdx(14);
+        manager.runProccessIdx(18);
+        manager.runProccessIdx(20);
 
 
         let html = "";

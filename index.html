@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -16,45 +17,391 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="/js/main.js"></script>
 
 </head>
 <body>
 <div class="wrapper">
-    <section>
-        <div class="container">
-            <div class="container_inner">
-                <div id="login">
-                    <div class="login_cover">
-                        <div class="profile"></div>
-                        <!-- <div class="name">
-                            <ul>
-                                <li>JANGYOONSUE</li>
-                                <li>JANGYOONSUE</li>
-                                <li>JANGYOONSUE</li>
-                                <li>JANGYOONSUE</li>
-                            </ul>
-                        </div> -->
-                        <div class="text">
-                            <span data-hover="PORTFOLIO">PORTFOLIO</span>
-                            <input type="password" id="password" placeholder="비밀번호 : 1234" />
-                            <span>ENTER</span>
-                        </div>
-                    </div>
+    <header id="header">
+      <div class="top">
+          <div class="top_inner">
+              <div class="logo">
+                  <h1><a href=""><img src="/images/logo.png" alt="logo"></a></h1>
+              </div>
+              <div class="download">
+                <div class="d_resume">
+                  <a href="/main" class="btn-3d yellow">이력서 및 스킬 보기
+                  </a>
                 </div>
+              </div>
+          </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="container_inner split">
+        <!-- 좌측: 목록 -->
+        <aside id="contents" class="pane pane-left" aria-label="프로젝트 목록"></aside>
+
+        <!-- 가터(드래그 핸들) -->
+        <div class="gutter" role="separator" aria-orientation="vertical" aria-label="크기 조절 핸들" tabindex="0"></div>
+
+        <!-- 우측: 상세 뷰 -->
+        <main id="view" class="pane pane-right" aria-live="polite" aria-label="상세 보기">
+          <div class="view-empty">왼쪽 목록에서 항목을 선택하세요</div>
+        </main>
+      </div>
+    </div>
+    <footer id="footer">
+        <div class="footer_inner">
+            <div class="text">
+                <span class="top">THANK YOU FOR YOUR VISIT!</span><br>
+                <span class="bottom">COPYRIGHT© 2022 SZ100. ALL RIGHTS RESERVED.</span>
             </div>
         </div>
-    </section>
-</div>
+    </footer>
+  </div>
 
 </body>
 <script>
-    
+  var obj = [
+    {
+      title : "Window 응용 프로그램",
+      contents : [
+        {
+          title : "Window 응용 프로그램",
+          contents : [
+            {
+              title : "아두이노 코드 설계 프로그램",
+              date : "2024.06 ~ 2025.08",
+              target : {
+                type : "url",
+                href : "https://www.instagram.com/jelo.creativelab/",
+                alert : "해당 사이트는 실제 설계프로그램으로 제작되어 판매되고있는 인스타 사이트입니다.",
+                target : "_blank"
+              },
+              img : {
+                src : "/images/magic/1.jpg",
+                video: "https://www.youtube.com/embed/HN8kXCf19us?autoplay=1",
+                type: "youtube",
+                alt : "아두이노"
+              },
+              desc : "아두이노 프로그램 설계부터 컴파일 Run 까지 가능한 임베디드 설계형 프로그램",
+              meta : {
+                team : "팀 구성: 프로그램 설계 및 코드 작업 1명",
+                role : "주요 역할: 모든 작업"
+              },
+              skill : [
+                "C#",
+                ".Net FrameWork",
+                "Json",
+                "log"
+              ],
+              kpi : [
+                {
+                  title : "C#",
+                  percent : "100%"
+                },
+              ]
 
-    const loginCookie = getCookie("login");
+            }
+          ]
+        },
+        {
+          title : "Window 응용 프로그램",
+          contents : [
+            {
+              title : "작업스케줄러 관리 프로그램",
+              date : "2024.05 ~ 2024.05",
+              target : {
+                type : "url",
+                href : "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",
+                alert : "해당 프로그램 다운로드 원하실경우 010-3943-8118 로 연락바랍니다.",
+                target : "_blank"
+              },
+              img : {
+                src : "/images/window/1.png",
+                video: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",
+                type: "youtube",
+                alt : "아두이노"
+              },
+              desc : "C# 기반 용량 관리 자동화 프로그램 — 대용량 이미지 및 다양한 파일 확장자를 대상으로 작업 스케줄 등록을 통한 자동 정리 및 실행 기능 구현.",
+              meta : {
+                team : "팀 구성: 프로그램 설계 및 코드 작업 1명",
+                role : "주요 역할: 모든 작업"
+              },
+              skill : [
+                "C#",
+                ".Net FrameWork",
+                "Json",
+                "log"
+              ],
+              kpi : [
+                {
+                  title : "C#",
+                  percent : "100%"
+                },
+              ]
 
-    if (loginCookie || atob(loginCookie) == "success") {
-        window.location.href = "/main";
-    }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title : "WEB",
+      contents : [
+        {
+          title : "Front End ● Publishing",
+          contents : [
+            {
+              title : "서귀포 스마트알림",
+              date : "2023.06 ~ 2023.09",
+              target : {
+                type : "url",
+                href : "https://smartcity.seogwipo.go.kr/",
+                target : "_blank"
+              },
+              img : {
+                src : "/images/jeju.png",
+                alt : "제주도 프로젝트 대표 이미지"
+              },
+              desc : "독거노인의 편의와 건강을 위한 IoT 연동 웹사이트",
+              meta : {
+                team : "팀 구성: Back 4명, Front 2명",
+                role : "주요 역할: UI 설계 · 컴포넌트화 · 접근성 · 반응형"
+              },
+              skill : [
+                "Java",
+                "JPA",
+                "Spring Boot",
+                "RestFull API(User)",
+                "JSP (Back Office)",
+                "HTML",
+                "CSS",
+                "MySQL"
+              ],
+              kpi : [
+                {
+                  title : "User-Front",
+                  percent : "90%"
+                },
+                {
+                  title : "BackOffice-Front",
+                  percent : "80%"
+                }
+              ]
+
+            },
+
+            {
+              title : "리쥬란 정품인증",
+              date : "2023.05 ~ 2023.05",
+              target : {
+                type : "url",
+                href : "https://rejuran.co.kr/cert",
+                target : "_blank"
+              },
+              img : {
+                src : "/images/rejuran1.png",
+                alt : "리쥬란 정품인증"
+              },
+              desc : "리쥬란 정품 인증 모바일 전용 웹",
+              meta : {
+                team : "팀 구성: Server 1명, Front 1명",
+                role : "주요 역할: UI 설계 · URL Redirect 기반 정품 인증 플로우 설계"
+              },
+              skill : [
+                "Java",
+                "JSP",
+                "Spring Boot",
+                "HTML",
+                "CSS",
+                "MySQL"
+              ],
+              kpi : [
+                {
+                  title : "Front",
+                  percent : "100%"
+                },
+                {
+                  title : "Back",
+                  percent : "60%"
+                }
+              ]
+
+            },
+
+            {
+              title : "해피리얼 AR앱",
+              date : "2023.05 ~ 2023.05",
+              target : {
+                type : "url",
+                href : "https://www.ebn.co.kr/news/articleView.html?idxno=1488264",
+                alert : "해당 프로젝트는 출시 중단되었음",
+                target : "_blank"
+              },
+              img : {
+                src : "/images/happy/1.jpg",
+                alt : "해피리얼 AR 앱"
+              },
+              desc : "해피리얼 AR 앱 Back Office",
+              meta : {
+                team : "팀 구성: Front AND Back(App) 8명, BackOffice(App) 3명",
+                role : "주요 역할: Back Office 포인트 관리 및 공지 게시판 프론트 작업"
+              },
+              skill : [
+                "React Native",
+                "NestJS",
+                "React",
+                "AWS",
+                "CSS",
+                "HTML"
+              ],
+              kpi : [
+                {
+                  title : "Back Office - React(front)",
+                  percent : "30%"
+                }
+              ]
+
+            },
+
+
+            {
+              title : "KT 원격 수업",
+              date : "2023.05 ~ 2023.05",
+              target : {
+                type : "url",
+                href : "https://www.ontactedu.co.kr/office/default",
+                alert : "해당 프로젝트는 협력업체만 확인가능합니다.",
+                target : "_blank"
+              },
+              img : {
+                src : "/images/kt/1.png",
+                alt : "KT 원격 수업 웹"
+              },
+              desc : "KT 원격 수업 FRONT",
+              meta : {
+                team : "팀 구성: Front 3명, BackOffice ?명",
+                role : "주요 역할: User단 Front UI 작업"
+              },
+              skill : [
+                "React",
+                "TypeScript",
+                "css3",
+              ],
+              kpi : [
+                {
+                  title : "User단- React(TypeScript)",
+                  percent : "60%"
+                }
+              ]
+
+            },
+
+            {
+              title : "만남의 교회",
+              date : "2023.05 ~ 2023.05",
+              target : {
+                type : "url",
+                href : "https://www.mannamchurch.org/",
+                target : "_blank"
+              },
+              img : {
+                src : "/images/sayok/만남.png",
+                alt : "만남의 교회"
+              },
+              desc : "만남의 교회",
+              meta : {
+                team : "팀 구성: Front 1명, Back 2명",
+                role : "주요 역할: User단 Front, Back AND BackOffice Front, Back"
+              },
+              skill : [
+                "JAVA",
+                "JSP",
+                "HTML",
+                "css",
+              ],
+              kpi : [
+                {
+                  title : "User단 - Front & 퍼블리싱",
+                  percent : "100%"
+                },
+                {
+                  title : "User단 - MVC2 JSP",
+                  percent : "80%"
+                },
+                {
+                  title : "BackOffice - MVC2 JSP",
+                  percent : "80%"
+                },
+              ]
+
+            },
+
+            {
+              title : "가평우리마을",
+              date : "2023.05 ~ 2023.05",
+              target : {
+                type : "url",
+                href : "https://www.woorimaeul.org/",
+                target : "_blank"
+              },
+              img : {
+                src : "/images/sayok/가평우리마을.png",
+                alt : "가평우리마을"
+              },
+              desc : "가평우리마을 팬션 예약시스템",
+              meta : {
+                team : "팀 구성: Front 1명, Back 3명",
+                role : "주요 역할: 가평우리마을 펜션 예약시스템 구축 및 서버 관리"
+              },
+              skill : [
+                "JAVA",
+                "JSP",
+                "HTML",
+                "css",
+              ],
+              kpi : [
+                {
+                  title : "User단 - Front & 퍼블리싱",
+                  percent : "100%"
+                },
+                {
+                  title : "User단 - MVC2 JSP",
+                  percent : "80%"
+                },
+                {
+                  title : "BackOffice - MVC2 JSP",
+                  percent : "80%"
+                },
+              ]
+
+            }
+            
+          ]
+        },
+
+        
+      ]
+    },
     
+    
+  ];
+
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+        const app = new AlpaPortfolio({
+            data: obj,                 // 네가 가진 obj
+            listSelector: '#contents', // 좌측
+            viewSelector: '#view',     // 우측
+            splitSelector: '.split',
+            leftPaneSelector: '.pane-left',
+            gutterSelector: '.gutter',
+            minLeft: 240,
+            maxLeft: 720
+        });
+        app.init();
+    });
 </script>
 </html>
