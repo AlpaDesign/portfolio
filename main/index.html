@@ -21,8 +21,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="../js/script.js"></script>
-    <script src="./AlpaDeskTop.js"></script>
-    <!-- <script src="./AlpaDeskTop_back.js"></script> -->
+    <!-- <script src="./AlpaDeskTop.js"></script> -->
+    <script src="./AlpaDeskTop_back.js"></script>
     <script src="../lib/AlpaProgress/js/AlpaProgress.js"></script>
     
 </head>
@@ -246,29 +246,29 @@ i.bi.bi-windows{
 
     // ====== 사용 ======
     const fileList = [
-        {idx:1,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/theater.mp4", ico: null },
-        {idx:2,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/product.mp4", ico: null },
-        {idx:3,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/buy.mp4", ico: null },
-        {idx:4,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/notice.mp4",ico: null },
+        {idx:1,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", title:"", name: "1.좌석 설계.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/theater.mp4", ico: null },
+        {idx:2,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", title:"", name: "2.공연 등록.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/product.mp4", ico: null },
+        {idx:3,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", title:"", name: "3.구매.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/buy.mp4", ico: null },
+        {idx:4,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\시연영상", title:"", name: "4.게시판.mp4", type: "file", ext: ".mp4", realPath: "/video/웹/극장/notice.mp4",ico: null },
 
-        {idx:5,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "/files/기획의도.html", ico: null },
-        {idx:6,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "/files/요구사항분석.html", ico: null },
-        {idx:7,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/데이터베이스-설계.html", ico: null },
-        {idx:8,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/화면설계.html", ico: null },
-        {idx:9,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/소프트웨어-설계.html",ico: null },
-        {idx:10,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "/files/소스코드.html", ico: null },
-        {idx:11,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "/files/테스트.html", ico: null },
+        {idx:5,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", title:"기획 및 의도", name: "1.기획 및 의도.pdf", type: "file", ext: ".pdf", realPath: "/files/기획의도.html", ico: null },
+        {idx:6,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", title:"요구사항 분석", name: "2.요구사항 분석.pdf", type: "file", ext: ".pdf", realPath: "/files/요구사항분석.html", ico: null },
+        {idx:7,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", title:"데이터 베이스 설계", name: "3.데이터 베이스 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/데이터베이스-설계.html", ico: null },
+        {idx:8,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", title:"화면 설계", name: "4.화면 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/화면설계.html", ico: null },
+        {idx:9,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", title:"소프트 웨어 설계", name: "5.소프트 웨어 설계.pdf", type: "file", ext: ".pdf", realPath: "/files/소프트웨어-설계.html",ico: null },
+        {idx:10,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", title:"소스 코드", name: "6.소스 코드.pdf", type: "file", ext: ".pdf", realPath: "/files/소스코드.html", ico: null },
+        {idx:11,pk:0, path: "D:\\웹 개발\\극장 티켓팅 프로젝트\\기획서", title:"테스트", name: "7.테스트.pdf", type: "file", ext: ".pdf", realPath: "/files/테스트.html", ico: null },
         
-        {idx:12,pk:0, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/HN8kXCf19us?autoplay=1",ico: null },
-        {idx:13,pk:0, path: "D:\\윈도우 응용프로그램\\작업스케줄러", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",ico: null },
-        {idx:14,pk:0, path: "C:\\기술", name: "기술.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaProgress/AlpaProgress.html", ico: `<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>` },
-        {idx:15,pk:0, path: "D:\\웹 개발", name: "기획서.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaTheater/AlpaTheater.html", ico: `<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>` },
-        {idx:16,pk:0, path: "D:\\이력서", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null },
+        {idx:12,pk:0, path: "D:\\윈도우 응용프로그램\\아두이노 코드 자동설계 프로그램", title:"아두이노 코드 자동설계 프로그램", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/HN8kXCf19us?autoplay=1",ico: null },
+        {idx:13,pk:0, path: "D:\\윈도우 응용프로그램\\작업스케줄러", title:"작업스케줄러", name: "시연.mp4", type: "file", ext: ".youtube", realPath: "https://www.youtube.com/embed/RteyPM53eYc?autoplay=1",ico: null },
+        {idx:14,pk:0, path: "C:\\기술", title:"기술스팩", name: "기술.pptx", type: "file", ext: ".exe", realPath: "/lib/AlpaProgress/AlpaProgress.html", ico: `<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>` },
+        {idx:15,pk:0, path: "D:\\웹 개발", title:"기획서", name: "기획서.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaTheater/AlpaTheater.html", ico: `<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>` },
+        {idx:16,pk:0, path: "D:\\이력서", title:"이력서", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null },
         
-        {idx:17,pk:0, path: "C:\\Users\\바탕화면", name: "파일탐색기", type: "folder", ext: "folder", realPath: "D:", ico: null ,order : {x : 1, y:1}},
-        {idx:18,pk:14, path: "C:\\Users\\바탕화면", name: "기술.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaProgress/AlpaProgress.html", ico: `<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>`,order : {x : 1, y:2} },
-        {idx:19,pk:15, path: "C:\\Users\\바탕화면", name: "기획서.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaTheater/AlpaTheater.html", ico: `<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>`,order : {x : 1, y:3} },
-        {idx:20,pk:16, path: "C:\\Users\\바탕화면", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null,order : {x : 1, y:4} },
+        {idx:17,pk:0, path: "C:\\Users\\바탕화면", title:"", name: "파일탐색기", type: "folder", ext: "folder", realPath: "D:", ico: null ,order : {x : 1, y:1}},
+        {idx:18,pk:14, path: "C:\\Users\\바탕화면", title:"기술", name: "기술.pptx", type: "file", ext: ".exe", realPath: "/lib/AlpaProgress/AlpaProgress.html", ico: `<span class="i_cover exe" style="background-color: #5C6BC0;"><i class="bi bi-bar-chart-line-fill"></i></span>`,order : {x : 1, y:2} },
+        {idx:19,pk:15, path: "C:\\Users\\바탕화면", title:"기획서", name: "기획서.exe", type: "file", ext: ".exe", realPath: "/lib/AlpaTheater/AlpaTheater.html", ico: `<span class="i_cover exe"><i class="bi bi-card-checklist"></i></span>`,order : {x : 1, y:3} },
+        {idx:20,pk:16, path: "C:\\Users\\바탕화면", title:"이력서", name: "이력서.pdf", type: "file", ext: ".pdf", realPath: "/download/장윤수 이력서.pdf", ico: null,order : {x : 1, y:4} },
     ];
     const mainList = {
         desktop : {

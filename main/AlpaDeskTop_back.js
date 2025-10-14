@@ -55,9 +55,10 @@ function normItem(raw) {
   if (raw.ext === "folder" || raw.type === TYPE.FOLDER) {
     const p  = raw.url || raw.path || "";
     const rp = (raw.realPath ? String(raw.realPath) : p).replace(/\//g, "\\"); // realPath 보존
-
+    
     return {
       type: TYPE.FOLDER,
+      title: raw.title,
       name: raw.name || raw.txt || Path.basename(p),
       path: p,               // 아이콘(표시) 위치
       ext: "folder",
@@ -83,6 +84,7 @@ function normItem(raw) {
   return {
     type: TYPE.FILE,
     name,
+    title: raw.title,
     path: base,
     ext: raw.ext || "",
     realPath: raw.realPath || raw.url || "",
@@ -432,9 +434,10 @@ class WindowBase {
     static _spawnIndex = 0;
     static WORKAREA_FOOTER = 48;
 
-    constructor({ manager }) {
+    constructor({ manager, title }) {
         this.manager = manager;
-        this.$root = $('<div class="alpaka-folder-window alpaka_folder"></div>').css({
+        this.title = title;
+        this.$root = $('<div class="alpaka-folder-window"></div>').css({
           position: 'absolute',
           // top/left는 아래 _applySpawnPosition()에서 설정
           width: '640px',
@@ -481,10 +484,11 @@ class WindowBase {
       WindowBase._spawnIndex++;
     }
 
-
+    
     buildChrome() {
         const $btns = $(`
       <div class="alpaka-folder_btn">
+        <p class="alpaka-folder-name">${this.title}</p>
         <div class="alpaka-hide-btn"><i class="bi bi-dash-lg"></i></div>
         <div class="alpaka-bigOrSmall-btn"><i class="bi bi-files"></i></div>
         <div class="alpaka-close-btn"><i class="bi bi-x-lg"></i></div>
@@ -598,8 +602,8 @@ class WindowBase {
  * 폴더 창 (네 헤더/입력/내비 구조 유지)
  * ========================= */
 class FolderWindow extends WindowBase {
-    constructor({ manager, startPath, fileList }) {
-        super({ manager });
+    constructor({ manager,title, startPath, fileList }) {
+        super({ manager, title });
         this.path = startPath;
         this.fileList = fileList;
 
@@ -810,10 +814,12 @@ class FolderWindow extends WindowBase {
  * 파일 창 (창 내부에 직접 미리보기 렌더)
  * ========================= */
 class FileWindow extends WindowBase {
-    constructor({ manager, file }) {
-        super({ manager });
+    constructor({ manager,title, file }) {
+        super({ manager,title });
         this.file = file;
+        this.$root.addClass("window-file");
         this.render();
+
     }
     render() {
         const { ext, realPath } = this.file;
@@ -863,7 +869,6 @@ class AlpaProcessManager {
      * @param {string} name - 파일명 (예: "1.기획 및 의도.pdf")
      */
     runProccess(path, name) {
-      console.log(path, name);
       const item = this.fileList.find(f =>{
         if(f.path.includes("C:")){
           console.log(f.path);
@@ -873,7 +878,6 @@ class AlpaProcessManager {
       }
       );
 
-      console.log(item);
       if (item) {
         this.open(item);
       } else {
@@ -938,7 +942,7 @@ class AlpaProcessManager {
 
         // 동일 경로 창이 없으면 새 폴더창 생성
         const key = `folder:${item.path}:${Date.now()}_${Math.random().toString(36).slice(2)}`;
-        this.win = new FolderWindow({ manager: this, startPath: item.path, fileList: this.fileList });
+        this.win = new FolderWindow({ manager: this,title:item.title,  startPath: item.path, fileList: this.fileList });
         this.win.$root.data('proc-key', key);
         this.win.onClose(() => this.close(key));
 
@@ -955,7 +959,7 @@ class AlpaProcessManager {
       const key = AlpaProcessManager.keyOf(item);
       if (this.processes.has(key)) { this.focus(key); return; }
 
-      this.win = new FileWindow({ manager: this, file: item });
+      this.win = new FileWindow({ manager: this,title: item.title, file: item });
       this.win.$root.data('proc-key', key);
       this.win.onClose(() => this.close(key));
 
@@ -1003,11 +1007,10 @@ class AlpaProcessManager {
 
       for (const [k, p] of this.processes) {
         const isActive = (k === topKey);
-        console.log(k, p);
         $t.append(`
           <div class="alpaka-proccess_box ${isActive ? 'select' : ''}" 
               data-key="${p.key}" 
-              title="${p.win.file.path}">
+              title="${p.win.file?.path}">
             ${p.icon}
           </div>
         `);
