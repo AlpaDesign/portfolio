@@ -22,6 +22,8 @@
 </head>
 <style>
 
+
+
   .wrapper {
       width: 100%;
       display: flex;
@@ -33,10 +35,12 @@
   .container {
       max-width: 100%;
       margin: 0 auto;
-      padding: 100px 20px 30px;
-      height: 100%;
+      padding: 100px 20px;
+      height: auto;
       display: flex;
       align-items: center;
+      flex-direction: column;
+    gap: 50px;
   }
   .container{
     max-width: 1200px;
@@ -112,6 +116,11 @@
     background-size: contain;
     background-color: #fff;
   }
+
+
+  @media only screen and (max-width: 740px){
+    
+  }
 </style>
 <body>
 <div class="wrapper">
@@ -131,6 +140,21 @@
       </div>
     </header>
     <div class="container">
+      <div class="title_background">
+        <div class="title_background-inner">
+            <div class="title">
+                <h3>ALPA.K</h3>
+                <span></span>
+            </div>
+            <div class="title_sub">
+                <span class="span"><span class="span1">웹과 윈도우 응용프로그램 개발이 가능한<br class="br1"></span> 프로그래머 <span class="span1_1"> 장윤수 </span>입니다.</span>
+                <span class="span2">
+                    프론트엔드, 백엔드는 물론 윈도우 기반의 자동화 도구까지 직접 개발한 경험을 바탕으로,<br>
+                    다양한 실무 환경에 유연하게 대응하는 풀스택 개발자가 되겠습니다.
+                </span>
+            </div>
+        </div>
+      </div>
       <div class="container_inner split">
         <a href="/main" class="box btn-3d yellow">
           <p>이력서</p>
