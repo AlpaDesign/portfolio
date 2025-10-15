@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QR 코드 기반 리쥬란 정품 인증 – 포트폴리오 원페이지</title>
+    <meta name="description" content="리쥬란 화장품 정품인증 QR 웹 프로젝트 소개 단일 페이지 포트폴리오" />
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        /* =====================
+       색상 토큰 (라이트 기본)
+       ===================== */
+        :root {
+            --bg: #f7fafc;
+            /* 페이지 배경 */
+            --panel: #ffffff;
+            /* 카드/패널 배경 */
+            --ink: #111827;
+            /* 본문 텍스트 */
+            --muted: #4b5563;
+            /* 보조 텍스트 */
+            --mint: #00bfa5;
+            /* 포인트 민트 */
+            --sky: #1e88e5;
+            /* 포인트 블루 */
+            --line: #e5e7eb;
+            /* 경계선 */
+            --accent: #0ea5a7;
+            /* 강조 */
+            --warn: #f59e0b;
+            /* 경고 */
+            --ok: #16a34a;
+            /* 성공 */
+            --panel-grad: linear-gradient(160deg, #ffffff, #f9fbff 70%);
+            --hero-grad: linear-gradient(135deg, #e8f3ff 0%, #ffffff 55%, #f5fffc 100%);
+        }
+
+        /* 다크모드 자동 전환 */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b1118;
+                --panel: #0f1722;
+                --ink: #e6f1ff;
+                --muted: #9fb1cc;
+                --mint: #32d4be;
+                --sky: #75b8ff;
+                --line: #223047;
+                --accent: #b9ffea;
+                --warn: #ffd166;
+                --ok: #7bed9f;
+                --panel-grad: linear-gradient(160deg, #0e1624, #0b1420 70%);
+                --hero-grad: radial-gradient(1200px 800px at 80% -10%, #16304a33 0%, transparent 60%), #0b1118;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font: 400 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            letter-spacing: 0.1px;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ===== Layout ===== */
+        .wrap {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 25px 120px;
+            position: relative;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: saturate(120%) blur(8px);
+            background: color-mix(in oklab, var(--panel) 85%, transparent);
+            border-bottom: 1px solid var(--line);
+            transition: background 0.35s ease, border-color 0.35s ease;
+        }
+
+        .header .inner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 25px;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .3px;
+            color: var(--ink);
+        }
+
+        .brand b {
+            color: var(--mint);
+        }
+
+        .nav {
+            margin-left: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav a {
+            padding: 8px 10px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 14px;
+            background: var(--panel);
+        }
+
+        .nav a:hover {
+            color: var(--ink);
+            border-color: color-mix(in oklab, var(--accent) 60%, var(--line));
+            box-shadow: 0 2px 10px #0000000d;
+        }
+
+        .nav {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+
+        .nav::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .nav::-webkit-scrollbar-thumb {
+            background: color-mix(in oklab, var(--line) 70%, #bbb);
+            border-radius: 999px;
+        }
+
+        .hero {
+            position: relative;
+            padding: 84px 0 56px;
+            overflow: hidden;
+            background: var(--hero-grad);
+        }
+
+        .hero .grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .h1 {
+            font-size: clamp(28px, 4vw, 44px);
+            line-height: 1.15;
+            letter-spacing: .2px;
+            margin: 0 0 12px;
+            color: var(--ink);
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .cta {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            font-weight: 700;
+            box-shadow: 0 2px 10px #00000010;
+        }
+
+        .btn.primary {
+            background: linear-gradient(90deg, var(--mint), var(--sky));
+            color: #0a1120;
+            border: none;
+        }
+
+        .card {
+            background: var(--panel-grad);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 6px 20px #0000000a;
+        }
+
+        .card+.card {
+            margin-top: 14px;
+        }
+
+        /* 이미지 플레이스홀더 */
+        .img-slot {
+            aspect-ratio: 16/10;
+            border: 2px dashed var(--line);
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: var(--muted);
+            font-weight: 700;
+            background: var(--panel);
+        }
+
+        .img-slot.small {
+            aspect-ratio: 4/3;
+        }
+
+        section {
+            padding: 64px 0;
+        }
+
+        section .title {
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0 0 18px;
+            letter-spacing: .2px;
+        }
+
+        section .desc {
+            color: var(--muted);
+            margin: 0 0 22px;
+        }
+
+        /* 2열/3열 */
+        .cols {
+            display: grid;
+            gap: 18px;
+        }
+
+        .cols.two {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cols.three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 920px) {
+            .hero .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cols.two,
+            .cols.three {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 72px 0 48px;
+            }
+
+            .card+.card {
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .img-slot {
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .img-slot {
+                aspect-ratio: 16/9;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .cols.three {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 920px) {
+
+            /* 기존에 있던 .hero .grid 1열 전환은 유지 */
+            .wrap {
+                padding: 0 16px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+
+            .card {
+                padding: 16px;
+                border-radius: 14px;
+            }
+
+            .img-slot {
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .cols.two,
+            .cols.three {
+                grid-template-columns: 1fr;
+            }
+
+            .h1 {
+                font-size: clamp(24px, 6vw, 36px);
+            }
+
+            .lead {
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 11px 12px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .header .inner {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header .inner {
+                gap: 10px;
+                padding: 12px 0;
+            }
+
+            .h1 {
+                letter-spacing: .1px;
+            }
+
+            .hero {
+                padding: 64px 0 40px;
+            }
+
+            .timeline {
+                padding-left: 16px;
+            }
+
+            .timeline:before {
+                left: 6px;
+            }
+
+            .step {
+                padding-left: 12px;
+            }
+
+            .step .dot {
+                left: -4px;
+            }
+
+            .result {
+                grid-template-columns: 1fr;
+            }
+
+            .result>div:last-child {
+                grid-template-columns: 1fr;
+            }
+
+            /* 상세정보 한줄 배치 */
+        }
+
+        /* 태그형 기술스택 */
+        .stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            border: 1px solid var(--line);
+            color: color-mix(in oklab, var(--ink) 85%, var(--muted));
+            padding: 8px 10px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 13px;
+            background: var(--panel);
+        }
+
+        /* 구분선 */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, color-mix(in oklab, var(--line) 70%, transparent), transparent);
+            margin: 28px 0;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: .7s ease;
+        }
+
+        .reveal.on {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ===== SVG Diagram ===== */
+        .diagram-wrap {
+            background: color-mix(in oklab, var(--panel) 92%, transparent);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 22px;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .node {
+            fill: color-mix(in oklab, var(--panel) 94%, #ffffff);
+            stroke: color-mix(in oklab, var(--line) 80%, #bcd2ff);
+            stroke-width: 1.5;
+        }
+
+        .node-title {
+            font-weight: 800;
+            font-size: clamp(11px, 1.2vw, 13px);
+            letter-spacing: .2px;
+            fill: color-mix(in oklab, var(--ink) 96%, #0b0b0b);
+        }
+
+        .node-sub {
+            font-size: clamp(10px, 1.1vw, 12px);
+            fill: color-mix(in oklab, var(--muted) 85%, #2a3a57);
+        }
+
+        .arrow {
+            fill: none;
+            stroke: url(#grad);
+            stroke-width: 2.2;
+            marker-end: url(#arrowhead);
+        }
+
+        /* 선 그리기 애니메이션 (길이 표준화 버전) */
+        .draw {
+            stroke-dasharray: 1;
+            /* pathLength=1 기준 (아래 3번 참고) */
+            stroke-dashoffset: 1;
+            animation: draw 1.6s ease forwards;
+            animation-play-state: paused;
+            /* ✨ 기본 일시정지 */
+        }
+
+        .draw.d2 {
+            animation-delay: 2s;
+        }
+
+        .draw.d3 {
+            animation-delay: 1.3s;
+        }
+
+        .draw.d5 {
+            animation-delay: 2.5s;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* #archi 섹션이 보일 때만 재생 */
+        #archi.play .draw {
+            animation-play-state: running;
+        }
+
+        /* 러닝 라이트 */
+        .pulse {
+            filter: drop-shadow(0 0 6px color-mix(in oklab, var(--mint) 80%, #2bffe2));
+            animation: pulse 1.6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: .6
+            }
+
+            50% {
+                opacity: 1
+            }
+        }
+
+        /* 타임라인 */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 2px;
+            bottom: 2px;
+            width: 2px;
+            background: color-mix(in oklab, var(--line) 85%, #cfe2ff);
+            border-radius: 1px;
+        }
+
+        .step {
+            position: relative;
+            padding: 8px 0 8px 16px;
+        }
+
+        .step .dot {
+            position: absolute;
+            left: -2px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--mint);
+            box-shadow: 0 0 0 3px color-mix(in oklab, var(--mint) 30%, transparent);
+        }
+
+        .step h4 {
+            margin: 0 0 6px;
+            font-size: 15px;
+        }
+
+        .step p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* 하단 모의 결과창 */
+        .result {
+            background: color-mix(in oklab, var(--panel) 96%, #f2f6ff);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 14px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            font-weight: 800;
+            border: 1px solid var(--line);
+            background: var(--panel);
+        }
+
+        .badge.ok {
+            background: #e6fff4;
+            color: #065f46;
+            border-color: #b7f3d1;
+        }
+
+        .badge.warn {
+            background: #fff7e5;
+            color: #8a6a00;
+            border-color: #fbe1a3;
+        }
+
+        /* SVG 화살표 가독성 향상 */
+        .arrow,
+        .arrow-bg {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* 실제 컬러 라인 */
+        .arrow {
+            stroke: url(#grad);
+            stroke-width: 3;
+            marker-end: url(#arrowhead);
+        }
+
+        /* 밑에 두꺼운 흰(또는 진한) 언더레이: 배경 위에서도 잘 보이게 */
+        .arrow-bg {
+            stroke: #ffffff;
+            opacity: .9;
+            stroke-width: 7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .arrow-bg {
+                stroke: #0b1118;
+                opacity: .65;
+            }
+
+            /* 다크모드: 어두운 언더레이 */
+        }
+
+        .footer {
+            padding: 42px 0 60px;
+            color: color-mix(in oklab, var(--muted) 90%, #87a0bf);
+            text-align: center;
+        }
+
+        .kbd {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+            background: color-mix(in oklab, var(--panel) 92%, #0c1a2a);
+            border: 1px solid var(--line);
+            padding: 0 6px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== Header ===== -->
+    <header class="header">
+        <div class="wrap inner">
+            <div class="brand">리쥬란 <b>QR</b> 정품 인증</div>
+            <nav class="nav" aria-label="섹션 빠른이동">
+                <a href="#overview">개요</a>
+                <a href="#stack">기술 스택</a>
+                <a href="#archi">아키텍처</a>
+                <a href="#flow">플로우</a>
+                <a href="#demo">결과</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+        <div class="wrap grid">
+            <div>
+                <h1 class="h1 reveal">리쥬란 제품 정품 인증 <span style="color:var(--mint)">모바일 웹</span></h1>
+                <p class="lead reveal" style="transition-delay:.1s">주요 역할 : UI 설계 및 프론트 백 작업, URL Redirect 기반 정품 인증 플로우
+                    설계</p>
+                <div class="cta reveal" style="transition-delay:.2s">
+                    <a class="btn primary" href="#archi">아키텍처 보기</a>
+                    <a class="btn" href="#flow">검증 플로우</a>
+                </div>
+            </div>
+            <div class="reveal" style="transition-delay:.25s">
+                <!-- 이미지 플레이스홀더(히어로) -->
+                <img src="/images/리쥬란/main.png" alt="리쥬란 소개">
+                <!-- <div class="img-slot" aria-label="히어로 이미지 영역">이미지 영역 (추후 교체)</div> -->
+            </div>
+        </div>
+    </section>
+
+    <div class="wrap">
+        <!-- ===== Overview ===== -->
+        <section id="overview">
+            <h2 class="title reveal">프로젝트 개요</h2>
+            <p class="desc reveal" style="transition-delay:.05s">리쥬란 매장에서 현재 제품이 정품인지 확인하는 QR Reading Mibile Web
+                프로젝트입니다.</p>
+            <div class="card reveal" style="transition-delay:.1s;border-radius: 12px 12px 0 0;border-bottom: none;">
+                <canvas id="scanCanvas" width="980" height="220"
+                    style="width:100%; height:auto; display:block; border-radius:12px; background: color-mix(in oklab, var(--panel) 98%, #0a1322)"></canvas>
+            </div>
+            <div class="cols">
+                <div class="card reveal" style="border-radius: 0 0 12px 12px;border-top: none;">
+                    <h3 style="margin:0 0 8px">핵심 포인트</h3>
+                    <ul style="margin:0; padding-left:18px; color:var(--muted)">
+                        <li>URL Redirect 기반의 경량 구조 (앱 설치 불필요)</li>
+                        <li>JSP 파라미터 파싱 → Backoffice REST API 연동</li>
+                        <li>DB 일치/중복/무효 상태 응답 분기</li>
+                        <li>로그/위치 기반(옵션) 이상접근 감지</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ===== Tech Stack ===== -->
+        <section id="stack">
+            <h2 class="title reveal">기술 스택</h2>
+            <!-- <p class="desc reveal" style="transition-delay:.05s">Frontend(User): JSP, HTML, CSS, JavaScript · Backend(Backoffice): Java, Spring Boot, JPA, RESTful API · Infra: AWS EC2, Nginx, PM2, Git</p> -->
+            <div class="stack reveal" style="transition-delay:.1s">
+                <span class="tag">JSP</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">JPA</span>
+                <span class="tag">REST API</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">AWS EC2</span>
+                <span class="tag">Nginx</span>
+                <span class="tag">JDK</span>
+                <span class="tag">Gradle</span>
+                <span class="tag">Git</span>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ===== Architecture (Animated SVG) ===== -->
+        <section id="archi">
+            <h2 class="title reveal">프로젝트 아키텍처</h2>
+            <!-- <p class="desc reveal" style="transition-delay:.05s">요구하신 플로우 그대로: <b>관리자</b>가 QR 생성→DB 저장, <b>사용자</b>가 QR 태깅→<b>JSP</b>가 파라미터 확인→<b>Backoffice API</b>로 전달→<b>DB</b> 조회→응답 후 <b>JSP</b> 표시.</p> -->
+
+            <div class="diagram-wrap reveal" style="transition-delay:.1s">
+                <svg viewBox="0 0 980 420" role="img" aria-label="아키텍처 다이어그램">
+                    <defs>
+                        <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#1bd7bf" />
+                            <stop offset="100%" stop-color="#79b7ff" />
+                        </linearGradient>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"
+                            markerUnits="strokeWidth">
+                            <path d="M0,0 L10,3 L0,6 Z" fill="#79b7ff" />
+                        </marker>
+                    </defs>
+
+                    <!-- 노드: 관리자(Backoffice) -->
+                    <g transform="translate(40,40)">
+                        <rect class="node" rx="12" ry="12" width="220" height="90" />
+                        <text x="12" y="26" class="node-title">관리자 (Backoffice)</text>
+                        <text x="12" y="50" class="node-sub">QR 정보 등록</text>
+                        <text x="12" y="68" class="node-sub">→ QR(URL) 생성</text>
+                    </g>
+
+                    <!-- 노드: DB -->
+                    <g transform="translate(350,40)">
+                        <rect class="node" rx="12" ry="12" width="210" height="90" />
+                        <text x="12" y="26" class="node-title">DB (MySQL)</text>
+                        <text x="12" y="50" class="node-sub">QR/제품/검증 기록 저장</text>
+                    </g>
+
+                    <!-- 노드: Backoffice API -->
+                    <g transform="translate(650,40)">
+                        <rect class="node" rx="12" ry="12" width="270" height="90" />
+                        <text x="12" y="26" class="node-title">Backoffice API (Spring)</text>
+                        <text x="12" y="50" class="node-sub">검증 엔드포인트 / 오류 처리 / 로그</text>
+                    </g>
+
+                    <!-- 노드: 사용자(JSP) -->
+                    <g transform="translate(40,240)">
+                        <rect class="node" rx="12" ry="12" width="360" height="120" />
+                        <text x="12" y="28" class="node-title">사용자 (JSP / User 서버)</text>
+                        <text x="12" y="54" class="node-sub">QR 태깅 → URL 파라미터 확인</text>
+                        <text x="12" y="76" class="node-sub">Backoffice API에 파라미터 전송</text>
+                        <text x="12" y="98" class="node-sub">응답 수신 후 결과 화면 표시</text>
+                    </g>
+
+
+                    <!-- 관리자 → DB -->
+                    <path class="arrow draw d1" pathLength="1" d="M260,83 L260,85 320,85 350,85" />
+
+                    <!-- 사용자(JSP) → Backoffice API -->
+                    <path class="arrow draw d2" pathLength="1" d="M560,79 L650,80" />
+
+                    <!-- DB → Backoffice API -->
+                    <path class="arrow draw d3" pathLength="1" d="M650,90 L560,91" />
+
+                    <!-- Backoffice API → DB -->
+                    <path class="arrow draw d4" pathLength="1" d="M400,300 C500,300 620,160 650,92" />
+                    <!-- Backoffice API → 사용자(JSP) -->
+                    <path class="arrow draw d5" pathLength="1" d="M785,130 C760,220 560,340 400,300" />
+
+                    <!-- 포인트 -->
+                    <circle class="pulse" cx="260" cy="85" r="3" fill="var(--mint)"></circle>
+                    <circle class="pulse" cx="350" cy="85" r="3" fill="var(--mint)" />
+                    <circle class="pulse" cx="650" cy="90" r="3" fill="var(--sky)" />
+                    <circle class="pulse" cx="400" cy="300" r="3" fill="var(--mint)" />
+                </svg>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ===== Flow / Timeline ===== -->
+        <section id="flow">
+            <h2 class="title reveal">사용자 인증 플로우</h2>
+            <div class="cols two">
+                <div class="reveal">
+                    <div class="timeline">
+                        <div class="step"><span class="dot"></span>
+                            <h4>QR 태깅</h4>
+                            <p>사용자가 제품의 QR을 스캔하여 User 서버(JSP)에 진입합니다.</p>
+                        </div>
+                        <div class="step"><span class="dot"></span>
+                            <h4>파라미터 확인</h4>
+                            <p>JSP에서 URL 파라미터(일련/토큰 등)를 파싱합니다.</p>
+                        </div>
+                        <div class="step"><span class="dot"></span>
+                            <h4>백오피스 요청</h4>
+                            <p>파라미터를 Backoffice REST API로 전송합니다.</p>
+                        </div>
+                        <div class="step"><span class="dot"></span>
+                            <h4>DB 검증</h4>
+                            <p>Backoffice가 DB에서 정합성/중복/무효 여부를 조회합니다.</p>
+                        </div>
+                        <div class="step"><span class="dot"></span>
+                            <h4>결과 표시</h4>
+                            <p>결과(유효/무효/이미 사용됨)에 따라 JSP 화면을 분기합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card reveal" style="transition-delay:.1s">
+                    <h3 style="margin:0 0 8px">모바일 결과 예시(모의)</h3>
+                    <div class="result">
+                        <div>
+                            <span class="badge ok">정품 인증 완료</span>
+                            <span class="badge warn" style="margin-left:6px">사용 이력: 1회</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns: 120px 1fr; gap:8px; color:var(--muted)">
+                            <div>제품명</div>
+                            <div>RIZURAN XYZ</div>
+                            <div>일련번호</div>
+                            <div>RZ-23-09-0001</div>
+                            <div>제조번호</div>
+                            <div>MF-2309-AB12</div>
+                            <div>검증시각</div>
+                            <div id="nowTime">2025-10-15 12:00</div>
+                        </div>
+                    </div>
+                    <div style="height:10px"></div>
+                    <!-- <div class="img-slot small">모바일 UI 캡처 추가</div> -->
+                    <img src="/images/리쥬란/success.jpg" alt="리쥬란 성공 이미지" />
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ===== Canvas Mini Animation (Optional visual) ===== -->
+        <!-- <section id="demo">
+            <h2 class="title reveal">미니 캔버스 애니메이션</h2>
+            <p class="desc reveal" style="transition-delay:.05s">QR 스캔 느낌의 라인 스캐너를 간단한 Canvas로 구현했습니다. 섹션에 도달하면 재생됩니다.</p>
+            
+            </section> -->
+
+                <!-- <section>
+            <div class="cols two">
+                <div class="card reveal">
+                <h3 style="margin:0 0 8px">이미지 섹션 A</h3>
+                <div class="img-slot">이미지 영역</div>
+                </div>
+                <div class="card reveal" style="transition-delay:.06s">
+                <h3 style="margin:0 0 8px">이미지 섹션 B</h3>
+                <div class="img-slot">이미지 영역</div>
+                </div>
+            </div>
+            </section> -->
+            <footer id="footer">
+                <div class="footer_inner">
+                    <div class="text">
+                        <span class="top">THANK YOU FOR YOUR VISIT!</span><br>
+                        <span class="bottom">COPYRIGHT© 2022 SZ100. ALL RIGHTS RESERVED.</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <script>
+            // ===== Scroll reveal =====
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+                })
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+            // ===== Now time (mock) =====
+            const pad = (n) => String(n).padStart(2, '0');
+            const t = new Date();
+            const now = `${t.getFullYear()}-${pad(t.getMonth() + 1)}-${pad(t.getDate())} ${pad(t.getHours())}:${pad(t.getMinutes())}`;
+            const nowEl = document.getElementById('nowTime');
+            if (nowEl) nowEl.textContent = now;
+
+            // ===== Canvas QR scan mini anim =====
+            (function () {
+                const cvs = document.getElementById('scanCanvas');
+                const ctx = cvs.getContext('2d');
+
+                function fitCanvas() {
+                    const dpr = Math.max(1, window.devicePixelRatio || 1);
+                    const rect = cvs.getBoundingClientRect(); // CSS 픽셀 크기
+                    cvs.width = Math.round(rect.width * dpr);
+                    cvs.height = Math.round(rect.height * dpr);
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // 스케일 보정
+                }
+
+                // 초기 사이즈 반영
+                fitCanvas();
+
+                // 리사이즈 대응
+                let rAF;
+                window.addEventListener('resize', () => {
+                    cancelAnimationFrame(rAF);
+                    fitCanvas();
+                    start(); // 크기 변경 후 다시 시작
+                }, { passive: true });
+
+                const cell = 14;
+                let tiles = [], W, H;
+
+                function makeTiles() {
+                    const rect = cvs.getBoundingClientRect();
+                    W = rect.width; H = rect.height;
+                    const cols = Math.floor(W / cell);
+                    const rows = Math.floor(H / cell);
+                    tiles = [];
+                    for (let y = 0; y < rows; y++) {
+                        for (let x = 0; x < cols; x++) {
+                            const r = Math.random();
+                            const v = r > 0.84 ? 1 : r > 0.76 ? 0.7 : r > 0.70 ? 0.4 : 0;
+                            tiles.push({ x, y, v });
+                        }
+                    }
+                }
+
+                function drawBG() {
+                    const bg = getComputedStyle(document.documentElement).getPropertyValue('--panel') || '#0a1322';
+                    ctx.clearRect(0, 0, cvs.width, cvs.height);
+                    ctx.fillStyle = bg;
+                    ctx.fillRect(0, 0, cvs.width, cvs.height);
+                    tiles.forEach(tl => {
+                        if (tl.v > 0) {
+                            ctx.fillStyle = 'rgba(123, 200, 255, 0.25)';
+                            ctx.fillRect(tl.x * cell, tl.y * cell, cell - 2, cell - 2);
+                        }
+                    });
+                }
+
+                let y = 0, dir = 1;
+                function scan() {
+                    const rect = cvs.getBoundingClientRect();
+                    drawBG();
+                    const grad = ctx.createLinearGradient(0, y, 0, y + 12);
+                    grad.addColorStop(0, 'rgba(50, 212, 190, 0)');
+                    grad.addColorStop(0.5, 'rgba(50, 212, 190, .8)');
+                    grad.addColorStop(1, 'rgba(121, 183, 255, 0)');
+                    ctx.fillStyle = grad;
+                    ctx.fillRect(0, y, rect.width, 12);
+
+                    tiles.forEach(tl => {
+                        const cy = tl.y * cell + cell / 2;
+                        if (Math.abs(cy - y) < 6 && tl.v > 0) {
+                            ctx.fillStyle = 'rgba(173, 255, 229, 0.7)';
+                            ctx.fillRect(tl.x * cell, tl.y * cell, cell - 2, cell - 2);
+                        }
+                    });
+
+                    y += dir * 2.2;
+                    if (y < 0 || y > rect.height) dir *= -1;
+                    rAF = requestAnimationFrame(scan);
+                }
+
+                function start() {
+                    makeTiles();
+                    y = 0; dir = 1;
+                    rAF = requestAnimationFrame(scan);
+                }
+
+                const io2 = new IntersectionObserver((ents) => {
+                    ents.forEach(e => { if (e.isIntersecting) { start(); io2.unobserve(cvs); } });
+                }, { threshold: .25 });
+                io2.observe(cvs);
+
+
+                const archi = document.querySelector('#archi');
+                if (!archi) return;
+                const ioArchi = new IntersectionObserver((entries) => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            archi.classList.add('play');   // ✨ 재생 시작
+                            //ioArchi.unobserve(archi);      // 한 번만 재생(원하면 제거)
+                        }
+                    });
+                }, { threshold: 0.3 });
+                ioArchi.observe(archi);
+            })();
+        </script>
+</body>
+
+</html>

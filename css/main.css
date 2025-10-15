@@ -109,6 +109,8 @@ button:hover {
 
 .wrapper {
     width: 100%;
+    position: relative;
+    padding-bottom:120px;
     /* display: flex;
     flex-direction: column;
     justify-content: start;
@@ -420,7 +422,7 @@ span.title {
     align-items: stretch;
     gap: 0;
     /* height: calc(100vh - 200px); */
-    background: var(--bg);
+    /* background: var(--bg); */
     /* border: 1px solid var(--line); */
     /* border-radius: 12px; */
     /* overflow: hidden; */
@@ -914,6 +916,10 @@ span.title {
     background-size: cover;
     font-size: 1em;
     margin-top: auto;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 #footer .footer_inner {
@@ -946,6 +952,7 @@ span.title {
 	font-size:3.750em;
 	font-weight:900;
 	color:#fff;
+    text-shadow: 3px 4px 5px rgba(0, 0, 0, .9);
 }
 .title_background .title_sub{
 	width:100%;

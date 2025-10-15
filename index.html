@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/lib/AlpaProgress/css/AlpaProgress.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -17,19 +18,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="/lib/AlpaProgress/js/AlpaProgress.js"></script>
     <!-- <script src="/js/main.js"></script> -->
 
 </head>
 <style>
 
-
-
+  #alpaWrap{
+    width: 100%;
+  }
+  .alpa-resume{
+    display: none;
+  }
   .wrapper {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      height: 100%;
   }
 
   .container {
@@ -165,6 +167,46 @@
           <span>포트폴리오 프로젝트 바로보기</span>
         </a>
       </div>
+      <div class="alpa-container" id="alpaWrap">
+    <div class="alpa-resume">
+      <div class="ar-header">
+        <div class="ar-title">이력 & 자격 & 프로젝트</div>
+        <div class="ar-controls">
+          <select id="viewSelect" class="ar-select" title="보기 방식">
+            <option value="auto">자동</option>
+            <option value="timeline">타임라인</option>
+            <option value="cards">카드</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ar-grid">
+        <aside class="ar-sections">
+          <nav class="ar-nav" id="arNav" aria-label="섹션"></nav>
+        </aside>
+        <section class="ar-pane" id="arPane" aria-live="polite"></section>
+      </div>
+    </div>
+
+    <div class="alpa-wrap">
+      <div class="alpa-header">
+        <div class="alpa-title">기술 스킬</div>
+        <div class="alpa-controls">
+          <label class="alpa-toggle" title="내용 접기/펼치기">
+            <input type="checkbox" id="toggleContents" checked />
+            내용 표시
+          </label>
+          <select id="typeSelect" class="alpa-select" title="표시 타입">
+            <option value="bar">막대형 (bar)</option>
+            <option value="circle">원형 (circle)</option>
+            <option value="mixed">혼합 (mixed)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="progressRoot" class="alpa-grid" aria-live="polite"></div>
+    </div>
+  </div>
     </div>
     <footer id="footer">
         <div class="footer_inner">
@@ -183,6 +225,279 @@
     el.forEach((elem, idx)=>{
       elem.classList.add("load");
     })
-  })
+  });
+    var intro = [
+      {
+        order : 1,
+        title : "경력",
+        list : [
+          {
+            title : "엔지온 시스템 -> 이엘피",
+            comment: "SW팀 검사알고리즘 활용한 프로그램 제작 및 유지보수",
+            date : "2024.01 ~ 2025.08.15",
+          },
+          {
+            title : "스마트레이저",
+            comment: "웹 개발 (프론트, 백엔드)",
+            date : "2022.12 ~ 2023.08",
+          },
+          {
+            title : "동아인재대학",
+            comment: "마술전공",
+            date : "2015.03~2017.02",
+          }
+        ]
+      },
+      {
+        order : 2,
+        title : "자격증 및 교육",
+        list : [
+          {
+            title : "정보처리산업기사 (국가기술자격증)",
+            comment: "한국산업인력공단",
+            date : "2022.11.04",
+          },
+          {
+            title : "마술지도사 2급 (사)",
+            comment: "축제문화 예술협회",
+            date : "2016.04.09",
+          },
+          {
+            title : "조경기능사 (국가기술자격증)",
+            comment: "한국산업인력공단",
+            date : "2014.07.18",
+          },
+          {
+            title : "하이미디어 아카데미",
+            comment: "JAVA 기반 웹개발자 수료",
+            date : "2022.04~2022.09",
+          },
+          {
+            title : "하이미디어 아카데미",
+            comment: "웹퍼블리셔 과정 수료",
+            date : "2020.11~2021.05",
+          }
+        ]
+      },
+
+      {
+        order : 3,
+        title : "프로젝트 경험",
+        list: [
+          {
+            title: "SDC BP Macro",
+            comment: "Mura 검사 Console 프로그램 및 IP 프로그램 유지보수 및 셋업",
+            date: "2024.07~2025.08",
+            framework: ["C#", ".Net Framework", "WPF", "Windows Forms"],
+            client: "SDC"
+          },
+          {
+            title: "Seal 공정 Lens 검사기",
+            comment: "Lens 검사 Console 프로그램 및 IP 프로그램 유지보수 및 셋업",
+            date: "2024.03~2024.07",
+            framework: ["C#", "Windows Forms", "WPF"],
+            client: "지오메디칼"
+          },
+          {
+            title: "서귀포 스마트 알림",
+            comment: "유저 단, 관리자 단 퍼블 및 프론트 담당",
+            date: "2023.06~2023.07",
+            framework: ["JAVA", "SPRING BOOT", "RESTFUL API", "Apache", "Gradle", "Git", "JavaScript", "HTML", "CSS", "Thymeleaf"],
+            client: "서귀포시"
+          },
+          {
+            title: "해피리얼 AR앱",
+            comment: "프론트 UI담당, 백오피스 공지등록",
+            date: "2023.06~2023.06",
+            framework: ["React Native", "NestJS", "React", "AWS", "Git"],
+            client: "섹터나인, SPC"
+          },
+          {
+            title: "리쥬란 NFC, QR 태깅 정품 인증",
+            comment: "프론트, 퍼블, 백엔드 담당, URL Redirect 기반 정품 인증 플로우 설계",
+            date: "2023.06~2023.07",
+            framework: ["JAVA", "Spring Boot", "JSP", "JavaScript", "HTML", "CSS", "Apache", "Gradle"],
+            client: "리쥬란"
+          },
+          {
+            title: "KT 원격 수업",
+            comment: "프론트, 퍼블",
+            date: "2023.05~2023.06",
+            framework: ["JAVA", "TypeScript", "HTML", "CSS", "Git"],
+            client: "KT, 올리브스톤"
+          },
+          {
+            title: "그 외 홈페이지 개발 및 유지보수",
+            comment: "자사폴렛폼 유지보수 및 고객 관리",
+            date: "2022.12~2023.08",
+            framework: ["JAVA", "Spring Boot", "Gradle", "Git"],
+            client: "스마트레이저"
+          },
+          {
+            title: "회사 내부 서버 이전 및 빌드 환경 변경",
+            comment: "AWS로 서버 이전, Spring → Spring Boot 전환, Maven → Gradle 변경, 서버 배포",
+            date: "2022.12~2023.08",
+            framework: ["JAVA", "AWS (EC2)", "Nginx", "Spring Boot", "SSL", "JSP", "Node"],
+            client: "스마트레이저"
+          },
+          {
+            title: "자회사 플랫폼 유지보수",
+            comment: "SSL 관련 작업",
+            date: "2022.12~2023.08",
+            framework: ["JAVA", "AWS (EC2)", "Nginx", "Spring Boot"],
+            client: "스마트레이저"
+          }
+        ]
+      }
+    ]
+
+    
+    var skills = [
+      { title: "HTML",
+        Contents: [
+          "HTML5 DTD 문법 준수",
+          "웹 접근성을 높인 Semantic Page 작성",
+          "IR 기법을 이용한 스타일 작성",
+          "반응형 웹 페이지 스타일 작성)",
+          "모바일 페이지 스타일 작성"
+        ],
+        Percent : 99
+      },
+      { title: "CSS",
+        Contents: [
+          "HTML5 DTD 문법 준수",
+          "웹 접근성을 높인 Semantic Page 작성",
+          "IR 기법을 이용한 스타일 작성", ,
+          "화려한 CSS3 Animation 구현",
+          "반응형 웹 페이지 스타일 작성",
+          "모바일 페이지 스타일 작성",
+          "CSS 전처리 기능 프로그래밍(SASS)"
+        ],
+        Percent: 80
+      },
+      { title: "JS",
+        Contents: [
+          "React 및 TypeScript 사용가능",
+          "Next js 를 이용한 프로젝트 활용 가능",
+          "JavaScript 플러그인 활용 및 구현(jQuery)",
+          "Parallax 웹 페이지 구현",
+          "외부 API 구현(Google Map, Carousel)",
+          "EcmaScript 6.0 기반 Native JavaScript 활용",
+          "JAX를 이용한 데이터 응용",
+          "모바일 페이지 스타일 작성",
+        ],
+        Percent: 90
+      },
+      { title: "React",
+        Contents: [
+          "React 및 TypeScript 사용가능",
+          "Next js 를 이용한 프로젝트 활용 가능",
+          "JavaScript 플러그인 활용 및 구현(jQuery)",
+          "Parallax 웹 페이지 구현",
+          "외부 API 구현(Google Map, Carousel)",
+          "EcmaScript 6.0 기반 Native JavaScript 활용",
+          "JAX를 이용한 데이터 응용",
+          "모바일 페이지 스타일 작성",
+        ],
+        Percent: 80
+      },
+      { title: "JSP",
+        Contents: [
+          "Scriptlet(스크립트릿)을 이용한 java sever page 활용",
+          "jsp로만 활용한 페이지 구성(MVC model1)",
+          "Expression(표현식)을 활용하여 HTML 표시",
+        ],
+        Percent: 60
+      },
+      { title: "JAVA",
+        Contents: [
+          "JAVA 언어를 활용한 기본 응용소프트웨어 구현 능력 함양",
+          "JAVA의 알고리즘 활용",
+          "스프링 프레임워크, 이클립스, 아파치 개발 도구 활용",
+          "SQL, 오라클을 기반으로 한 서버 구축 및 데이터 입출력 체크",
+          "DataBase 기반으로 게시판 제작"
+        ],
+        Percent: 70
+      },
+      { title: "PHP",
+        Contents: [
+          "php 언어를 활용한 기본 응용소프트웨어 구현 능력 함양",
+          "php로 간단한 쇼핑몰 제작가능",
+          "아파치 서버 활용"
+        ],
+        Percent: 80
+      },
+      { title: "Oracle",
+        Contents: [
+          "DataBase 서버 구현과 API를 기반으로 하는 프로그램 개발 및 데이터 개발",
+          "SQL, 오라클을 기반으로 한 서버 구축 및 데이터 입출력 체크",
+          "DataBase 기반으로 정규화된 프로젝트 설계 가능",
+          "DataBase 개념적 물리적 논리적설계 가능"
+        ],
+        Percent: 60
+      },
+      { title: "MYSQL",
+        Contents: [
+          "DataBase 서버 구현과 API를 기반으로 하는 프로그램 개발 및 데이터 개발",
+          "SQL, 오라클을 기반으로 한 서버 구축 및 데이터 입출력 체크",
+          "DataBase 기반으로 정규화된 프로젝트 설계 가능",
+          "DataBase 개념적 물리적 논리적설계 가능"
+        ],
+        Percent: 70
+      },
+      { title: "Spring",
+        Contents: [
+          "Spring Boot를 활용",
+          "MVC mode2를 활용한 페이지 구성",
+          "JAVA 언어를 활용한 기본 응용소프트웨어 구현 능력 함양",
+          "JAVA의 알고리즘 활용",
+          "스프링 프레임워크, 이클립스, 아파치 개발 도구 활용",
+          "SQL, 오라클을 기반으로 한 서버 구축 및 데이터 입출력 체크",
+          "DataBase 기반으로 게시판 제작"
+        ],
+        Percent: 80
+      },
+      { title: "C#",
+        Contents: [
+          "WPF로 window 프로그램 제작 가능",
+          ".NET FrameWork WindowsForm을 활용한 프로그램 제작 가능",
+          "아두이노 코드 설계 프로그램 제작",
+          "윈도우 스케줄러 관리 프로그램 제작",
+          "그외 다수 라이브러리 패키지 제작"
+        ],
+        Percent: 80
+      },
+      { title: "C++",
+        Contents: [
+          "MFC 프로젝트 활용 가능",
+          "POS 단말 프로그램 제작"
+        ],
+        Percent: 40
+      },
+      { title: "Python",
+        Contents: [
+          "간단한 스크립트 작성하여 빌드가능",
+          "파이썬을 활용한 통신 프로그램 제작"
+        ],
+        Percent: 50
+      },
+    ];
+    let isTarget = false;
+    document.getElementById("alpaWrap").addEventListener("click", () => {
+      isTarget = !isTarget;
+      window.parent.postMessage(isTarget, "*");
+    });
+    
+    const ap = new AlpaProgress('#progressRoot', skills, {
+      type: 'bar',
+      showContents: true,
+    });
+
+    const typeSelect = document.getElementById('typeSelect');
+    const toggleContents = document.getElementById('toggleContents');
+    window.addEventListener('DOMContentLoaded', ()=> new AlpaResume(document.querySelector('.alpa-resume'), intro));
+
+    typeSelect.addEventListener('change', (e)=> ap.setType(e.target.value));
+    toggleContents.addEventListener('change', (e)=> ap.showContents(e.target.checked));
 </script>
 </html>
