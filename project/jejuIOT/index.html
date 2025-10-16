@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>QR 코드 기반 리쥬란 정품 인증 – 포트폴리오 원페이지</title>
     <meta name="description" content="리쥬란 화장품 정품인증 QR 웹 프로젝트 소개 단일 페이지 포트폴리오" />
-    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
     <style>
         /* =====================
@@ -263,10 +262,6 @@
             grid-template-columns: repeat(3, 1fr);
         }
 
-        .skill_img{
-            max-width: 500px; box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
-        }
-
         @media (max-width: 920px) {
             .hero .grid {
                 grid-template-columns: 1fr;
@@ -328,13 +323,7 @@
         }
 
         @media (max-width: 768px) {
-            .skill_img{
-                padding: 25px;
-                width: 100%;
-            }
-            .skill_box{
-                flex-direction: column;
-            }
+
             .cols.two,
             .cols.three {
                 grid-template-columns: 1fr;
@@ -625,12 +614,6 @@
             opacity: .9;
             stroke-width: 7;
         }
-        .skill_box{
-            display: flex;
-            justify-content: start;
-            gap: 50px;
-            align-items: center;
-        }
 
         @media (prefers-color-scheme: dark) {
             .arrow-bg {
@@ -721,27 +704,22 @@
         <!-- ===== Tech Stack ===== -->
         <section id="stack">
             <h2 class="title reveal">기술 스택</h2>
-            <div class="skill_box">
-                <div class="skill_img reveal">
-                    <img src="/images/ico/skill.png" alt="기술">
-                </div>
-                <!-- <p class="desc reveal" style="transition-delay:.05s">Frontend(User): JSP, HTML, CSS, JavaScript · Backend(Backoffice): Java, Spring Boot, JPA, RESTful API · Infra: AWS EC2, Nginx, PM2, Git</p> -->
-                <ul class="stack reveal" style="transition-delay:.1s">
-                    <li class="tag"><span>JSP</span></li>
-                    <li class="tag"><span>HTML</span></li>
-                    <li class="tag"><span>CSS</span></li>
-                    <li class="tag"><span>JavaScript</span></li>
-                    <li class="tag"><span>Java</span></li>
-                    <li class="tag"><span>Spring Boot</span></li>
-                    <li class="tag"><span>JPA</span></li>
-                    <li class="tag"><span>REST API</span></li>
-                    <li class="tag"><span>MySQL</span></li>
-                    <li class="tag"><span>AWS EC2</span></li>
-                    <li class="tag"><span>Nginx</span></li>
-                    <li class="tag"><span>JDK</span></li>
-                    <li class="tag"><span>Gradle</span></li>
-                    <li class="tag"><span>Git</span></li>
-                </div>
+            <!-- <p class="desc reveal" style="transition-delay:.05s">Frontend(User): JSP, HTML, CSS, JavaScript · Backend(Backoffice): Java, Spring Boot, JPA, RESTful API · Infra: AWS EC2, Nginx, PM2, Git</p> -->
+            <div class="stack reveal" style="transition-delay:.1s">
+                <span class="tag">JSP</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">JPA</span>
+                <span class="tag">REST API</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">AWS EC2</span>
+                <span class="tag">Nginx</span>
+                <span class="tag">JDK</span>
+                <span class="tag">Gradle</span>
+                <span class="tag">Git</span>
             </div>
         </section>
 
@@ -876,15 +854,6 @@
         </section>
 
         <div class="divider"></div>
-
-        <footer id="footer">
-            <div class="footer_inner">
-                <div class="text">
-                    <span class="top">THANK YOU FOR YOUR VISIT!</span><br>
-                    <span class="bottom">COPYRIGHT© 2022 SZ100. ALL RIGHTS RESERVED.</span>
-                </div>
-            </div>
-        </footer>
     </div>
 
         <!-- ===== Canvas Mini Animation (Optional visual) ===== -->
@@ -906,7 +875,14 @@
                 </div>
             </div>
             </section> -->
-            
+            <footer id="footer">
+                <div class="footer_inner">
+                    <div class="text">
+                        <span class="top">THANK YOU FOR YOUR VISIT!</span><br>
+                        <span class="bottom">COPYRIGHT© 2022 SZ100. ALL RIGHTS RESERVED.</span>
+                    </div>
+                </div>
+            </footer>
         </div>
         
         <script>
