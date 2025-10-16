@@ -4,7 +4,37 @@
  *  - 문의 : skskskwkd456@naver.com
  * ========================= */
 
+
+
+
 const TYPE = { FILE: "file", FOLDER: "folder" };
+
+
+const AlpaObj = {
+  type: TYPE.FOLDER, //해당 프로세스 타입
+  title: "", // 프로세스 창에 표기할 제목
+  name: "", // 파일명
+  path: "", // 경로
+  ext: "", //확장자
+  realPath: "", // 실제 파일 경로
+  ico: "", // 아이콘 없으면 기본 아이콘
+  idx: 0, // 프로세스 순서
+  pk:  0, // 연결된 정보
+  dirPath: "", // 전체 경로
+  fullPath: "", // 전체경로
+  order: 0, //순서
+  position: { // 위치를 직접 지정시 use true
+    use : false,
+    left:null,
+    top:null,
+    right:null,
+    bottom:null,
+    width : null,
+    height : null,
+    point : {left : "px", top:"px",right : "px", bottom:"px",width:"px", height:"px"},
+  }
+}
+
 
 const Icon = {
     get(extOrType, ico = null) {
@@ -57,18 +87,20 @@ function normItem(raw) {
     const rp = (raw.realPath ? String(raw.realPath) : p).replace(/\//g, "\\"); // realPath 보존
     
     return {
+      ...AlpaObj,
       type: TYPE.FOLDER,
       title: raw.title,
       name: raw.name || raw.txt || Path.basename(p),
-      path: p,               // 아이콘(표시) 위치
+      path: p,
       ext: "folder",
-      realPath: rp,          // 시작 경로로 사용될 수 있는 실제 경로
+      realPath: rp,
       ico: raw.ico || null,
       idx: raw.idx ?? -1,
       pk:  raw.pk ?? null,
       dirPath: p,
       fullPath: p,
-      order: raw.order ?? null
+      order: raw.order ?? null,
+      
     };
   }
 
@@ -82,6 +114,7 @@ function normItem(raw) {
   const full = looksLikeFull ? base : Path.join(dir, name);
 
   return {
+    ...AlpaObj,
     type: TYPE.FILE,
     name,
     title: raw.title,
@@ -93,7 +126,7 @@ function normItem(raw) {
     pk:  raw.pk ?? null,
     dirPath: dir,
     fullPath: full,
-    order: raw.order ?? null
+    order: raw.order ?? null,
   };
 }
 
@@ -434,14 +467,15 @@ class WindowBase {
     static _spawnIndex = 0;
     static WORKAREA_FOOTER = 48;
 
-    constructor({ manager, title }) {
+    constructor({ manager, obj }) {
         this.manager = manager;
-        this.title = title;
+        this.title = obj.title;
+        this.position = obj.position;
         this.$root = $('<div class="alpaka-folder-window"></div>').css({
           position: 'absolute',
           // top/left는 아래 _applySpawnPosition()에서 설정
-          width: '640px',
-          height: '420px',
+          width: this.position?.use ? `${this.position?.width}` : '640px',
+          height: this.position?.use ? `${this.position?.height}` :  '420px',
           display: 'none'
         });
         // 초기 auto 방지
@@ -454,6 +488,10 @@ class WindowBase {
         $("body").append(this.$root);
         this.buildChrome();
         this.setupDragResize();
+        setTimeout(()=>{
+
+          this.clampToWorkArea();
+        }, 1)
     }
 
     _workArea(){
@@ -465,6 +503,8 @@ class WindowBase {
 
 
     _applySpawnPosition() {
+      let safeTop = "";
+      let safeLeft = "";
       const BASE_TOP  = 100;
       const BASE_LEFT = 100;
       const STEP      = 24;
@@ -476,11 +516,17 @@ class WindowBase {
 
       const { vw, maxH } = this._workArea();
       const winW = 640, winH = 420;
+      if(!this.position?.use){
+        
+  
+        safeTop  = Math.max(0, Math.min(top,  Math.max(0, maxH - winH - 20))) + "px";
+        safeLeft = Math.max(0, Math.min(left, Math.max(0, vw   - winW - 20))) + "px";
+      } else {
+        safeTop = this.position.top;
+        safeLeft = this.position.left;
+      }
 
-      const safeTop  = Math.max(0, Math.min(top,  Math.max(0, maxH - winH - 20)));
-      const safeLeft = Math.max(0, Math.min(left, Math.max(0, vw   - winW - 20)));
-
-      this.$root.css({ top: `${safeTop}px`, left: `${safeLeft}px` });
+      this.$root.css({ left: `${(this.position?.right) ? "auto" : safeLeft}`, top: `${safeTop}`, right: `${this.position?.right}` });
       WindowBase._spawnIndex++;
     }
 
@@ -540,40 +586,78 @@ class WindowBase {
         });
     }
 
-    setupDragResize() {
-      const clampToWorkArea = () => {
-        const { vw, maxH } = this._workArea();
-        const rect = {
-          top:  this.$root[0].offsetTop,
-          left: this.$root[0].offsetLeft,
-          w:    this.$root[0].clientWidth,
-          h:    this.$root[0].clientHeight
-        };
-        // 수평
-        if (rect.left < 0) rect.left = 0;
-        if (rect.left + rect.w > vw) rect.left = Math.max(0, vw - rect.w);
-        // 수직 (아래쪽은 작업표시줄 위까지만)
-        if (rect.top < 0) rect.top = 0;
-        if (rect.top + rect.h > maxH) rect.top = Math.max(0, maxH - rect.h);
-
-        this.$root.css({ left: rect.left, top: rect.top });
-        // 리사이즈로 인해 높이가 과하게 커졌다면 줄여줌
-        if (this.$root[0].clientHeight > maxH) {
-          this.$root.css({ height: `${maxH}px` });
-        }
+  clampToWorkArea = () => {
+      const { vw, maxH } = this._workArea();
+      console.log(this.$root[0].clientHeight);
+      const rect = {
+        top:  this.$root[0].offsetTop,
+        left: this.$root[0].offsetLeft,
+        w:    this.$root[0].clientWidth,
+        h:    this.$root[0].clientHeight
       };
+      // 수평
+      if (rect.left < 0) rect.left = 0;
+      if (rect.left + rect.w > vw) rect.left = Math.max(0, vw - rect.w);
+      // 수직 (아래쪽은 작업표시줄 위까지만)
+      if (rect.top < 0) rect.top = 0;
+      if (rect.top + rect.h > maxH) rect.top = Math.max(0, maxH - rect.h);
+
+      this.$root.css({ left: rect.left, top: rect.top });
+      // 리사이즈로 인해 높이가 과하게 커졌다면 줄여줌
+      if (this.$root[0].clientHeight > maxH) {
+        this.$root.css({ height: `${maxH}px` });
+      }
+    };
+
+    addDragShield() {
+      if (document.getElementById('drag-shield')) return;
+      const el = document.createElement('div');
+      el.id = 'drag-shield';
+      Object.assign(el.style, {
+        position: 'fixed',
+        left: 0, top: 0, right: 0, bottom: 0,
+        zIndex: 999999,
+        cursor: 'grabbing'  // 리사이즈면 'nwse-resize' 등으로 바꿔도 됨
+      });
+      document.body.appendChild(el);
+    }
+    removeDragShield() {
+      const el = document.getElementById('drag-shield');
+      if (el) el.remove();
+    }
+
+    setupDragResize() {
+      
 
       this.$root
-        .resizable({
-          minWidth: 360,
-          minHeight: 240,
-          handles: "n,e,s,w,ne,nw,se,sw",
-          stop: () => clampToWorkArea()   // ★ 리사이즈 후 보정
-        })
-        .draggable({
-          handle: ".alpaka-folder_btn",
-          stop: () => clampToWorkArea()   // ★ 드래그 후 보정
-        });
+  .resizable({
+    minWidth: 360,
+    minHeight: 240,
+    handles: "n,e,s,w,ne,nw,se,sw",
+    iframeFix: true,
+    start: () => {
+      this.addDragShield('nwse-resize');
+      document.querySelectorAll('iframe').forEach(f => f.classList.add('no-pointer'));
+    },
+    stop: () => {
+      this.removeDragShield();
+      document.querySelectorAll('iframe').forEach(f => f.classList.remove('no-pointer'));
+      this.clampToWorkArea(); // ★ 리사이즈 후 보정
+    }
+  })
+  .draggable({
+    handle: ".alpaka-folder_btn",
+    iframeFix: true,
+    start: () => {
+      this.addDragShield('grabbing');
+      document.querySelectorAll('iframe').forEach(f => f.classList.add('no-pointer'));
+    },
+    stop: () => {
+      this.removeDragShield();
+      document.querySelectorAll('iframe').forEach(f => f.classList.remove('no-pointer'));
+      this.clampToWorkArea(); // ★ 드래그 후 보정
+    }
+  });
 
       // 포커스 시 최상단 (기존 로직 유지)
       this.$root.on(`mousedown${this.ns}`, () => {
@@ -599,11 +683,11 @@ class WindowBase {
 }
 
 /* =========================
- * 폴더 창 (네 헤더/입력/내비 구조 유지)
+ * 폴더 창 (구조)
  * ========================= */
 class FolderWindow extends WindowBase {
-    constructor({ manager,title, startPath, fileList }) {
-        super({ manager, title });
+    constructor({ manager,obj, startPath, fileList }) {
+        super({ manager, obj });
         this.path = startPath;
         this.fileList = fileList;
 
@@ -814,8 +898,8 @@ class FolderWindow extends WindowBase {
  * 파일 창 (창 내부에 직접 미리보기 렌더)
  * ========================= */
 class FileWindow extends WindowBase {
-    constructor({ manager,title, file }) {
-        super({ manager,title });
+    constructor({ manager,obj, file }) {
+        super({ manager,obj });
         this.file = file;
         this.$root.addClass("window-file");
         this.render();
@@ -885,10 +969,13 @@ class AlpaProcessManager {
       }
     }
 
-    runProccessIdx(idx) {
+    runProccessIdx(idx, position = null) {
       const item = this.fileList.find(f =>
         f.idx == idx
       );
+      if(position?.use){
+        item.position = {...item.position, ...position};
+      }
       if (item) {
         this.open(item);
       } else {
@@ -942,13 +1029,13 @@ class AlpaProcessManager {
 
         // 동일 경로 창이 없으면 새 폴더창 생성
         const key = `folder:${item.path}:${Date.now()}_${Math.random().toString(36).slice(2)}`;
-        this.win = new FolderWindow({ manager: this,title:item.title,  startPath: item.path, fileList: this.fileList });
+        this.win = new FolderWindow({ manager: this,obj:item,  startPath: item.path, fileList: this.fileList });
         this.win.$root.data('proc-key', key);
         this.win.onClose(() => this.close(key));
 
         this.processes.set(key, { key, type: item.type, win : this.win, z: 0, icon: Icon.get(item.ext, item.ico) });
-        this.order.push(key);        // ★ 최상단에 추가
-        this._reflowZ();             // ★ 일괄 재배치
+        this.order.push(key); 
+        this._reflowZ();
 
         this.win.open();
         this.renderTaskbar();
@@ -959,13 +1046,13 @@ class AlpaProcessManager {
       const key = AlpaProcessManager.keyOf(item);
       if (this.processes.has(key)) { this.focus(key); return; }
 
-      this.win = new FileWindow({ manager: this,title: item.title, file: item });
+      this.win = new FileWindow({ manager: this,obj: item, file: item });
       this.win.$root.data('proc-key', key);
       this.win.onClose(() => this.close(key));
 
       this.processes.set(key, { key, type: item.type, win:this.win, z: 0, icon: Icon.get(item.ext, item.ico) });
-      this.order.push(key);          // ★ 최상단에 추가
-      this._reflowZ();               // ★ 일괄 재배치
+      this.order.push(key);
+      this._reflowZ();
 
       this.win.open();
       this.renderTaskbar();

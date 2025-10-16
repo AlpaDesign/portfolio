@@ -334,6 +334,8 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
   	border-radius: 10px;
 	box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.3);
 	background-color: #fff;
+	overflow: hidden;
+	padding-bottom: 26px;
 }
 #folder.active{
 	z-index: 20;
@@ -401,11 +403,12 @@ i.bi-browser-edge, i.bi-windows, i.bi-collection-fill {
 .alpaka-foloder-body{
 	width:100%;
 	background-color: #fff;
-    height: calc(100% - 74px);
+    height: 100%;
 	-webkit-user-select: none; /* Chrome, Safari, Edge */
   	-moz-user-select: none;    /* Firefox */
   	-ms-user-select: none;     /* IE 10+ */
   	user-select: none;
+	padding: 26px 5px;
 	
 }
 .alpaka-foloder-body{

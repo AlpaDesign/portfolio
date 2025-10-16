@@ -21,8 +21,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="../js/script.js"></script>
-    <script src="./AlpaDeskTop.js"></script>
-    <!-- <script src="./AlpaDeskTop_back.js"></script> -->
+    <!-- <script src="./AlpaDeskTop.js"></script> -->
+    <script src="./AlpaDeskTop_back.js"></script>
     <script src="../lib/AlpaProgress/js/AlpaProgress.js"></script>
     
 </head>
@@ -297,8 +297,9 @@ i.bi.bi-windows{
 
 
     $(window).on("load",()=>{
-        manager.runProccessIdx(18);
-        manager.runProccessIdx(20);
+        manager.runProccessIdx(18, position = {use :true, left:"84px", top:"25px", width:"calc((100% - 150px)/2)", height:"790px"});
+        manager.runProccessIdx(20,position = {use :true, right:"25px", top:"25px", width:"calc((100% - 150px)/2)", height:"790px"});
+
 
 
         let html = "";
