@@ -9,6 +9,7 @@
     --radius: 16px;
     --shadow: 0 6px 24px rgba(0, 0, 0, .22), 0 2px 6px rgba(0, 0, 0, .18);
     --gap: 20px;
+    --max-width: 1490px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -62,7 +63,7 @@ body {
 
 #header .top .top_inner {
     margin: 0 auto;
-    max-width: 100%;
+    max-width: var(--max-width);
     height: 70px;
     display: flex;
     overflow: hidden;
@@ -118,7 +119,7 @@ button:hover {
 }
 
 .container {
-    max-width: 100%;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 100px 20px 30px;
     height: 100%;
@@ -604,7 +605,10 @@ span.title {
 }
 
 .view-figure {
-    margin: 0 0 16px;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 800px;
     aspect-ratio: 12/7;
     border: 1px solid var(--line);
     border-radius: 16px;
@@ -923,7 +927,7 @@ span.title {
 }
 
 #footer .footer_inner {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
@@ -946,7 +950,7 @@ span.title {
 
 .title_background .title_background-inner{
 	margin: 0 auto;
-	max-width:100%;
+	max-width:var(--max-width);
 }
 .title_background .title{
 	font-size:3.750em;
