@@ -209,6 +209,7 @@ body.no-scroll{
       title : "Window 응용 프로그램",
       contents : [
         {
+          idx : 100,
           title : "Window 응용 프로그램",
           contents : [
             {
@@ -247,6 +248,7 @@ body.no-scroll{
             },
 
             {
+              idx : 101,
               title : "작업스케줄러 관리 프로그램",
               date : "2024.05 ~ 2024.05",
               target : {
@@ -291,6 +293,7 @@ body.no-scroll{
           title : "Front End ● Publishing",
           contents : [
             {
+              idx : 200,
               title : "서귀포 스마트알림",
               date : "2023.06 ~ 2023.09",
               target : {
@@ -331,6 +334,7 @@ body.no-scroll{
             },
 
             {
+              idx : 201,
               title : "리쥬란 정품인증",
               date : "2023.05 ~ 2023.05",
               html : "/project/rejuran",
@@ -370,6 +374,7 @@ body.no-scroll{
             },
 
             {
+              idx : 202,
               title : "해피리얼 AR앱",
               date : "2023.05 ~ 2023.05",
               target : {
@@ -406,6 +411,7 @@ body.no-scroll{
 
 
             {
+              idx : 203,
               title : "KT 원격 수업",
               date : "2023.05 ~ 2023.05",
               target : {
@@ -438,6 +444,7 @@ body.no-scroll{
             },
 
             {
+              idx : 204,
               title : "만남의 교회",
               date : "2023.05 ~ 2023.05",
               target : {
@@ -478,6 +485,7 @@ body.no-scroll{
             },
 
             {
+              idx : 205,
               title : "가평우리마을",
               date : "2023.05 ~ 2023.05",
               target : {
@@ -527,20 +535,24 @@ body.no-scroll{
     
   ];
 
-
-    document.addEventListener('DOMContentLoaded', ()=>{
-        const app = new AlpaPortfolio({
-            data: obj,
-            listSelector: '#contents',
-            viewSelector: '#view',
-            splitSelector: '.split',
-            leftPaneSelector: '.pane-left',
-            gutterSelector: '.gutter',
-            minLeft: 240,
-            maxLeft: 720
-        });
-        app.init();
-    });
+  const urlParams = new URLSearchParams(window.location.search);
+  const idx = urlParams.get("idx");
+  document.addEventListener('DOMContentLoaded', ()=>{
+      const app = new AlpaPortfolio({
+          data: obj,
+          listSelector: '#contents',
+          viewSelector: '#view',
+          splitSelector: '.split',
+          leftPaneSelector: '.pane-left',
+          gutterSelector: '.gutter',
+          minLeft: 240,
+          maxLeft: 720
+      });
+      app.init();
+      if(idx){
+        app.openByIdx(idx);
+      }
+  });
 
 
 
