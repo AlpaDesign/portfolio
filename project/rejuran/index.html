@@ -84,7 +84,7 @@
 
         /* ===== Layout ===== */
         .wrap {
-            max-width: 100%;
+            max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 25px 120px;
             position: relative;
@@ -641,6 +641,7 @@
 </head>
 
 <body>
+    <div class="wrapper">
     <!-- ===== Header ===== -->
     <header class="header">
         <div class="wrap inner">
@@ -674,8 +675,7 @@
             </div>
         </div>
     </section>
-
-    <div class="wrap">
+    <div class="container">
         <!-- ===== Overview ===== -->
         <section id="overview">
             <h2 class="title reveal">프로젝트 개요</h2>
@@ -854,6 +854,7 @@
         </section>
 
         <div class="divider"></div>
+    </div>
 
         <!-- ===== Canvas Mini Animation (Optional visual) ===== -->
         <!-- <section id="demo">
